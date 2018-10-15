@@ -9,6 +9,24 @@ package Código;
  *
  * @author Maru
  */
-public class Pizza {
+public class Pizza extends Producto{
+    private String sabor;
+
+    public Pizza(String sabor, float precioVenta) {
+        super(precioVenta);
+        this.sabor = sabor;
+    }
     
+    public Pizza(){
+        super();
+        this.sabor="";
+    }
+
+    public String getSabor() {
+        return sabor;
+    }
+
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
 }
