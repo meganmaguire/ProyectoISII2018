@@ -9,6 +9,24 @@ package Código;
  *
  * @author Maru
  */
-public class Narguile {
+public class Narguile extends Producto{
+    private String tabaco;
+
+    public Narguile(String tabaco, float precioVenta) {
+        super(precioVenta);
+        this.tabaco = tabaco;
+    }
     
+    public Narguile(){
+        super();
+        this.tabaco="";
+    }
+
+    public String getTabaco() {
+        return tabaco;
+    }
+
+    public void setTabaco(String tabaco) {
+        this.tabaco = tabaco;
+    }
 }

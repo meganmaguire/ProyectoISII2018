@@ -10,5 +10,33 @@ package Código;
  * @author Maru
  */
 public class Barril {
+    private float cantActual;
+    private float cantMinima;
+
+    public Barril(float cantActual, float cantMinima) {
+        this.cantActual = cantActual;
+        this.cantMinima = cantMinima;
+    }
+    
+    public Barril(){
+        this.cantActual=0;
+        this.cantMinima=0;
+    }
+
+    public float getCantActual() {
+        return cantActual;
+    }
+
+    public float getCantMinima() {
+        return cantMinima;
+    }
+
+    public void setCantActual(float cantActual) {
+        this.cantActual = cantActual;
+    }
+
+    public void setCantMinima(float cantMinima) {
+        this.cantMinima = cantMinima;
+    }
     
 }

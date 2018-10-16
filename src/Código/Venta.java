@@ -17,17 +17,20 @@ public class Venta {
     private Date fecha;
     private float precioTotal;
     private List<Renglon> renglonesDeVenta;
+    private String usuario;
 
-    public Venta(Date fecha, float precioTotal, List renglonesDeVenta) {
-        this.fecha = fecha;
+    public Venta(float precioTotal, List renglonesDeVenta, String usuario) {
+        this.fecha = new java.util.Date(); //fecha actual del sistema;
         this.precioTotal = precioTotal;
         this.renglonesDeVenta = renglonesDeVenta;
+        this.usuario=usuario;
     }
     
     public Venta(){
-        this.fecha=null;
+        this.fecha=new java.util.Date(); //fecha actual del sistema;
         this.precioTotal=0;
         this.renglonesDeVenta= new ArrayList(); 
+        this.usuario="";
     }
 
     public Date getFecha() {
@@ -42,6 +45,9 @@ public class Venta {
         return renglonesDeVenta;
     }
 
+    public String getUsuario(){
+        return usuario;
+    }
     
     public void setFecha(Date fecha) {
         this.fecha = fecha;
@@ -55,4 +61,7 @@ public class Venta {
         this.renglonesDeVenta = renglonesDeVenta;
     }
     
+    public void setUsuario(String usuario){
+        this.usuario=usuario;
+    }
 }
