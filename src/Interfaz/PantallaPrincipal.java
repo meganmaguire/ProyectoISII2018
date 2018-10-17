@@ -31,6 +31,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         base = new javax.swing.JPanel();
         cuerpo = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         lateral = new javax.swing.JPanel();
         tabVenta = new javax.swing.JPanel();
         labelVenta = new javax.swing.JLabel();
@@ -71,17 +73,37 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         base.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cuerpo.setBackground(new java.awt.Color(32, 40, 51));
+        cuerpo.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout cuerpoLayout = new javax.swing.GroupLayout(cuerpo);
-        cuerpo.setLayout(cuerpoLayout);
-        cuerpoLayout.setHorizontalGroup(
-            cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel2.setBackground(new java.awt.Color(32, 40, 51));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 990, Short.MAX_VALUE)
         );
-        cuerpoLayout.setVerticalGroup(
-            cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 660, Short.MAX_VALUE)
         );
+
+        cuerpo.add(jPanel2, "card3");
+
+        jPanel1.setBackground(new java.awt.Color(32, 40, 51));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 990, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+
+        cuerpo.add(jPanel1, "card2");
 
         base.add(cuerpo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 990, 660));
 
@@ -479,21 +501,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         superiorLayout.setVerticalGroup(
             superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(superiorLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(superiorLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(iconUsuario)
-                            .addComponent(labelUsuario)
-                            .addComponent(iconListadoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(iconNuevoUser)
-                            .addComponent(iconAlerta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(separadorUser3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(separadorUser)
-                            .addComponent(cerrar)))
-                    .addGroup(superiorLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(separadorUser2)))
+                    .addComponent(iconUsuario, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(labelUsuario, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(iconListadoUser, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iconNuevoUser, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(iconAlerta, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(separadorUser3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(separadorUser, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(cerrar, javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(separadorUser2))
                 .addGap(12, 12, 12))
         );
 
@@ -678,6 +696,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel iconUsuario;
     private javax.swing.JLabel iconVenta;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelBalance;
     private javax.swing.JLabel labelCatalogo;
     private javax.swing.JLabel labelCompra;

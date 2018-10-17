@@ -31,7 +31,6 @@ public class ConexionBD {
             Class.forName(driver).newInstance();
             this.conn = (Connection)DriverManager.getConnection(dbURL,username,password);
             stmt = conn.createStatement();
-            //ResultSet res = stmt.executeQuery("SHOW DATABASES LIKE '"+name+"'");
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("Error al cargar la BD");
