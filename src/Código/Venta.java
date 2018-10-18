@@ -5,6 +5,7 @@
  */
 package Código;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,12 +19,14 @@ public class Venta {
     private float precioTotal;
     private List<Renglon> renglonesDeVenta;
     private String usuario;
+    private int id;
 
     public Venta(float precioTotal, List renglonesDeVenta, String usuario) {
         this.fecha = new java.util.Date(); //fecha actual del sistema;
         this.precioTotal = precioTotal;
         this.renglonesDeVenta = renglonesDeVenta;
         this.usuario=usuario;
+        this.id=this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
     }
     
     public Venta(){
@@ -31,6 +34,7 @@ public class Venta {
         this.precioTotal=0;
         this.renglonesDeVenta= new ArrayList(); 
         this.usuario="";
+        this.id=this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
     }
 
     public Date getFecha() {
@@ -49,6 +53,10 @@ public class Venta {
         return usuario;
     }
     
+    public int getId(){
+        return id;
+    }
+    
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
@@ -63,5 +71,19 @@ public class Venta {
     
     public void setUsuario(String usuario){
         this.usuario=usuario;
+    }
+    
+    public void setId(int id){
+        this.id=id;
+    }
+    
+    public void mostrarVenta(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Fecha de nacimiento: "+formato.format(fecha));
+        System.out.println("Usuario: "+usuario);
+        System.out.println("Id: "+id);
+        System.out.println("Renglones: ");
+        System.out.println(renglonesDeVenta.toString());
+        System.out.println("Precio total: "+precioTotal);
     }
 }
