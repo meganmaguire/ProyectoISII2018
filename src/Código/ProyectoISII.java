@@ -5,6 +5,10 @@
  */
 package Código;
 
+import Interfaz.PantallaPrincipal;
+import javax.swing.JFrame;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Megan Maguire
@@ -16,6 +20,18 @@ public class ProyectoISII {
      */
     public static void main(String[] args) {
     
+        try{
+            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+        } 
+        catch (UnsupportedLookAndFeelException e) {}
+        catch (ClassNotFoundException e) {}
+        catch (InstantiationException e) {}
+        catch (IllegalAccessException e) {}
+        
+        JFrame ventana = new PantallaPrincipal();
+        
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }
     
 }
