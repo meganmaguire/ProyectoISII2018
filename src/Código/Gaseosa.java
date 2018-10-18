@@ -16,9 +16,9 @@ public class Gaseosa extends Producto{
     private float precioCosto;
     private Stock stock;
 
-    public Gaseosa(String nombre, String sabor, float contenido, float precioCosto, Stock stock, float precioVenta) {
-        super(precioVenta);
-        this.nombre = nombre;
+    public Gaseosa(String nombre,String sabor, float contenido, float precioCosto, Stock stock, float precioVenta,String tipoProducto) {
+        super(precioVenta,tipoProducto);
+        this.nombre=nombre;
         this.sabor = sabor;
         this.contenido = contenido;
         this.precioCosto = precioCosto;
@@ -34,10 +34,10 @@ public class Gaseosa extends Producto{
         this.stock= new Stock();
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
-
+    
     public String getSabor() {
         return sabor;
     }
@@ -53,11 +53,11 @@ public class Gaseosa extends Producto{
     public Stock getStock(){
         return stock;
     }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+    
     public void setSabor(String sabor) {
         this.sabor = sabor;
     }
@@ -72,5 +72,17 @@ public class Gaseosa extends Producto{
     
     public void setStock(Stock stock){
         this.stock=stock;
+    }
+
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Id: "+super.getId());
+        System.out.println("Sabor: "+sabor);
+        System.out.println("Contenido: "+contenido);
+        System.out.println("Precio de costo: "+precioCosto);
+        System.out.println("Stock: ");
+        System.out.println(stock.toString());
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
 }
