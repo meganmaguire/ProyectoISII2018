@@ -5,6 +5,11 @@
  */
 package Código;
 
+import BD.ConexionBD;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -32,8 +37,14 @@ public class ManagerUsuarios {
     }
     
     //Metodos para el manejo del manager usuarios
-    public void cargarUsuarios(){
-        //cargar usuarios de la bd
+    public void cargarUsuarios() throws SQLException{
+        Connection con=null;
+        PreparedStatement consulta=null;
+        ResultSet datos=null;
+        ConexionBD.createConexionBD();
+        con = (Connection) ConexionBD.getConexionBD();
+        consulta =con.prepareStatement("SELECT * FROM Usuarios");
+        datos=consulta.executeQuery();
     }
     
     //si el usuario existe en la bd devuelve verdadero, sino falso
