@@ -11,20 +11,44 @@ package Código;
  */
 public abstract class Producto {
     private float precioVenta;
+    private int id;
+    private String tipoProducto;
 
-    public Producto(float precioVenta) {
+    public Producto(float precioVenta,String nombreProducto) {
         this.precioVenta = precioVenta;
+        this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
+        this.tipoProducto=nombreProducto;
     }
     
     public Producto(){
         this.precioVenta=0;
+        this.id=(int) (Math.random() *100000) + 1;
+        this.tipoProducto="";
     }
 
     public float getPrecioVenta() {
         return precioVenta;
     }
+    
+    public int getId(){
+        return id;
+    }
+    
+    public String getTipoProducto(){
+        return tipoProducto;
+    }
 
     public void setPrecioVenta(float precioVenta) {
         this.precioVenta = precioVenta;
     }
+    
+    public void setId(int id){
+        this.id=id;
+    }
+    
+    public void setTipoProducto(String tipoProducto){
+        this.tipoProducto=tipoProducto;
+    }
+    
+    public abstract void mostrarProducto();
 }
