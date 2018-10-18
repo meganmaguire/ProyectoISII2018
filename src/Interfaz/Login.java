@@ -108,11 +108,6 @@ public class Login extends javax.swing.JFrame {
         campoPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         campoPass.setForeground(new java.awt.Color(197, 198, 199));
         campoPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoPassActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout fondoLayout = new javax.swing.GroupLayout(fondo);
         fondo.setLayout(fondoLayout);
@@ -125,7 +120,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(fondoLayout.createSequentialGroup()
                 .addGap(147, 147, 147)
                 .addComponent(titulo)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoLayout.createSequentialGroup()
                 .addGroup(fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(fondoLayout.createSequentialGroup()
@@ -178,10 +173,6 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void campoPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoPassActionPerformed
 
     private void cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarMouseClicked
         System.exit(0);
