@@ -5,6 +5,7 @@
  */
 package Código;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -63,5 +64,14 @@ public class Compra {
     
     public void setUsuario(String usuario){
         this.usuario=usuario;
+    }
+    
+    public void mostrarCompra(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Fecha de nacimiento: "+formato.format(fecha));
+        System.out.println("Usuario: "+usuario);
+        System.out.println("Renglones: ");
+        System.out.println(renglonesDeCompra.toString());
+        System.out.println("Precio total: "+precioTotal);
     }
 }
