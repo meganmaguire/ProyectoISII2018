@@ -20,156 +20,163 @@ public class ConexionBD {
     private Connection conn;
     
     private ConexionBD(){
-        String      driver = "org.postgresql.Driver";
-        String      name = "BD-BARBA-AZUL";
-        String      dbURL = "jdbc:postgresql://localhost/";
-        String      username = "postgres";
-        String      password = "postgres";
+        String      name = "BD_BARBA_AZUL";
+        String      dbURL = "jdbc:sqlite:";
         
         
         try{
-            Class.forName(driver).newInstance();
-            this.conn = (Connection)DriverManager.getConnection(dbURL,username,password);
+            this.conn = (Connection)DriverManager.getConnection(dbURL+name+".db");
             stmt = conn.createStatement();
+        
+            try{
+                //stmt.executeUpdate("CREATE DATABASE '"+name+"';");
+
+                //System.out.println("BD creada!");
+
+             }catch(Exception e){
+                System.out.println("BD ya creada!");
+                e.printStackTrace();
+            }
+                //Si no existen las tablas las crea
+            try{
+                stmt.execute("CREATE TABLE IF NOT EXISTS PRODUCTOS(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    Prod_PrecioVenta    REAL        NOT NULL,\n" +
+                            "    Prod_Esp            VARCHAR(10) NOT NULL\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS USUARIOS(\n" +
+                            "    U_Nombre            VARCHAR(20) NOT NULL,\n" +
+                            "    U_Apellido          VARCHAR(20) NOT NULL,\n" +
+                            "    U_FechaNac          DATE        NOT NULL,\n" +
+                            "    U_User              VARCHAR(20) NOT NULL    PRIMARY KEY,\n" +
+                            "    U_Pass              VARCHAR(20) NOT NULL,\n" +
+                            "    U_Permiso           INT         NOT NULL\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS VENTAS(\n" +
+                            "    V_Fecha             DATE        NOT NULL,\n" +
+                            "    V_ID                INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    V_PrecioTotal       REAL        NOT NULL,\n" +
+                            "    U_User              VARCHAR(20) NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(U_User) REFERENCES Usuarios(U_User)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS COMPRAS(\n" +
+                            "    C_Fecha             DATE        NOT NULL,\n" +
+                            "    C_ID                INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    C_PrecioTotal       REAL        NOT NULL,\n" +
+                            "    U_User              VARCHAR(20) NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(U_User) REFERENCES Usuarios(U_User)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS RENGLONES(\n" +
+                            "    R_Producto          VARCHAR(20) NOT NULL,\n" +
+                            "    R_Cant              INT         NOT NULL,\n" +
+                            "    V_ID                INT         NOT NULL    PRIMARY KEY,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(V_ID) REFERENCES Ventas(V_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS BARRILES(\n" +
+                            "    Bar_ID              INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    Bar_CantActual      REAL        NOT NULL,\n" +
+                            "    Bar_CantMinima      REAL        NOT NULL\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS INDUSTRIALES(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    I_Nombre            VARCHAR(20) NOT NULL,\n" +
+                            "    I_Marca             VARCHAR(30) NOT NULL,\n" +
+                            "    I_Tipo              VARCHAR(30) NOT NULL,\n" +
+                            "    I_PrecioCosto       REAL        NOT NULL,\n" +
+                            "    I_GradAlc           REAL        NOT NULL,\n" +
+                            "    I_Cont              REAL        NOT NULL,\n" +
+                            "    I_Origen            VARCHAR(20) NOT NULL,\n" +
+                            "    I_StockActual       INT         NOT NULL,\n" +
+                            "    I_StockMinimo       INT         NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS ARTESANALES(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    A_Nombre            VARCHAR(20) NOT NULL,\n" +
+                            "    A_Marca             VARCHAR(30) NOT NULL,\n" +
+                            "    A_Tipo              VARCHAR(30) NOT NULL,\n" +
+                            "    A_PrecioCosto       REAL        NOT NULL,\n" +
+                            "    A_GradAlc           REAL        NOT NULL,\n" +
+                            "    A_Cont              REAL        NOT NULL,\n" +
+                            "    A_Color             VARCHAR(20) NOT NULL,\n" +
+                            "    A_Lúpulo            VARCHAR(30) NOT NULL,\n" +
+                            "    A_Malta             VARCHAR(30) NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS TRAGOS(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    T_Nombre            VARCHAR(20) NOT NULL,\n" +
+                            "    T_Ingredientes      VARCHAR(100) NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS NARGUILE(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    N_Tabaco            VARCHAR     NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS GASEOSAS(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    G_Nombre            VARCHAR(30) NOT NULL,\n" +
+                            "    G_Sabor             VARCHAR(20) NOT NULL,\n" +
+                            "    G_Cont              REAL        NOT NULL,\n" +
+                            "    G_PrecioCosto       REAL        NOT NULL,\n" +
+                            "    G_StockActual       INT         NOT NULL,\n" +
+                            "    G_StockMinima       INT         NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS VINOS(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    Vi_Nombre           VARCHAR(30) NOT NULL,\n" +
+                            "    Vi_Bodega           VARCHAR(20) NOT NULL,\n" +
+                            "    Vi_Color            VARCHAR(20) NOT NULL,\n" +
+                            "    Vi_Uva              VARCHAR(30) NOT NULL,\n" +
+                            "    Vi_GradAlc          REAL        NOT NULL,\n" +
+                            "    Vi_PrecioCosto      REAL        NOT NULL,\n" +
+                            "    Vi_StockActual      INT         NOT NULL,\n" +
+                            "    Vi_StockMinimo      INT         NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS PIZZAS(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    Pizza_Sabor         VARCHAR(30) NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS PICADAS(\n" +
+                            "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    Pic_CantPersonas    INT         NOT NULL,\n" +
+                            "\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    \n" +
+                            ");");
+
+                System.out.println("Tablas creadas");
+            }catch(Exception e){
+                System.out.println("No se pudieron crear las tablas");
+                e.printStackTrace();
+            }
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("Error al cargar la BD");
         }
-        try{
-            stmt.executeUpdate("CREATE DATABASE \""+name+"\"");
-            System.out.println("BD creada!");
-            //Si no existen las tablas las crea
-            try{
-                stmt.execute("CREATE TABLE Productos(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    Prod-PrecioVenta    REAL        NOT NULL,\n" +
-                            "    Prod-Esp            VARCHAR(10) NOT NULL,\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Usuarios(\n" +
-                            "    U-Nombre            VARCHAR(20) NOT NULL,\n" +
-                            "    U-Apellido          VARCHAR(20) NOT NULL,\n" +
-                            "    U-FechaNac          DATE        NOT NULL,\n" +
-                            "    U-User              VARCHAR(20) NOT NULL    PRIMARY KEY,\n" +
-                            "    U-Pass              VARCHAR(20) NOT NULL,\n" +
-                            "    U-Permiso           INT         NOT NULL\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Ventas(\n" +
-                            "    V-Fecha             DATE        NOT NULL,\n" +
-                            "    V-ID                INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    V-PrecioTotal       REAL        NOT NULL,\n" +
-                            "    U-User              INT         NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(U-User) REFERENCES Usuarios(U-User)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Compras(\n" +
-                            "    C-Fecha             DATE        NOT NULL,\n" +
-                            "    C-ID                INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    C-PrecioTotal       REAL        NOT NULL,\n" +
-                            "    U-User              VARCHAR(20) NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(U-User) REFERENCES Usuarios(U-User)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Renglones(\n" +
-                            "    R-Producto          VARCHAR(20) NOT NULL,\n" +
-                            "    R-Cant              INT         NOT NULL,\n" +
-                            "    V-ID                INT         NOT NULL    PRIMARY KEY,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(V-ID) REFERENCES Ventas(V-ID)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Industriales(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    I-Nombre            VARCHAR(20) NOT NULL,\n" +
-                            "    I-Marca             VARCHAR(30) NOT NULL,\n" +
-                            "    I-Tipo              VARCHAR(30) NOT NULL,\n" +
-                            "    I-PrecioCosto       REAL        NOT NULL,\n" +
-                            "    I-GradAlc           REAL        NOT NULL,\n" +
-                            "    I-Cont              REAL        NOT NULL,\n" +
-                            "    I-Origen            VARCHAR(20) NOT NULL,\n" +
-                            "    I-StockActual       INT         NOT NULL,\n" +
-                            "    I-StockMinimo       INT         NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Artesanales(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    A-Nombre            VARCHAR(20) NOT NULL,\n" +
-                            "    A-Marca             VARCHAR(30) NOT NULL,\n" +
-                            "    A-Tipo              VARCHAR(30) NOT NULL,\n" +
-                            "    A-PrecioCosto       REAL        NOT NULL,\n" +
-                            "    A-GradAlc           REAL        NOT NULL,\n" +
-                            "    A-Cont              REAL        NOT NULL,\n" +
-                            "    A-Color             VARCHAR(20) NOT NULL,\n" +
-                            "    A-Lúpulo            VARCHAR(30) NOT NULL,\n" +
-                            "    A-Malta             VARCHAR(30) NOT NULL,\n" +
-                            "    A-CantActual        REAL        NOT NULL,\n" +
-                            "    A-CantMinima        REAL        NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Tragos(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    T-Nombre            VARCHAR(20) NOT NULL,\n" +
-                            "    T-Ingredientes      VARCHAR(100) NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Narguiles(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    N-Tabaco            VARCHAR     NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Gaseosas(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    G-Nombre            VARCHAR(30) NOT NULL,\n" +
-                            "    G-Sabor             VARCHAR(20) NOT NULL,\n" +
-                            "    G-Cont              REAL        NOT NULL,\n" +
-                            "    G-PrecioCosto       REAL        NOT NULL,\n" +
-                            "    G-StockActual       INT         NOT NULL,\n" +
-                            "    G-StockMinima       INT         NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Vinos(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    Vi-Nombre           VARCHAR(30) NOT NULL,\n" +
-                            "    Vi-Bodega           VARCHAR(20) NOT NULL,\n" +
-                            "    Vi-Color            VARCHAR(20) NOT NULL,\n" +
-                            "    Vi-Uva              VARCHAR(30) NOT NULL,\n" +
-                            "    Vi-GradAlc          REAL        NOT NULL,\n" +
-                            "    Vi-PrecioCosto      REAL        NOT NULL,\n" +
-                            "    Vi-StockActual      INT         NOT NULL,\n" +
-                            "    Vi-StockMinimo      INT         NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Pizzas(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    Pizza-Sabor         VARCHAR(30) NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            "\n" +
-                            ");");
-                stmt.execute("CREATE TABLE Picadas(\n" +
-                            "    Prod-ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    Pic-CantPersonas    INT         NOT NULL,\n" +
-                            "\n" +
-                            "    FOREIGN KEY(Prod-ID) REFERENCES Productos(Prod-ID)\n" +
-                            "    \n" +
-                            ");");
-            }catch(Exception e){}
-        }catch(Exception e){
-            System.out.println("BD ya creada!");
-        }
-        
     }
     public Connection getConn(){
         return conn;
