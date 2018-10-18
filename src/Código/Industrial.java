@@ -13,8 +13,8 @@ public class Industrial extends Cerveza{
     private String origen;
     private Stock stock;
 
-    public Industrial(String origen, Stock stock, String nombre, String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta) {
-        super(nombre, marca, tipo, precioCosto, graduacionAlc, contenido, precioVenta);
+    public Industrial(String origen, Stock stock,String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta, String tipoProducto) {
+        super(marca, tipo, precioCosto, graduacionAlc, contenido, precioVenta,tipoProducto);
         this.origen = origen;
         this.stock = stock;
     }
@@ -39,5 +39,12 @@ public class Industrial extends Cerveza{
     
     public void setStock(Stock stock){
         this.stock=stock;
+    }
+    
+    public void mostrarProducto(){
+        this.mostrarProducto();
+        System.out.println("Origen: "+origen);
+        System.out.println("Stock: ");
+        System.out.println(stock.toString());
     }
 }
