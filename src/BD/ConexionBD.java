@@ -174,7 +174,7 @@ public class ConexionBD {
     public Connection getConn(){
         return conn;
     }
-    private static void createConexionBD(){
+    public static void createConexionBD(){
         if(conBD == null)
             conBD = new ConexionBD();
     }
