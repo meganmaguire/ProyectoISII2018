@@ -76,7 +76,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Fira Sans UltraLight", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Fira Sans UltraLight", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 252, 241));
         jLabel1.setText("INGRESAR");
 
@@ -125,7 +125,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(fondoLayout.createSequentialGroup()
                 .addGap(147, 147, 147)
                 .addComponent(titulo)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoLayout.createSequentialGroup()
                 .addGroup(fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(fondoLayout.createSequentialGroup()
@@ -162,7 +162,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(campoPass, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
