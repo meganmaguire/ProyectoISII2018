@@ -5,10 +5,16 @@
  */
 package Código;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import BD.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -43,12 +49,24 @@ public class ManagerVentas {
     }
     
     //Metodos para le manejo del manager ventas
-    public void cargarVentas(){
-        //cargar lista desde la bd
+    public void cargarVentas() throws SQLException{
+        Connection con=null;
+        PreparedStatement consulta=null;
+        ResultSet datos=null;
+        ConexionBD.createConexionBD();
+        con = (Connection) ConexionBD.getConexionBD();
+        consulta =con.prepareStatement("SELECT * FROM Ventas");
+        datos=consulta.executeQuery();
     }
     
-    public void cargarCompras(){
-        //cargar lista desde la bd
+    public void cargarCompras() throws SQLException{
+        Connection con=null;
+        PreparedStatement consulta=null;
+        ResultSet datos=null;
+        ConexionBD.createConexionBD();
+        con = (Connection) ConexionBD.getConexionBD();
+        consulta =con.prepareStatement("SELECT * FROM Compras");
+        datos=consulta.executeQuery();
     }
     
     public void balanceVentas(Date fecha1, Date fecha2){
