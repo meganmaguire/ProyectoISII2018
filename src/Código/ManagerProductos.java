@@ -5,6 +5,11 @@
  */
 package Código;
 
+import BD.ConexionBD;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -47,8 +52,14 @@ public class ManagerProductos {
         //cargar lista desde la bd
     }
     
-    public void cargarCompras(){
-        //cargar lista desde la bd
+    public void cargarCompras() throws SQLException{
+        Connection con=null;
+        PreparedStatement consulta=null;
+        ResultSet datos=null;
+        ConexionBD.createConexionBD();
+        con = (Connection) ConexionBD.getConexionBD();
+        consulta =con.prepareStatement("SELECT * FROM Compras");
+        datos=consulta.executeQuery();
     }
     
     //Genera una compra, la carga en la base de datos y actualiza el stock
