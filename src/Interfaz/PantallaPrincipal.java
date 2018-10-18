@@ -261,6 +261,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelElimInd7 = new javax.swing.JLabel();
         labelTitulo51 = new javax.swing.JLabel();
         campoPrecioVPicadas = new javax.swing.JTextField();
+        panelVacío = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tablaListado = new javax.swing.JTable();
         labelTitulo1 = new javax.swing.JLabel();
@@ -2814,6 +2815,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         panelTablas.add(panelTablaPicadas, "card9");
 
+        panelVacío.setBackground(new java.awt.Color(24, 30, 38));
+
+        javax.swing.GroupLayout panelVacíoLayout = new javax.swing.GroupLayout(panelVacío);
+        panelVacío.setLayout(panelVacíoLayout);
+        panelVacíoLayout.setHorizontalGroup(
+            panelVacíoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 344, Short.MAX_VALUE)
+        );
+        panelVacíoLayout.setVerticalGroup(
+            panelVacíoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 472, Short.MAX_VALUE)
+        );
+
+        panelTablas.add(panelVacío, "card10");
+
         tablaListado.setBackground(new java.awt.Color(32, 40, 51));
         tablaListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3919,6 +3935,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panelTablaTragos;
     private javax.swing.JPanel panelTablaVinos;
     private javax.swing.JPanel panelTablas;
+    private javax.swing.JPanel panelVacío;
     private javax.swing.JPanel panelVenta;
     private javax.swing.JSeparator separadorLogo;
     private javax.swing.JSeparator separadorUser;
