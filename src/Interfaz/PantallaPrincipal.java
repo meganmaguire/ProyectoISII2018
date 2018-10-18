@@ -124,7 +124,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         fondo = new javax.swing.JPanel();
         panelCatalogo = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
-        panelTablas = new javax.swing.JPanel();
+        panelDetalle = new javax.swing.JPanel();
         panelTablaIndustriales = new javax.swing.JPanel();
         labelTitulo3 = new javax.swing.JLabel();
         labelTitulo4 = new javax.swing.JLabel();
@@ -1436,8 +1436,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTitulo.setForeground(new java.awt.Color(250, 250, 250));
         labelTitulo.setText("Listado");
 
-        panelTablas.setBackground(new java.awt.Color(24, 30, 38));
-        panelTablas.setLayout(new java.awt.CardLayout());
+        panelDetalle.setBackground(new java.awt.Color(24, 30, 38));
+        panelDetalle.setLayout(new java.awt.CardLayout());
 
         panelTablaIndustriales.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -1670,7 +1670,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelTablas.add(panelTablaIndustriales, "card2");
+        panelDetalle.add(panelTablaIndustriales, "card2");
 
         panelTablaArtesanales.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -1904,7 +1904,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        panelTablas.add(panelTablaArtesanales, "card3");
+        panelDetalle.add(panelTablaArtesanales, "card3");
 
         panelTablaVinos.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2133,7 +2133,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        panelTablas.add(panelTablaVinos, "card4");
+        panelDetalle.add(panelTablaVinos, "card4");
 
         panelTablaGaseosas.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2317,7 +2317,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelTablas.add(panelTablaGaseosas, "card5");
+        panelDetalle.add(panelTablaGaseosas, "card5");
 
         panelTablaTragos.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2441,7 +2441,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelTablas.add(panelTablaTragos, "card6");
+        panelDetalle.add(panelTablaTragos, "card6");
 
         panelTablaNarguile.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2565,7 +2565,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelTablas.add(panelTablaNarguile, "card7");
+        panelDetalle.add(panelTablaNarguile, "card7");
 
         panelTablaPizzas.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2689,7 +2689,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelTablas.add(panelTablaPizzas, "card8");
+        panelDetalle.add(panelTablaPizzas, "card8");
 
         panelTablaPicadas.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2813,7 +2813,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelTablas.add(panelTablaPicadas, "card9");
+        panelDetalle.add(panelTablaPicadas, "card9");
 
         panelVacío.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2828,7 +2828,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 472, Short.MAX_VALUE)
         );
 
-        panelTablas.add(panelVacío, "card10");
+        panelDetalle.add(panelVacío, "card10");
 
         tablaListado.setBackground(new java.awt.Color(32, 40, 51));
         tablaListado.setModel(new javax.swing.table.DefaultTableModel(
@@ -2914,7 +2914,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(panelCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelTitulo2)
-                            .addComponent(panelTablas, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(panelDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
         panelCatalogoLayout.setVerticalGroup(
@@ -2933,7 +2933,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(panelCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5)
-                    .addComponent(panelTablas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelDetalle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(40, 40, 40))
         );
 
@@ -3919,6 +3919,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panelBalance;
     private javax.swing.JPanel panelCatalogo;
     private javax.swing.JPanel panelCompra;
+    private javax.swing.JPanel panelDetalle;
     private javax.swing.JPanel panelEcuaciones;
     private javax.swing.JPanel panelMesa1;
     private javax.swing.JPanel panelMesa2;
@@ -3934,7 +3935,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panelTablaPizzas;
     private javax.swing.JPanel panelTablaTragos;
     private javax.swing.JPanel panelTablaVinos;
-    private javax.swing.JPanel panelTablas;
     private javax.swing.JPanel panelVacío;
     private javax.swing.JPanel panelVenta;
     private javax.swing.JSeparator separadorLogo;

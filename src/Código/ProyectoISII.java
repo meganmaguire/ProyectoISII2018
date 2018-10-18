@@ -5,7 +5,9 @@
  */
 package Código;
 
+import BD.ConexionBD;
 import Interfaz.PantallaPrincipal;
+import java.sql.Connection;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -27,11 +29,14 @@ public class ProyectoISII {
         catch (ClassNotFoundException e) {}
         catch (InstantiationException e) {}
         catch (IllegalAccessException e) {}
-        
+        /*
         JFrame ventana = new PantallaPrincipal();
         
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
+                */
+        
+        Connection conn = ConexionBD.getConexionBD().getConn();
     }
     
 }
