@@ -36,7 +36,18 @@ public interface DAO {
     //public void createPizza(Pizza pizza);
     //public void createPicada(Picada picada);
     
-    
+    //updates
+    //public void upDateUsuario(Usuario usuario);
+    //public void upDateVenta(Venta venta);
+    //public void upDateCompra(Compra compra);
+    //public void upDateIndustriales(Industrial industrial);
+    //public void upDateArtesanalas(Artesanal artesanal);
+    //public void upDateTragos(Trago trago);
+    //public void upDateNarguile(Narguile narguile);
+    //public void upDateGaseosa(Gaseosa gaseosa);
+    //public void upDateVino(Vino vino);
+    //public void upDatePizza(Pizza pizza);
+    //public void upDatePicada(Picada picada);
     
     //deletes
     //public void deleteUsuario(Usuario usuario);
