@@ -48,77 +48,6 @@ public class ManagerProductos {
     }
     
     //Metodos para el manejo del maneger productos
-    public void cargarProductos() throws SQLException{
-        Connection con=null;
-        PreparedStatement consulta=null;
-        ResultSet datos=null;
-        ConexionBD.createConexionBD();
-        con = (Connection) ConexionBD.getConexionBD();
-        consulta =con.prepareStatement("SELECT * FROM Industriales");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Artesanales");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Tragos");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Narguiles");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Gaseosas");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Vinos");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Pizzas");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-        consulta =con.prepareStatement("SELECT * FROM Picadas");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Producto p= (Producto) datos;
-            listaProductos.add(p);
-        }
-    }
-    
-    public List cargarCompras() throws SQLException{
-        Connection con=null;
-        PreparedStatement consulta=null;
-        ResultSet datos=null;
-        ConexionBD.createConexionBD();
-        con = (Connection) ConexionBD.getConexionBD();
-        consulta =con.prepareStatement("SELECT * FROM Compras");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Compra c= (Compra) datos;
-            listaCompras.add(c);
-        }
-        return listaCompras;
-    }
-    
     //Genera una compra, la carga en la base de datos y actualiza el stock
     public void realizarCompra(Compra c) throws SQLException {
         Stock stock=null;
@@ -149,21 +78,11 @@ public class ManagerProductos {
     }
     
     public void agregarProducto(Producto p){
-        listaProductos.add(p);
     }
     
     public void modificarProducto(Producto p1, Producto p2){
-        listaProductos.remove(p1);  //elimina el producto a modificar
-        listaProductos.add(p2);     //agrega el producto modificado
     }
     
     public void bajaProducto(Producto p){
-        Iterator i= listaProductos.iterator();
-        while(i.hasNext()){
-            Producto prod = (Producto) i.next();
-            if(prod.equals(p)){
-                listaProductos.remove(p);
-            }
-        }
     }
 }
