@@ -188,7 +188,7 @@ public class DAOSQLite implements DAO{
                 stock = new Stock(resultado.getInt(9), resultado.getInt(10));
                 gas.setStock(stock);
                 
-                
+                gaseosas.add(gas.clone());
             }
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta");
