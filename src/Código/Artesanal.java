@@ -87,4 +87,7 @@ public class Artesanal extends Cerveza{
         
         return art;
     }
+    public String instance(){
+        return "Artesanal";
+    }
 }
