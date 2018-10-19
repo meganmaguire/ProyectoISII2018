@@ -76,7 +76,8 @@ public class ConexionBD {
                             "    R_Cant              INT         NOT NULL,\n" +
                             "    V_ID                INT         NOT NULL    PRIMARY KEY,\n" +
                             "\n" +
-                            "    FOREIGN KEY(V_ID) REFERENCES VENTAS(V_ID)\n" +
+                            "    FOREIGN KEY(V_ID) REFERENCES VENTAS(V_ID),\n" +
+                            "    FOREIGN KEY(V_ID) REFERENCES COMPRAS(V_ID)" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS BARRILES(\n" +
