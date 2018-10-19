@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface DAO {
     //reads
-    //public List readeUsuarios();
+    //public List readUsuarios();
     public List readVentas();
     public List readCompras();
     public List readIndustriales();
