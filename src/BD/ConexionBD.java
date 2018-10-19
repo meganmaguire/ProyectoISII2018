@@ -59,7 +59,7 @@ public class ConexionBD {
                             "    V_PrecioTotal       REAL        NOT NULL,\n" +
                             "    U_User              VARCHAR(20) NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(U_User) REFERENCES Usuarios(U_User)\n" +
+                            "    FOREIGN KEY(U_User) REFERENCES USUARIOS(U_User)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS COMPRAS(\n" +
@@ -68,7 +68,7 @@ public class ConexionBD {
                             "    C_PrecioTotal       REAL        NOT NULL,\n" +
                             "    U_User              VARCHAR(20) NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(U_User) REFERENCES Usuarios(U_User)\n" +
+                            "    FOREIGN KEY(U_User) REFERENCES USUARIOS(U_User)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS RENGLONES(\n" +
@@ -76,7 +76,7 @@ public class ConexionBD {
                             "    R_Cant              INT         NOT NULL,\n" +
                             "    V_ID                INT         NOT NULL    PRIMARY KEY,\n" +
                             "\n" +
-                            "    FOREIGN KEY(V_ID) REFERENCES Ventas(V_ID)\n" +
+                            "    FOREIGN KEY(V_ID) REFERENCES VENTAS(V_ID)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS BARRILES(\n" +
@@ -95,7 +95,7 @@ public class ConexionBD {
                             "    I_StockActual       INT         NOT NULL,\n" +
                             "    I_StockMinimo       INT         NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS ARTESANALES(\n" +
@@ -107,22 +107,24 @@ public class ConexionBD {
                             "    A_Cont              REAL        NOT NULL,\n" +
                             "    A_Color             VARCHAR(20) NOT NULL,\n" +
                             "    A_Lúpulo            VARCHAR(30) NOT NULL,\n" +
-                            "    A_Malta             VARCHAR(30) NOT NULL,\n" +
+                            "    A_Malta             VARCHAR(30) NOT NULL,\n"+ 
+                            "    Bar_ID              INT         NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID),\n" +
+                            "    FOREIGN KEY(Bar_ID) REFERENCES BARRILES(Bar_ID)"+
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS TRAGOS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
                             "    T_Ingredientes      VARCHAR(100) NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS NARGUILE(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
                             "    N_Tabaco            VARCHAR     NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS GASEOSAS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
@@ -132,7 +134,7 @@ public class ConexionBD {
                             "    G_StockActual       INT         NOT NULL,\n" +
                             "    G_StockMinima       INT         NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS VINOS(\n" +
@@ -145,21 +147,21 @@ public class ConexionBD {
                             "    Vi_StockActual      INT         NOT NULL,\n" +
                             "    Vi_StockMinimo      INT         NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS PIZZAS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
                             "    Pizza_Sabor         VARCHAR(30) NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS PICADAS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
                             "    Pic_CantPersonas    INT         NOT NULL,\n" +
                             "\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             "    \n" +
                             ");");
 
