@@ -73,4 +73,18 @@ public class Gaseosa extends Producto{
         System.out.println(stock.toString());
         System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
+    
+    public Gaseosa clone(){
+        Gaseosa gas = new Gaseosa();
+        
+        gas.setId(this.getId());
+        gas.setPrecioVenta(this.getPrecioVenta());
+        gas.setNombreProducto(this.getNombreProducto());
+        gas.setSabor(this.getSabor());
+        gas.setContenido(this.getContenido());
+        gas.setPrecioCosto(this.getPrecioCosto());
+        gas.setStock(this.getStock());
+        
+        return gas;
+    }
 }

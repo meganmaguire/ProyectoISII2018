@@ -71,4 +71,20 @@ public class Artesanal extends Cerveza{
         System.out.println("Barril: ");
         System.out.println(barril.toString());
     }
+    
+    public Artesanal clone(){
+        Artesanal art = new Artesanal();
+        art.setId(this.getId());
+        art.setPrecioVenta(this.getPrecioVenta());
+        art.setNombreProducto(this.getNombreProducto());
+        art.setMarca(this.getMarca());
+        art.setTipo(this.getTipo());
+        art.setGraduacionAlc(this.getGraduacionAlc());
+        art.setContenido(this.getContenido());
+        art.setColor(this.getColor());
+        art.setLupulo(this.getLupulo());
+        art.setMalta(this.malta);
+        
+        return art;
+    }
 }

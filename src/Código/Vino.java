@@ -96,4 +96,20 @@ public class Vino extends Producto{
         System.out.println(stock.toString());
         System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
+    
+    public Vino clone(){
+        Vino vino = new Vino();
+        
+        vino.setId(this.getId());
+        vino.setPrecioVenta(this.getPrecioVenta());
+        vino.setNombreProducto(this.getNombreProducto());
+        vino.setBodega(this.getBodega());
+        vino.setColor(this.getColor());
+        vino.setTipoDeUva(this.getTipoDeUva());
+        vino.setGraduacionAlc(this.getGraduacionAlc());
+        vino.setPrecioCosto(this.getPrecioCosto());
+        vino.setStock(this.getStock());
+        
+        return vino;
+    }
 }

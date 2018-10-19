@@ -47,4 +47,21 @@ public class Industrial extends Cerveza{
         System.out.println("Stock: ");
         System.out.println(stock.toString());
     }
+    
+    public Industrial clone(){
+        Industrial ind = new Industrial();
+        
+        ind.setId(this.getId());
+        ind.setPrecioVenta(this.getPrecioVenta());
+        ind.setNombreProducto(this.getNombreProducto());
+        ind.setMarca(this.getMarca());
+        ind.setTipo(this.getTipo());
+        ind.setPrecioCosto(this.getPrecioCosto());
+        ind.setGraduacionAlc(this.getGraduacionAlc());
+        ind.setContenido(this.getContenido());
+        ind.setOrigen(this.getOrigen());
+        ind.setStock(this.getStock());
+        
+        return ind;
+    }
 }

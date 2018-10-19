@@ -36,4 +36,14 @@ public class Pizza extends Producto{
         System.out.println("Sabor: "+sabor);
         System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
+    public Pizza clone(){
+        Pizza pizza = new Pizza();
+        
+        pizza.setId(this.getId());
+        pizza.setPrecioVenta(this.getPrecioVenta());
+        pizza.setNombreProducto(this.getNombreProducto());
+        pizza.setSabor(this.getSabor());
+        
+        return pizza;
+    }
 }

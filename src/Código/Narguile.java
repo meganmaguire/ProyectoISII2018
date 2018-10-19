@@ -36,4 +36,14 @@ public class Narguile extends Producto{
         System.out.println("Tabaco: "+tabaco);
         System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
+    public Narguile clone(){
+        Narguile nar = new Narguile();
+        
+        nar.setId(this.getId());
+        nar.setPrecioVenta(this.getPrecioVenta());
+        nar.setNombreProducto(this.getNombreProducto());
+        nar.setTabaco(this.getTabaco());
+        
+        return nar;
+    }
 }
