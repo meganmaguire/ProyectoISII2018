@@ -14,7 +14,6 @@ import BD.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *
@@ -49,7 +48,7 @@ public class ManagerVentas {
     }
     
     //Metodos para le manejo del manager ventas
-    public void cargarVentas() throws SQLException{
+    public List cargarVentas() throws SQLException{
         Connection con=null;
         PreparedStatement consulta=null;
         ResultSet datos=null;
@@ -57,9 +56,14 @@ public class ManagerVentas {
         con = (Connection) ConexionBD.getConexionBD();
         consulta =con.prepareStatement("SELECT * FROM Ventas");
         datos=consulta.executeQuery();
+        while(datos.next()){
+            Venta v= (Venta) datos;
+            listaVentas.add(v);
+        }
+        return listaVentas;
     }
     
-    public void cargarCompras() throws SQLException{
+    public List cargarCompras() throws SQLException{
         Connection con=null;
         PreparedStatement consulta=null;
         ResultSet datos=null;
@@ -67,6 +71,11 @@ public class ManagerVentas {
         con = (Connection) ConexionBD.getConexionBD();
         consulta =con.prepareStatement("SELECT * FROM Compras");
         datos=consulta.executeQuery();
+        while(datos.next()){
+            Compra c= (Compra) datos;
+            listaCompras.add(c);
+        }
+        return listaCompras;
     }
     
     public void balanceVentas(Date fecha1, Date fecha2){
@@ -98,19 +107,19 @@ public class ManagerVentas {
         while(i.hasNext()){
             Renglon renglon=(Renglon) i.next();
             Producto p=renglon.getProducto();
-            if(p.getTipoProducto().equals("gaseosa")){
+            if(p instanceof Gaseosa){
                 Gaseosa g=(Gaseosa) p;
                 stock.setStockActual((g.getStock().getStockActual())-renglon.getCantidad());
                 stock.setStockMinimo(g.getStock().getStockMinimo());
                 g.setStock(stock);
             }
-            if(p.getTipoProducto().equals("vino")){
+            if(p instanceof Vino){
                 Vino vino= (Vino) p;
                 stock.setStockActual((vino.getStock().getStockActual())-renglon.getCantidad());
                 stock.setStockMinimo(vino.getStock().getStockMinimo());
                 vino.setStock(stock);
             }
-            if(p.getTipoProducto().equals("industrial")){
+            if(p instanceof Industrial){
                 Industrial ind=(Industrial) p;
                 stock.setStockActual((ind.getStock().getStockActual())-renglon.getCantidad());
                 stock.setStockMinimo(ind.getStock().getStockMinimo());

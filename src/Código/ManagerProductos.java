@@ -48,11 +48,63 @@ public class ManagerProductos {
     }
     
     //Metodos para el manejo del maneger productos
-    public void cargarProductos(){
-        //cargar lista desde la bd
+    public void cargarProductos() throws SQLException{
+        Connection con=null;
+        PreparedStatement consulta=null;
+        ResultSet datos=null;
+        ConexionBD.createConexionBD();
+        con = (Connection) ConexionBD.getConexionBD();
+        consulta =con.prepareStatement("SELECT * FROM Industriales");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Artesanales");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Tragos");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Narguiles");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Gaseosas");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Vinos");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Pizzas");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
+        consulta =con.prepareStatement("SELECT * FROM Picadas");
+        datos=consulta.executeQuery();
+        while(datos.next()){
+            Producto p= (Producto) datos;
+            listaProductos.add(p);
+        }
     }
     
-    public void cargarCompras() throws SQLException{
+    public List cargarCompras() throws SQLException{
         Connection con=null;
         PreparedStatement consulta=null;
         ResultSet datos=null;
@@ -60,29 +112,34 @@ public class ManagerProductos {
         con = (Connection) ConexionBD.getConexionBD();
         consulta =con.prepareStatement("SELECT * FROM Compras");
         datos=consulta.executeQuery();
+        while(datos.next()){
+            Compra c= (Compra) datos;
+            listaCompras.add(c);
+        }
+        return listaCompras;
     }
     
     //Genera una compra, la carga en la base de datos y actualiza el stock
-    public void realizarCompra(Compra c) {
+    public void realizarCompra(Compra c) throws SQLException {
         Stock stock=null;
         listaCompras.add(c);
         Iterator i=c.getRenglonesDeCompra().iterator();
         while(i.hasNext()){
             Renglon renglon=(Renglon) i.next();
             Producto p=renglon.getProducto();
-            if(p.getTipoProducto().equals("gaseosa")){
+            if(p instanceof Gaseosa){
                 Gaseosa g=(Gaseosa) p;
                 stock.setStockActual((g.getStock().getStockActual())+renglon.getCantidad());
                 stock.setStockMinimo(g.getStock().getStockMinimo());
                 g.setStock(stock);
             }
-            if(p.getTipoProducto().equals("vino")){
+            if(p instanceof Vino){
                 Vino vino= (Vino) p;
                 stock.setStockActual((vino.getStock().getStockActual())+renglon.getCantidad());
                 stock.setStockMinimo(vino.getStock().getStockMinimo());
                 vino.setStock(stock);
             }
-            if(p.getTipoProducto().equals("industrial")){
+            if(p instanceof Industrial){
                 Industrial ind=(Industrial) p;
                 stock.setStockActual((ind.getStock().getStockActual())+renglon.getCantidad());
                 stock.setStockMinimo(ind.getStock().getStockMinimo());

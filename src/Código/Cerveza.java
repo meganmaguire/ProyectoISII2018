@@ -16,8 +16,8 @@ public class Cerveza extends Producto{
     private float graduacionAlc;
     private float contenido;
 
-    public Cerveza(String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta,String tipoProducto) {
-        super(precioVenta,tipoProducto);
+    public Cerveza(String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta,String nombreProducto) {
+        super(precioVenta,nombreProducto);
         this.marca = marca;
         this.tipo = tipo;
         this.precioCosto = precioCosto;
@@ -75,7 +75,7 @@ public class Cerveza extends Producto{
     }
 
     public void mostrarProducto() {
-        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Nombre: "+super.getNombreProducto());
         System.out.println("Id: "+super.getId());
         System.out.println("Marca: "+marca);
         System.out.println("Tipo: "+tipo);

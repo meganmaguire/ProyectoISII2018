@@ -10,15 +10,13 @@ package Código;
  * @author Maru
  */
 public class Gaseosa extends Producto{
-    private String nombre;
     private String sabor;
     private float contenido;
     private float precioCosto;
     private Stock stock;
 
-    public Gaseosa(String nombre,String sabor, float contenido, float precioCosto, Stock stock, float precioVenta,String tipoProducto) {
-        super(precioVenta,tipoProducto);
-        this.nombre=nombre;
+    public Gaseosa(String nombre,String sabor, float contenido, float precioCosto, Stock stock, float precioVenta,String nombreProducto) {
+        super(precioVenta,nombreProducto);
         this.sabor = sabor;
         this.contenido = contenido;
         this.precioCosto = precioCosto;
@@ -27,15 +25,10 @@ public class Gaseosa extends Producto{
 
     public Gaseosa(){
         super();
-        this.nombre="";
         this.sabor="";
         this.contenido=0;
         this.precioCosto=0;
         this.stock= new Stock();
-    }
-
-    public String getNombre(){
-        return nombre;
     }
     
     public String getSabor() {
@@ -52,10 +45,6 @@ public class Gaseosa extends Producto{
 
     public Stock getStock(){
         return stock;
-    }
-
-    public void setNombre(String nombre){
-        this.nombre=nombre;
     }
     
     public void setSabor(String sabor) {
@@ -75,8 +64,7 @@ public class Gaseosa extends Producto{
     }
 
     public void mostrarProducto() {
-        System.out.println("Tipo de producto: "+super.getTipoProducto());
-        System.out.println("Nombre: "+nombre);
+        System.out.println("Nombre: "+super.getNombreProducto());
         System.out.println("Id: "+super.getId());
         System.out.println("Sabor: "+sabor);
         System.out.println("Contenido: "+contenido);

@@ -37,7 +37,7 @@ public class ManagerUsuarios {
     }
     
     //Metodos para el manejo del manager usuarios
-    public void cargarUsuarios() throws SQLException{
+    public List cargarUsuarios() throws SQLException{
         Connection con=null;
         PreparedStatement consulta=null;
         ResultSet datos=null;
@@ -45,6 +45,11 @@ public class ManagerUsuarios {
         con = (Connection) ConexionBD.getConexionBD();
         consulta =con.prepareStatement("SELECT * FROM Usuarios");
         datos=consulta.executeQuery();
+        while(datos.next()){
+            Usuario u= (Usuario) datos;
+            listaUsuarios.add(u);
+        }
+        return listaUsuarios;
     }
     
     //si el usuario existe en la bd devuelve verdadero, sino falso
