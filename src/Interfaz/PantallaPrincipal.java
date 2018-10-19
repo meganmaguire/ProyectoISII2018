@@ -9,7 +9,9 @@ import Código.Artesanal;
 import Código.Gaseosa;
 import Código.Industrial;
 import Código.ManagerProductos;
+import Código.Narguile;
 import Código.Producto;
+import Código.Trago;
 import Código.Vino;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -3774,9 +3776,34 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     campoColorVino.setText(vino.getColor());
                     campoUvaVino.setText(vino.getTipoDeUva());
                     campoGradAlcIndustrial.setText(String.valueOf(vino.getGraduacionAlc()));
-                    
+                    campoPrecioCVino.setText(String.valueOf(vino.getPrecioCosto()));
+                    campoStockActVino.setText(String.valueOf(vino.getStock().getStockActual()));
+                    campoStockMinVino.setText(String.valueOf(vino.getStock().getStockMinimo()));
+                    campoPrecioVVino.setText(String.valueOf(vino.getPrecioVenta()));
+                    break;
                 case "Gaseosa" :
                     Gaseosa gas = (Gaseosa)producto.clone();
+                    campoNombreGaseosa.setText(gas.getNombreProducto());
+                    campoSaborGaseosa.setText(gas.getSabor());
+                    campoContGaseosa.setText(String.valueOf(gas.getContenido()));
+                    campoPrecioCGaseosa.setText(String.valueOf(gas.getPrecioCosto()));
+                    campoStockActGaseosa.setText(String.valueOf(gas.getStock().getStockActual()));
+                    campoStockMinGaseosa.setText(String.valueOf(gas.getStock().getStockMinimo()));
+                    campoPrecioVGaseosa.setText(String.valueOf(gas.getPrecioVenta()));
+                    break;
+                case "Trago" :
+                    Trago trago = (Trago)producto.clone();
+                    campoNombreTrago.setText(trago.getNombreProducto());
+                    campoIngTrago.setText(trago.getIngredientes());
+                    campoPrecioVTrago.setText(String.valueOf(trago.getPrecioVenta()));
+                    break;
+                case "Narguile" :
+                    Narguile nar = (Narguile)producto.clone();
+                    campoNombreNarguile.setText(nar.getNombreProducto());
+                    campoTabacoNarguile.setText(nar.getTabaco());
+                    campoPrecioVNarguile.setText(String.valueOf(nar.getPrecioVenta()));
+                    break;
+                case "" :
                     
                                     
                                     
