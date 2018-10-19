@@ -5,6 +5,7 @@
  */
 package Código;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,9 +16,20 @@ import java.util.List;
  */
 public class ManagerProductos {
     
-    public List<Producto> verListado(){
+    public List verCatálogo(){
+        List<Producto> listado = new ArrayList();
+        DAOSQLite dao = new DAOSQLite();
         
+        listado.addAll(dao.readIndustriales());
+        listado.addAll(dao.readArtesanal());
+        listado.addAll(dao.readTragos());
+        listado.addAll(dao.readNarguiles());
+        listado.addAll(dao.readGaseosas());
+        listado.addAll(dao.readVinos());
+        listado.addAll(dao.readPizzas());
+        listado.addAll(dao.readPicadas());
         
+        return listado;
     }
     
    
