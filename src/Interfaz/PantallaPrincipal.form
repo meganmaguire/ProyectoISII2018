@@ -5016,7 +5016,7 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="botonElimPicadas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="botonModPicadas" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
