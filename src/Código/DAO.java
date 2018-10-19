@@ -5,36 +5,38 @@
  */
 package Código;
 
+import java.util.List;
+
 /**
  *
  * @author Maru
  */
 public interface DAO {
     //reades
-    //public void readeUsuarios();
-    /*public void readeVentas();
-    public void readeCompras();
-    public void readeIndustriales();
-    public void readeArtesanal();
-    public void readeTragos();
-    public void readeNarguiles();
-    public void readeGaseosas();
-    public void readeVinos();
-    public void readePizzas();
-    public void readePicadas();
-    */
+    //public List readeUsuarios();
+    public List readeVentas();
+    public List readeCompras();
+    public List readeIndustriales();
+    public List readeArtesanal();
+    public List readeTragos();
+    public List readeNarguiles();
+    public List readeGaseosas();
+    public List readeVinos();
+    public List readePizzas();
+    public List readePicadas();
+    
     //creates
-    //public void createUsuario(Usuario usuario);
-    //public void createVenta(Venta venta);
-    //public void createCompra(Compra compra);
-    //public void createIndustriales(Industrial industrial);
-    //public void createArtesanalas(Artesanal artesanal);
-    //public void createTragos(Trago trago);
-    //public void createNarguile(Narguile narguile);
-    //public void createGaseosa(Gaseosa gaseosa);
-    //public void createVino(Vino vino);
-    //public void createPizza(Pizza pizza);
-    //public void createPicada(Picada picada);
+    //public boolean createUsuario(Usuario usuario);
+    public boolean createVenta(Venta venta);
+    //public boolean createCompra(Compra compra);
+    //public boolean createIndustriales(Industrial industrial);
+    //public boolean createArtesanalas(Artesanal artesanal);
+    //public boolean createTragos(Trago trago);
+    //public boolea createNarguile(Narguile narguile);
+    //public boolean createGaseosa(Gaseosa gaseosa);
+    //public boolean createVino(Vino vino);
+    //public boolean createPizza(Pizza pizza);
+    //public boolean createPicada(Picada picada);
     
     //updates
     //public void upDateUsuario(Usuario usuario);
@@ -50,16 +52,16 @@ public interface DAO {
     //public void upDatePicada(Picada picada);
     
     //deletes
-    //public void deleteUsuario(Usuario usuario);
-    //public void deleteVenta(Venta venta);
-    //public void deleteCompra(Compra compra);
-    //public void deleteIndustriales(Industrial industrial);
-    //public void deleteArtesanalas(Artesanal artesanal);
-    //public void deleteTragos(Trago trago);
-    //public void deleteNarguile(Narguile narguile);
-    //public void deleteGaseosa(Gaseosa gaseosa);
-    //public void deleteVino(Vino vino);
-    //public void deletePizza(Pizza pizza);
-    //public void deletePicada(Picada picada);
+    //public boolean deleteUsuario(Usuario usuario);
+    //public boolean deleteVenta(Venta venta);
+    //public boolean deleteCompra(Compra compra);
+    //public boolean deleteIndustriales(Industrial industrial);
+    //public boolean deleteArtesanalas(Artesanal artesanal);
+    //public boolean deleteTragos(Trago trago);
+    //public boolean deleteNarguile(Narguile narguile);
+    //public boolean deleteGaseosa(Gaseosa gaseosa);
+    //public boolean deleteVino(Vino vino);
+    //public boolean deletePizza(Pizza pizza);
+    //public boolean deletePicada(Picada picada);
     
 }

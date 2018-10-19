@@ -5,15 +5,10 @@
  */
 package Código;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import BD.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 /**
  *
@@ -48,21 +43,6 @@ public class ManagerVentas {
     }
     
     //Metodos para le manejo del manager ventas
-    
-    public List cargarCompras() throws SQLException{
-        Connection con=null;
-        PreparedStatement consulta=null;
-        ResultSet datos=null;
-        ConexionBD.createConexionBD();
-        con = (Connection) ConexionBD.getConexionBD();
-        consulta =con.prepareStatement("SELECT * FROM Compras");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Compra c= (Compra) datos;
-            listaCompras.add(c);
-        }
-        return listaCompras;
-    }
     
     public void balanceVentas(Date fecha1, Date fecha2){
         float totalVentas=0;
