@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class DAOSQLite implements DAO{
 
-    public List readeVentas(){
+    public List readVentas(){
         List<Venta> listaVentas=new ArrayList();
         try {
             Connection con=null;
@@ -37,7 +37,7 @@ public class DAOSQLite implements DAO{
         return listaVentas;
     }
 
-    public List readeCompras() {
+    public List readCompras() {
         List <Compra> listaCompras= new ArrayList();
         try {
             Connection con=null;
@@ -53,7 +53,7 @@ public class DAOSQLite implements DAO{
         return listaCompras;
     }
 
-    public List readeIndustriales() {
+    public List readIndustriales() {
         List<Industrial> listaIndustriales=new ArrayList();
         try {
             Connection con=null;
@@ -73,7 +73,7 @@ public class DAOSQLite implements DAO{
         return listaIndustriales;
     }
 
-    public List readeArtesanal() {
+    public List readArtesanal() {
         List <Artesanal> listaArtesanales=new ArrayList();
         try { 
             Connection con=null;
@@ -93,7 +93,7 @@ public class DAOSQLite implements DAO{
         return listaArtesanales;  
     }
 
-    public List readeTragos() {
+    public List readTragos() {
         List <Trago> listaTragos=new ArrayList();
         try { 
             Connection con=null;
@@ -113,7 +113,7 @@ public class DAOSQLite implements DAO{
         return listaTragos;
     }
 
-    public List readeNarguiles() {
+    public List readNarguiles() {
         List <Narguile> listaNarguiles=new ArrayList();
         try { 
             Connection con=null;
@@ -133,7 +133,7 @@ public class DAOSQLite implements DAO{
         return listaNarguiles;
     }
 
-    public List readeGaseosas() {
+    public List readGaseosas() {
         List <Gaseosa> listaGaseosas= new ArrayList();
         try { 
             Connection con=null;
@@ -153,7 +153,7 @@ public class DAOSQLite implements DAO{
         return listaGaseosas;
     }
 
-    public List readeVinos() {
+    public List readVinos() {
         List <Vino> listaVinos= new ArrayList();
         try { 
             Connection con=null;
@@ -173,7 +173,7 @@ public class DAOSQLite implements DAO{
         return listaVinos;
     }
 
-    public List readePizzas() {
+    public List readPizzas() {
         List <Pizza> listaPizzas= new ArrayList();
         try { 
             Connection con=null;
@@ -193,7 +193,7 @@ public class DAOSQLite implements DAO{
         return listaPizzas;
     }
 
-    public List readePicadas() {
+    public List readPicadas() {
         List <Picada> listaPicadas= new ArrayList();
         try { 
             Connection con=null;
@@ -216,5 +216,5 @@ public class DAOSQLite implements DAO{
     public boolean createVenta(Venta venta) {
         return true;
     }
-    */
+    
 }
