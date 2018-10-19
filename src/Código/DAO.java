@@ -12,18 +12,18 @@ import java.util.List;
  * @author Maru
  */
 public interface DAO {
-    //reades
+    //reads
     //public List readeUsuarios();
-    public List readeVentas();
-    public List readeCompras();
-    public List readeIndustriales();
-    public List readeArtesanal();
-    public List readeTragos();
-    public List readeNarguiles();
-    public List readeGaseosas();
-    public List readeVinos();
-    public List readePizzas();
-    public List readePicadas();
+    public List readVentas();
+    public List readCompras();
+    public List readIndustriales();
+    public List readArtesanal();
+    public List readTragos();
+    public List readNarguiles();
+    public List readGaseosas();
+    public List readVinos();
+    public List readPizzas();
+    public List readPicadas();
     
     //creates
     //public boolean createUsuario(Usuario usuario);
