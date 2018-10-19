@@ -89,17 +89,47 @@ public class DAOSQLite implements DAO{
         
         return industriales;
     }
-
+    
+    public Industrial readIndustrial(int id){
+        Industrial ind = new Industrial();
+        Stock stock;
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+        
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,INDUSTRIALES WHERE PRODUCTOS.Prod_ID = INDUSTRIALES.Prod_ID, PRODUCTOS.Prod_ID="+id);
+            
+            ind.setId(resultado.getInt(1));
+            ind.setPrecioVenta(resultado.getFloat(2));
+            ind.setNombreProducto(resultado.getString(3));
+            ind.setMarca(resultado.getString(6));
+            ind.setTipo(resultado.getString(7));
+            ind.setPrecioCosto(resultado.getFloat(8));
+            ind.setGraduacionAlc(resultado.getFloat(9));
+            ind.setContenido(resultado.getFloat(10));
+            ind.setOrigen(resultado.getString(11));
+            stock = new Stock(resultado.getInt(12),resultado.getInt(13));
+            ind.setStock(stock);
+            
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta");
+        }
+        
+        return ind;
+        
+    }
+    
     public List readArtesanal() {
         List<Artesanal> artesanales=new ArrayList();
         Artesanal art = new Artesanal();
-        //Barril barril = new Barril();
+        Barril barril;
         
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,ARTESANALES WHERE PRODUCTOS.Prod_ID = ARTESANALES.Prod_ID");
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,ARTESANALES,BARRILES WHERE PRODUCTOS.Prod_ID = ARTESANALES.Prod_ID AND ARTESANALES.Bar_ID = BARRILES.Bar_ID");
             while(resultado.next()){
                 art.setId(resultado.getInt(1));
                 art.setPrecioVenta(resultado.getFloat(2));
@@ -111,6 +141,8 @@ public class DAOSQLite implements DAO{
                 art.setColor(resultado.getString(10));
                 art.setLupulo(resultado.getString(11));
                 art.setMalta(resultado.getString(12));
+                barril = new Barril(resultado.getInt(13),resultado.getFloat(14),resultado.getFloat(15));
+                art.setBarril(barril);
                 
                 artesanales.add(art.clone());
             }
