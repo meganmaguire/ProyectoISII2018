@@ -41,7 +41,8 @@ public class ConexionBD {
             try{
                 stmt.execute("CREATE TABLE IF NOT EXISTS PRODUCTOS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    Prod_PrecioVenta    REAL        NOT NULL,\n" +
+                            "    Prod_PrecioVenta    REAL        NOT NULL,\n"+ 
+                            "    Prod_Nombre         VARCHAR(50) NOT NULL,\n" +
                             "    Prod_Esp            VARCHAR(10) NOT NULL\n" +
                             "\n" +
                             ");");
@@ -86,7 +87,6 @@ public class ConexionBD {
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS INDUSTRIALES(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    I_Nombre            VARCHAR(20) NOT NULL,\n" +
                             "    I_Marca             VARCHAR(30) NOT NULL,\n" +
                             "    I_Tipo              VARCHAR(30) NOT NULL,\n" +
                             "    I_PrecioCosto       REAL        NOT NULL,\n" +
@@ -101,7 +101,6 @@ public class ConexionBD {
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS ARTESANALES(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    A_Nombre            VARCHAR(20) NOT NULL,\n" +
                             "    A_Marca             VARCHAR(30) NOT NULL,\n" +
                             "    A_Tipo              VARCHAR(30) NOT NULL,\n" +
                             "    A_PrecioCosto       REAL        NOT NULL,\n" +
@@ -116,7 +115,6 @@ public class ConexionBD {
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS TRAGOS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    T_Nombre            VARCHAR(20) NOT NULL,\n" +
                             "    T_Ingredientes      VARCHAR(100) NOT NULL,\n" +
                             "\n" +
                             "    FOREIGN KEY(Prod_ID) REFERENCES Productos(Prod_ID)\n" +
@@ -129,7 +127,6 @@ public class ConexionBD {
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS GASEOSAS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    G_Nombre            VARCHAR(30) NOT NULL,\n" +
                             "    G_Sabor             VARCHAR(20) NOT NULL,\n" +
                             "    G_Cont              REAL        NOT NULL,\n" +
                             "    G_PrecioCosto       REAL        NOT NULL,\n" +
@@ -141,7 +138,6 @@ public class ConexionBD {
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS VINOS(\n" +
                             "    Prod_ID             INT         NOT NULL    PRIMARY KEY,\n" +
-                            "    Vi_Nombre           VARCHAR(30) NOT NULL,\n" +
                             "    Vi_Bodega           VARCHAR(20) NOT NULL,\n" +
                             "    Vi_Color            VARCHAR(20) NOT NULL,\n" +
                             "    Vi_Uva              VARCHAR(30) NOT NULL,\n" +
