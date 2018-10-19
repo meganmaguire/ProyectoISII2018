@@ -48,20 +48,6 @@ public class ManagerVentas {
     }
     
     //Metodos para le manejo del manager ventas
-    public List cargarVentas() throws SQLException{
-        Connection con=null;
-        PreparedStatement consulta=null;
-        ResultSet datos=null;
-        ConexionBD.createConexionBD();
-        con = (Connection) ConexionBD.getConexionBD();
-        consulta =con.prepareStatement("SELECT * FROM Ventas");
-        datos=consulta.executeQuery();
-        while(datos.next()){
-            Venta v= (Venta) datos;
-            listaVentas.add(v);
-        }
-        return listaVentas;
-    }
     
     public List cargarCompras() throws SQLException{
         Connection con=null;
