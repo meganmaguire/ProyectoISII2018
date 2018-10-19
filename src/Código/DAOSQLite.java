@@ -16,7 +16,7 @@ import java.sql.ResultSet;
  */
 public class DAOSQLite implements DAO{
 
-    public void readeVentas() {
+   /* public void readeVentas() {
         Connection con=null;
         PreparedStatement consulta=null;
         ResultSet datos=null;
