@@ -45,5 +45,9 @@ public class Narguile extends Producto{
         nar.setTabaco(this.getTabaco());
         
         return nar;
+        
+    }
+    public String instance(){
+        return "Narguile";
     }
 }

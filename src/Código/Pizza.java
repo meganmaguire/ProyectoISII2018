@@ -46,4 +46,7 @@ public class Pizza extends Producto{
         
         return pizza;
     }
+    public String instance(){
+        return "Pizza";
+    }
 }

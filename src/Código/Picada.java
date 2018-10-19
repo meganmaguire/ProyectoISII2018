@@ -46,4 +46,7 @@ public class Picada extends Producto{
         
         return picada;
     }
+    public String instance(){
+        return "Picada";
+    }
 }

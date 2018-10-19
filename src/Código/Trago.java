@@ -49,4 +49,7 @@ public class Trago extends Producto{
         
         return trago;
     }
+    public String instance(){
+        return "Trago";
+    }
 }

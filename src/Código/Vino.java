@@ -112,4 +112,7 @@ public class Vino extends Producto{
         
         return vino;
     }
+    public String instance(){
+        return "Vino";
+    }
 }

@@ -87,4 +87,7 @@ public class Gaseosa extends Producto{
         
         return gas;
     }
+    public String instance(){
+        return "Gaseosa";
+    }
 }

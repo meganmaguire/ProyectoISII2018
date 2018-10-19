@@ -64,4 +64,7 @@ public class Industrial extends Cerveza{
         
         return ind;
     }
+    public String instance(){
+        return "Industrial";
+    }
 }
