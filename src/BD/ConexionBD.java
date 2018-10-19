@@ -15,9 +15,8 @@ import java.sql.DriverManager;
  */
 public class ConexionBD {
     
-    private static ConexionBD conBD = null;
     private Statement stmt;
-    private Connection conn;
+    private static Connection conn = null;
     
     private ConexionBD(){
         String      name = "BD_BARBA_AZUL";
@@ -178,12 +177,12 @@ public class ConexionBD {
         return conn;
     }
     public static void createConexionBD(){
-        if(conBD == null)
-            conBD = new ConexionBD();
+        if(conn == null)
+            new ConexionBD();
     }
-    public static ConexionBD getConexionBD(){
-        if(conBD == null)
+    public static Connection getConexionBD(){
+        if(conn == null)
             createConexionBD();
-        return conBD;
+        return conn;
     }
 }
