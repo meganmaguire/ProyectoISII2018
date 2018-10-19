@@ -99,7 +99,6 @@ public class Vino extends Producto{
     
     public Vino clone(){
         Vino vino = new Vino();
-        
         vino.setId(this.getId());
         vino.setPrecioVenta(this.getPrecioVenta());
         vino.setNombreProducto(this.getNombreProducto());
@@ -109,7 +108,6 @@ public class Vino extends Producto{
         vino.setGraduacionAlc(this.getGraduacionAlc());
         vino.setPrecioCosto(this.getPrecioCosto());
         vino.setStock(this.getStock());
-        
         return vino;
     }
 }

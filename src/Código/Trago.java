@@ -41,12 +41,10 @@ public class Trago extends Producto{
     
     public Trago clone(){
         Trago trago = new Trago();
-        
         trago.setId(this.getId());
         trago.setPrecioVenta(this.getPrecioVenta());
         trago.setNombreProducto(this.getNombreProducto());
         trago.setIngredientes(this.getIngredientes());
-        
         return trago;
     }
 }

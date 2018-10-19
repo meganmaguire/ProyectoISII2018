@@ -38,4 +38,11 @@ public class Stock {
     public void setStockMinimo(int stockMinimo) {
         this.stockMinimo = stockMinimo;
     }
+    
+    public Stock clone(){
+        Stock stock= new Stock();
+        stock.setStockActual(this.getStockActual());
+        stock.setStockMinimo(this.getStockMinimo());
+        return stock;
+    }
 }

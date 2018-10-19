@@ -39,4 +39,11 @@ public class Barril {
         this.cantMinima = cantMinima;
     }
     
+    public Barril clone(){
+        Barril barril= new Barril();
+        barril.setCantActual(this.getCantActual());
+        barril.setCantMinima(this.getCantMinima());
+        return barril;
+    }
+    
 }

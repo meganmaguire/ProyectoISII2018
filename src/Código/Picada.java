@@ -38,12 +38,10 @@ public class Picada extends Producto{
     }
     public Picada clone(){
         Picada picada = new Picada();
-        
         picada.setId(this.getId());
         picada.setPrecioVenta(this.getPrecioVenta());
         picada.setNombreProducto(this.getNombreProducto());
         picada.setcPersonas(this.getcPersonas());
-        
         return picada;
     }
 }

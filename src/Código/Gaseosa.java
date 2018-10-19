@@ -76,7 +76,6 @@ public class Gaseosa extends Producto{
     
     public Gaseosa clone(){
         Gaseosa gas = new Gaseosa();
-        
         gas.setId(this.getId());
         gas.setPrecioVenta(this.getPrecioVenta());
         gas.setNombreProducto(this.getNombreProducto());
@@ -84,7 +83,6 @@ public class Gaseosa extends Producto{
         gas.setContenido(this.getContenido());
         gas.setPrecioCosto(this.getPrecioCosto());
         gas.setStock(this.getStock());
-        
         return gas;
     }
 }

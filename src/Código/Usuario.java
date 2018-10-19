@@ -104,4 +104,15 @@ public class Usuario {
             return false;
         }
     }
+    
+    public Usuario clone(){
+        Usuario usuario= new Usuario();
+        usuario.setNombre(this.getNombre());
+        usuario.setApellido(this.getApellido());
+        usuario.setFechaNacimiento(this.getFechaNacimiento());
+        usuario.setUsuario(this.getUsuario());
+        usuario.setContraseña(this.getContraseña());
+        usuario.setPermiso(this.getPermiso());
+        return usuario;
+    }
 }
