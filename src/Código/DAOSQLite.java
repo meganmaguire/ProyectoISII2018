@@ -22,8 +22,8 @@ import java.util.logging.Logger;
  */
 public class DAOSQLite implements DAO{
     
-    Connection conn;
-    Statement stmt;
+    private Connection conn;
+    private Statement stmt;
     
     
     public List readVentas(){
