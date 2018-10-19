@@ -214,7 +214,7 @@ public class DAOSQLite implements DAO{
     }
 
     public boolean createVenta(Venta venta) {
-        
+        return true;
     }
     
 }
