@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -20,7 +21,11 @@ import java.util.logging.Logger;
  * @author Maru
  */
 public class DAOSQLite implements DAO{
-
+    
+    Connection conn;
+    Statement stmt;
+    
+    
     public List readVentas(){
         List<Venta> listaVentas=new ArrayList();
         try {
@@ -54,23 +59,9 @@ public class DAOSQLite implements DAO{
     }
 
     public List readIndustriales() {
-        List<Industrial> listaIndustriales=new ArrayList();
-        try {
-            Connection con=null;
-            PreparedStatement consulta=null;
-            ResultSet datos=null;
-            ConexionBD.createConexionBD();
-            con = (Connection) ConexionBD.getConexionBD();
-            consulta =con.prepareStatement("SELECT * FROM Industriales");
-            datos=consulta.executeQuery();
-            while(datos.next()){
-                Industrial industrial= (Industrial) datos;
-                listaIndustriales.add(industrial);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DAOSQLite.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return listaIndustriales;
+        conn = ConexionBD.getConexionBD();
+        
+        
     }
 
     public List readArtesanal() {
