@@ -12,8 +12,8 @@ package Código;
 public class Picada extends Producto{
     private int cPersonas;
 
-    public Picada(int cPersonas, float precioVenta) {
-        super(precioVenta);
+    public Picada(int cPersonas, float precioVenta,String tipoProducto) {
+        super(precioVenta,tipoProducto);
         this.cPersonas = cPersonas;
     }
     
@@ -28,5 +28,12 @@ public class Picada extends Producto{
 
     public void setcPersonas(int cPersonas) {
         this.cPersonas = cPersonas;
+    }
+
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Id: "+super.getId());
+        System.out.println("Cantidad de personas: "+cPersonas);
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
 }

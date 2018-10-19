@@ -14,33 +14,42 @@ import java.util.List;
  */
 public class Trago extends Producto{
     private String nombre;
-    private List <String> listIngredientes;
+    private List <String> listaIngredientes;
 
-    public Trago(String nombre, List<String> listIngredientes, float precioVenta) {
-        super(precioVenta);
-        this.nombre = nombre;
-        this.listIngredientes = listIngredientes;
+    public Trago(String nombre,List<String> listaIngredientes, float precioVenta,String tipoProducto) {
+        super(precioVenta,tipoProducto);
+        this.nombre=nombre;
+        this.listaIngredientes = listaIngredientes;
     }
     
     public Trago(){
         super();
         this.nombre="";
-        this.listIngredientes=new ArrayList ();
+        this.listaIngredientes=new ArrayList ();
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
-
-    public List<String> getListIngredientes() {
-        return listIngredientes;
+    
+    public List<String> getListaIngredientes() {
+        return listaIngredientes;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+    
+    public void setListaIngredientes(List<String> listaIngredientes) {
+        this.listaIngredientes = listaIngredientes;
     }
 
-    public void setListIngredientes(List<String> listIngredientes) {
-        this.listIngredientes = listIngredientes;
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Id: "+super.getId());
+        System.out.println("Lista de ingredientes: ");
+        System.out.println(listaIngredientes.toString());
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
 }

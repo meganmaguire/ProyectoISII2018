@@ -12,8 +12,8 @@ package Código;
 public class Narguile extends Producto{
     private String tabaco;
 
-    public Narguile(String tabaco, float precioVenta) {
-        super(precioVenta);
+    public Narguile(String tabaco, float precioVenta,String tipoProducto) {
+        super(precioVenta,tipoProducto);
         this.tabaco = tabaco;
     }
     
@@ -28,5 +28,12 @@ public class Narguile extends Producto{
 
     public void setTabaco(String tabaco) {
         this.tabaco = tabaco;
+    }
+
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto "+super.getTipoProducto());
+        System.out.println("Id: "+super.getId());
+        System.out.println("Tabaco: "+tabaco);
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
 }

@@ -12,8 +12,8 @@ package Código;
 public class Pizza extends Producto{
     private String sabor;
 
-    public Pizza(String sabor, float precioVenta) {
-        super(precioVenta);
+    public Pizza(String sabor, float precioVenta, String tipoProducto) {
+        super(precioVenta,tipoProducto);
         this.sabor = sabor;
     }
     
@@ -28,5 +28,12 @@ public class Pizza extends Producto{
 
     public void setSabor(String sabor) {
         this.sabor = sabor;
+    }
+
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Id: "+super.getId());
+        System.out.println("Sabor: "+sabor);
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
 }

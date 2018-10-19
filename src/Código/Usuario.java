@@ -5,6 +5,7 @@
  */
 package Código;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -83,5 +84,24 @@ public class Usuario {
 
     public void setPermiso(String permiso) {
         this.permiso = permiso;
+    }
+    
+    public void mostrarUsuario(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Apellido: "+apellido);
+        System.out.println("Fecha de nacimiento: "+formato.format(fechaNacimiento));
+        System.out.println("Usuario: "+usuario);
+        System.out.println("Contraseña: "+contraseña);
+        System.out.println("Permiso: "+permiso);
+    }
+    
+    public boolean equals(Usuario us1){
+        if((this.getNombre().equals(us1.getNombre())) && (this.getApellido().equals(us1.getApellido()))){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

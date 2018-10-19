@@ -5,40 +5,37 @@
  */
 package Código;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Maru
  */
 public class Renglon {
     private int cantidad;
-    private List <Producto> listaProductos;
+    private Producto producto;
 
-    public Renglon(int cantidad, List<Producto> listaProductos) {
+    public Renglon(int cantidad, Producto producto) {
         this.cantidad = cantidad;
-        this.listaProductos = listaProductos;
+        this.producto=producto;
     }
 
     public Renglon(){
         this.cantidad=0;
-        this.listaProductos=new ArrayList ();
+        this.producto= null;
     }
     
     public int getCantidad() {
         return cantidad;
     }
 
-    public List<Producto> getListaProductos() {
-        return listaProductos;
+    public Producto getProducto() {
+        return producto;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public void setListaProductos(List<Producto> listaProductos) {
-        this.listaProductos = listaProductos;
+    public void setProducto(Producto producto) {
+        this.producto=producto;
     }
 }

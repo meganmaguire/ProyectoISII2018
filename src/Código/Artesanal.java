@@ -15,8 +15,8 @@ public class Artesanal extends Cerveza{
     private String malta;
     private Barril barril;
 
-    public Artesanal(String color, String lupulo, String malta, Barril barril, String nombre, String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta) {
-        super(nombre, marca, tipo, precioCosto, graduacionAlc, contenido, precioVenta);
+    public Artesanal(String color, String lupulo, String malta, Barril barril,String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta,String nombreProducto) {
+        super(marca, tipo, precioCosto, graduacionAlc, contenido, precioVenta,nombreProducto);
         this.color = color;
         this.lupulo = lupulo;
         this.malta = malta;
@@ -61,5 +61,14 @@ public class Artesanal extends Cerveza{
     
     public void setBarril(Barril barril){
         this.barril=barril;
+    }
+    
+    public void mostrarProducto(){
+        this.mostrarProducto();
+        System.out.println("Color: "+color);
+        System.out.println("Lupulo: "+lupulo);
+        System.out.println("Malta: "+malta);
+        System.out.println("Barril: ");
+        System.out.println(barril.toString());
     }
 }

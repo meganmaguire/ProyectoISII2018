@@ -18,9 +18,9 @@ public class Vino extends Producto{
     private float precioCosto;
     private Stock stock;
 
-    public Vino(String nombre, String bodega, String color, String tipoDeUva, float graduacionAlc, float precioCosto, Stock stock, float precioVenta) {
-        super(precioVenta);
-        this.nombre = nombre;
+    public Vino(String nombre,String bodega, String color, String tipoDeUva, float graduacionAlc, float precioCosto, Stock stock, float precioVenta,String tipoProducto) {
+        super(precioVenta,tipoProducto);
+        this.nombre=nombre;
         this.bodega = bodega;
         this.color = color;
         this.tipoDeUva = tipoDeUva;
@@ -31,7 +31,7 @@ public class Vino extends Producto{
     
     public Vino(){
         super();
-        this.nombre = "";
+        this.nombre="";
         this.bodega = "";
         this.color = "";
         this.tipoDeUva = "";
@@ -40,10 +40,10 @@ public class Vino extends Producto{
         this.stock= new Stock();
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
-
+    
     public String getBodega() {
         return bodega;
     }
@@ -68,8 +68,8 @@ public class Vino extends Producto{
         return stock;
     }
     
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre){
+        this.nombre=nombre;
     }
 
     public void setBodega(String bodega) {
@@ -94,5 +94,18 @@ public class Vino extends Producto{
     
     public void setStock(Stock stock){
         this.stock=stock;
+    }
+
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Id: "+super.getId());
+        System.out.println("Bodega:"+bodega);
+        System.out.println("Tipo de uva: "+tipoDeUva);
+        System.out.println("Graduacion alcoholica: "+graduacionAlc);
+        System.out.println("Precio de costo: "+precioCosto);
+        System.out.println("Stock: ");
+        System.out.println(stock.toString());
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
     }
 }

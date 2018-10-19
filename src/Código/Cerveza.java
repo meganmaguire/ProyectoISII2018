@@ -10,16 +10,14 @@ package Código;
  * @author Maru
  */
 public class Cerveza extends Producto{
-    private String nombre;
     private String marca;
     private String tipo;
     private float precioCosto;
     private float graduacionAlc;
     private float contenido;
 
-    public Cerveza(String nombre, String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta) {
-        super(precioVenta);
-        this.nombre = nombre;
+    public Cerveza(String marca, String tipo, float precioCosto, float graduacionAlc, float contenido, float precioVenta,String tipoProducto) {
+        super(precioVenta,tipoProducto);
         this.marca = marca;
         this.tipo = tipo;
         this.precioCosto = precioCosto;
@@ -29,16 +27,11 @@ public class Cerveza extends Producto{
     
     public Cerveza(){
         super();
-        this.nombre = "";
         this.marca = "";
         this.tipo = "";
         this.precioCosto = 0;
         this.graduacionAlc = 0;
         this.contenido = 0;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
     public String getMarca() {
@@ -61,10 +54,6 @@ public class Cerveza extends Producto{
         return contenido;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -84,6 +73,15 @@ public class Cerveza extends Producto{
     public void setContenido(float contenido) {
         this.contenido = contenido;
     }
-    
-    
+
+    public void mostrarProducto() {
+        System.out.println("Tipo de producto: "+super.getTipoProducto());
+        System.out.println("Id: "+super.getId());
+        System.out.println("Marca: "+marca);
+        System.out.println("Tipo: "+tipo);
+        System.out.println("Graduacion alcoholica: "+graduacionAlc);
+        System.out.println("Contenido: "+contenido);
+        System.out.println("Precio de costo: "+precioCosto);
+        System.out.println("Precio de venta: "+super.getPrecioVenta());
+    }
 }
