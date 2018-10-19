@@ -12,7 +12,7 @@ package Código;
 public interface DAO {
     //reades
     //public void readeUsuarios();
-    public void readeVentas();
+    /*public void readeVentas();
     public void readeCompras();
     public void readeIndustriales();
     public void readeArtesanal();
@@ -22,10 +22,10 @@ public interface DAO {
     public void readeVinos();
     public void readePizzas();
     public void readePicadas();
-    
+    */
     //creates
     //public void createUsuario(Usuario usuario);
-    public void createVenta(Venta venta);
+    //public void createVenta(Venta venta);
     //public void createCompra(Compra compra);
     //public void createIndustriales(Industrial industrial);
     //public void createArtesanalas(Artesanal artesanal);
