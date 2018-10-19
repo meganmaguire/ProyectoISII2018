@@ -7,6 +7,7 @@ package Interfaz;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.JDialog;
 
 /**
  *
@@ -311,6 +312,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         base.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -467,6 +470,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonProducto1.setBackground(new java.awt.Color(36, 46, 59));
         botonProducto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonProducto1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonProducto1MouseClicked(evt);
+            }
+        });
 
         labelProducto1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelProducto1.setForeground(new java.awt.Color(102, 252, 241));
@@ -718,6 +726,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonProducto2.setBackground(new java.awt.Color(36, 46, 59));
         botonProducto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonProducto2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonProducto2MouseClicked(evt);
+            }
+        });
 
         labelProducto2.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelProducto2.setForeground(new java.awt.Color(102, 252, 241));
@@ -969,6 +982,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonProducto3.setBackground(new java.awt.Color(36, 46, 59));
         botonProducto3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonProducto3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonProducto3MouseClicked(evt);
+            }
+        });
 
         labelProducto3.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelProducto3.setForeground(new java.awt.Color(102, 252, 241));
@@ -1158,7 +1176,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        cuerpoVenta.add(panelMesa3, "card4");
+        cuerpoVenta.add(panelMesa3, "panelMesa3");
 
         panelMesa4.setBackground(new java.awt.Color(32, 40, 51));
 
@@ -1220,6 +1238,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonProducto4.setBackground(new java.awt.Color(36, 46, 59));
         botonProducto4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonProducto4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonProducto4MouseClicked(evt);
+            }
+        });
 
         labelProducto4.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelProducto4.setForeground(new java.awt.Color(102, 252, 241));
@@ -1409,7 +1432,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        cuerpoVenta.add(panelMesa4, "card5");
+        cuerpoVenta.add(panelMesa4, "panelMesa4");
 
         panelVenta.add(cuerpoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 990, 610));
 
@@ -3638,6 +3661,26 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void campoUvaVinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUvaVinoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoUvaVinoActionPerformed
+
+    private void botonProducto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto4MouseClicked
+        JDialog listado = new ListadoProductos(this,true);
+        listado.setVisible(true);
+    }//GEN-LAST:event_botonProducto4MouseClicked
+
+    private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
+        JDialog listado = new ListadoProductos(this,true);
+        listado.setVisible(true);
+    }//GEN-LAST:event_botonProducto1MouseClicked
+
+    private void botonProducto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto2MouseClicked
+        JDialog listado = new ListadoProductos(this,true);
+        listado.setVisible(true);
+    }//GEN-LAST:event_botonProducto2MouseClicked
+
+    private void botonProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto3MouseClicked
+        JDialog listado = new ListadoProductos(this,true);
+        listado.setVisible(true);
+    }//GEN-LAST:event_botonProducto3MouseClicked
 
     /**
      * @param args the command line arguments
