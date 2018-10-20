@@ -28,6 +28,7 @@ public interface DAO {
     //creates
     //public boolean createUsuario(Usuario usuario);
     public boolean createVenta(Venta venta);
+    public boolean createRenglon(Renglon renglon);
     //public boolean createCompra(Compra compra);
     //public boolean createIndustriales(Industrial industrial);
     //public boolean createArtesanalas(Artesanal artesanal);
