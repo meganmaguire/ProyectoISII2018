@@ -32,7 +32,7 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS,RENGLONES");
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS,RENGLONES WHERE VENTAS.V_ID = RENGLONES.V_ID");
             while(resultado.next()){
                 listaVentas.add(venta.clone());
             }
@@ -50,7 +50,7 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS,RENGLONES WHERE COMPRAS.C_ID = ");
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS,RENGLONES WHERE COMPRAS.C_ID = RENGLONES.V_ID");
             while(resultado.next()){
                 listaCompras.add(compra.clone());
             } 
