@@ -51,6 +51,10 @@ public interface DAO {
     //public void upDateVino(Vino vino);
     //public void upDatePizza(Pizza pizza);
     //public void upDatePicada(Picada picada);
+    public int consultarStockIndustrial(Industrial ind);
+    public float consultarStockArtesanal(Artesanal art);
+    public int consultarStockGaseosas(Gaseosa gaseosa);
+    public int consultarStockVinos(Vino vino);
     
     //deletes
     //public boolean deleteUsuario(Usuario usuario);
