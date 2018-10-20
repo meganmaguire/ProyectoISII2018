@@ -128,8 +128,6 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
         
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,INDUSTRIALES WHERE PRODUCTOS.Prod_ID = INDUSTRIALES.Prod_ID, PRODUCTOS.Prod_ID="+id);
-            
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,ARTESANALES,BARRILES WHERE PRODUCTOS.Prod_ID = ARTESANALES.Prod_ID AND ARTESANALES.Bar_ID = BARRILES.Bar_ID");
             while(resultado.next()){
                 art.setId(resultado.getInt(1));
