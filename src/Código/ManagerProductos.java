@@ -32,11 +32,25 @@ public class ManagerProductos {
         
         return listado;
     }
-    /*public Producto verDetalle(int id,String categoria){
-        Producto
+    
+    public Producto instanciarProducto(int id,String nombre,String instancia, float precio){
+        Producto producto = null;
+        switch(instancia){
+            case "Industrial":  producto = new Industrial(); break;
+            case "Artesanal" :  producto = new Artesanal(); break;
+            case "Vino" :       producto = new Vino(); break;
+            case "Gaseosa" :    producto = new Gaseosa(); break;
+            case "Narguile" :   producto = new Narguile(); break;
+            case "Pizza" :      producto = new Pizza(); break;
+            case "Picada" :     producto = new Picada(); break;
+            case "Trago" :      producto = new Trago();
+        }
+        producto.setId(id);
+        producto.setNombreProducto(nombre);
+        producto.setPrecioVenta(precio);
         
         return producto;
-    }*/
+    }
     
    
 }

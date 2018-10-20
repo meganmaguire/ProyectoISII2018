@@ -63,6 +63,8 @@ public class ListadoProductos extends javax.swing.JDialog {
         campoFiltro = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         base.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -233,14 +235,12 @@ public class ListadoProductos extends javax.swing.JDialog {
     }//GEN-LAST:event_campoFiltroKeyTyped
 
     private void tablaListadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListadoMouseClicked
+        ManagerProductos manager = new ManagerProductos(); 
         if(evt.getClickCount()==2){
             int i = tablaListado.getSelectedRow();
             if(i!=-1){
                 nombre.setText(String.valueOf(tablaListado.getValueAt(i, 1)));
-                
-                producto.setNombreProducto(String.valueOf(tablaListado.getValueAt(i, 1)));
-                producto.setId(Integer.parseInt(String.valueOf(tablaListado.getValueAt(i, 0))));
-                producto.setPrecioVenta(Float.parseFloat(String.valueOf(tablaListado.getValueAt(i, 3))));
+                producto = manager.instanciarProducto(Integer.parseInt(String.valueOf(tablaListado.getValueAt(i, 0))), String.valueOf(tablaListado.getValueAt(i, 1)), String.valueOf(tablaListado.getValueAt(i, 2)),Float.parseFloat(String.valueOf(tablaListado.getValueAt(i, 3))));
                 this.dispose();
             }
         }
