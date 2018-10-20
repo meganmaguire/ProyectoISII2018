@@ -3659,7 +3659,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         ManagerProductos manager = new ManagerProductos();
         
         //Traigo los datos de la tabla
-        listado = manager.verListado();
+        listado = manager.verCatálogo();
         
         CardLayout card2 = (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");
@@ -3713,6 +3713,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
         JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,categoria1,id1);
         listadoVentana.setVisible(true);
+        listadoVentana.setLocationRelativeTo(null);
     }//GEN-LAST:event_botonProducto1MouseClicked
 
     private void botonProducto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto2MouseClicked
