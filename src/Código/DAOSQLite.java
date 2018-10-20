@@ -84,7 +84,7 @@ public class DAOSQLite implements DAO{
                 industriales.add(ind.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readIndustriales");
         }
         
         return industriales;
@@ -120,7 +120,7 @@ public class DAOSQLite implements DAO{
         
     }
     
-    public List readArtesanal() {
+    public List readArtesanales() {
         List<Artesanal> artesanales=new ArrayList();
         Artesanal art = new Artesanal();
         Barril barril;
@@ -147,7 +147,7 @@ public class DAOSQLite implements DAO{
                 artesanales.add(art.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readArtesanales");
         }
         
         return artesanales;  
@@ -171,7 +171,7 @@ public class DAOSQLite implements DAO{
                 tragos.add(trago.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readTragos");
         }
         
         return tragos;
@@ -185,7 +185,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,NARGUILES WHERE PRODUCTOS.Prod_ID = NARGUILES.Prod_ID");
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,NARGUILE WHERE PRODUCTOS.Prod_ID = NARGUILE.Prod_ID");
             while(resultado.next()){
                 nar.setId(resultado.getInt(1));
                 nar.setPrecioVenta(resultado.getFloat(2));
@@ -195,7 +195,7 @@ public class DAOSQLite implements DAO{
                 narguiles.add(nar.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readNarguiles");
         }
         return narguiles;
     }
@@ -223,7 +223,7 @@ public class DAOSQLite implements DAO{
                 gaseosas.add(gas.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readGaseosas");
         }
         
         return gaseosas;
@@ -255,7 +255,7 @@ public class DAOSQLite implements DAO{
             }
             
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readVinos");
         }
         return vinos;
     }
@@ -278,7 +278,7 @@ public class DAOSQLite implements DAO{
                 pizzas.add(pizza.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readPizzas");
         }
         
         return pizzas;
@@ -302,7 +302,7 @@ public class DAOSQLite implements DAO{
                 picadas.add(picada.clone());
             }
         }catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta");
+            System.out.println("No se pudo realizar la consulta readPicadas");
         }
         
         return picadas;
