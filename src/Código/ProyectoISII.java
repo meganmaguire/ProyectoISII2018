@@ -29,14 +29,14 @@ public class ProyectoISII {
         catch (ClassNotFoundException e) {}
         catch (InstantiationException e) {}
         catch (IllegalAccessException e) {}
-        /*
+        
         JFrame ventana = new PantallaPrincipal();
         
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
-                */
+                
         
-        //Connection conn = ConexionBD.getConexionBD();
+        Connection conn = ConexionBD.getConexionBD();
     }
     
 }
