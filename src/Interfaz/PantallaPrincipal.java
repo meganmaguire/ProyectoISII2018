@@ -2879,6 +2879,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelDetalle.add(panelVacío, "empty");
 
         tablaListado.setBackground(new java.awt.Color(32, 40, 51));
+        tablaListado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tablaListado.setForeground(new java.awt.Color(255, 255, 255));
         tablaListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -2940,9 +2942,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 campoFiltroKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                campoFiltroKeyTyped(evt);
             }
         });
 
@@ -3826,15 +3825,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             card.show(panelDetalle, "empty");
         
     }//GEN-LAST:event_tablaListadoMouseClicked
-
-    private void campoFiltroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyTyped
-        if(!Character.isLetter(evt.getKeyChar())){
-            if(evt.getKeyChar()!= KeyEvent.VK_BACKSPACE){
-                getToolkit().beep();
-                evt.consume();
-            }
-        }
-    }//GEN-LAST:event_campoFiltroKeyTyped
 
     private void campoFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyReleased
         String filtro = String.valueOf(comboBoxFiltro.getSelectedItem());
