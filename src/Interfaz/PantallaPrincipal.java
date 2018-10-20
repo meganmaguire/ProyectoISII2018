@@ -530,6 +530,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonAgregar1.setBackground(new java.awt.Color(36, 46, 59));
         botonAgregar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonAgregar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonAgregar1MouseClicked(evt);
+            }
+        });
 
         labelAgregar1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelAgregar1.setForeground(new java.awt.Color(102, 252, 241));
@@ -3712,6 +3717,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
         JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,categoria1,id1);
+        //Validar los campos del producto,validar el stock
         listadoVentana.setVisible(true);
         listadoVentana.setLocationRelativeTo(null);
     }//GEN-LAST:event_botonProducto1MouseClicked
@@ -3853,6 +3859,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_campoFiltroKeyReleased
+
+    private void botonAgregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregar1MouseClicked
 
     /**
      * @param args the command line arguments
