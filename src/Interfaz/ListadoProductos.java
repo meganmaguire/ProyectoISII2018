@@ -5,18 +5,41 @@
  */
 package Interfaz;
 
+import Código.ManagerProductos;
+import Código.Producto;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author megan
  */
 public class ListadoProductos extends javax.swing.JDialog {
-
+    private JTextField producto;
+    private String categoria;
+    private int id;
+    private DefaultTableModel modeloTablaListado;
+    private List<Producto> listado = new ArrayList();
+    
     /**
      * Creates new form ListadoProductos
      */
-    public ListadoProductos(java.awt.Frame parent, boolean modal) {
+    public ListadoProductos(java.awt.Frame parent, boolean modal,JTextField producto,String categoria,int id) {
         super(parent, modal);
         initComponents();
+        //Seteo del model
+        modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
+        tablaListado.setModel(modeloTablaListado);
+        //Trae los productos
+        ManagerProductos manager = new ManagerProductos();
+        listado = manager.verCatálogo();
+        //Los muestra
+        for(Producto p : listado){
+            Object [] row ={p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+            modeloTablaListado.addRow(row);
+        }
     }
 
     /**
@@ -107,6 +130,12 @@ public class ListadoProductos extends javax.swing.JDialog {
             }
         });
         tablaListado.setGridColor(new java.awt.Color(69, 162, 158));
+        tablaListado.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tablaListado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaListadoMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tablaListado);
 
         labelListado.setFont(new java.awt.Font("Fira Sans Book", 1, 36)); // NOI18N
@@ -126,9 +155,12 @@ public class ListadoProductos extends javax.swing.JDialog {
         campoFiltro.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoFiltro.setForeground(new java.awt.Color(197, 198, 199));
         campoFiltro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoFiltro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoFiltroActionPerformed(evt);
+        campoFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                campoFiltroKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoFiltroKeyTyped(evt);
             }
         });
 
@@ -154,12 +186,12 @@ public class ListadoProductos extends javax.swing.JDialog {
             panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaLayout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addGroup(panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelListado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelTitulo12)
                         .addComponent(comboBoxFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(campoFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(campoFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelListado))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
@@ -193,9 +225,25 @@ public class ListadoProductos extends javax.swing.JDialog {
         this.cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Multiply_32px.png")));
     }//GEN-LAST:event_cerrarMouseExited
 
-    private void campoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoFiltroActionPerformed
+    private void campoFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoFiltroActionPerformed
+    }//GEN-LAST:event_campoFiltroKeyReleased
+
+    private void campoFiltroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoFiltroKeyTyped
+
+    private void tablaListadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListadoMouseClicked
+        if(evt.getClickCount()==2){
+            int i = tablaListado.getSelectedRow();
+            if(i!=-1){
+                producto.setText(String.valueOf(tablaListado.getValueAt(i, 1)));
+                categoria = String.valueOf(tablaListado.getValueAt(i, 2));
+                id = Integer.parseInt(String.valueOf(tablaListado.getValueAt(i, 0)));
+                this.dispose();
+            }
+        }
+    }//GEN-LAST:event_tablaListadoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -227,7 +275,7 @@ public class ListadoProductos extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ListadoProductos dialog = new ListadoProductos(new javax.swing.JFrame(), true);
+                /*ListadoProductos dialog = new ListadoProductos(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -235,6 +283,7 @@ public class ListadoProductos extends javax.swing.JDialog {
                     }
                 });
                 dialog.setVisible(true);
+                */
             }
         });
     }
