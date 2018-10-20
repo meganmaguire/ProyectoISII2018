@@ -15,6 +15,7 @@ import Código.Pizza;
 import Código.Producto;
 import Código.Trago;
 import Código.Vino;
+import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -2934,9 +2935,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoFiltro.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoFiltro.setForeground(new java.awt.Color(197, 198, 199));
         campoFiltro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoFiltro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoFiltroActionPerformed(evt);
+        campoFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                campoFiltroKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoFiltroKeyTyped(evt);
             }
         });
 
@@ -3645,10 +3649,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.mesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px_2.png")));
     }//GEN-LAST:event_mesa4MouseClicked
 
-    private void campoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoFiltroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoFiltroActionPerformed
-
     private void tabCatalogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabCatalogoMouseClicked
         CardLayout card1 = (CardLayout)cuerpo.getLayout();
         card1.show(cuerpo, "panelCatalogo");
@@ -3824,6 +3824,42 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             card.show(panelDetalle, "empty");
         
     }//GEN-LAST:event_tablaListadoMouseClicked
+
+    private void campoFiltroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyTyped
+        if(!Character.isLetter(evt.getKeyChar())){
+            if(evt.getKeyChar()!= KeyEvent.VK_BACKSPACE){
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_campoFiltroKeyTyped
+
+    private void campoFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyReleased
+        String filtro = String.valueOf(comboBoxFiltro.getSelectedItem());
+        String filtroObtenido = campoFiltro.getText();
+        //borra la lista
+        int i, n=modeloTablaListado.getRowCount();
+        for(i=0;i<n;i++){
+            modeloTablaListado.removeRow(0);
+        }
+        //Ve cual filtrar
+        if(filtro.equals("Nombre")){
+            for(Producto p : listado){
+                if(p.getNombreProducto().startsWith(filtroObtenido)){
+                    Object[] row = {p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+                    modeloTablaListado.addRow(row);
+                }
+            }
+        }
+        else{
+            for(Producto p : listado){
+                if(p.instance().startsWith(filtroObtenido)){
+                    Object[] row = {p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+                    modeloTablaListado.addRow(row);
+                }
+            }
+        }
+    }//GEN-LAST:event_campoFiltroKeyReleased
 
     /**
      * @param args the command line arguments
