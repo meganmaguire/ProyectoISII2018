@@ -11,11 +11,13 @@ package Código;
  */
 public class Renglon {
     private int cantidad;
+    private int id;
     private Producto producto;
 
-    public Renglon(int cantidad, Producto producto) {
+    public Renglon(int cantidad, Producto producto,int id) {
         this.cantidad = cantidad;
         this.producto=producto;
+        this.id=id;
     }
 
     public Renglon(){
@@ -37,5 +39,19 @@ public class Renglon {
 
     public void setProducto(Producto producto) {
         this.producto=producto;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }
