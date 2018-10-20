@@ -17,7 +17,7 @@ public interface DAO {
     public List readVentas();
     public List readCompras();
     public List readIndustriales();
-    public List readArtesanal();
+    public List readArtesanales();
     public List readTragos();
     public List readNarguiles();
     public List readGaseosas();
