@@ -7,14 +7,11 @@ package Código;
 
 import BD.ConexionBD;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -32,7 +29,7 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS,RENGLONES WHERE VENTAS.V_ID = RENGLONES.V_ID");
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS");
             while(resultado.next()){
                 listaVentas.add(venta.clone());
             }
@@ -50,7 +47,7 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS,RENGLONES WHERE COMPRAS.C_ID = RENGLONES.V_ID");
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS");
             while(resultado.next()){
                 listaCompras.add(compra.clone());
             } 
@@ -286,7 +283,83 @@ public class DAOSQLite implements DAO{
     }
 
     public boolean createVenta(Venta venta) {
+        try{
         conn = ConexionBD.getConexionBD();
+        stmt = conn.createStatement();
+        stmt.execute ("INSERT"
+                + "INTO VENTAS"
+                + "VALUES ("+venta.getFecha()+","+venta.getId()+","+venta.getPrecioTotal()+","+venta.getUsuario()+")");
+        }catch(SQLException e){
+            System.out.println("");
+            return false;
+        }
         return true;
     }
+    
+    public boolean createRenglon(Renglon renglon) {
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO RENGLONES"
+                        + "VALUES ("+renglon.getProducto().getId()+","+renglon.getCantidad()+","+renglon.getId()+")");
+        }catch(SQLException e){
+            System.out.println("");
+            return false;
+        }
+        return true;
+    }
+    
+    public int consultarStockIndustrial(Industrial ind){
+        int stockActual=0;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT I_StockActual FROM INDUSTRIALES WHERE Prod_ID = "+ind.getId());
+            stockActual=resultado.getInt(1);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta de stock industrial");
+        }
+        return stockActual;
+    }
+    
+    public float consultarStockArtesanal(Artesanal art){
+        float stockActual=0;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT Bar_CantActual FROM BARRILES,ARTESANALES WHERE Prod_ID = "+art.getId()+" AND BARRILES.Bar_ID = ARTESANALES.Bar_ID");
+            stockActual=resultado.getFloat(1);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta de stock artesanal");
+        }
+        return stockActual;
+    }
+    
+    public int consultarStockGaseosas(Gaseosa gaseosa){
+        int stockActual=0;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT G_StockActual FROM GASOESAS WHERE Prod_ID = "+gaseosa.getId());
+            stockActual=resultado.getInt(1);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta de stock gaseosa");
+        }
+        return stockActual;
+    }
+    
+    public int consultarStockVinos(Vino vino){
+        int stockActual=0;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT Vi_StockActual FROM VINOS WHERE Prod_ID = "+vino.getId());
+            stockActual=resultado.getInt(1);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta de stock gaseosa");
+        }
+        return stockActual;
+    }
+
 }
