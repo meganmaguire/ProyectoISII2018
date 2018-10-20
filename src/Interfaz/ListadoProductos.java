@@ -63,6 +63,8 @@ public class ListadoProductos extends javax.swing.JDialog {
         campoFiltro = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         base.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
