@@ -9,8 +9,13 @@ import Código.Artesanal;
 import Código.Gaseosa;
 import Código.Industrial;
 import Código.ManagerProductos;
+import Código.Narguile;
+import Código.Picada;
+import Código.Pizza;
 import Código.Producto;
+import Código.Trago;
 import Código.Vino;
+import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -27,6 +32,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     
     private DefaultTableModel modeloTablaListado;
     private List <Producto> listado;
+    private String categoria1,categoria2,categoria3,categoria4,categoria5,categoria6,categoria7,categoria8,categoria9,categoria10;
+    private int id1,id2,id3,id4,id5,id6,id7,id8,id9,id10;
     /**
      * Creates new form PantallaPrincipal
      */
@@ -2872,6 +2879,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelDetalle.add(panelVacío, "empty");
 
         tablaListado.setBackground(new java.awt.Color(32, 40, 51));
+        tablaListado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tablaListado.setForeground(new java.awt.Color(255, 255, 255));
         tablaListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -2930,9 +2939,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoFiltro.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoFiltro.setForeground(new java.awt.Color(197, 198, 199));
         campoFiltro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoFiltro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoFiltroActionPerformed(evt);
+        campoFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                campoFiltroKeyReleased(evt);
             }
         });
 
@@ -3641,10 +3650,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.mesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px_2.png")));
     }//GEN-LAST:event_mesa4MouseClicked
 
-    private void campoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoFiltroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoFiltroActionPerformed
-
     private void tabCatalogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabCatalogoMouseClicked
         CardLayout card1 = (CardLayout)cuerpo.getLayout();
         card1.show(cuerpo, "panelCatalogo");
@@ -3701,23 +3706,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoUvaVinoActionPerformed
 
     private void botonProducto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto4MouseClicked
-        JDialog listado = new ListadoProductos(this,true);
-        listado.setVisible(true);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto4,categoria4,id4);
+        listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto4MouseClicked
 
     private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
-        JDialog listado = new ListadoProductos(this,true);
-        listado.setVisible(true);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,categoria1,id1);
+        listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto1MouseClicked
 
     private void botonProducto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto2MouseClicked
-        JDialog listado = new ListadoProductos(this,true);
-        listado.setVisible(true);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto2,categoria2,id2);
+        listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto2MouseClicked
 
     private void botonProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto3MouseClicked
-        JDialog listado = new ListadoProductos(this,true);
-        listado.setVisible(true);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto3,categoria3,id3);
+        listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto3MouseClicked
 
     private void tablaListadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListadoMouseClicked
@@ -3774,18 +3779,79 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     campoColorVino.setText(vino.getColor());
                     campoUvaVino.setText(vino.getTipoDeUva());
                     campoGradAlcIndustrial.setText(String.valueOf(vino.getGraduacionAlc()));
-                    
+                    campoPrecioCVino.setText(String.valueOf(vino.getPrecioCosto()));
+                    campoStockActVino.setText(String.valueOf(vino.getStock().getStockActual()));
+                    campoStockMinVino.setText(String.valueOf(vino.getStock().getStockMinimo()));
+                    campoPrecioVVino.setText(String.valueOf(vino.getPrecioVenta()));
+                    break;
                 case "Gaseosa" :
                     Gaseosa gas = (Gaseosa)producto.clone();
+                    campoNombreGaseosa.setText(gas.getNombreProducto());
+                    campoSaborGaseosa.setText(gas.getSabor());
+                    campoContGaseosa.setText(String.valueOf(gas.getContenido()));
+                    campoPrecioCGaseosa.setText(String.valueOf(gas.getPrecioCosto()));
+                    campoStockActGaseosa.setText(String.valueOf(gas.getStock().getStockActual()));
+                    campoStockMinGaseosa.setText(String.valueOf(gas.getStock().getStockMinimo()));
+                    campoPrecioVGaseosa.setText(String.valueOf(gas.getPrecioVenta()));
+                    break;
+                case "Trago" :
+                    Trago trago = (Trago)producto.clone();
+                    campoNombreTrago.setText(trago.getNombreProducto());
+                    campoIngTrago.setText(trago.getIngredientes());
+                    campoPrecioVTrago.setText(String.valueOf(trago.getPrecioVenta()));
+                    break;
+                case "Narguile" :
+                    Narguile nar = (Narguile)producto.clone();
+                    campoNombreNarguile.setText(nar.getNombreProducto());
+                    campoTabacoNarguile.setText(nar.getTabaco());
+                    campoPrecioVNarguile.setText(String.valueOf(nar.getPrecioVenta()));
+                    break;
+                case "Pizza" :
+                    Pizza pizza = (Pizza)producto.clone();
+                    campoNombrePizzas.setText(pizza.getNombreProducto());
+                    campoVariedadPizzas.setText(pizza.getSabor());
+                    campoPrecioVPizzas.setText(String.valueOf(pizza.getPrecioVenta()));
+                    break;
+                case "Picada" :
+                    Picada pic = (Picada)producto.clone();
+                    campoNombrePicadas.setText(pic.getNombreProducto());
+                    campoCPersonasPicadas.setText(String.valueOf(pic.getcPersonas()));
+                    campoPrecioVPicadas.setText(String.valueOf(pic.getPrecioVenta()));
+                    break;
                     
-                                    
-                                    
             }
         }
         else
             card.show(panelDetalle, "empty");
         
     }//GEN-LAST:event_tablaListadoMouseClicked
+
+    private void campoFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFiltroKeyReleased
+        String filtro = String.valueOf(comboBoxFiltro.getSelectedItem());
+        String filtroObtenido = campoFiltro.getText();
+        //borra la lista
+        int i, n=modeloTablaListado.getRowCount();
+        for(i=0;i<n;i++){
+            modeloTablaListado.removeRow(0);
+        }
+        //Ve cual filtrar
+        if(filtro.equals("Nombre")){
+            for(Producto p : listado){
+                if(p.getNombreProducto().startsWith(filtroObtenido)){
+                    Object[] row = {p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+                    modeloTablaListado.addRow(row);
+                }
+            }
+        }
+        else{
+            for(Producto p : listado){
+                if(p.instance().startsWith(filtroObtenido)){
+                    Object[] row = {p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+                    modeloTablaListado.addRow(row);
+                }
+            }
+        }
+    }//GEN-LAST:event_campoFiltroKeyReleased
 
     /**
      * @param args the command line arguments

@@ -36,7 +36,7 @@ public class ProyectoISII {
         ventana.setVisible(true);
                 */
         
-        Connection conn = ConexionBD.getConexionBD();
+        //Connection conn = ConexionBD.getConexionBD();
     }
     
 }

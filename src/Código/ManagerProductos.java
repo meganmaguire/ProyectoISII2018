@@ -6,7 +6,6 @@
 package Código;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 
@@ -18,50 +17,20 @@ import java.util.List;
 public class ManagerProductos {
     DAOSQLite dao;
     
-    public List verListado(){
-        List <Producto> listaProductos= new ArrayList();
-        Iterator i;
-        List <Industrial> listaIndustriales= dao.readIndustriales();
-        i= listaIndustriales.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Artesanal> listaArtesanales= dao.readArtesanal();
-        i= listaArtesanales.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Trago> listaTragos= dao.readTragos();
-        i= listaTragos.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Narguile> listaNarguiles= dao.readNarguiles();
-        i= listaNarguiles.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Gaseosa> listaGaseosas= dao.readGaseosas();
-        i= listaGaseosas.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Vino> listaVinos= dao.readVinos();
-        i= listaVinos.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Pizza> listaPizzas= dao.readPizzas();
-        i= listaPizzas.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        List <Picada> listaPicadas= dao.readPicadas();
-        i= listaPicadas.iterator();
-        while(i.hasNext()){
-            listaProductos.add((Producto) i);
-        }
-        return listaProductos;
+    public List verCatálogo(){
+        List<Producto> listado = new ArrayList();
+        DAOSQLite dao = new DAOSQLite();
+        
+        listado.addAll(dao.readIndustriales());
+        listado.addAll(dao.readArtesanales());
+        listado.addAll(dao.readTragos());
+        listado.addAll(dao.readNarguiles());
+        listado.addAll(dao.readGaseosas());
+        listado.addAll(dao.readVinos());
+        listado.addAll(dao.readPizzas());
+        listado.addAll(dao.readPicadas());
+        
+        return listado;
     }
     /*public Producto verDetalle(int id,String categoria){
         Producto
