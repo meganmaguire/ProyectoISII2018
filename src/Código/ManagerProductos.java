@@ -63,4 +63,11 @@ public class ManagerProductos {
         }
         return listaProductos;
     }
+    /*public Producto verDetalle(int id,String categoria){
+        Producto
+        
+        return producto;
+    }*/
+    
+   
 }

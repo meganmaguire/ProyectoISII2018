@@ -44,4 +44,7 @@ public class Picada extends Producto{
         picada.setcPersonas(this.getcPersonas());
         return picada;
     }
+    public String instance(){
+        return "Picada";
+    }
 }

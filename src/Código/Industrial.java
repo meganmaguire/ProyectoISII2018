@@ -62,4 +62,7 @@ public class Industrial extends Cerveza{
         ind.setStock(this.getStock());
         return ind;
     }
+    public String instance(){
+        return "Industrial";
+    }
 }

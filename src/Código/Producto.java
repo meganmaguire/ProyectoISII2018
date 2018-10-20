@@ -51,4 +51,6 @@ public abstract class Producto {
     }
     
     public abstract void mostrarProducto();
+    public abstract Producto clone();
+    public abstract String instance();
 }

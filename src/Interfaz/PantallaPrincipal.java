@@ -5,9 +5,19 @@
  */
 package Interfaz;
 
+import Código.Artesanal;
+import Código.Gaseosa;
+import Código.Industrial;
+import Código.ManagerProductos;
+import Código.Producto;
+import Código.Vino;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.JDialog;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,11 +25,19 @@ import javax.swing.JDialog;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
     
+    private DefaultTableModel modeloTablaListado;
+    private List <Producto> listado;
     /**
      * Creates new form PantallaPrincipal
      */
     public PantallaPrincipal() {
         initComponents(); 
+        
+        this.modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
+        tablaListado.setModel(modeloTablaListado);
+        
+        
+        
     }
 
     /**
@@ -1693,7 +1711,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelDetalle.add(panelTablaIndustriales, "card2");
+        panelDetalle.add(panelTablaIndustriales, "Industrial");
 
         panelTablaArtesanales.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -1927,7 +1945,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        panelDetalle.add(panelTablaArtesanales, "card3");
+        panelDetalle.add(panelTablaArtesanales, "Artesanal");
 
         panelTablaVinos.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2156,7 +2174,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        panelDetalle.add(panelTablaVinos, "card4");
+        panelDetalle.add(panelTablaVinos, "Vino");
 
         panelTablaGaseosas.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2340,7 +2358,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelDetalle.add(panelTablaGaseosas, "card5");
+        panelDetalle.add(panelTablaGaseosas, "Gaseosa");
 
         panelTablaTragos.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2464,7 +2482,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelDetalle.add(panelTablaTragos, "card6");
+        panelDetalle.add(panelTablaTragos, "Trago");
 
         panelTablaNarguile.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2588,7 +2606,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelDetalle.add(panelTablaNarguile, "card7");
+        panelDetalle.add(panelTablaNarguile, "Narguile");
 
         panelTablaPizzas.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2712,7 +2730,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelDetalle.add(panelTablaPizzas, "card8");
+        panelDetalle.add(panelTablaPizzas, "Pizza");
 
         panelTablaPicadas.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2810,7 +2828,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(campoNombrePicadas)))
                     .addGroup(panelTablaPicadasLayout.createSequentialGroup()
                         .addComponent(botonElimPicadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonModPicadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
         );
@@ -2836,7 +2854,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        panelDetalle.add(panelTablaPicadas, "card9");
+        panelDetalle.add(panelTablaPicadas, "Picada");
 
         panelVacío.setBackground(new java.awt.Color(24, 30, 38));
 
@@ -2851,15 +2869,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 472, Short.MAX_VALUE)
         );
 
-        panelDetalle.add(panelVacío, "card10");
+        panelDetalle.add(panelVacío, "empty");
 
         tablaListado.setBackground(new java.awt.Color(32, 40, 51));
         tablaListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Código", "Nombre", "Categoría", "Precio "
@@ -2881,6 +2896,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         tablaListado.setGridColor(new java.awt.Color(69, 162, 158));
+        tablaListado.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tablaListado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaListadoMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tablaListado);
         if (tablaListado.getColumnModel().getColumnCount() > 0) {
             tablaListado.getColumnModel().getColumn(0).setResizable(false);
@@ -3625,8 +3646,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoFiltroActionPerformed
 
     private void tabCatalogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabCatalogoMouseClicked
-        CardLayout card = (CardLayout)cuerpo.getLayout();
-        card.show(cuerpo, "panelCatalogo");
+        CardLayout card1 = (CardLayout)cuerpo.getLayout();
+        card1.show(cuerpo, "panelCatalogo");
+        CardLayout card =  (CardLayout)panelDetalle.getLayout();
+        card.show(panelDetalle, "empty");
+        
+        ManagerProductos manager = new ManagerProductos();
+        
+        //Traigo los datos de la tabla
+        listado = manager.verListado();
+        
+        CardLayout card2 = (CardLayout)panelDetalle.getLayout();
+        card.show(panelDetalle, "empty");
+        
+        
+        for(Producto p : listado){
+            Object [] row ={p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+            modeloTablaListado.addRow(row);
+        }
+        
     }//GEN-LAST:event_tabCatalogoMouseClicked
 
     private void tabVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabVentaMouseClicked
@@ -3681,6 +3719,73 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         JDialog listado = new ListadoProductos(this,true);
         listado.setVisible(true);
     }//GEN-LAST:event_botonProducto3MouseClicked
+
+    private void tablaListadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListadoMouseClicked
+        int i = tablaListado.getSelectedRow();
+        CardLayout card = (CardLayout)panelDetalle.getLayout();
+        Producto producto = null;
+        String categoria;
+        int id;
+        
+        if(i!= -1){
+            categoria = String.valueOf(tablaListado.getValueAt(i, 2));
+            id = Integer.parseInt(String.valueOf(tablaListado.getValueAt(i, 0)));
+            //Busca en el listado
+            for(Producto p : listado){
+                if(p.getId()== id)
+                    producto = p.clone();
+            }
+            //Ve que Detalle tiene que mostrar
+            card.show(panelDetalle, categoria);
+            switch(categoria){
+                case "Industrial" : 
+                    Industrial ind = (Industrial)producto.clone();
+                    campoNombreIndustrial.setText(ind.getNombreProducto());
+                    campoMarcaIndustrial.setText(ind.getMarca());
+                    campoTipoIndustrial.setText(ind.getTipo());
+                    if(ind.getOrigen().equals("Nacional"))
+                        comboBoxOrigenInd.setSelectedIndex(0);
+                    else
+                        comboBoxOrigenInd.setSelectedIndex(1);
+                    campoPrecioCIndustrial.setText(String.valueOf(ind.getPrecioCosto()));
+                    campoGradAlcIndustrial.setText(String.valueOf(ind.getGraduacionAlc()));
+                    campoContIndustrial.setText(String.valueOf(ind.getContenido()));
+                    campoStockActIndustrial.setText(String.valueOf(ind.getStock().getStockActual()));
+                    campoStockMinIndustrial.setText(String.valueOf(ind.getStock().getStockMinimo()));
+                    campoPrecioVIndustrial.setText(String.valueOf(ind.getPrecioVenta()));
+                    break;
+                case "Artesanal" :
+                    Artesanal art = (Artesanal)producto.clone();
+                    campoNombreArtesanal.setText(art.getNombreProducto());
+                    campoMarcaArtesanal.setText(art.getMarca());
+                    campoTipoArtesanal.setText(art.getTipo());
+                    campoPrecioCArtesanal.setText(String.valueOf(art.getPrecioCosto()));
+                    campoGradAlcArtesanal.setText(String.valueOf(art.getGraduacionAlc()));
+                    campoContArtesanal.setText(String.valueOf(art.getContenido()));
+                    campoColorArtesanal.setText(art.getColor());
+                    campoLupuloArtesanal.setText(art.getLupulo());
+                    campoMaltaArtesanal.setText(art.getMalta());
+                    campoCantidadActual.setText(String.valueOf(art.getBarril().getCantActual()));
+                    break;
+                case "Vino" :
+                    Vino vino = (Vino)producto.clone();
+                    campoNombreVino.setText(vino.getNombreProducto());
+                    campoBodegaVino.setText(vino.getBodega());
+                    campoColorVino.setText(vino.getColor());
+                    campoUvaVino.setText(vino.getTipoDeUva());
+                    campoGradAlcIndustrial.setText(String.valueOf(vino.getGraduacionAlc()));
+                    
+                case "Gaseosa" :
+                    Gaseosa gas = (Gaseosa)producto.clone();
+                    
+                                    
+                                    
+            }
+        }
+        else
+            card.show(panelDetalle, "empty");
+        
+    }//GEN-LAST:event_tablaListadoMouseClicked
 
     /**
      * @param args the command line arguments

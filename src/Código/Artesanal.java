@@ -86,4 +86,7 @@ public class Artesanal extends Cerveza{
         art.setMalta(this.malta);
         return art;
     }
+    public String instance(){
+        return "Artesanal";
+    }
 }

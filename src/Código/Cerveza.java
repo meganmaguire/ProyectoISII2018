@@ -9,7 +9,7 @@ package Código;
  *
  * @author Maru
  */
-public class Cerveza extends Producto{
+public abstract class Cerveza extends Producto{
     private String marca;
     private String tipo;
     private float precioCosto;

@@ -12,8 +12,10 @@ package Código;
 public class Barril {
     private float cantActual;
     private float cantMinima;
+    private int id;
 
-    public Barril(float cantActual, float cantMinima) {
+    public Barril(int id,float cantActual, float cantMinima) {
+        this.id = id;
         this.cantActual = cantActual;
         this.cantMinima = cantMinima;
     }
@@ -37,6 +39,20 @@ public class Barril {
 
     public void setCantMinima(float cantMinima) {
         this.cantMinima = cantMinima;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     public Barril clone(){

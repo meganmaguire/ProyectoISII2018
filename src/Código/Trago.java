@@ -47,4 +47,7 @@ public class Trago extends Producto{
         trago.setIngredientes(this.getIngredientes());
         return trago;
     }
+    public String instance(){
+        return "Trago";
+    }
 }
