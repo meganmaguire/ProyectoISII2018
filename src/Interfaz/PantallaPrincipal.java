@@ -32,8 +32,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     
     private DefaultTableModel modeloTablaListado;
     private List <Producto> listado;
-    private String categoria1,categoria2,categoria3,categoria4,categoria5,categoria6,categoria7,categoria8,categoria9,categoria10;
-    private int id1,id2,id3,id4,id5,id6,id7,id8,id9,id10;
+    private Producto producto;
     /**
      * Creates new form PantallaPrincipal
      */
@@ -3711,24 +3710,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoUvaVinoActionPerformed
 
     private void botonProducto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto4MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto4,categoria4,id4);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto4,producto);
         listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto4MouseClicked
 
     private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,categoria1,id1);
-        //Validar los campos del producto,validar el stock
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,producto);
         listadoVentana.setVisible(true);
         listadoVentana.setLocationRelativeTo(null);
     }//GEN-LAST:event_botonProducto1MouseClicked
 
     private void botonProducto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto2MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto2,categoria2,id2);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto2,producto);
         listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto2MouseClicked
 
     private void botonProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto3MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto3,categoria3,id3);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto3,producto);
         listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto3MouseClicked
 
