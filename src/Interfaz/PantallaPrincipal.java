@@ -10,6 +10,8 @@ import Código.Gaseosa;
 import Código.Industrial;
 import Código.ManagerProductos;
 import Código.Narguile;
+import Código.Picada;
+import Código.Pizza;
 import Código.Producto;
 import Código.Trago;
 import Código.Vino;
@@ -3803,10 +3805,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     campoTabacoNarguile.setText(nar.getTabaco());
                     campoPrecioVNarguile.setText(String.valueOf(nar.getPrecioVenta()));
                     break;
-                case "" :
+                case "Pizza" :
+                    Pizza pizza = (Pizza)producto.clone();
+                    campoNombrePizzas.setText(pizza.getNombreProducto());
+                    campoVariedadPizzas.setText(pizza.getSabor());
+                    campoPrecioVPizzas.setText(String.valueOf(pizza.getPrecioVenta()));
+                    break;
+                case "Picada" :
+                    Picada pic = (Picada)producto.clone();
+                    campoNombrePicadas.setText(pic.getNombreProducto());
+                    campoCPersonasPicadas.setText(String.valueOf(pic.getcPersonas()));
+                    campoPrecioVPicadas.setText(String.valueOf(pic.getPrecioVenta()));
+                    break;
                     
-                                    
-                                    
             }
         }
         else
