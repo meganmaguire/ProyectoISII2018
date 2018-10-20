@@ -9,16 +9,24 @@ import Código.Artesanal;
 import Código.Gaseosa;
 import Código.Industrial;
 import Código.ManagerProductos;
+import Código.ManagerVentas;
 import Código.Narguile;
 import Código.Picada;
 import Código.Pizza;
 import Código.Producto;
+import Código.Renglon;
 import Código.Trago;
+import Código.Usuario;
+import Código.Validar;
+import Código.Venta;
 import Código.Vino;
 import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.JDialog;
@@ -33,6 +41,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private DefaultTableModel modeloTablaListado;
     private List <Producto> listado;
     private Producto producto;
+    private ManagerVentas managerVentas= new ManagerVentas();
+    private Usuario usuario;
     /**
      * Creates new form PantallaPrincipal
      */
@@ -41,8 +51,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         this.modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
         tablaListado.setModel(modeloTablaListado);
-        
-        
+        SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
+        try{
+            usuario=new Usuario("Fede","Chira",formato.parse("12/09/1991"),"fedechira","123","admin");
+        }catch(ParseException e){
+            
+        }
         
     }
 
@@ -491,6 +505,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCantidad1.setForeground(new java.awt.Color(197, 198, 199));
         campoCantidad1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
         campoCantidad1.setCaretColor(new java.awt.Color(197, 198, 199));
+        campoCantidad1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoCantidad1KeyTyped(evt);
+            }
+        });
 
         botonProducto1.setBackground(new java.awt.Color(36, 46, 59));
         botonProducto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
@@ -582,6 +601,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonAceptar1.setBackground(new java.awt.Color(36, 46, 59));
         botonAceptar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonAceptar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonAceptar1MouseClicked(evt);
+            }
+        });
 
         labelAceptar1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelAceptar1.setForeground(new java.awt.Color(102, 252, 241));
@@ -606,6 +630,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiar1.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiar1MouseClicked(evt);
+            }
+        });
 
         labelLimpiar1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelLimpiar1.setForeground(new java.awt.Color(102, 252, 241));
@@ -3859,8 +3888,52 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoFiltroKeyReleased
 
     private void botonAgregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregar1MouseClicked
-        // TODO add your handling code here:
+        Validar validar=new Validar();
+        boolean respuesta;
+        if(this.campoProducto1.getText().equals("") || this.campoCantidad1.getText().equals("")){
+            //imprime cartel de campo vacio
+        }
+        else{
+            respuesta=validar.validarStock(producto, Integer.parseInt(campoProducto1.getText()));
+            if(respuesta){
+                //agrego en tabla
+            }
+            else{
+                //cartel con stock insuficiente
+            }
+        }
     }//GEN-LAST:event_botonAgregar1MouseClicked
+
+    private void campoCantidad1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoCantidad1KeyTyped
+        char digito = evt.getKeyChar();
+        if(!Character.isDigit(digito)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_campoCantidad1KeyTyped
+
+    private void botonAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptar1MouseClicked
+        List <Renglon> listaRenglones= new ArrayList();
+        boolean exito;
+        float precioTotal=0;
+        //tomo los datos de la tabla
+        Venta venta= new Venta(precioTotal,listaRenglones,usuario.getUsuario());
+        exito=managerVentas.realizarVenta(venta);
+        if(exito){
+            //cartel exito
+            //limpio campos
+            this.campoProducto1.setText("");
+            this.campoCantidad1.setText("");
+        }
+        else{
+            //cartel fracaso
+        }
+    }//GEN-LAST:event_botonAceptar1MouseClicked
+
+    private void botonLimpiar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiar1MouseClicked
+        this.campoProducto1.setText("");
+        this.campoCantidad1.setText("");
+        //limpiar tabla
+    }//GEN-LAST:event_botonLimpiar1MouseClicked
 
     /**
      * @param args the command line arguments

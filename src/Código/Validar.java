@@ -10,7 +10,11 @@ package Código;
  * @author Maru
  */
 public class Validar {
-    DAOSQLite dao= new DAOSQLite();
+    DAOSQLite dao;
+    
+    public Validar(){
+        dao= new DAOSQLite();
+    }
     
     public boolean validarStock(Producto producto, int cantidad){
         int stockActual;

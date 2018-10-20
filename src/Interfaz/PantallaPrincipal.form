@@ -432,6 +432,9 @@
                               <Color blue="c7" green="c6" red="c5" type="rgb"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="campoCantidad1KeyTyped"/>
+                          </Events>
                         </Component>
                         <Container class="javax.swing.JPanel" name="botonProducto1">
                           <Properties>
@@ -619,6 +622,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAceptar1MouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -667,6 +673,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonLimpiar1MouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
