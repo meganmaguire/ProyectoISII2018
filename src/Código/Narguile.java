@@ -38,12 +38,10 @@ public class Narguile extends Producto{
     }
     public Narguile clone(){
         Narguile nar = new Narguile();
-        
         nar.setId(this.getId());
         nar.setPrecioVenta(this.getPrecioVenta());
         nar.setNombreProducto(this.getNombreProducto());
         nar.setTabaco(this.getTabaco());
-        
         return nar;
         
     }

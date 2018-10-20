@@ -25,35 +25,38 @@ public class DAOSQLite implements DAO{
     private Connection conn;
     private Statement stmt;
     
-    
     public List readVentas(){
         List<Venta> listaVentas=new ArrayList();
-        try {
-            Connection con=null;
-            PreparedStatement consulta=null;
-            ResultSet datos=null;
-            ConexionBD.createConexionBD();
-            con = (Connection) ConexionBD.getConexionBD();
-            consulta =con.prepareStatement("SELECT * FROM Ventas");
-            datos=consulta.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(DAOSQLite.class.getName()).log(Level.SEVERE, null, ex);
+        Venta venta= new Venta();
+        Renglon renglon=new Renglon();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS,RENGLONES");
+            while(resultado.next()){
+                listaVentas.add(venta.clone());
+            }
+        }
+        catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta");
         }
         return listaVentas;
     }
 
     public List readCompras() {
         List <Compra> listaCompras= new ArrayList();
-        try {
-            Connection con=null;
-            PreparedStatement consulta=null;
-            ResultSet datos=null;
-            ConexionBD.createConexionBD();
-            con = (Connection) ConexionBD.getConexionBD();
-            consulta =con.prepareStatement("SELECT * FROM Compras");
-            datos=consulta.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(DAOSQLite.class.getName()).log(Level.SEVERE, null, ex);
+        Compra compra= new Compra();
+        Renglon renglon= new Renglon();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS,RENGLONES WHERE COMPRAS.C_ID = ");
+            while(resultado.next()){
+                listaCompras.add(compra.clone());
+            } 
+        }
+        catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta");
         }
         return listaCompras;
     }
@@ -62,11 +65,9 @@ public class DAOSQLite implements DAO{
         List<Industrial> industriales = new ArrayList();
         Industrial ind = new Industrial();
         Stock stock;
-            
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-        
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,INDUSTRIALES WHERE PRODUCTOS.Prod_ID = INDUSTRIALES.Prod_ID");
             while(resultado.next()){
                 ind.setId(resultado.getInt(1));
@@ -80,13 +81,11 @@ public class DAOSQLite implements DAO{
                 ind.setOrigen(resultado.getString(11));
                 stock = new Stock(resultado.getInt(12),resultado.getInt(13));
                 ind.setStock(stock);
-                
                 industriales.add(ind.clone());
             }
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta readIndustriales");
         }
-        
         return industriales;
     }
     
@@ -128,6 +127,8 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
+        
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,INDUSTRIALES WHERE PRODUCTOS.Prod_ID = INDUSTRIALES.Prod_ID, PRODUCTOS.Prod_ID="+id);
             
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,ARTESANALES,BARRILES WHERE PRODUCTOS.Prod_ID = ARTESANALES.Prod_ID AND ARTESANALES.Bar_ID = BARRILES.Bar_ID");
             while(resultado.next()){
@@ -149,38 +150,32 @@ public class DAOSQLite implements DAO{
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta readArtesanales");
         }
-        
         return artesanales;  
     }
 
     public List readTragos() {
         List<Trago> tragos=new ArrayList();
         Trago trago = new Trago();
-        
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,TRAGOS WHERE PRODUCTOS.Prod_ID = TRAGOS.Prod_ID");
             while(resultado.next()){
                 trago.setId(resultado.getInt(1));
                 trago.setPrecioVenta(resultado.getFloat(2));
                 trago.setNombreProducto(resultado.getString(3));
                 trago.setIngredientes(resultado.getString(6));
-                
                 tragos.add(trago.clone());
             }
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta readTragos");
         }
-        
         return tragos;
     }
 
     public List readNarguiles() {
         List <Narguile> narguiles=new ArrayList();
         Narguile nar = new Narguile();
-        
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
@@ -191,7 +186,6 @@ public class DAOSQLite implements DAO{
                 nar.setPrecioVenta(resultado.getFloat(2));
                 nar.setNombreProducto(resultado.getString(3));
                 nar.setTabaco(resultado.getString(6));
-                
                 narguiles.add(nar.clone());
             }
         }catch(SQLException e){
@@ -204,11 +198,9 @@ public class DAOSQLite implements DAO{
         List <Gaseosa> gaseosas= new ArrayList();
         Gaseosa gas = new Gaseosa();
         Stock stock;
-        
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,GASEOSAS WHERE PRODUCTOS.Prod_ID = GASEOSAS.Prod_ID");
             while(resultado.next()){
                 gas.setId(resultado.getInt(1));
@@ -219,13 +211,11 @@ public class DAOSQLite implements DAO{
                 gas.setPrecioCosto(resultado.getFloat(8));
                 stock = new Stock(resultado.getInt(9), resultado.getInt(10));
                 gas.setStock(stock);
-                
                 gaseosas.add(gas.clone());
             }
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta readGaseosas");
         }
-        
         return gaseosas;
     }
 
@@ -233,11 +223,9 @@ public class DAOSQLite implements DAO{
         List <Vino> vinos= new ArrayList();
         Vino vino = new Vino();
         Stock stock;
-        
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,VINOS WHERE PRODUCTOS.Prod_ID = VINOS.Prod_ID");
             while(resultado.next()){
                 vino.setId(resultado.getInt(1));
@@ -250,7 +238,6 @@ public class DAOSQLite implements DAO{
                 vino.setPrecioCosto(resultado.getFloat(10));
                 stock = new Stock(resultado.getInt(11),resultado.getInt(12));
                 vino.setStock(stock);
-                
                 vinos.add(vino.clone());
             }
             
@@ -263,53 +250,45 @@ public class DAOSQLite implements DAO{
     public List readPizzas() {
         List <Pizza> pizzas= new ArrayList();
         Pizza pizza = new Pizza();
-        
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,PIZZAS WHERE PRODUCTOS.Prod_ID = PIZZAS.Prod_ID");
             while(resultado.next()){
                 pizza.setId(resultado.getInt(1));
                 pizza.setPrecioVenta(resultado.getFloat(2));
                 pizza.setNombreProducto(resultado.getString(3));
                 pizza.setSabor(resultado.getString(6));
-                
                 pizzas.add(pizza.clone());
             }
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta readPizzas");
         }
-        
         return pizzas;
     }
 
     public List readPicadas() {
         List <Picada> picadas= new ArrayList();
         Picada picada = new Picada();
-        
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            
             ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS,PICADAS WHERE PRODUCTOS.Prod_ID = PICADAS.Prod_ID");
             while(resultado.next()){
                 picada.setId(resultado.getInt(1));
                 picada.setPrecioVenta(resultado.getFloat(2));
                 picada.setNombreProducto(resultado.getString(3));
                 picada.setcPersonas(resultado.getInt(6));
-                
                 picadas.add(picada.clone());
             }
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta readPicadas");
         }
-        
         return picadas;
     }
 
     public boolean createVenta(Venta venta) {
+        conn = ConexionBD.getConexionBD();
         return true;
     }
-    
 }

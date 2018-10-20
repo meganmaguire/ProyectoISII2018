@@ -55,4 +55,11 @@ public class Barril {
         this.id = id;
     }
     
+    public Barril clone(){
+        Barril barril= new Barril();
+        barril.setCantActual(this.getCantActual());
+        barril.setCantMinima(this.getCantMinima());
+        return barril;
+    }
+    
 }

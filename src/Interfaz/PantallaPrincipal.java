@@ -3659,7 +3659,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         ManagerProductos manager = new ManagerProductos();
         
         //Traigo los datos de la tabla
-        listado = manager.verCatálogo();
+        listado = manager.verListado();
         
         CardLayout card2 = (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");

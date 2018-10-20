@@ -50,7 +50,6 @@ public class Industrial extends Cerveza{
     
     public Industrial clone(){
         Industrial ind = new Industrial();
-        
         ind.setId(this.getId());
         ind.setPrecioVenta(this.getPrecioVenta());
         ind.setNombreProducto(this.getNombreProducto());
@@ -61,7 +60,6 @@ public class Industrial extends Cerveza{
         ind.setContenido(this.getContenido());
         ind.setOrigen(this.getOrigen());
         ind.setStock(this.getStock());
-        
         return ind;
     }
     public String instance(){

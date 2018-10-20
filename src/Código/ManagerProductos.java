@@ -15,6 +15,7 @@ import java.util.List;
  * @author Maru
  */
 public class ManagerProductos {
+    DAOSQLite dao;
     
     public List verCatálogo(){
         List<Producto> listado = new ArrayList();

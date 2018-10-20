@@ -38,12 +38,10 @@ public class Pizza extends Producto{
     }
     public Pizza clone(){
         Pizza pizza = new Pizza();
-        
         pizza.setId(this.getId());
         pizza.setPrecioVenta(this.getPrecioVenta());
         pizza.setNombreProducto(this.getNombreProducto());
         pizza.setSabor(this.getSabor());
-        
         return pizza;
     }
     public String instance(){

@@ -84,7 +84,6 @@ public class Artesanal extends Cerveza{
         art.setColor(this.getColor());
         art.setLupulo(this.getLupulo());
         art.setMalta(this.malta);
-        
         return art;
     }
     public String instance(){

@@ -26,7 +26,7 @@ public class Venta {
         this.precioTotal = precioTotal;
         this.renglonesDeVenta = renglonesDeVenta;
         this.usuario=usuario;
-        this.id=this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
+        this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
     }
     
     public Venta(){
@@ -34,7 +34,7 @@ public class Venta {
         this.precioTotal=0;
         this.renglonesDeVenta= new ArrayList(); 
         this.usuario="";
-        this.id=this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
+        this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
     }
 
     public Date getFecha() {
@@ -85,5 +85,15 @@ public class Venta {
         System.out.println("Renglones: ");
         System.out.println(renglonesDeVenta.toString());
         System.out.println("Precio total: "+precioTotal);
+    }
+    
+    public Venta clone(){
+        Venta venta= new Venta();
+        venta.setId(this.getId());
+        venta.setFecha(this.getFecha());
+        venta.setPrecioTotal(this.getPrecioTotal());
+        venta.setUsuario(this.getUsuario());
+        venta.setRenglonesDeVenta(this.getRenglonesDeVenta());
+        return venta;
     }
 }
