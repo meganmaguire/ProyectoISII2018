@@ -46,7 +46,24 @@ public class ManagerVentas {
     }
     
     //Genera una venta, la carga en la base de datos y actualiza el stock
-    public void agregarVenta(Venta v){
+    public boolean realizarVenta(Venta v){
+        List <Renglon> listaRenglones= v.getRenglonesDeVenta();
+        boolean respuesta;
+        respuesta=dao.createVenta(v);
+        if(!respuesta){
+            return false;
+        }
+        else{
+            Iterator i= listaRenglones.iterator();
+            while(i.hasNext()){
+                Renglon renglon= (Renglon) i;
+                respuesta=dao.createRenglon(renglon);
+                if(!respuesta){
+                    return false;
+                }
+            }
+        
+        }
+        return true;
     }
-
 }
