@@ -32,6 +32,7 @@ public class ListadoProductos extends javax.swing.JDialog {
         //Seteo del model
         modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
         tablaListado.setModel(modeloTablaListado);
+        this.producto = producto;
         //Trae los productos
         ManagerProductos manager = new ManagerProductos();
         listado = manager.verCatálogo();
@@ -103,12 +104,11 @@ public class ListadoProductos extends javax.swing.JDialog {
         panelTabla.setBackground(new java.awt.Color(32, 40, 51));
 
         tablaListado.setBackground(new java.awt.Color(32, 40, 51));
+        tablaListado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tablaListado.setForeground(new java.awt.Color(255, 255, 255));
         tablaListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Código", "Nombre", "Categoría", "Precio "
