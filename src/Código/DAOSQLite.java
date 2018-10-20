@@ -339,7 +339,7 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
     
-    public int consultarGaseosas(Gaseosa gaseosa){
+    public int consultarStockGaseosas(Gaseosa gaseosa){
         int stockActual=0;
         try{
             conn = ConexionBD.getConexionBD();
@@ -352,7 +352,7 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
     
-    public int consultarVinos(Vino vino){
+    public int consultarStockVinos(Vino vino){
         int stockActual=0;
         try{
             conn = ConexionBD.getConexionBD();
