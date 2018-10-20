@@ -21,7 +21,7 @@ public class ManagerProductos {
         DAOSQLite dao = new DAOSQLite();
         
         listado.addAll(dao.readIndustriales());
-        listado.addAll(dao.readArtesanal());
+        listado.addAll(dao.readArtesanales());
         listado.addAll(dao.readTragos());
         listado.addAll(dao.readNarguiles());
         listado.addAll(dao.readGaseosas());
