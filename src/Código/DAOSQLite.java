@@ -362,4 +362,52 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
 
+    public void updateStockIndustriales(int id,int stock) {
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE INDUSTRIALES "
+                        + "SET I_StockActual = "+stock+""
+                        + "WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion");
+        }
+    }
+
+    public void updateStockArtesanalas(int id, float stock) {
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE BARRILES "
+                        + "SET Bar_CantActual = "+stock+""
+                        + "WHERE ARTESANALES.Prod_ID = "+id+" AND ARTESANALES.Bar_ID = BARRILES.Bar_ID");
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion");
+        }
+    }
+
+    public void updateStockGaseosa(int id, int stock) {
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE GASEOSAS "
+                        + "SET G_StockActual = "+stock+""
+                        + "WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion");
+        }
+    }
+
+    public void updateStockVino(int id, int stock) {
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE VINOS "
+                        + "SET Vi_StockActual = "+stock+""
+                        + "WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion");
+        }
+    }
+
 }

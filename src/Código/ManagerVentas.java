@@ -17,6 +17,10 @@ import java.util.List;
 public class ManagerVentas {
     DAOSQLite dao;
     
+    public ManagerVentas(){
+        dao= new DAOSQLite();
+    }
+    
     public List balanceVentas(Date fecha1, Date fecha2){
         List <Double> listaBalance=new ArrayList();
         List <Venta> listaVentas= dao.readVentas();
@@ -66,4 +70,14 @@ public class ManagerVentas {
         }
         return true;
     }
+    
+    public void actualizarStock(Producto producto, int cantidad){
+        int stock;
+        if(producto instanceof Industrial){
+            Industrial ind= (Industrial) producto;
+            stock=dao.consultarStockIndustrial(ind);
+        }
+            
+    }
+    
 }
