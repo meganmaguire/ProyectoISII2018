@@ -480,6 +480,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         tablaVentas1.setGridColor(new java.awt.Color(69, 162, 158));
+        tablaVentas1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tablaVentas1);
 
         labelCantidad1.setFont(new java.awt.Font("Fira Sans Book", 1, 24)); // NOI18N
