@@ -35,9 +35,11 @@ public interface DAO {
     public void updateStockGaseosa(int id,int stock);
     public void updateStockVino(int id,int stock);
     
-    public int consultarStockIndustrial(Industrial ind);
-    public float consultarStockArtesanal(Artesanal art);
-    public int consultarStockGaseosas(Gaseosa gaseosa);
-    public int consultarStockVinos(Vino vino);
-    
+    //consultas
+    public int consultarStockIndustrial(int idProducto);
+    public float consultarStockArtesanal(int idProducto);
+    public int consultarStockGaseosas(int idProducto);
+    public int consultarStockVinos(int idProducto);
+    public String consultarTipoProducto(int idProducto);
+    public float consultarContenidoArtesanal(int idProducto);
 }

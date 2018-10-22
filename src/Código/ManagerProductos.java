@@ -17,6 +17,10 @@ import java.util.List;
 public class ManagerProductos {
     DAOSQLite dao;
     
+    public ManagerProductos(){
+        dao= new DAOSQLite();
+    }
+    
     public List verCatálogo(){
         List<Producto> listado = new ArrayList();
         DAOSQLite dao = new DAOSQLite();

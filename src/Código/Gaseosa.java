@@ -85,6 +85,7 @@ public class Gaseosa extends Producto{
         gas.setStock(this.getStock());
         return gas;
     }
+    
     public String instance(){
         return "Gaseosa";
     }

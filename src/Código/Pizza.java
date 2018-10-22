@@ -44,6 +44,7 @@ public class Pizza extends Producto{
         pizza.setSabor(this.getSabor());
         return pizza;
     }
+    
     public String instance(){
         return "Pizza";
     }

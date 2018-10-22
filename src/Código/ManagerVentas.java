@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import javax.swing.JTable;
 
 /**
  *
@@ -50,34 +51,61 @@ public class ManagerVentas {
     }
     
     //Genera una venta, la carga en la base de datos y actualiza el stock
-    public boolean realizarVenta(Venta v){
-        List <Renglon> listaRenglones= v.getRenglonesDeVenta();
+    public boolean realizarVenta(JTable tablaVentas,String nombreUsuario){
+        List <Renglon> listaRenglones;
+        Venta venta= new Venta();
+        Renglon renglon= new Renglon();
         boolean respuesta;
-        respuesta=dao.createVenta(v);
-        if(!respuesta){
-            return false;
+        boolean exitoVenta;
+        float total=0;
+        float subtotal;
+        for (int i = 0; i < tablaVentas.getRowCount(); i++) {
+            renglon.setIdProducto((int) tablaVentas.getValueAt(i, 0)); //en vez de categoria el id del producto
+            renglon.setCantidad((int) tablaVentas.getValueAt(i,2));
+            renglon.setId(venta.getId());
+            respuesta=dao.createRenglon(renglon);
+            subtotal=Float.parseFloat((String) tablaVentas.getValueAt(i,4));
+            total=total+subtotal;
+            if(!respuesta){
+                return false;
+            }
+            else{
+                actualizarStock((int)tablaVentas.getValueAt(i, 0),(int)tablaVentas.getValueAt(i,2));
+            }
+        }
+        venta.setPrecioTotal(total);
+        venta.setUsuario(nombreUsuario);
+        exitoVenta=dao.createVenta(venta);
+        if(exitoVenta){
+            return true;
         }
         else{
-            Iterator i= listaRenglones.iterator();
-            while(i.hasNext()){
-                Renglon renglon= (Renglon) i;
-                respuesta=dao.createRenglon(renglon);
-                if(!respuesta){
-                    return false;
-                }
-            }
-        
+            return false;
         }
-        return true;
     }
     
-    public void actualizarStock(Producto producto, int cantidad){
+    public void actualizarStock(int idProducto, int cantidad){
         int stock;
-        if(producto instanceof Industrial){
-            Industrial ind= (Industrial) producto;
-            stock=dao.consultarStockIndustrial(ind);
+        float stockArt;
+        float contenido;
+        String tipoProducto=dao.consultarTipoProducto(idProducto);
+        if(tipoProducto.equals("Industrial")){
+            stock=dao.consultarStockIndustrial(idProducto);
+            dao.updateStockIndustriales(idProducto, (stock-cantidad));
         }
-            
+        if(tipoProducto.equals("Gaseosa")){
+            stock=dao.consultarStockGaseosas(idProducto);
+            dao.updateStockIndustriales(idProducto, (stock-cantidad));
+        }
+        if(tipoProducto.equals("Vino")){
+            stock=dao.consultarStockVinos(idProducto);
+            dao.updateStockIndustriales(idProducto, (stock-cantidad));
+        }
+        if(tipoProducto.equals("Artesanal")){
+            stockArt=dao.consultarStockArtesanal(idProducto);
+            contenido=dao.consultarContenidoArtesanal(idProducto);
+            dao.updateStockArtesanalas(idProducto, (stockArt-contenido*cantidad));
+        }
     }
     
 }

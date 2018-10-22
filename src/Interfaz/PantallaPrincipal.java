@@ -20,16 +20,13 @@ import Código.Usuario;
 import Código.Validar;
 import Código.Venta;
 import Código.Vino;
-import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -51,13 +48,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         this.modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
         tablaListado.setModel(modeloTablaListado);
-        SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
-        try{
-            usuario=new Usuario("Fede","Chira",formato.parse("12/09/1991"),"fedechira","123","admin");
-        }catch(ParseException e){
-            
-        }
-        
     }
 
     /**
@@ -578,6 +568,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonEliminar1.setBackground(new java.awt.Color(36, 46, 59));
         botonEliminar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonEliminar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonEliminar1MouseClicked(evt);
+            }
+        });
 
         labelEliminar1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
         labelEliminar1.setForeground(new java.awt.Color(102, 252, 241));
@@ -3892,15 +3887,47 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         Validar validar=new Validar();
         boolean respuesta;
         if(this.campoProducto1.getText().equals("") || this.campoCantidad1.getText().equals("")){
-            //imprime cartel de campo vacio
+            CartelError error= new CartelError (this,true,"Campos vacios");
         }
         else{
             respuesta=validar.validarStock(producto, Integer.parseInt(campoProducto1.getText()));
             if(respuesta){
-                //agrego en tabla
+                Object[] dato = new Object[4];
+                if(producto instanceof Industrial){
+                    dato[0]="Industrial";
+                }
+                if(producto instanceof Artesanal){
+                    dato[0]="Artesanal";
+                }
+                if(producto instanceof Trago){
+                    dato[0]="Trago";
+                }
+                if(producto instanceof Narguile){
+                    dato[0]="Narguile";
+                }
+                if(producto instanceof Gaseosa){
+                    dato[0]="Gaseosa";
+                }
+                if(producto instanceof Vino){
+                    dato[0]="Vino";
+                }
+                if(producto instanceof Pizza){
+                    dato[0]="Pizza";
+                }
+                if(producto instanceof Picada){
+                    dato[0]="Picada";
+                }
+                int cantidad=Integer.parseInt(this.campoCantidad1.getText());
+                float precioUnitario=producto.getPrecioVenta();
+                dato[1]= producto.getNombreProducto();
+                dato[2]=cantidad;
+                dato[3]=precioUnitario;
+                float precioTotal=precioUnitario*cantidad;
+                dato[4]=precioTotal;
+                this.modeloTablaListado.addRow(dato);
             }
             else{
-                //cartel con stock insuficiente
+                CartelError error= new CartelError (this,true,"Stock insuficiente");
             }
         }
     }//GEN-LAST:event_botonAgregar1MouseClicked
@@ -3913,28 +3940,50 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoCantidad1KeyTyped
 
     private void botonAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptar1MouseClicked
-        List <Renglon> listaRenglones= new ArrayList();
         boolean exito;
-        float precioTotal=0;
-        //tomo los datos de la tabla
-        Venta venta= new Venta(precioTotal,listaRenglones,usuario.getUsuario());
-        exito=managerVentas.realizarVenta(venta);
-        if(exito){
-            //cartel exito
-            //limpio campos
-            this.campoProducto1.setText("");
-            this.campoCantidad1.setText("");
+        if(this.tablaVentas1.getRowCount()>0){
+            exito=managerVentas.realizarVenta(this.tablaVentas1,usuario.getUsuario());
+            if(exito){
+                this.campoProducto1.setText("");
+                this.campoCantidad1.setText("");
+                CartelExito exitoCartel= new CartelExito(this,true,"Venta concretada");
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Fracaso en la venta");
+            }
         }
         else{
-            //cartel fracaso
+            CartelError error= new CartelError(this,true,"Debe agregar un producto para realizar una venta");
         }
     }//GEN-LAST:event_botonAceptar1MouseClicked
 
     private void botonLimpiar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiar1MouseClicked
         this.campoProducto1.setText("");
         this.campoCantidad1.setText("");
-        //limpiar tabla
+        for (int i = 0; i < this.tablaVentas1.getRowCount(); i++) {
+                tablaVentas1.setValueAt("", i, 0);
+                tablaVentas1.setValueAt("", i, 1);
+                tablaVentas1.setValueAt("", i, 2);
+                tablaVentas1.setValueAt("", i, 3);
+        }
     }//GEN-LAST:event_botonLimpiar1MouseClicked
+
+    private void botonEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseClicked
+        if(this.tablaVentas1.getSelectedRow()!=-1){
+            String nombreProd =(String) this.tablaVentas1.getValueAt(this.tablaVentas1.getSelectedRow(),1);
+            int filas = this.tablaVentas1.getRowCount();
+            for (int i = 0; i < filas; i++) {
+                if(nombreProd.equals((String) this.tablaVentas1.getValueAt(i,1))){
+                    modeloTablaListado.removeRow(i);
+                    CartelExito exito= new CartelExito(this,true,"Renglon eliminado con exito");
+                    break;
+                }
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Debes seleccionar un renglon para eliminar");
+        }
+    }//GEN-LAST:event_botonEliminar1MouseClicked
 
     /**
      * @param args the command line arguments

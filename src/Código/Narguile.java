@@ -45,6 +45,7 @@ public class Narguile extends Producto{
         return nar;
         
     }
+    
     public String instance(){
         return "Narguile";
     }
