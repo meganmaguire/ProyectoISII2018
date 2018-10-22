@@ -96,4 +96,14 @@ public class Venta {
         venta.setRenglonesDeVenta(this.getRenglonesDeVenta());
         return venta;
     }
+    
+    public void agregarRenglon(Renglon renglon){
+        renglonesDeVenta.add(renglon);
+    }
+    
+    public void cargarRenglon(Renglon renglon,int idProducto, int cantidad,int idVenta){
+        renglon.setIdProducto(idProducto);
+        renglon.setCantidad(cantidad);
+        renglon.setId(idVenta);
+    }
 }

@@ -369,20 +369,6 @@ public class DAOSQLite implements DAO{
         }
         return stockActual;
     }
-
-    public String consultarTipoProducto(int idProducto){
-        String tipoProducto="";
-        try{
-            conn = ConexionBD.getConexionBD();
-            stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT Prod_Esp FROM PRODUCTOS WHERE Prod_ID = "+idProducto);
-            tipoProducto=resultado.getString(1);
-        }
-        catch(SQLException e){
-            System.out.println("No se pudo realizar la consulta del tipo del producto");
-        }
-        return tipoProducto;
-    }
     
     public float consultarContenidoArtesanal(int idProducto){
         float contenido=0;
