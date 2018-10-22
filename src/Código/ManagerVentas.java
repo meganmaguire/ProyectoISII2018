@@ -51,13 +51,11 @@ public class ManagerVentas {
     }
     
     //Genera una venta, la carga en la base de datos y actualiza el stock
-    public boolean realizarVenta(JTable tablaVentas,String nombreUsuario){
+    public boolean realizarVenta(JTable tablaVentas,String nombreUsuario, float total){
         List <Renglon> listaRenglones;
         Venta venta= new Venta();
         boolean respuesta;
         boolean exitoVenta;
-        float total=0;
-        float subtotal;
         venta.setPrecioTotal(total);
         venta.setUsuario(nombreUsuario);
         exitoVenta=dao.createVenta(venta);
@@ -66,8 +64,6 @@ public class ManagerVentas {
             venta.cargarRenglon(renglon, (int) tablaVentas.getValueAt(i, 0), (int) tablaVentas.getValueAt(i,2), venta.getId());
             venta.agregarRenglon(renglon);
             respuesta=dao.createRenglon(renglon);
-            subtotal=Float.parseFloat((String) tablaVentas.getValueAt(i,4));
-            total=total+subtotal;
             if(!respuesta){
                 return false;
             }

@@ -4041,6 +4041,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void botonAgregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregar1MouseClicked
         Validar validar=new Validar();
         boolean respuesta;
+        float total=0;
+        float subtotal=0;
         if(this.campoProducto1.getText().equals("") || this.campoCantidad1.getText().equals("")){
             CartelError error= new CartelError (this,true,"Campos vacios");
         }
@@ -4080,6 +4082,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 float precioTotal=precioUnitario*cantidad;
                 dato[4]=precioTotal;
                 this.modeloTablaListado.addRow(dato);
+                for (int i = 0; i < this.tablaVentas1.getRowCount(); i++){
+                    subtotal=Float.parseFloat((String) this.tablaVentas1.getValueAt(i,4));
+                    total=total+subtotal;
+                    this.labelTotal1.setText(String.valueOf(total));
+                }
             }
             else{
                 CartelError error= new CartelError (this,true,"Stock insuficiente");
@@ -4099,10 +4106,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void botonAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptar1MouseClicked
         boolean exito;
         if(this.tablaVentas1.getRowCount()>0){
-            exito=managerVentas.realizarVenta(this.tablaVentas1,usuario.getUsuario());
+            exito=managerVentas.realizarVenta(this.tablaVentas1,usuario.getUsuario(),Float.parseFloat(this.labelTotal1.getText()));
             if(exito){
                 this.campoProducto1.setText("");
                 this.campoCantidad1.setText("");
+                this.labelTotal1.setText("00,00");
                 CartelExito exitoCartel= new CartelExito(this,true,"Venta concretada");
                 exitoCartel.setLocationRelativeTo(null);
                 exitoCartel.setVisible(true);
@@ -4129,13 +4137,22 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 tablaVentas1.setValueAt("", i, 2);
                 tablaVentas1.setValueAt("", i, 3);
         }
+        this.labelTotal1.setText("00,00");
     }//GEN-LAST:event_botonLimpiar1MouseClicked
 
     private void botonEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseClicked
         int i;
+        float total=0;
+        float subtotal=0;
         if(this.tablaVentas1.getSelectedRow()!=-1){
+            for (int j = 0; j < this.tablaVentas1.getRowCount(); j++){
+                subtotal=Float.parseFloat((String) this.tablaVentas1.getValueAt(j,4));
+                total=total+subtotal;
+                this.labelTotal1.setText(String.valueOf(total));
+            }
             i=this.tablaVentas1.getSelectedRow();
             modeloTablaListado.removeRow(i);
+            
         }
         else{
             CartelError error= new CartelError(this,true,"Debes seleccionar un renglon para eliminar");
