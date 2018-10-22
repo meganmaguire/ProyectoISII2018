@@ -3928,6 +3928,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
             else{
                 CartelError error= new CartelError (this,true,"Stock insuficiente");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
             }
         }
     }//GEN-LAST:event_botonAgregar1MouseClicked
@@ -3982,6 +3984,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
         else{
             CartelError error= new CartelError(this,true,"Debes seleccionar un renglon para eliminar");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
         }
     }//GEN-LAST:event_botonEliminar1MouseClicked
 
