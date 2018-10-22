@@ -54,15 +54,17 @@ public class ManagerVentas {
     public boolean realizarVenta(JTable tablaVentas,String nombreUsuario){
         List <Renglon> listaRenglones;
         Venta venta= new Venta();
-        Renglon renglon= new Renglon();
         boolean respuesta;
         boolean exitoVenta;
         float total=0;
         float subtotal;
+        venta.setPrecioTotal(total);
+        venta.setUsuario(nombreUsuario);
+        exitoVenta=dao.createVenta(venta);
+        Renglon renglon= new Renglon();
         for (int i = 0; i < tablaVentas.getRowCount(); i++) {
-            renglon.setIdProducto((int) tablaVentas.getValueAt(i, 0)); //en vez de categoria el id del producto
-            renglon.setCantidad((int) tablaVentas.getValueAt(i,2));
-            renglon.setId(venta.getId());
+            venta.cargarRenglon(renglon, (int) tablaVentas.getValueAt(i, 0), (int) tablaVentas.getValueAt(i,2), venta.getId());
+            venta.agregarRenglon(renglon);
             respuesta=dao.createRenglon(renglon);
             subtotal=Float.parseFloat((String) tablaVentas.getValueAt(i,4));
             total=total+subtotal;
@@ -70,12 +72,9 @@ public class ManagerVentas {
                 return false;
             }
             else{
-                actualizarStock((int)tablaVentas.getValueAt(i, 0),(int)tablaVentas.getValueAt(i,2));
+                actualizarStock((String)tablaVentas.getValueAt(i, 1),(int)tablaVentas.getValueAt(i, 0),(int)tablaVentas.getValueAt(i,2));
             }
         }
-        venta.setPrecioTotal(total);
-        venta.setUsuario(nombreUsuario);
-        exitoVenta=dao.createVenta(venta);
         if(exitoVenta){
             return true;
         }
@@ -84,24 +83,23 @@ public class ManagerVentas {
         }
     }
     
-    public void actualizarStock(int idProducto, int cantidad){
+    public void actualizarStock(String categoria,int idProducto, int cantidad){
         int stock;
         float stockArt;
         float contenido;
-        String tipoProducto=dao.consultarTipoProducto(idProducto);
-        if(tipoProducto.equals("Industrial")){
+        if(categoria.equals("Industrial")){
             stock=dao.consultarStockIndustrial(idProducto);
             dao.updateStockIndustriales(idProducto, (stock-cantidad));
         }
-        if(tipoProducto.equals("Gaseosa")){
+        if(categoria.equals("Gaseosa")){
             stock=dao.consultarStockGaseosas(idProducto);
             dao.updateStockIndustriales(idProducto, (stock-cantidad));
         }
-        if(tipoProducto.equals("Vino")){
+        if(categoria.equals("Vino")){
             stock=dao.consultarStockVinos(idProducto);
             dao.updateStockIndustriales(idProducto, (stock-cantidad));
         }
-        if(tipoProducto.equals("Artesanal")){
+        if(categoria.equals("Artesanal")){
             stockArt=dao.consultarStockArtesanal(idProducto);
             contenido=dao.consultarContenidoArtesanal(idProducto);
             dao.updateStockArtesanalas(idProducto, (stockArt-contenido*cantidad));

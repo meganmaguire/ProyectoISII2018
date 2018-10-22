@@ -4132,19 +4132,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonLimpiar1MouseClicked
 
     private void botonEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseClicked
+        int i;
         if(this.tablaVentas1.getSelectedRow()!=-1){
-            String nombreProd =(String) this.tablaVentas1.getValueAt(this.tablaVentas1.getSelectedRow(),1);
-            int filas = this.tablaVentas1.getRowCount();
-            for (int i = 0; i < filas; i++) {
-                if(nombreProd.equals((String) this.tablaVentas1.getValueAt(i,1))){
-                    modeloTablaListado.removeRow(i);
-                    CartelExito exito= new CartelExito(this,true,"Renglon eliminado con exito");
-                    break;
-                }
-            }
+            i=this.tablaVentas1.getSelectedRow();
+            modeloTablaListado.removeRow(i);
         }
         else{
             CartelError error= new CartelError(this,true,"Debes seleccionar un renglon para eliminar");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
         }
     }//GEN-LAST:event_botonEliminar1MouseClicked
 
