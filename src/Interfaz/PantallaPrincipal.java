@@ -484,6 +484,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         tablaVentas1.setGridColor(new java.awt.Color(69, 162, 158));
+        tablaVentas1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tablaVentas1);
 
         labelCantidad1.setFont(new java.awt.Font("Fira Sans Book", 1, 24)); // NOI18N
@@ -3740,8 +3741,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
         JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,producto);
-        listadoVentana.setVisible(true);
         listadoVentana.setLocationRelativeTo(null);
+        listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto1MouseClicked
 
     private void botonProducto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto2MouseClicked
@@ -3946,13 +3947,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 this.campoProducto1.setText("");
                 this.campoCantidad1.setText("");
                 CartelExito exitoCartel= new CartelExito(this,true,"Venta concretada");
+                exitoCartel.setLocationRelativeTo(null);
+                exitoCartel.setVisible(true);
             }
             else{
                 CartelError error= new CartelError(this,true,"Fracaso en la venta");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
             }
         }
         else{
-            CartelError error= new CartelError(this,true,"Debe agregar un producto para realizar una venta");
+            CartelError error= new CartelError(this,true,"Debe agregar un producto \n para realizar una venta");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
         }
     }//GEN-LAST:event_botonAceptar1MouseClicked
 
