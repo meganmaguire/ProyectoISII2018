@@ -21,28 +21,28 @@ public class Validar {
         float stockActArt;
         if(producto instanceof Gaseosa){
             Gaseosa gaseosa= (Gaseosa) producto;
-            stockActual= dao.consultarStockGaseosas(gaseosa);
+            stockActual= dao.consultarStockGaseosas(gaseosa.getId());
             if(cantidad > stockActual){
                 return false;
             }
         }
         if(producto instanceof Industrial){
             Industrial ind= (Industrial) producto;
-            stockActual=dao.consultarStockIndustrial(ind);
+            stockActual=dao.consultarStockIndustrial(ind.getId());
             if(cantidad > stockActual){
                 return false;
             }
         }
         if(producto instanceof Vino){
             Vino vino= (Vino) producto;
-            stockActual= dao.consultarStockVinos(vino);
+            stockActual= dao.consultarStockVinos(vino.getId());
             if(cantidad > stockActual){
                 return false;
             }
         }
         if(producto instanceof Artesanal){
             Artesanal art= (Artesanal) producto;
-            stockActArt= dao.consultarStockArtesanal(art);
+            stockActArt= dao.consultarStockArtesanal(art.getId());
             if(cantidad > stockActArt){
                 return false;
             }

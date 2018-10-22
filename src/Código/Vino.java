@@ -110,6 +110,7 @@ public class Vino extends Producto{
         vino.setStock(this.getStock());
         return vino;
     }
+    
     public String instance(){
         return "Vino";
     }

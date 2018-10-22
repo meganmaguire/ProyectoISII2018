@@ -32,6 +32,10 @@ public class Barril {
     public float getCantMinima() {
         return cantMinima;
     }
+    
+    public int getId() {
+        return id;
+    }
 
     public void setCantActual(float cantActual) {
         this.cantActual = cantActual;
@@ -41,16 +45,6 @@ public class Barril {
         this.cantMinima = cantMinima;
     }
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
     public void setId(int id) {
         this.id = id;
     }
@@ -61,5 +55,4 @@ public class Barril {
         barril.setCantMinima(this.getCantMinima());
         return barril;
     }
-    
 }
