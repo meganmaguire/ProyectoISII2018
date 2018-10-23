@@ -4131,6 +4131,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 this.campoProducto1.setText("");
                 this.campoCantidad1.setText("");
                 this.labelTotal1.setText("00,00");
+                int n = tablaVentas1.getRowCount();
+                for(int i =0;i<n;i++){
+                    modeloTablaVenta.removeRow(0);
+                }
                 CartelExito exitoCartel= new CartelExito(this,true,"Venta concretada");
                 exitoCartel.setLocationRelativeTo(null);
                 exitoCartel.setVisible(true);
