@@ -22,6 +22,7 @@ import Código.Venta;
 import Código.Vino;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -36,8 +37,11 @@ import javax.swing.table.DefaultTableModel;
 public class PantallaPrincipal extends javax.swing.JFrame {
     
     private DefaultTableModel modeloTablaListado;
+    private DefaultTableModel modeloTablaVenta;
     private List <Producto> listado;
-    private Producto producto;
+    private String categoria;
+    private Integer id;
+    private Object[] valores;
     private ManagerVentas managerVentas= new ManagerVentas();
     private Usuario usuario;
     /**
@@ -48,6 +52,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         this.modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
         tablaListado.setModel(modeloTablaListado);
+        this.modeloTablaVenta = (DefaultTableModel)tablaVentas1.getModel();
+        tablaVentas1.setModel(modeloTablaVenta);
+        this.valores = new Object[2];
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        try{
+            usuario = new Usuario("Fede","Chira",formato.parse("19/09/1992"),"fedechira","1234","admin");
+        }catch(Exception e){}
     }
 
     /**
@@ -475,6 +486,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCliente1.setCaretColor(new java.awt.Color(197, 198, 199));
 
         tablaVentas1.setBackground(new java.awt.Color(32, 40, 51));
+        tablaVentas1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tablaVentas1.setForeground(new java.awt.Color(250, 250, 250));
         tablaVentas1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -3186,7 +3199,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         panelProductoLayout.setVerticalGroup(
             panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
 
         cuerpo.add(panelProducto, "panelProducto");
@@ -3201,7 +3214,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         panelRankingLayout.setVerticalGroup(
             panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
 
         cuerpo.add(panelRanking, "panelRanking");
@@ -3216,7 +3229,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         panelBalanceLayout.setVerticalGroup(
             panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
 
         cuerpo.add(panelBalance, "panelBalance");
@@ -3231,7 +3244,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         panelCompraLayout.setVerticalGroup(
             panelCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
 
         cuerpo.add(panelCompra, "panelCompra");
@@ -3246,7 +3259,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
         panelEcuacionesLayout.setVerticalGroup(
             panelEcuacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
 
         cuerpo.add(panelEcuaciones, "panelEcuaciones");
@@ -3890,24 +3903,24 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_campoUvaVinoActionPerformed
 
     private void botonProducto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto4MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto4,producto);
-        listadoVentana.setVisible(true);
+        /*JDialog listadoVentana = new ListadoProductos(this,true,campoProducto4,producto);
+        listadoVentana.setVisible(true);*/
     }//GEN-LAST:event_botonProducto4MouseClicked
 
     private void botonProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,producto);
+        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto1,valores);
         listadoVentana.setLocationRelativeTo(null);
         listadoVentana.setVisible(true);
     }//GEN-LAST:event_botonProducto1MouseClicked
 
     private void botonProducto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto2MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto2,producto);
-        listadoVentana.setVisible(true);
+        /*JDialog listadoVentana = new ListadoProductos(this,true,campoProducto2,producto);
+        listadoVentana.setVisible(true);*/
     }//GEN-LAST:event_botonProducto2MouseClicked
 
     private void botonProducto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto3MouseClicked
-        JDialog listadoVentana = new ListadoProductos(this,true,campoProducto3,producto);
-        listadoVentana.setVisible(true);
+        /*JDialog listadoVentana = new ListadoProductos(this,true,campoProducto3,producto);
+        listadoVentana.setVisible(true);*/
     }//GEN-LAST:event_botonProducto3MouseClicked
 
     private void tablaListadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListadoMouseClicked
@@ -4040,6 +4053,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void botonAgregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregar1MouseClicked
         Validar validar=new Validar();
+        ManagerProductos manager = new ManagerProductos();
         boolean respuesta;
         float total=0;
         float subtotal=0;
@@ -4047,46 +4061,52 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             CartelError error= new CartelError (this,true,"Campos vacios");
         }
         else{
-            respuesta=validar.validarStock(producto, Integer.parseInt(campoProducto1.getText()));
+            id=Integer.parseInt(String.valueOf(valores[0]));
+            categoria=String.valueOf(valores[1]);
+            respuesta=validar.validarStock(id,categoria,Integer.parseInt(campoCantidad1.getText()));
             if(respuesta){
-                Object[] dato = new Object[4];
-                if(producto instanceof Industrial){
-                    dato[0]="Industrial";
+                Object[] dato = new Object[6];
+                dato[0]=id;
+                if(categoria.equals("Industrial")){
+                    dato[1]="Industrial";
                 }
-                if(producto instanceof Artesanal){
-                    dato[0]="Artesanal";
+                if(categoria.equals("Artesanal")){
+                    dato[1]="Artesanal";
                 }
-                if(producto instanceof Trago){
-                    dato[0]="Trago";
+                if(categoria.equals("Trago")){
+                    dato[1]="Trago";
                 }
-                if(producto instanceof Narguile){
-                    dato[0]="Narguile";
+                if(categoria.equals("Narguile")){
+                    dato[1]="Narguile";
                 }
-                if(producto instanceof Gaseosa){
-                    dato[0]="Gaseosa";
+                if(categoria.equals("Gaseosa")){
+                    dato[1]="Gaseosa";
                 }
-                if(producto instanceof Vino){
-                    dato[0]="Vino";
+                if(categoria.equals("Vino")){
+                    dato[1]="Vino";
                 }
-                if(producto instanceof Pizza){
-                    dato[0]="Pizza";
+                if(categoria.equals("Pizza")){
+                    dato[1]="Pizza";
                 }
-                if(producto instanceof Picada){
-                    dato[0]="Picada";
+                if(categoria.equals("Picada")){
+                    dato[1]="Picada";
                 }
                 int cantidad=Integer.parseInt(this.campoCantidad1.getText());
-                float precioUnitario=producto.getPrecioVenta();
-                dato[1]= producto.getNombreProducto();
-                dato[2]=cantidad;
-                dato[3]=precioUnitario;
+                
+                float precioUnitario=manager.consultarPrecioVenta(id);
+                dato[2]= campoProducto1.getText();
+                dato[3]=cantidad;
+                dato[4]=precioUnitario;
                 float precioTotal=precioUnitario*cantidad;
-                dato[4]=precioTotal;
-                this.modeloTablaListado.addRow(dato);
+                dato[5]=precioTotal;
+                this.modeloTablaVenta.addRow(dato);
                 for (int i = 0; i < this.tablaVentas1.getRowCount(); i++){
-                    subtotal=Float.parseFloat((String) this.tablaVentas1.getValueAt(i,4));
+                    subtotal=Float.parseFloat(String.valueOf(tablaVentas1.getValueAt(i,5)));
                     total=total+subtotal;
                     this.labelTotal1.setText(String.valueOf(total));
                 }
+                this.campoProducto1.setText("");
+                this.campoCantidad1.setText("");
             }
             else{
                 CartelError error= new CartelError (this,true,"Stock insuficiente");
@@ -4131,13 +4151,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void botonLimpiar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiar1MouseClicked
         this.campoProducto1.setText("");
         this.campoCantidad1.setText("");
-        for (int i = 0; i < this.tablaVentas1.getRowCount(); i++) {
-                tablaVentas1.setValueAt("", i, 0);
-                tablaVentas1.setValueAt("", i, 1);
-                tablaVentas1.setValueAt("", i, 2);
-                tablaVentas1.setValueAt("", i, 3);
+        int n = this.modeloTablaVenta.getRowCount();
+        for (int i = 0; i < n; i++) {
+            modeloTablaVenta.removeRow(0);
         }
-        this.labelTotal1.setText("00,00");
+        this.labelTotal1.setText("000.00");
     }//GEN-LAST:event_botonLimpiar1MouseClicked
 
     private void botonEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseClicked
@@ -4145,14 +4163,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         float total=0;
         float subtotal=0;
         if(this.tablaVentas1.getSelectedRow()!=-1){
+            
+            i=this.tablaVentas1.getSelectedRow();
+            modeloTablaVenta.removeRow(i);
             for (int j = 0; j < this.tablaVentas1.getRowCount(); j++){
-                subtotal=Float.parseFloat((String) this.tablaVentas1.getValueAt(j,4));
+                subtotal=Float.parseFloat(String.valueOf(this.tablaVentas1.getValueAt(j,5)));
                 total=total+subtotal;
                 this.labelTotal1.setText(String.valueOf(total));
             }
-            i=this.tablaVentas1.getSelectedRow();
-            modeloTablaListado.removeRow(i);
-            
         }
         else{
             CartelError error= new CartelError(this,true,"Debes seleccionar un renglon para eliminar");
