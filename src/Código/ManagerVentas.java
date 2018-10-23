@@ -98,6 +98,7 @@ public class ManagerVentas {
         int stock;
         float stockArt;
         float contenido;
+        int idBarril;
         if(categoria.equals("Industrial")){
             stock=dao.consultarStockIndustrial(idProducto);
             dao.updateStockIndustriales(idProducto, (stock-cantidad));
@@ -113,7 +114,8 @@ public class ManagerVentas {
         if(categoria.equals("Artesanal")){
             stockArt=dao.consultarStockArtesanal(idProducto);
             contenido=dao.consultarContenidoArtesanal(idProducto);
-            dao.updateStockArtesanalas(idProducto, (stockArt-contenido*cantidad));
+            idBarril=dao.consultarIdBarril(idProducto);
+            dao.updateStockArtesanalas(idBarril, (stockArt-contenido*cantidad));
         }
     }
     
