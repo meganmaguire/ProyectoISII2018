@@ -79,11 +79,13 @@ public class Artesanal extends Cerveza{
         art.setNombreProducto(this.getNombreProducto());
         art.setMarca(this.getMarca());
         art.setTipo(this.getTipo());
+        art.setPrecioCosto(this.getPrecioCosto());
         art.setGraduacionAlc(this.getGraduacionAlc());
         art.setContenido(this.getContenido());
         art.setColor(this.getColor());
         art.setLupulo(this.getLupulo());
-        art.setMalta(this.malta);
+        art.setMalta(this.getMalta());
+        art.setBarril(this.getBarril());
         return art;
     }
     

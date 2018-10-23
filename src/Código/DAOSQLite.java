@@ -142,12 +142,13 @@ public class DAOSQLite implements DAO{
                 art.setNombreProducto(resultado.getString(3));
                 art.setMarca(resultado.getString(6));
                 art.setTipo(resultado.getString(7));
-                art.setGraduacionAlc(resultado.getFloat(8));
-                art.setContenido(resultado.getFloat(9));
-                art.setColor(resultado.getString(10));
-                art.setLupulo(resultado.getString(11));
-                art.setMalta(resultado.getString(12));
-                barril = new Barril(resultado.getInt(13),resultado.getFloat(14),resultado.getFloat(15));
+                art.setPrecioCosto(resultado.getFloat(8));
+                art.setGraduacionAlc(resultado.getFloat(9));
+                art.setContenido(resultado.getFloat(10));
+                art.setColor(resultado.getString(11));
+                art.setLupulo(resultado.getString(12));
+                art.setMalta(resultado.getString(13));
+                barril = new Barril(resultado.getInt(14),resultado.getFloat(16),resultado.getFloat(17));
                 art.setBarril(barril);
                 
                 artesanales.add(art.clone());

@@ -2712,11 +2712,16 @@
                                               <Component id="campoTipoIndustrial" max="32767" attributes="0"/>
                                               <Component id="campoPrecioCIndustrial" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoGradAlcIndustrial" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="campoContIndustrial" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoStockActIndustrial" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoStockMinIndustrial" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoPrecioVIndustrial" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="campoContIndustrial" min="-2" pref="121" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel2" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="botonElimIndustrial" min="-2" max="-2" attributes="0"/>
@@ -2724,7 +2729,7 @@
                                           <Component id="botonModIndustrial" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                                  <EmptySpace pref="19" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2765,6 +2770,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="labelTitulo9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="campoContIndustrial" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3201,6 +3207,17 @@
                             </Property>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel2">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Fira Sans Book" size="18" style="0"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="cc"/>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="panelTablaArtesanales">
@@ -3237,15 +3254,23 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="campoNombreArtesanal" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="campoMarcaArtesanal" alignment="0" pref="151" max="32767" attributes="0"/>
+                                              <Component id="campoMarcaArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoTipoArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoPrecioCArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoGradAlcArtesanal" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="campoContArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoColorArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoMaltaArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoLupuloArtesanal" max="32767" attributes="0"/>
-                                              <Component id="campoCantidadActual" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="campoContArtesanal" min="-2" pref="127" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel3" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="campoCantidadActual" min="-2" pref="128" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel4" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -3290,6 +3315,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="labelTitulo19" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="campoContArtesanal" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="jLabel3" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3310,6 +3336,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="labelTitulo23" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="campoCantidadActual" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="jLabel4" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -3729,6 +3756,28 @@
                               <Color blue="fa" green="fa" red="fa" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Cant. actual"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel3">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Fira Sans Book" size="18" style="0"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="cc"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel4">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Fira Sans Book" size="18" style="0"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="cc"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -4274,10 +4323,14 @@
                                               <Component id="campoNombreGaseosa" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoSaborGaseosa" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoPrecioCGaseosa" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="campoContGaseosa" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoStockActGaseosa" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoStockMinGaseosa" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoPrecioVGaseosa" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="campoContGaseosa" min="-2" pref="127" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel5" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -4302,6 +4355,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="labelTitulo38" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="campoContGaseosa" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="jLabel5" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -4645,6 +4699,17 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel5">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Fira Sans Book" size="18" style="0"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="cc"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -5749,22 +5814,22 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
+                              <Title value="C&#xf3;digo"/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
+                              <Title value="Nombre"/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
+                              <Title value="Categor&#xed;a"/>
                               <Editor/>
                               <Renderer/>
                             </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                              <Title/>
+                              <Title value="Precio "/>
                               <Editor/>
                               <Renderer/>
                             </Column>

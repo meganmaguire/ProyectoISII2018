@@ -204,6 +204,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelElimInd = new javax.swing.JLabel();
         labelTitulo15 = new javax.swing.JLabel();
         campoPrecioVIndustrial = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         panelTablaArtesanales = new javax.swing.JPanel();
         labelTitulo13 = new javax.swing.JLabel();
         labelTitulo14 = new javax.swing.JLabel();
@@ -229,6 +230,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelElimInd1 = new javax.swing.JLabel();
         labelTitulo22 = new javax.swing.JLabel();
         labelTitulo23 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         panelTablaVinos = new javax.swing.JPanel();
         labelTitulo24 = new javax.swing.JLabel();
         labelTitulo25 = new javax.swing.JLabel();
@@ -271,6 +274,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelElimInd3 = new javax.swing.JLabel();
         labelTitulo41 = new javax.swing.JLabel();
         campoPrecioVGaseosa = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         panelTablaTragos = new javax.swing.JPanel();
         labelTitulo33 = new javax.swing.JLabel();
         labelTitulo37 = new javax.swing.JLabel();
@@ -1842,6 +1846,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoPrecioVIndustrial.setForeground(new java.awt.Color(197, 198, 199));
         campoPrecioVIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
 
+        jLabel2.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel2.setText("cc");
+
         javax.swing.GroupLayout panelTablaIndustrialesLayout = new javax.swing.GroupLayout(panelTablaIndustriales);
         panelTablaIndustriales.setLayout(panelTablaIndustrialesLayout);
         panelTablaIndustrialesLayout.setHorizontalGroup(
@@ -1869,15 +1877,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(campoTipoIndustrial)
                             .addComponent(campoPrecioCIndustrial)
                             .addComponent(campoGradAlcIndustrial)
-                            .addComponent(campoContIndustrial)
                             .addComponent(campoStockActIndustrial)
                             .addComponent(campoStockMinIndustrial)
-                            .addComponent(campoPrecioVIndustrial)))
+                            .addComponent(campoPrecioVIndustrial)
+                            .addGroup(panelTablaIndustrialesLayout.createSequentialGroup()
+                                .addComponent(campoContIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(16, 16, 16))
                     .addGroup(panelTablaIndustrialesLayout.createSequentialGroup()
                         .addComponent(botonElimIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botonModIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         panelTablaIndustrialesLayout.setVerticalGroup(
             panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1909,7 +1921,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo9)
-                    .addComponent(campoContIndustrial))
+                    .addComponent(campoContIndustrial)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo11)
@@ -2076,6 +2089,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTitulo23.setForeground(new java.awt.Color(250, 250, 250));
         labelTitulo23.setText("Cant. actual");
 
+        jLabel3.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel3.setText("cc");
+
+        jLabel4.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel4.setText("cc");
+
         javax.swing.GroupLayout panelTablaArtesanalesLayout = new javax.swing.GroupLayout(panelTablaArtesanales);
         panelTablaArtesanales.setLayout(panelTablaArtesanalesLayout);
         panelTablaArtesanalesLayout.setHorizontalGroup(
@@ -2098,15 +2119,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(campoNombreArtesanal)
-                            .addComponent(campoMarcaArtesanal, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                            .addComponent(campoMarcaArtesanal)
                             .addComponent(campoTipoArtesanal)
                             .addComponent(campoPrecioCArtesanal)
                             .addComponent(campoGradAlcArtesanal)
-                            .addComponent(campoContArtesanal)
                             .addComponent(campoColorArtesanal)
                             .addComponent(campoMaltaArtesanal)
                             .addComponent(campoLupuloArtesanal)
-                            .addComponent(campoCantidadActual)))
+                            .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
+                                .addComponent(campoContArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
+                                .addComponent(campoCantidadActual, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
                         .addComponent(botonElimArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -2139,7 +2166,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo19)
-                    .addComponent(campoContArtesanal))
+                    .addComponent(campoContArtesanal)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo21)
@@ -2155,7 +2183,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo23)
-                    .addComponent(campoCantidadActual))
+                    .addComponent(campoCantidadActual)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(39, 39, 39)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonElimArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2507,6 +2536,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoPrecioVGaseosa.setForeground(new java.awt.Color(197, 198, 199));
         campoPrecioVGaseosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
 
+        jLabel5.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel5.setText("cc");
+
         javax.swing.GroupLayout panelTablaGaseosasLayout = new javax.swing.GroupLayout(panelTablaGaseosas);
         panelTablaGaseosas.setLayout(panelTablaGaseosasLayout);
         panelTablaGaseosasLayout.setHorizontalGroup(
@@ -2532,10 +2565,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(campoNombreGaseosa)
                             .addComponent(campoSaborGaseosa)
                             .addComponent(campoPrecioCGaseosa)
-                            .addComponent(campoContGaseosa)
                             .addComponent(campoStockActGaseosa)
                             .addComponent(campoStockMinGaseosa)
-                            .addComponent(campoPrecioVGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(campoPrecioVGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelTablaGaseosasLayout.createSequentialGroup()
+                                .addComponent(campoContGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(35, 35, 35))
         );
         panelTablaGaseosasLayout.setVerticalGroup(
@@ -2552,7 +2588,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo38)
-                    .addComponent(campoContGaseosa))
+                    .addComponent(campoContGaseosa)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo36)
@@ -3125,8 +3162,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jScrollPane5.setViewportView(tablaListado);
         if (tablaListado.getColumnModel().getColumnCount() > 0) {
             tablaListado.getColumnModel().getColumn(0).setResizable(false);
+            tablaListado.getColumnModel().getColumn(0).setHeaderValue("Código");
             tablaListado.getColumnModel().getColumn(1).setResizable(false);
+            tablaListado.getColumnModel().getColumn(1).setHeaderValue("Nombre");
+            tablaListado.getColumnModel().getColumn(2).setHeaderValue("Categoría");
             tablaListado.getColumnModel().getColumn(3).setResizable(false);
+            tablaListado.getColumnModel().getColumn(3).setHeaderValue("Precio ");
         }
 
         labelTitulo1.setFont(new java.awt.Font("Fira Sans Book", 1, 36)); // NOI18N
@@ -3994,7 +4035,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         CardLayout card2 = (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");
         
-        
         for(Producto p : listado){
             Object [] row ={p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
             modeloTablaListado.addRow(row);
@@ -4109,7 +4149,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     campoBodegaVino.setText(vino.getBodega());
                     campoColorVino.setText(vino.getColor());
                     campoUvaVino.setText(vino.getTipoDeUva());
-                    campoGradAlcIndustrial.setText(String.valueOf(vino.getGraduacionAlc()));
+                    campoGradAlcVino.setText(String.valueOf(vino.getGraduacionAlc()));
                     campoPrecioCVino.setText(String.valueOf(vino.getPrecioCosto()));
                     campoStockActVino.setText(String.valueOf(vino.getStock().getStockActual()));
                     campoStockMinVino.setText(String.valueOf(vino.getStock().getStockMinimo()));
@@ -4520,6 +4560,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel iconVenta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
