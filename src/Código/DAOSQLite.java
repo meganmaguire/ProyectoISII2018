@@ -35,7 +35,7 @@ public class DAOSQLite implements DAO{
             while(resultado.next()){
                 venta.setFecha(resultado.getString(1));
                 venta.setId(resultado.getInt(2));
-                venta.setPrecioTotal(resultado.getFloat(1));
+                venta.setPrecioTotal(resultado.getFloat(3));
                 venta.setUsuario(resultado.getString(4));
                 listaVentas.add(venta.clone());
             }
@@ -57,7 +57,7 @@ public class DAOSQLite implements DAO{
             while(resultado.next()){
                 compra.setFecha(resultado.getString(1));
                 compra.setId(resultado.getInt(2));
-                compra.setPrecioTotal(resultado.getFloat(1));
+                compra.setPrecioTotal(resultado.getFloat(3));
                 compra.setUsuario(resultado.getString(4));
                 listaCompras.add(compra.clone());
             } 

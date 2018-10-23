@@ -4192,6 +4192,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         float subtotal=0;
         if(this.campoProducto1.getText().equals("") || this.campoCantidad1.getText().equals("")){
             CartelError error= new CartelError (this,true,"Campos vacios");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
         }
         else{
             if(Integer.parseInt(campoCantidad1.getText())<1){
@@ -4350,8 +4352,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 }
                 else{
                     balance=managerVentas.balanceVentas(fechaI, fechaF);
-                    this.labelTotalCompras.setText(String.valueOf(balance[0]));
-                    this.labelTotalVentas.setText(String.valueOf(balance[1]));
+                    this.labelTotalCompras.setText(String.valueOf(balance[1]));
+                    this.labelTotalVentas.setText(String.valueOf(balance[0]));
                     this.labelTotalNeto.setText(String.valueOf(balance[2]));
                 }
             }
