@@ -33,7 +33,7 @@ public class DAOSQLite implements DAO{
             stmt = conn.createStatement();
             ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS");
             while(resultado.next()){
-                venta.setFecha(resultado.getDate(1));
+                venta.setFechaVenta(resultado.getString(1));
                 venta.setId(resultado.getInt(2));
                 venta.setPrecioTotal(resultado.getFloat(1));
                 venta.setUsuario(resultado.getString(4));
@@ -55,7 +55,7 @@ public class DAOSQLite implements DAO{
             stmt = conn.createStatement();
             ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS");
             while(resultado.next()){
-                compra.setFecha(resultado.getDate(1));
+                compra.setFecha(resultado.getString(1));
                 compra.setId(resultado.getInt(2));
                 compra.setPrecioTotal(resultado.getFloat(1));
                 compra.setUsuario(resultado.getString(4));

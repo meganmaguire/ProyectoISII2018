@@ -32,7 +32,7 @@ public class Usuario {
     public Usuario() {
         this.nombre= "";
         this.apellido="";
-        this.fechaNacimiento=null;
+        this.fechaNacimiento="";
         this.usuario="";
         this.contraseña="";
         this.permiso="";

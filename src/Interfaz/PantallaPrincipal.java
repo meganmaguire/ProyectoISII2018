@@ -4153,6 +4153,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         float subtotal=0;
         if(this.campoProducto1.getText().equals("") || this.campoCantidad1.getText().equals("")){
             CartelError error= new CartelError (this,true,"Campos vacios");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+        if(Integer.parseInt(this.campoProducto1.getText())<1){
+            CartelError error= new CartelError (this,true,"La cantidad tiene que ser mayor a 0");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
         }
         else{
             id=Integer.parseInt(String.valueOf(valores[0]));

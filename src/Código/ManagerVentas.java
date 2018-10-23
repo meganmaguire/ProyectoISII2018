@@ -5,6 +5,8 @@
  */
 package Código;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -22,17 +24,20 @@ public class ManagerVentas {
         dao= new DAOSQLite();
     }
     
-    public List balanceVentas(Date fecha1, Date fecha2){
+    public List balanceVentas(Date fecha1, Date fecha2) throws ParseException{
         List <Double> listaBalance=new ArrayList();
         List <Venta> listaVentas= dao.readVentas();
         List <Compra> listaCompras= dao.readCompras();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fecha;
         double totalVentas=0;
         double totalCompras=0;
         double totalDeTotales=0;
         Iterator i= listaVentas.iterator();
         while(i.hasNext()){
             Venta venta= (Venta) i.next();
-            if(venta.getFecha().compareTo(fecha1) >=0 && venta.getFecha().compareTo(fecha2) <=0){
+            fecha=formato.parse(venta.getFechaVenta());
+            if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
                 totalVentas= totalVentas+venta.getPrecioTotal();
             }
         }
@@ -40,7 +45,8 @@ public class ManagerVentas {
         Iterator j= listaCompras.iterator();
         while(j.hasNext()){
             Compra compra= (Compra) j.next();
-            if(compra.getFecha().compareTo(fecha1) >=0 && compra.getFecha().compareTo(fecha2) <=0){
+            fecha=formato.parse(compra.getFecha());
+            if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
                 totalCompras= totalCompras+compra.getPrecioTotal();
             }
         }
