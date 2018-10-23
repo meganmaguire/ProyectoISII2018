@@ -703,7 +703,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         labelTotal1.setFont(new java.awt.Font("Fira Sans Book", 1, 24)); // NOI18N
         labelTotal1.setForeground(new java.awt.Color(102, 252, 241));
-        labelTotal1.setText("000.00");
+        labelTotal1.setText("00.0");
 
         labelCantidad5.setBackground(new java.awt.Color(102, 252, 241));
         labelCantidad5.setFont(new java.awt.Font("Fira Sans Book", 1, 24)); // NOI18N
@@ -4314,7 +4314,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             if(exito){
                 this.campoProducto1.setText("");
                 this.campoCantidad1.setText("");
-                this.labelTotal1.setText("000.00");
+                this.labelTotal1.setText("00.0");
                 this.campoCliente1.setText("");
                 int n = tablaVentas1.getRowCount();
                 for(int i =0;i<n;i++){
@@ -4344,7 +4344,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         for (int i = 0; i < n; i++) {
             modeloTablaVenta.removeRow(0);
         }
-        this.labelTotal1.setText("000.00");
+        this.labelTotal1.setText("00.0");
     }//GEN-LAST:event_botonLimpiar1MouseClicked
 
     private void botonEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseClicked
@@ -4359,6 +4359,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 subtotal=Float.parseFloat(String.valueOf(this.tablaVentas1.getValueAt(j,5)));
                 total=total+subtotal;
                 this.labelTotal1.setText(String.valueOf(total));
+            }
+            if(tablaVentas1.getRowCount() == 0){
+                this.labelTotal1.setText("00.0");
             }
         }
         else{
@@ -4395,8 +4398,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 }
                 else{
                     balance=managerVentas.balanceVentas(fechaI, fechaF);
-                    this.labelTotalCompras.setText(String.valueOf(balance[0]));
-                    this.labelTotalVentas.setText(String.valueOf(balance[1]));
+                    this.labelTotalCompras.setText(String.valueOf(balance[1]));
+                    this.labelTotalVentas.setText(String.valueOf(balance[0]));
                     this.labelTotalNeto.setText(String.valueOf(balance[2]));
                 }
             }
