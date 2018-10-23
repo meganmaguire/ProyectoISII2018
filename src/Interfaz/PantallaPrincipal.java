@@ -1919,10 +1919,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(labelTitulo8)
                     .addComponent(campoGradAlcIndustrial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTitulo9)
-                    .addComponent(campoContIndustrial)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelTitulo9)
+                        .addComponent(campoContIndustrial)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo11)
@@ -4381,8 +4382,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         else{
             if(fechaI.compareTo(fechaActual)>0 || fechaF.compareTo(fechaActual)>0){
                 CartelError error= new CartelError(this,true,"La fecha ingresada excede la fecha actual");
-            error.setLocationRelativeTo(null);
-            error.setVisible(true);
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
             }
             else{
                 if(fechaI.compareTo(fechaF)>0){
