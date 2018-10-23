@@ -78,7 +78,7 @@ public class ManagerVentas {
         for (int i = 0; i < tablaVentas.getRowCount(); i++) {
             renglon.cargarRenglon(renglon, Integer.parseInt(String.valueOf(tablaVentas.getValueAt(i, 0))), Integer.parseInt(String.valueOf(tablaVentas.getValueAt(i,3))), venta.getId());
             venta.agregarRenglon(renglon);
-            respuesta=dao.createRenglon(renglon);
+            respuesta=dao.createRenglonVenta(renglon);
             if(!respuesta){
                 return false;
             }
