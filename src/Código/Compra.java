@@ -15,13 +15,13 @@ import java.util.List;
  * @author Maru
  */
 public class Compra {
-    private String fecha;  //Puede no ser la fecha actual
+    private Date fecha;  //Puede no ser la fecha actual
     private float precioTotal;
     private List<Renglon> renglonesDeCompra;
     private String usuario;
     private int id;
 
-    public Compra(String fecha, float precioTotal,List renglonesDeCompra, String usuario) {
+    public Compra(Date fecha, float precioTotal,List renglonesDeCompra, String usuario) {
         this.fecha = fecha;
         this.precioTotal = precioTotal;
         this.renglonesDeCompra = renglonesDeCompra;
@@ -30,14 +30,14 @@ public class Compra {
     }
     
     public Compra(){
-        this.fecha="";
+        this.fecha=null;
         this.precioTotal=0;
         this.renglonesDeCompra= new ArrayList();
         this.usuario="";
         this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
@@ -57,7 +57,7 @@ public class Compra {
         return id;
     }
     
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -78,7 +78,8 @@ public class Compra {
     }
     
     public void mostrarCompra(){
-        System.out.println("Fecha de compra: "+fecha);
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Fecha de compra: "+formato.format(fecha));
         System.out.println("Usuario: "+usuario);
         System.out.println("Id: "+id);
         System.out.println("Renglones: ");

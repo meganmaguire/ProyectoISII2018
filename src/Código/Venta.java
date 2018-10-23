@@ -15,18 +15,14 @@ import java.util.List;
  * @author Maru
  */
 public class Venta {
-    private List<Renglon> renglonesDeVenta;
     private Date fecha;
-    SimpleDateFormat formato;
-    private String fechaVenta;
-    private String usuario;
     private float precioTotal;
+    private List<Renglon> renglonesDeVenta;
+    private String usuario;
     private int id;
 
     public Venta(float precioTotal, List renglonesDeVenta, String usuario) {
         this.fecha = new java.util.Date(); //fecha actual del sistema;
-        formato = new SimpleDateFormat("dd/MM/yyyy");
-        fechaVenta=formato.format(fecha);
         this.precioTotal = precioTotal;
         this.renglonesDeVenta = renglonesDeVenta;
         this.usuario=usuario;
@@ -35,16 +31,14 @@ public class Venta {
     
     public Venta(){
         this.fecha=new java.util.Date(); //fecha actual del sistema;
-        formato = new SimpleDateFormat("dd/MM/yyyy");
-        fechaVenta=formato.format(fecha);
         this.precioTotal=0;
         this.renglonesDeVenta= new ArrayList(); 
         this.usuario="";
         this.id= (int) (Math.random() *100000) + 1; //mientras se crea un producto le sumo 1
     }
 
-    public String getFechaVenta() {
-        return fechaVenta;
+    public Date getFecha() {
+        return fecha;
     }
 
     public float getPrecioTotal() {
@@ -63,8 +57,8 @@ public class Venta {
         return id;
     }
     
-    public void setFechaVenta(String fechaVenta) {
-        this.fechaVenta = fechaVenta;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public void setPrecioTotal(float precioTotal) {
@@ -84,7 +78,8 @@ public class Venta {
     }
     
     public void mostrarVenta(){
-        System.out.println("Fecha de nacimiento: "+fechaVenta);
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Fecha de nacimiento: "+formato.format(fecha));
         System.out.println("Usuario: "+usuario);
         System.out.println("Id: "+id);
         System.out.println("Renglones: ");
@@ -95,7 +90,7 @@ public class Venta {
     public Venta clone(){
         Venta venta= new Venta();
         venta.setId(this.getId());
-        venta.setFechaVenta(this.getFechaVenta());
+        venta.setFecha(this.getFecha());
         venta.setPrecioTotal(this.getPrecioTotal());
         venta.setUsuario(this.getUsuario());
         venta.setRenglonesDeVenta(this.getRenglonesDeVenta());
