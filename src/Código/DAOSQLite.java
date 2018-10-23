@@ -359,7 +359,7 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT G_StockActual FROM GASOESAS WHERE Prod_ID = "+idProducto);
+            ResultSet resultado = stmt.executeQuery("SELECT G_StockActual FROM GASEOSAS WHERE Prod_ID = "+idProducto);
             stockActual=resultado.getInt(1);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la consulta de stock gaseosa");
@@ -392,6 +392,20 @@ public class DAOSQLite implements DAO{
             System.out.println("No se pudo realizar la consulta del contenido de la cerveza artesanal");
         }
         return contenido;
+    }
+    
+    public int consultarIdBarril(int idProducto){
+        int idBarril=0;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT Bar_ID FROM ARTESANALES WHERE Prod_ID = "+idProducto);
+            idBarril=resultado.getInt(1);
+        }
+        catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta del contenido de la cerveza artesanal");
+        }
+        return idBarril;
     }
     
     public float consultarPrecioProducto(int idProducto){
@@ -428,7 +442,7 @@ public class DAOSQLite implements DAO{
             stmt = conn.createStatement();
             stmt.execute("UPDATE BARRILES "
                         + "SET Bar_CantActual = "+stock+" "
-                        + "WHERE ARTESANALES.Prod_ID = "+id+" AND ARTESANALES.Bar_ID = BARRILES.Bar_ID");
+                        + "WHERE Bar_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion");
         }
