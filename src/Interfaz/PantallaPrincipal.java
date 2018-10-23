@@ -4194,57 +4194,64 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             CartelError error= new CartelError (this,true,"Campos vacios");
         }
         else{
-            id=Integer.parseInt(String.valueOf(valores[0]));
-            categoria=String.valueOf(valores[1]);
-            respuesta=validar.validarStock(id,categoria,Integer.parseInt(campoCantidad1.getText()));
-            if(respuesta){
-                Object[] dato = new Object[6];
-                dato[0]=id;
-                if(categoria.equals("Industrial")){
-                    dato[1]="Industrial";
-                }
-                if(categoria.equals("Artesanal")){
-                    dato[1]="Artesanal";
-                }
-                if(categoria.equals("Trago")){
-                    dato[1]="Trago";
-                }
-                if(categoria.equals("Narguile")){
-                    dato[1]="Narguile";
-                }
-                if(categoria.equals("Gaseosa")){
-                    dato[1]="Gaseosa";
-                }
-                if(categoria.equals("Vino")){
-                    dato[1]="Vino";
-                }
-                if(categoria.equals("Pizza")){
-                    dato[1]="Pizza";
-                }
-                if(categoria.equals("Picada")){
-                    dato[1]="Picada";
-                }
-                int cantidad=Integer.parseInt(this.campoCantidad1.getText());
-                
-                float precioUnitario=manager.consultarPrecioVenta(id);
-                dato[2]= campoProducto1.getText();
-                dato[3]=cantidad;
-                dato[4]=precioUnitario;
-                float precioTotal=precioUnitario*cantidad;
-                dato[5]=precioTotal;
-                this.modeloTablaVenta.addRow(dato);
-                for (int i = 0; i < this.tablaVentas1.getRowCount(); i++){
-                    subtotal=Float.parseFloat(String.valueOf(tablaVentas1.getValueAt(i,5)));
-                    total=total+subtotal;
-                    this.labelTotal1.setText(String.valueOf(total));
-                }
-                this.campoProducto1.setText("");
-                this.campoCantidad1.setText("");
+            if(Integer.parseInt(campoCantidad1.getText())<1){
+                CartelError cartel = new CartelError(this,true,"Cantidad inválida");
+                cartel.setLocationRelativeTo(null);
+                cartel.setVisible(true);
             }
             else{
-                CartelError error= new CartelError (this,true,"Stock insuficiente");
-                error.setLocationRelativeTo(null);
-                error.setVisible(true);
+                id=Integer.parseInt(String.valueOf(valores[0]));
+                categoria=String.valueOf(valores[1]);
+                respuesta=validar.validarStock(id,categoria,Integer.parseInt(campoCantidad1.getText()));
+                if(respuesta){
+                    Object[] dato = new Object[6];
+                    dato[0]=id;
+                    if(categoria.equals("Industrial")){
+                        dato[1]="Industrial";
+                    }
+                    if(categoria.equals("Artesanal")){
+                        dato[1]="Artesanal";
+                    }
+                    if(categoria.equals("Trago")){
+                        dato[1]="Trago";
+                    }
+                    if(categoria.equals("Narguile")){
+                        dato[1]="Narguile";
+                    }
+                    if(categoria.equals("Gaseosa")){
+                        dato[1]="Gaseosa";
+                    }
+                    if(categoria.equals("Vino")){
+                        dato[1]="Vino";
+                    }
+                    if(categoria.equals("Pizza")){
+                        dato[1]="Pizza";
+                    }
+                    if(categoria.equals("Picada")){
+                        dato[1]="Picada";
+                    }
+                    int cantidad=Integer.parseInt(this.campoCantidad1.getText());
+
+                    float precioUnitario=manager.consultarPrecioVenta(id);
+                    dato[2]= campoProducto1.getText();
+                    dato[3]=cantidad;
+                    dato[4]=precioUnitario;
+                    float precioTotal=precioUnitario*cantidad;
+                    dato[5]=precioTotal;
+                    this.modeloTablaVenta.addRow(dato);
+                    for (int i = 0; i < this.tablaVentas1.getRowCount(); i++){
+                        subtotal=Float.parseFloat(String.valueOf(tablaVentas1.getValueAt(i,5)));
+                        total=total+subtotal;
+                        this.labelTotal1.setText(String.valueOf(total));
+                    }
+                    this.campoProducto1.setText("");
+                    this.campoCantidad1.setText("");
+                }
+                else{
+                    CartelError error= new CartelError (this,true,"Stock insuficiente");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
             }
         }
     }//GEN-LAST:event_botonAgregar1MouseClicked
