@@ -52,7 +52,6 @@ public class ManagerVentas {
     
     //Genera una venta, la carga en la base de datos y actualiza el stock
     public boolean realizarVenta(JTable tablaVentas,String nombreUsuario, float total){
-        List <Renglon> listaRenglones;
         Venta venta= new Venta();
         boolean respuesta;
         boolean exitoVenta;
@@ -61,14 +60,14 @@ public class ManagerVentas {
         exitoVenta=dao.createVenta(venta);
         Renglon renglon= new Renglon();
         for (int i = 0; i < tablaVentas.getRowCount(); i++) {
-            venta.cargarRenglon(renglon, (int) tablaVentas.getValueAt(i, 0), (int) tablaVentas.getValueAt(i,2), venta.getId());
+            renglon.cargarRenglon(renglon, Integer.parseInt(String.valueOf(tablaVentas.getValueAt(i, 0))), Integer.parseInt(String.valueOf(tablaVentas.getValueAt(i,3))), venta.getId());
             venta.agregarRenglon(renglon);
             respuesta=dao.createRenglon(renglon);
             if(!respuesta){
                 return false;
             }
             else{
-                actualizarStock((String)tablaVentas.getValueAt(i, 1),(int)tablaVentas.getValueAt(i, 0),(int)tablaVentas.getValueAt(i,2));
+                actualizarStock(String.valueOf(tablaVentas.getValueAt(i, 1)),Integer.parseInt(String.valueOf(tablaVentas.getValueAt(i, 0))),Integer.parseInt(String.valueOf(tablaVentas.getValueAt(i,3))));
             }
         }
         if(exitoVenta){

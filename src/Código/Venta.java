@@ -101,9 +101,5 @@ public class Venta {
         renglonesDeVenta.add(renglon);
     }
     
-    public void cargarRenglon(Renglon renglon,int idProducto, int cantidad,int idVenta){
-        renglon.setIdProducto(idProducto);
-        renglon.setCantidad(cantidad);
-        renglon.setId(idVenta);
-    }
+    
 }
