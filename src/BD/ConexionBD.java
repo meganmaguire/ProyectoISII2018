@@ -71,15 +71,24 @@ public class ConexionBD {
                             "    FOREIGN KEY(U_User) REFERENCES USUARIOS(U_User)\n" +
                             "\n" +
                             ");");
-                stmt.execute("CREATE TABLE IF NOT EXISTS RENGLONES(\n" +
+                stmt.execute("CREATE TABLE IF NOT EXISTS RENGLONESVENTA(\n" +
                             "    Prod_ID             INT         NOT NULL,\n" +
-                            "    R_Cant              INT         NOT NULL,\n" +
+                            "    RV_Cant             INT         NOT NULL,\n" +
                             "    V_ID                INT         NOT NULL,\n" +
                             "\n" +
-                            "    PRIMARY KEY(V_ID,Prod_ID,R_Cant)," +
+                            "    PRIMARY KEY(V_ID,Prod_ID,RV_Cant)," +
                             "    FOREIGN KEY(V_ID) REFERENCES VENTAS(V_ID),\n" +
-                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID),\n" +
-                            "    FOREIGN KEY(V_ID) REFERENCES COMPRAS(V_ID)" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
+                            "\n" +
+                            ");");
+                stmt.execute("CREATE TABLE IF NOT EXISTS RENGLONESCOMPRA(\n" +
+                            "    Prod_ID             INT         NOT NULL,\n" +
+                            "    RC_Cant             INT         NOT NULL,\n" +
+                            "    C_ID                INT         NOT NULL,\n" +
+                            "\n" +
+                            "    PRIMARY KEY(C_ID,Prod_ID,RC_Cant)," +
+                            "    FOREIGN KEY(C_ID) REFERENCES COMPRAS(C_ID),\n" +
+                            "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID)\n" +
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS BARRILES(\n" +
