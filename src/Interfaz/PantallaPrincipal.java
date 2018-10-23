@@ -501,7 +501,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCliente1.setFont(new java.awt.Font("Fira Sans Medium", 0, 18)); // NOI18N
         campoCliente1.setForeground(new java.awt.Color(197, 198, 199));
         campoCliente1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoCliente1.setCaretColor(new java.awt.Color(197, 198, 199));
+        campoCliente1.setCaretColor(new java.awt.Color(250, 250, 250));
 
         tablaVentas1.setBackground(new java.awt.Color(32, 40, 51));
         tablaVentas1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -541,7 +541,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCantidad1.setFont(new java.awt.Font("Fira Sans Medium", 0, 18)); // NOI18N
         campoCantidad1.setForeground(new java.awt.Color(197, 198, 199));
         campoCantidad1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoCantidad1.setCaretColor(new java.awt.Color(197, 198, 199));
+        campoCantidad1.setCaretColor(new java.awt.Color(250, 250, 250));
         campoCantidad1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 campoCantidad1KeyTyped(evt);
@@ -581,7 +581,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoProducto1.setFont(new java.awt.Font("Fira Sans Medium", 0, 18)); // NOI18N
         campoProducto1.setForeground(new java.awt.Color(197, 198, 199));
         campoProducto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoProducto1.setCaretColor(new java.awt.Color(197, 198, 199));
+        campoProducto1.setCaretColor(new java.awt.Color(250, 250, 250));
 
         botonAgregar1.setBackground(new java.awt.Color(36, 46, 59));
         botonAgregar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
@@ -1858,6 +1858,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelTablaIndustrialesLayout.createSequentialGroup()
+                        .addComponent(botonElimIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonModIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelTablaIndustrialesLayout.createSequentialGroup()
                         .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(labelTitulo11)
                             .addComponent(labelTitulo8)
@@ -1883,13 +1887,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addGroup(panelTablaIndustrialesLayout.createSequentialGroup()
                                 .addComponent(campoContIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(16, 16, 16))
-                    .addGroup(panelTablaIndustrialesLayout.createSequentialGroup()
-                        .addComponent(botonElimIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonModIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         panelTablaIndustrialesLayout.setVerticalGroup(
             panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1919,10 +1918,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(labelTitulo8)
                     .addComponent(campoGradAlcIndustrial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTitulo9)
-                    .addComponent(campoContIndustrial)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelTitulo9)
+                        .addComponent(campoContIndustrial)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo11)
@@ -2185,7 +2185,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(labelTitulo23)
                     .addComponent(campoCantidadActual)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(39, 39, 39)
+                .addGap(37, 37, 37)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonElimArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonModArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2414,7 +2414,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo42)
                     .addComponent(campoPrecioVVino))
-                .addGap(76, 76, 76)
+                .addGap(74, 74, 74)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonElimVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonModVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2545,11 +2545,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelTablaGaseosasLayout.setHorizontalGroup(
             panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTablaGaseosasLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelTablaGaseosasLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaGaseosasLayout.createSequentialGroup()
                         .addComponent(botonElimGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
                         .addComponent(botonModGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelTablaGaseosasLayout.createSequentialGroup()
                         .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2572,7 +2572,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                                 .addComponent(campoContGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(35, 35, 35))
+                .addGap(36, 36, 36))
         );
         panelTablaGaseosasLayout.setVerticalGroup(
             panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2606,7 +2606,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo41)
                     .addComponent(campoPrecioVGaseosa))
-                .addGap(139, 139, 139)
+                .addGap(146, 146, 146)
                 .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonElimGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonModGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3082,8 +3082,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(campoCPersonasPicadas)
                             .addComponent(campoNombrePicadas)))
                     .addGroup(panelTablaPicadasLayout.createSequentialGroup()
+                        .addGap(0, 8, Short.MAX_VALUE)
                         .addComponent(botonElimPicadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(botonModPicadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
         );
@@ -3191,6 +3192,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoFiltro.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoFiltro.setForeground(new java.awt.Color(197, 198, 199));
         campoFiltro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoFiltro.setCaretColor(new java.awt.Color(250, 250, 250));
         campoFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 campoFiltroKeyReleased(evt);
@@ -4232,6 +4234,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         float subtotal=0;
         if(this.campoProducto1.getText().equals("") || this.campoCantidad1.getText().equals("")){
             CartelError error= new CartelError (this,true,"Campos vacios");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
         }
         else{
             if(Integer.parseInt(campoCantidad1.getText())<1){
@@ -4311,6 +4315,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 this.campoProducto1.setText("");
                 this.campoCantidad1.setText("");
                 this.labelTotal1.setText("000.00");
+                this.campoCliente1.setText("");
                 int n = tablaVentas1.getRowCount();
                 for(int i =0;i<n;i++){
                     modeloTablaVenta.removeRow(0);

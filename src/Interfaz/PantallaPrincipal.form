@@ -372,7 +372,7 @@
                               </Border>
                             </Property>
                             <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="c7" green="c6" red="c5" type="rgb"/>
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -481,7 +481,7 @@
                               </Border>
                             </Property>
                             <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="c7" green="c6" red="c5" type="rgb"/>
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
                             </Property>
                           </Properties>
                           <Events>
@@ -558,7 +558,7 @@
                               </Border>
                             </Property>
                             <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="c7" green="c6" red="c5" type="rgb"/>
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -2691,7 +2691,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="botonElimIndustrial" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="botonModIndustrial" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="labelTitulo11" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo8" min="-2" max="-2" attributes="0"/>
@@ -2721,15 +2726,9 @@
                                                   <Component id="jLabel2" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="botonElimIndustrial" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="botonModIndustrial" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace pref="35" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2767,10 +2766,12 @@
                                       <Component id="campoGradAlcIndustrial" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="labelTitulo9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoContIndustrial" alignment="3" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="labelTitulo9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="campoContIndustrial" alignment="3" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3338,7 +3339,7 @@
                                       <Component id="campoCantidadActual" alignment="3" max="32767" attributes="0"/>
                                       <Component id="jLabel4" alignment="3" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="botonElimArtesanal" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonModArtesanal" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -3891,7 +3892,7 @@
                                       <Component id="labelTitulo42" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="campoPrecioVVino" alignment="3" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="botonElimVino" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonModVino" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -4301,11 +4302,11 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <Component id="botonElimGaseosa" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="botonModGaseosa" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -4334,7 +4335,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4377,7 +4378,7 @@
                                       <Component id="labelTitulo41" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="campoPrecioVGaseosa" alignment="3" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="botonElimGaseosa" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonModGaseosa" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -5528,9 +5529,10 @@
                                               <Component id="campoNombrePicadas" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                           <Component id="botonElimPicadas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="botonModPicadas" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -5924,6 +5926,9 @@
                           <Color PropertyName="color" blue="9e" green="a2" red="45" type="rgb"/>
                         </LineBorder>
                       </Border>
+                    </Property>
+                    <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="fa" green="fa" red="fa" type="rgb"/>
                     </Property>
                   </Properties>
                   <Events>
