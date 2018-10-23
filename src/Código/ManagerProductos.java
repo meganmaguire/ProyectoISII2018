@@ -55,6 +55,11 @@ public class ManagerProductos {
         
         return producto;
     }
+    public float consultarPrecioVenta(int id){
+        float precioVenta=dao.consultarPrecioProducto(id);
+        return precioVenta;
+        
+    }
     
    
 }

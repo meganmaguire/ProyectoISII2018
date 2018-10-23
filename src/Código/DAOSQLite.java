@@ -384,6 +384,22 @@ public class DAOSQLite implements DAO{
         return contenido;
     }
     
+    public float consultarPrecioProducto(int idProducto){
+        float precioVenta = 0;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            String consulta = "SELECT Prod_PrecioVenta FROM PRODUCTOS WHERE Prod_ID ="+idProducto; 
+            ResultSet resultado = stmt.executeQuery(consulta);
+            precioVenta=resultado.getFloat(1);
+        }
+        catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta del precio de venta");
+            e.printStackTrace();
+        }
+        return precioVenta;
+    }
+    
     public void updateStockIndustriales(int id,int stock) {
         try{
             conn = ConexionBD.getConexionBD();

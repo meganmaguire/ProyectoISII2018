@@ -18,16 +18,19 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ListadoProductos extends javax.swing.JDialog {
     private JTextField nombre;
-    private Producto producto;
+    private Integer id;
+    private String categoria;
+    private Object[] valores;
     private DefaultTableModel modeloTablaListado;
     private List<Producto> listado = new ArrayList();
     
     /**
      * Creates new form ListadoProductos
      */
-    public ListadoProductos(java.awt.Frame parent, boolean modal,JTextField nombre,Producto producto) {
+    public ListadoProductos(java.awt.Frame parent, boolean modal,JTextField nombre,Object[] valores) {
         super(parent, modal);
         initComponents();
+        this.valores=valores;
         //Seteo del model
         modeloTablaListado = (DefaultTableModel)tablaListado.getModel();
         tablaListado.setModel(modeloTablaListado);
@@ -240,7 +243,8 @@ public class ListadoProductos extends javax.swing.JDialog {
             int i = tablaListado.getSelectedRow();
             if(i!=-1){
                 nombre.setText(String.valueOf(tablaListado.getValueAt(i, 1)));
-                producto = manager.instanciarProducto(Integer.parseInt(String.valueOf(tablaListado.getValueAt(i, 0))), String.valueOf(tablaListado.getValueAt(i, 1)), String.valueOf(tablaListado.getValueAt(i, 2)),Float.parseFloat(String.valueOf(tablaListado.getValueAt(i, 3))));
+                valores[0] = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));  
+                valores [1] = String.valueOf(modeloTablaListado.getValueAt(i, 2));
                 this.dispose();
             }
         }

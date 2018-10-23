@@ -16,33 +16,29 @@ public class Validar {
         dao= new DAOSQLite();
     }
     
-    public boolean validarStock(Producto producto, int cantidad){
+    public boolean validarStock(Integer id,String categoria, int cantidad){
         int stockActual;
         float stockActArt;
-        if(producto instanceof Gaseosa){
-            Gaseosa gaseosa= (Gaseosa) producto;
-            stockActual= dao.consultarStockGaseosas(gaseosa.getId());
+        if(categoria.equals("Gaseosa")){
+            stockActual= dao.consultarStockGaseosas(id);
             if(cantidad > stockActual){
                 return false;
             }
         }
-        if(producto instanceof Industrial){
-            Industrial ind= (Industrial) producto;
-            stockActual=dao.consultarStockIndustrial(ind.getId());
+        if(categoria.equals("Industrial")){
+            stockActual=dao.consultarStockIndustrial(id);
             if(cantidad > stockActual){
                 return false;
             }
         }
-        if(producto instanceof Vino){
-            Vino vino= (Vino) producto;
-            stockActual= dao.consultarStockVinos(vino.getId());
+        if(categoria.equals("Vino")){
+            stockActual= dao.consultarStockVinos(id);
             if(cantidad > stockActual){
                 return false;
             }
         }
-        if(producto instanceof Artesanal){
-            Artesanal art= (Artesanal) producto;
-            stockActArt= dao.consultarStockArtesanal(art.getId());
+        if(categoria.equals("Artesanal")){
+            stockActArt= dao.consultarStockArtesanal(id);
             if(cantidad > stockActArt){
                 return false;
             }
