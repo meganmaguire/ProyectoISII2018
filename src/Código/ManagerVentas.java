@@ -5,6 +5,8 @@
  */
 package Código;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -22,8 +24,10 @@ public class ManagerVentas {
         dao= new DAOSQLite();
     }
     
-    public List balanceVentas(Date fecha1, Date fecha2){
-        List <Double> listaBalance=new ArrayList();
+    public Object[] balanceVentas(Date fecha1, Date fecha2){
+        SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
+        Date fecha=null;
+        Object[] balance= new Object[3];
         List <Venta> listaVentas= dao.readVentas();
         List <Compra> listaCompras= dao.readCompras();
         double totalVentas=0;
@@ -32,22 +36,34 @@ public class ManagerVentas {
         Iterator i= listaVentas.iterator();
         while(i.hasNext()){
             Venta venta= (Venta) i.next();
-            if(venta.getFecha().compareTo(fecha1) >=0 && venta.getFecha().compareTo(fecha2) <=0){
+            try{
+                fecha=formato.parse(venta.getFecha());
+            }
+            catch(ParseException e){
+                System.out.println("No se pudo parsear la fecha");
+            }
+            if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
                 totalVentas= totalVentas+venta.getPrecioTotal();
             }
         }
-        listaBalance.add(totalVentas);
+        balance[0]=totalVentas;
         Iterator j= listaCompras.iterator();
         while(j.hasNext()){
             Compra compra= (Compra) j.next();
-            if(compra.getFecha().compareTo(fecha1) >=0 && compra.getFecha().compareTo(fecha2) <=0){
+            try{
+                fecha= formato.parse(compra.getFecha());
+            }
+            catch(ParseException e){
+                System.out.println("No se pudo parsear la fecha");
+            }
+            if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
                 totalCompras= totalCompras+compra.getPrecioTotal();
             }
         }
-        listaBalance.add(totalCompras);
+        balance[1]=totalCompras;
         totalDeTotales=totalVentas-totalCompras;
-        listaBalance.add(totalDeTotales);
-        return listaBalance;
+        balance[2]=totalDeTotales;
+        return balance;
     }
     
     //Genera una venta, la carga en la base de datos y actualiza el stock
