@@ -310,7 +310,7 @@ public class DAOSQLite implements DAO{
         return true;
     }
     
-    public boolean createRenglon(Renglon renglon) {
+    public boolean createRenglonVenta(Renglon renglon) {
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
@@ -318,7 +318,7 @@ public class DAOSQLite implements DAO{
             int cantidad = renglon.getCantidad();
             int id = renglon.getId();
             stmt.execute("INSERT "
-                        + "INTO RENGLONES "
+                        + "INTO RENGLONESVENTA "
                         + "VALUES("+idproducto+","+cantidad+","+id+")");
         }catch(SQLException e){
             System.out.println("");
