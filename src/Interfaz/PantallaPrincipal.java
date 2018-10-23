@@ -57,7 +57,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.valores = new Object[2];
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         try{
-            usuario = new Usuario("Fede","Chira",formato.parse("19/09/1992"),"fedechira","1234","admin");
+            usuario = new Usuario("Fede","Chira","19/09/1992","fedechira","1234","admin");
         }catch(Exception e){}
     }
 

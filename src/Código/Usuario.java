@@ -15,12 +15,12 @@ import java.util.Date;
 public class Usuario {
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String usuario;
     private String contraseña;
     private String permiso;
 
-    public Usuario(String nombre, String apellido, Date fechaNacimiento, String usuario, String contraseña, String permiso) {
+    public Usuario(String nombre, String apellido, String fechaNacimiento, String usuario, String contraseña, String permiso) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -46,7 +46,7 @@ public class Usuario {
         return apellido;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -70,7 +70,7 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -87,10 +87,10 @@ public class Usuario {
     }
     
     public void mostrarUsuario(){
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        
         System.out.println("Nombre: "+nombre);
         System.out.println("Apellido: "+apellido);
-        System.out.println("Fecha de nacimiento: "+formato.format(fechaNacimiento));
+        System.out.println("Fecha de nacimiento: "+fechaNacimiento);
         System.out.println("Usuario: "+usuario);
         System.out.println("Contraseña: "+contraseña);
         System.out.println("Permiso: "+permiso);

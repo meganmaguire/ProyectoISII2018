@@ -10,7 +10,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -291,14 +293,21 @@ public class DAOSQLite implements DAO{
     }
 
     public boolean createVenta(Venta venta) {
+        Date fecha = null;
         try{
         conn = ConexionBD.getConexionBD();
         stmt = conn.createStatement();
-        stmt.execute ("INSERT"
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+            System.out.println(formato.format(venta.getFecha()));
+            try{
+            fecha = formato.parse(formato.format(venta.getFecha()));
+            }catch(Exception e){}
+            System.out.println(venta.getId());
+        stmt.execute ("INSERT "
                 + "INTO VENTAS"
-                + "VALUES ("+venta.getFecha()+","+venta.getId()+","+venta.getPrecioTotal()+","+venta.getUsuario()+")");
+                + "VALUES (\"22/10/2018\","+venta.getId()+","+venta.getPrecioTotal()+","+venta.getUsuario()+")");
         }catch(SQLException e){
-            System.out.println("");
+            e.printStackTrace();
             return false;
         }
         return true;
