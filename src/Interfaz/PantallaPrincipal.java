@@ -325,6 +325,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelProducto = new javax.swing.JPanel();
         panelRanking = new javax.swing.JPanel();
         panelBalance = new javax.swing.JPanel();
+        labelTitulo52 = new javax.swing.JLabel();
+        labelTitulo53 = new javax.swing.JLabel();
+        fechaInicio = new com.toedter.calendar.JDateChooser();
+        labelTitulo54 = new javax.swing.JLabel();
+        fechaFin = new com.toedter.calendar.JDateChooser();
+        labelTitulo55 = new javax.swing.JLabel();
+        labelTitulo56 = new javax.swing.JLabel();
+        labelTitulo57 = new javax.swing.JLabel();
+        labelTotalCompras = new javax.swing.JLabel();
+        labelTotalVentas = new javax.swing.JLabel();
+        labelTotalNeto = new javax.swing.JLabel();
         panelCompra = new javax.swing.JPanel();
         panelEcuaciones = new javax.swing.JPanel();
         superior = new javax.swing.JPanel();
@@ -3221,15 +3232,98 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         panelBalance.setBackground(new java.awt.Color(32, 40, 51));
 
+        labelTitulo52.setFont(new java.awt.Font("Fira Sans Book", 1, 36)); // NOI18N
+        labelTitulo52.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo52.setText("Balance de Ventas");
+
+        labelTitulo53.setFont(new java.awt.Font("Fira Sans Book", 0, 24)); // NOI18N
+        labelTitulo53.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo53.setText("Desde");
+
+        labelTitulo54.setFont(new java.awt.Font("Fira Sans Book", 0, 24)); // NOI18N
+        labelTitulo54.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo54.setText("Hasta");
+
+        labelTitulo55.setFont(new java.awt.Font("Fira Sans Book", 0, 30)); // NOI18N
+        labelTitulo55.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo55.setText("Total de Compras");
+
+        labelTitulo56.setFont(new java.awt.Font("Fira Sans Book", 0, 30)); // NOI18N
+        labelTitulo56.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo56.setText("Total de Ventas");
+
+        labelTitulo57.setFont(new java.awt.Font("Fira Sans Book", 1, 30)); // NOI18N
+        labelTitulo57.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo57.setText("Ganancia Neta");
+
+        labelTotalCompras.setFont(new java.awt.Font("Fira Sans Book", 1, 30)); // NOI18N
+        labelTotalCompras.setForeground(new java.awt.Color(250, 250, 250));
+        labelTotalCompras.setText("000.00");
+
+        labelTotalVentas.setFont(new java.awt.Font("Fira Sans Book", 1, 30)); // NOI18N
+        labelTotalVentas.setForeground(new java.awt.Color(250, 250, 250));
+        labelTotalVentas.setText("000.00");
+
+        labelTotalNeto.setFont(new java.awt.Font("Fira Sans Book", 1, 30)); // NOI18N
+        labelTotalNeto.setForeground(new java.awt.Color(102, 252, 241));
+        labelTotalNeto.setText("000.00");
+
         javax.swing.GroupLayout panelBalanceLayout = new javax.swing.GroupLayout(panelBalance);
         panelBalance.setLayout(panelBalanceLayout);
         panelBalanceLayout.setHorizontalGroup(
             panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 990, Short.MAX_VALUE)
+            .addGroup(panelBalanceLayout.createSequentialGroup()
+                .addGap(226, 226, 226)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelTitulo57)
+                    .addComponent(labelTitulo55)
+                    .addComponent(labelTitulo56))
+                .addGap(18, 18, 18)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelTotalCompras)
+                    .addComponent(labelTotalVentas)
+                    .addComponent(labelTotalNeto))
+                .addGap(0, 405, Short.MAX_VALUE))
+            .addGroup(panelBalanceLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelTitulo52)
+                    .addGroup(panelBalanceLayout.createSequentialGroup()
+                        .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTitulo53)
+                            .addComponent(labelTitulo54))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fechaInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                            .addComponent(fechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBalanceLayout.setVerticalGroup(
             panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(panelBalanceLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(labelTitulo52)
+                .addGap(35, 35, 35)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelTitulo53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelTitulo54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo55)
+                    .addComponent(labelTotalCompras))
+                .addGap(47, 47, 47)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo56)
+                    .addComponent(labelTotalVentas))
+                .addGap(55, 55, 55)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo57)
+                    .addComponent(labelTotalNeto))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         cuerpo.add(panelBalance, "panelBalance");
@@ -4130,7 +4224,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             if(exito){
                 this.campoProducto1.setText("");
                 this.campoCantidad1.setText("");
-                this.labelTotal1.setText("00,00");
+                this.labelTotal1.setText("000.00");
                 int n = tablaVentas1.getRowCount();
                 for(int i =0;i<n;i++){
                     modeloTablaVenta.removeRow(0);
@@ -4322,6 +4416,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox comboBoxOrigenInd;
     private javax.swing.JPanel cuerpo;
     private javax.swing.JPanel cuerpoVenta;
+    private com.toedter.calendar.JDateChooser fechaFin;
+    private com.toedter.calendar.JDateChooser fechaInicio;
     private javax.swing.JPanel fondo;
     private javax.swing.JLabel iconAlerta;
     private javax.swing.JLabel iconBalance;
@@ -4448,6 +4544,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo5;
     private javax.swing.JLabel labelTitulo50;
     private javax.swing.JLabel labelTitulo51;
+    private javax.swing.JLabel labelTitulo52;
+    private javax.swing.JLabel labelTitulo53;
+    private javax.swing.JLabel labelTitulo54;
+    private javax.swing.JLabel labelTitulo55;
+    private javax.swing.JLabel labelTitulo56;
+    private javax.swing.JLabel labelTitulo57;
     private javax.swing.JLabel labelTitulo6;
     private javax.swing.JLabel labelTitulo7;
     private javax.swing.JLabel labelTitulo8;
@@ -4456,6 +4558,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelTotal2;
     private javax.swing.JLabel labelTotal3;
     private javax.swing.JLabel labelTotal4;
+    private javax.swing.JLabel labelTotalCompras;
+    private javax.swing.JLabel labelTotalNeto;
+    private javax.swing.JLabel labelTotalVentas;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JLabel labelVenta;
     private javax.swing.JPanel lateral;
