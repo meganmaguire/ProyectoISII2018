@@ -297,15 +297,12 @@ public class DAOSQLite implements DAO{
         try{
         conn = ConexionBD.getConexionBD();
         stmt = conn.createStatement();
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-            System.out.println(formato.format(venta.getFecha()));
-            try{
-            fecha = formato.parse(formato.format(venta.getFecha()));
-            }catch(Exception e){}
-            System.out.println(venta.getId());
+        int id = venta.getId();
+        float precioTotal = venta.getPrecioTotal();
+        String usuario = venta.getUsuario();
         stmt.execute ("INSERT "
-                + "INTO VENTAS"
-                + "VALUES (\"22/10/2018\","+venta.getId()+","+venta.getPrecioTotal()+","+venta.getUsuario()+")");
+                + "INTO VENTAS "
+                + "VALUES('22/10/2018',"+id+","+precioTotal+",'"+usuario+"')");
         }catch(SQLException e){
             e.printStackTrace();
             return false;
@@ -317,11 +314,15 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
+            int idproducto = renglon.getIdProducto();
+            int cantidad = renglon.getCantidad();
+            int id = renglon.getId();
             stmt.execute("INSERT "
-                        + "INTO RENGLONES"
-                        + "VALUES ("+renglon.getIdProducto()+","+renglon.getCantidad()+","+renglon.getId()+")");
+                        + "INTO RENGLONES "
+                        + "VALUES("+idproducto+","+cantidad+","+id+")");
         }catch(SQLException e){
             System.out.println("");
+            e.printStackTrace();
             return false;
         }
         return true;
@@ -414,7 +415,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE INDUSTRIALES "
-                        + "SET I_StockActual = "+stock+""
+                        + "SET I_StockActual = "+stock+" "
                         + "WHERE Prod_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion");
@@ -426,7 +427,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE BARRILES "
-                        + "SET Bar_CantActual = "+stock+""
+                        + "SET Bar_CantActual = "+stock+" "
                         + "WHERE ARTESANALES.Prod_ID = "+id+" AND ARTESANALES.Bar_ID = BARRILES.Bar_ID");
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion");
@@ -438,7 +439,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE GASEOSAS "
-                        + "SET G_StockActual = "+stock+""
+                        + "SET G_StockActual = "+stock+" "
                         + "WHERE Prod_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion");
@@ -450,7 +451,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE VINOS "
-                        + "SET Vi_StockActual = "+stock+""
+                        + "SET Vi_StockActual = "+stock+" "
                         + "WHERE Prod_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion");
