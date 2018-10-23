@@ -105,7 +105,7 @@ public class ManagerVentas {
         }
         if(categoria.equals("Gaseosa")){
             stock=dao.consultarStockGaseosas(idProducto);
-            dao.updateStockIndustriales(idProducto, (stock-cantidad));
+            dao.updateStockGaseosa(idProducto, (stock-cantidad));
         }
         if(categoria.equals("Vino")){
             stock=dao.consultarStockVinos(idProducto);
