@@ -27,7 +27,7 @@ public interface DAO {
     
     //creates
     public boolean createVenta(Venta venta);
-    public boolean createRenglon(Renglon renglon);
+    public boolean createRenglonVenta(Renglon renglon);
     
     //updates
     public void updateStockIndustriales(int id,int stock);
