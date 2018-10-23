@@ -24,6 +24,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.JDialog;
@@ -336,6 +337,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTotalCompras = new javax.swing.JLabel();
         labelTotalVentas = new javax.swing.JLabel();
         labelTotalNeto = new javax.swing.JLabel();
+        botonCalcular = new javax.swing.JPanel();
+        labelCalcular = new javax.swing.JLabel();
         panelCompra = new javax.swing.JPanel();
         panelEcuaciones = new javax.swing.JPanel();
         superior = new javax.swing.JPanel();
@@ -3268,6 +3271,35 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTotalNeto.setForeground(new java.awt.Color(102, 252, 241));
         labelTotalNeto.setText("000.00");
 
+        botonCalcular.setBackground(new java.awt.Color(36, 46, 59));
+        botonCalcular.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCalcular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCalcularMouseClicked(evt);
+            }
+        });
+
+        labelCalcular.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
+        labelCalcular.setForeground(new java.awt.Color(102, 252, 241));
+        labelCalcular.setText("CALCULAR");
+
+        javax.swing.GroupLayout botonCalcularLayout = new javax.swing.GroupLayout(botonCalcular);
+        botonCalcular.setLayout(botonCalcularLayout);
+        botonCalcularLayout.setHorizontalGroup(
+            botonCalcularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCalcularLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(labelCalcular)
+                .addGap(28, 28, 28))
+        );
+        botonCalcularLayout.setVerticalGroup(
+            botonCalcularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCalcularLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelCalcular)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panelBalanceLayout = new javax.swing.GroupLayout(panelBalance);
         panelBalance.setLayout(panelBalanceLayout);
         panelBalanceLayout.setHorizontalGroup(
@@ -3283,10 +3315,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(labelTotalCompras)
                     .addComponent(labelTotalVentas)
                     .addComponent(labelTotalNeto))
-                .addGap(0, 405, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(panelBalanceLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelTitulo52)
                     .addGroup(panelBalanceLayout.createSequentialGroup()
                         .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3295,8 +3327,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(fechaInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                            .addComponent(fechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(fechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(66, 66, 66)
+                        .addComponent(botonCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(498, Short.MAX_VALUE))
         );
         panelBalanceLayout.setVerticalGroup(
             panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3304,10 +3338,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(labelTitulo52)
                 .addGap(35, 35, 35)
-                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelTitulo53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(fechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(labelTitulo53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(labelTitulo54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(fechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3323,7 +3359,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGroup(panelBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo57)
                     .addComponent(labelTotalNeto))
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         cuerpo.add(panelBalance, "panelBalance");
@@ -4280,6 +4316,40 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonEliminar1MouseClicked
 
+    private void botonCalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCalcularMouseClicked
+        Object[] balance= new Object[3];
+        SimpleDateFormat formato= new SimpleDateFormat();
+        Date fechaActual= new Date();
+        Date fechaI;
+        Date fechaF;
+        fechaI=this.fechaInicio.getDate();
+        fechaF=this.fechaFin.getDate();
+        if(fechaI==null || fechaF==null){
+            CartelError error= new CartelError(this,true,"Debes seleccionar las fechas");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+        else{
+            if(fechaI.compareTo(fechaActual)>0 || fechaF.compareTo(fechaActual)>0){
+                CartelError error= new CartelError(this,true,"La fecha ingresada excede la fecha actual");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+            }
+            else{
+                if(fechaI.compareTo(fechaF)>0){
+                    CartelError error= new CartelError(this,true,"La fecha de inicio es mayor a la fecha de fin");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                else{
+                    balance=managerVentas.balanceVentas(fechaI, fechaF);
+                    this.labelTotalCompras.setText(String.valueOf(balance[0]));
+                    this.labelTotalVentas.setText(String.valueOf(balance[1]));
+                    this.labelTotalNeto.setText(String.valueOf(balance[2]));
+                }
+            }
+        }
+    }//GEN-LAST:event_botonCalcularMouseClicked
     private void tabBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabBalanceMouseClicked
         CardLayout card1 = (CardLayout)cuerpo.getLayout();
         card1.show(cuerpo, "panelBalance");
@@ -4331,6 +4401,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel botonAgregar2;
     private javax.swing.JPanel botonAgregar3;
     private javax.swing.JPanel botonAgregar4;
+    private javax.swing.JPanel botonCalcular;
     private javax.swing.JPanel botonElimArtesanal;
     private javax.swing.JPanel botonElimGaseosa;
     private javax.swing.JPanel botonElimIndustrial;
@@ -4455,6 +4526,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelAgregar3;
     private javax.swing.JLabel labelAgregar4;
     private javax.swing.JLabel labelBalance;
+    private javax.swing.JLabel labelCalcular;
     private javax.swing.JLabel labelCantidad1;
     private javax.swing.JLabel labelCantidad2;
     private javax.swing.JLabel labelCantidad3;

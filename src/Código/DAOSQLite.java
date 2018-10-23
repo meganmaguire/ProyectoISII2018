@@ -33,7 +33,7 @@ public class DAOSQLite implements DAO{
             stmt = conn.createStatement();
             ResultSet resultado = stmt.executeQuery("SELECT * FROM VENTAS");
             while(resultado.next()){
-                venta.setFecha(resultado.getDate(1));
+                venta.setFecha(resultado.getString(1));
                 venta.setId(resultado.getInt(2));
                 venta.setPrecioTotal(resultado.getFloat(1));
                 venta.setUsuario(resultado.getString(4));
@@ -55,7 +55,7 @@ public class DAOSQLite implements DAO{
             stmt = conn.createStatement();
             ResultSet resultado = stmt.executeQuery("SELECT * FROM COMPRAS");
             while(resultado.next()){
-                compra.setFecha(resultado.getDate(1));
+                compra.setFecha(resultado.getString(1));
                 compra.setId(resultado.getInt(2));
                 compra.setPrecioTotal(resultado.getFloat(1));
                 compra.setUsuario(resultado.getString(4));
@@ -293,16 +293,16 @@ public class DAOSQLite implements DAO{
     }
 
     public boolean createVenta(Venta venta) {
-        Date fecha = null;
         try{
         conn = ConexionBD.getConexionBD();
         stmt = conn.createStatement();
         int id = venta.getId();
         float precioTotal = venta.getPrecioTotal();
         String usuario = venta.getUsuario();
+        String fecha= venta.getFecha();
         stmt.execute ("INSERT "
                 + "INTO VENTAS "
-                + "VALUES('22/10/2018',"+id+","+precioTotal+",'"+usuario+"')");
+                + "VALUES('"+fecha+"',"+id+","+precioTotal+",'"+usuario+"')");
         }catch(SQLException e){
             e.printStackTrace();
             return false;
