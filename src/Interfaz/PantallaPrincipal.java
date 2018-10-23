@@ -3687,6 +3687,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         tabBalance.setBackground(new java.awt.Color(17, 19, 26));
         tabBalance.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabBalanceMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tabBalanceMouseEntered(evt);
             }
@@ -4276,6 +4279,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             error.setVisible(true);
         }
     }//GEN-LAST:event_botonEliminar1MouseClicked
+
+    private void tabBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabBalanceMouseClicked
+        CardLayout card1 = (CardLayout)cuerpo.getLayout();
+        card1.show(cuerpo, "panelBalance");
+    }//GEN-LAST:event_tabBalanceMouseClicked
 
     /**
      * @param args the command line arguments
