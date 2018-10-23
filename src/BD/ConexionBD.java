@@ -48,13 +48,13 @@ public class ConexionBD {
                 stmt.execute("CREATE TABLE IF NOT EXISTS USUARIOS(\n" +
                             "    U_Nombre            VARCHAR(20) NOT NULL,\n" +
                             "    U_Apellido          VARCHAR(20) NOT NULL,\n" +
-                            "    U_FechaNac          DATE        NOT NULL,\n" +
+                            "    U_FechaNac          VARCHAR(20) NOT NULL,\n" +
                             "    U_User              VARCHAR(20) NOT NULL    PRIMARY KEY,\n" +
                             "    U_Pass              VARCHAR(20) NOT NULL,\n" +
                             "    U_Permiso           INT         NOT NULL\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS VENTAS(\n" +
-                            "    V_Fecha             DATE        NOT NULL,\n" +
+                            "    V_Fecha             VARCHAR(20) NOT NULL,\n" +
                             "    V_ID                INT         NOT NULL    PRIMARY KEY,\n" +
                             "    V_PrecioTotal       REAL        NOT NULL,\n" +
                             "    U_User              VARCHAR(20) NOT NULL,\n" +
@@ -63,7 +63,7 @@ public class ConexionBD {
                             "\n" +
                             ");");
                 stmt.execute("CREATE TABLE IF NOT EXISTS COMPRAS(\n" +
-                            "    C_Fecha             DATE        NOT NULL,\n" +
+                            "    C_Fecha             VARCHAR(20) NOT NULL,\n" +
                             "    C_ID                INT         NOT NULL    PRIMARY KEY,\n" +
                             "    C_PrecioTotal       REAL        NOT NULL,\n" +
                             "    U_User              VARCHAR(20) NOT NULL,\n" +
@@ -74,8 +74,9 @@ public class ConexionBD {
                 stmt.execute("CREATE TABLE IF NOT EXISTS RENGLONES(\n" +
                             "    Prod_ID             INT         NOT NULL,\n" +
                             "    R_Cant              INT         NOT NULL,\n" +
-                            "    V_ID                INT         NOT NULL    PRIMARY KEY,\n" +
+                            "    V_ID                INT         NOT NULL,\n" +
                             "\n" +
+                            "    PRIMARY KEY(V_ID,Prod_ID,R_Cant)," +
                             "    FOREIGN KEY(V_ID) REFERENCES VENTAS(V_ID),\n" +
                             "    FOREIGN KEY(Prod_ID) REFERENCES PRODUCTOS(Prod_ID),\n" +
                             "    FOREIGN KEY(V_ID) REFERENCES COMPRAS(V_ID)" +
