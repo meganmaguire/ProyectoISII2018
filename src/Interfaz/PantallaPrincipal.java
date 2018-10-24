@@ -4036,7 +4036,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         CardLayout card2 = (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");
-        
+    
+        //borra la tabla antes de cargarla por si tiene algo previamente
+        int i,n=tablaListado.getRowCount();
+        for(i=0;i<n;i++){
+            modeloTablaListado.removeRow(0);
+        }
+        //se carga la tabla con el listado de la BD
         for(Producto p : listado){
             Object [] row ={p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
             modeloTablaListado.addRow(row);
