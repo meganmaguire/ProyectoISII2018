@@ -4393,8 +4393,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         else{
             if(fechaI.compareTo(fechaActual)>0 || fechaF.compareTo(fechaActual)>0){
                 CartelError error= new CartelError(this,true,"La fecha ingresada excede la fecha actual");
-            error.setLocationRelativeTo(null);
-            error.setVisible(true);
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
             }
             else{
                 if(fechaI.compareTo(fechaF)>0){
