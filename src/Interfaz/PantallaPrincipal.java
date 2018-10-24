@@ -813,11 +813,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCliente2.setForeground(new java.awt.Color(197, 198, 199));
         campoCliente2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
         campoCliente2.setCaretColor(new java.awt.Color(197, 198, 199));
-        campoCliente2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoCliente2ActionPerformed(evt);
-            }
-        });
 
         tablaVentas2.setBackground(new java.awt.Color(32, 40, 51));
         tablaVentas2.setModel(new javax.swing.table.DefaultTableModel(
@@ -1103,11 +1098,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCliente3.setForeground(new java.awt.Color(197, 198, 199));
         campoCliente3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
         campoCliente3.setCaretColor(new java.awt.Color(197, 198, 199));
-        campoCliente3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoCliente3ActionPerformed(evt);
-            }
-        });
 
         tablaVentas3.setBackground(new java.awt.Color(32, 40, 51));
         tablaVentas3.setModel(new javax.swing.table.DefaultTableModel(
@@ -1394,11 +1384,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCliente4.setForeground(new java.awt.Color(197, 198, 199));
         campoCliente4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
         campoCliente4.setCaretColor(new java.awt.Color(197, 198, 199));
-        campoCliente4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoCliente4ActionPerformed(evt);
-            }
-        });
 
         tablaVentas4.setBackground(new java.awt.Color(32, 40, 51));
         tablaVentas4.setModel(new javax.swing.table.DefaultTableModel(
@@ -1768,11 +1753,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoGradAlcIndustrial.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoGradAlcIndustrial.setForeground(new java.awt.Color(197, 198, 199));
         campoGradAlcIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoGradAlcIndustrial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoGradAlcIndustrialActionPerformed(evt);
-            }
-        });
 
         campoContIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         campoContIndustrial.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
@@ -2002,11 +1982,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoGradAlcArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoGradAlcArtesanal.setForeground(new java.awt.Color(197, 198, 199));
         campoGradAlcArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoGradAlcArtesanal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoGradAlcArtesanalActionPerformed(evt);
-            }
-        });
 
         campoContArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         campoContArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
@@ -2247,21 +2222,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoUvaVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoUvaVino.setForeground(new java.awt.Color(197, 198, 199));
         campoUvaVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoUvaVino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUvaVinoActionPerformed(evt);
-            }
-        });
 
         campoGradAlcVino.setBackground(new java.awt.Color(36, 46, 59));
         campoGradAlcVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoGradAlcVino.setForeground(new java.awt.Color(197, 198, 199));
         campoGradAlcVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoGradAlcVino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoGradAlcVinoActionPerformed(evt);
-            }
-        });
 
         campoPrecioCVino.setBackground(new java.awt.Color(36, 46, 59));
         campoPrecioCVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
@@ -4054,34 +4019,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         CardLayout card = (CardLayout)cuerpo.getLayout();
         card.show(cuerpo, "panelVenta");
     }//GEN-LAST:event_tabVentaMouseClicked
-
-    private void campoCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCliente2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoCliente2ActionPerformed
-
-    private void campoCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCliente3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoCliente3ActionPerformed
-
-    private void campoCliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCliente4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoCliente4ActionPerformed
-
-    private void campoGradAlcIndustrialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoGradAlcIndustrialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoGradAlcIndustrialActionPerformed
-
-    private void campoGradAlcArtesanalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoGradAlcArtesanalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoGradAlcArtesanalActionPerformed
-
-    private void campoGradAlcVinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoGradAlcVinoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoGradAlcVinoActionPerformed
-
-    private void campoUvaVinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUvaVinoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUvaVinoActionPerformed
 
     private void botonProducto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto4MouseClicked
         /*JDialog listadoVentana = new ListadoProductos(this,true,campoProducto4,producto);
