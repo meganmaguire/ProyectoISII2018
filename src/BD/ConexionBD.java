@@ -177,7 +177,7 @@ public class ConexionBD {
                             "    \n" +
                             ");");
 
-                System.out.println("Tablas creadas");
+                //System.out.println("Tablas creadas");
             }catch(Exception e){
                 System.out.println("No se pudieron crear las tablas");
                 e.printStackTrace();
