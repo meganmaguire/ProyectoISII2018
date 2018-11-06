@@ -328,6 +328,101 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         comboBoxFiltro = new javax.swing.JComboBox();
         campoFiltro = new javax.swing.JTextField();
         panelProducto = new javax.swing.JPanel();
+        labelTitulo58 = new javax.swing.JLabel();
+        labelTitulo59 = new javax.swing.JLabel();
+        comboBoxCategoría = new javax.swing.JComboBox();
+        panelFormulario = new javax.swing.JPanel();
+        panelCargaIndustriales = new javax.swing.JPanel();
+        labelTitulo60 = new javax.swing.JLabel();
+        labelTitulo61 = new javax.swing.JLabel();
+        labelTitulo62 = new javax.swing.JLabel();
+        labelTitulo63 = new javax.swing.JLabel();
+        labelTitulo64 = new javax.swing.JLabel();
+        labelTitulo65 = new javax.swing.JLabel();
+        labelTitulo66 = new javax.swing.JLabel();
+        labelTitulo67 = new javax.swing.JLabel();
+        campoNombreIndustrialCarga = new javax.swing.JTextField();
+        campoMarcaIndustrialCarga = new javax.swing.JTextField();
+        comboBoxOrigenIndCarga = new javax.swing.JComboBox();
+        campoTipoIndustrialCarga = new javax.swing.JTextField();
+        campoPrecioCIndustrialCarga = new javax.swing.JTextField();
+        campoGradAlcIndustrialCarga = new javax.swing.JTextField();
+        campoContIndustrialCarga = new javax.swing.JTextField();
+        campoStockMinIndustrialCarga = new javax.swing.JTextField();
+        botonCargarIndustrial = new javax.swing.JPanel();
+        labelModInd8 = new javax.swing.JLabel();
+        botonLimpiarIndustrial = new javax.swing.JPanel();
+        labelElimInd8 = new javax.swing.JLabel();
+        labelTitulo69 = new javax.swing.JLabel();
+        campoPrecioVIndustrialCarga = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        campoPrecioVIndustrialCarga1 = new javax.swing.JTextField();
+        labelTitulo88 = new javax.swing.JLabel();
+        panelCargaArtesanales = new javax.swing.JPanel();
+        labelTitulo68 = new javax.swing.JLabel();
+        labelTitulo70 = new javax.swing.JLabel();
+        labelTitulo72 = new javax.swing.JLabel();
+        labelTitulo73 = new javax.swing.JLabel();
+        labelTitulo74 = new javax.swing.JLabel();
+        labelTitulo75 = new javax.swing.JLabel();
+        labelTitulo76 = new javax.swing.JLabel();
+        campoNombreArtesanalCarga = new javax.swing.JTextField();
+        campoMarcaArtesanalCarga = new javax.swing.JTextField();
+        campoTipoArtesanalCarga = new javax.swing.JTextField();
+        campoPrecioCArtesanalCarga = new javax.swing.JTextField();
+        campoGradAlcArtesanalCarga = new javax.swing.JTextField();
+        campoContArtesanalCarga = new javax.swing.JTextField();
+        campoColorArtesanalCarga = new javax.swing.JTextField();
+        botonCargarArtesanal = new javax.swing.JPanel();
+        labelModInd9 = new javax.swing.JLabel();
+        botonLimpiarArtesanal = new javax.swing.JPanel();
+        labelElimInd9 = new javax.swing.JLabel();
+        labelTitulo77 = new javax.swing.JLabel();
+        campoPrecioVArtesanalCarga = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        campoMaltaArtesanalCarga = new javax.swing.JTextField();
+        labelTitulo78 = new javax.swing.JLabel();
+        campoLupuloArtesanalCarga = new javax.swing.JTextField();
+        labelTitulo79 = new javax.swing.JLabel();
+        panelCargaVinos = new javax.swing.JPanel();
+        labelTitulo71 = new javax.swing.JLabel();
+        labelTitulo80 = new javax.swing.JLabel();
+        labelTitulo81 = new javax.swing.JLabel();
+        labelTitulo82 = new javax.swing.JLabel();
+        labelTitulo83 = new javax.swing.JLabel();
+        labelTitulo84 = new javax.swing.JLabel();
+        labelTitulo85 = new javax.swing.JLabel();
+        campoNombreVinoCarga = new javax.swing.JTextField();
+        campoBodegaVinoCarga = new javax.swing.JTextField();
+        campoColorVinoCarga = new javax.swing.JTextField();
+        campoPrecioCVinoCarga = new javax.swing.JTextField();
+        campoGradAlcVinoCarga = new javax.swing.JTextField();
+        campoUvaVinoCarga = new javax.swing.JTextField();
+        campoStockMinVinoCarga = new javax.swing.JTextField();
+        botonCargarVino = new javax.swing.JPanel();
+        labelModInd10 = new javax.swing.JLabel();
+        botonLimpiarVino = new javax.swing.JPanel();
+        labelElimInd10 = new javax.swing.JLabel();
+        labelTitulo86 = new javax.swing.JLabel();
+        campoPrecioVVinoCarga = new javax.swing.JTextField();
+        panelCargaGaseosa = new javax.swing.JPanel();
+        labelTitulo87 = new javax.swing.JLabel();
+        labelTitulo89 = new javax.swing.JLabel();
+        labelTitulo90 = new javax.swing.JLabel();
+        labelTitulo92 = new javax.swing.JLabel();
+        labelTitulo93 = new javax.swing.JLabel();
+        campoNombreArtesanalCarga1 = new javax.swing.JTextField();
+        campoMarcaArtesanalCarga1 = new javax.swing.JTextField();
+        campoPrecioCGaseosaCarga = new javax.swing.JTextField();
+        campoContArtesanalCarga1 = new javax.swing.JTextField();
+        campoStockMinGaseosaCarga = new javax.swing.JTextField();
+        botonCargarArtesanal1 = new javax.swing.JPanel();
+        labelModInd11 = new javax.swing.JLabel();
+        botonLimpiarArtesanal1 = new javax.swing.JPanel();
+        labelElimInd11 = new javax.swing.JLabel();
+        labelTitulo94 = new javax.swing.JLabel();
+        campoPrecioVGaseosaCarga = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         panelRanking = new javax.swing.JPanel();
         panelBalance = new javax.swing.JPanel();
         labelTitulo52 = new javax.swing.JLabel();
@@ -2338,7 +2433,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                                 .addComponent(botonElimVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botonModVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         panelTablaVinosLayout.setVerticalGroup(
             panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3213,15 +3308,968 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         panelProducto.setBackground(new java.awt.Color(32, 40, 51));
 
+        labelTitulo58.setFont(new java.awt.Font("Fira Sans Book", 1, 36)); // NOI18N
+        labelTitulo58.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo58.setText("Nuevo Producto");
+
+        labelTitulo59.setFont(new java.awt.Font("Fira Sans Book", 1, 24)); // NOI18N
+        labelTitulo59.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo59.setText("Categoría");
+
+        comboBoxCategoría.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Industrial", "Artesanal", "Gaseosa", "Vino", "Trago", "Narguile", "Pizza", "Picada" }));
+
+        panelFormulario.setLayout(new java.awt.CardLayout());
+
+        panelCargaIndustriales.setBackground(new java.awt.Color(24, 30, 38));
+
+        labelTitulo60.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo60.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo60.setText("Nombre");
+
+        labelTitulo61.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo61.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo61.setText("Tipo");
+
+        labelTitulo62.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo62.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo62.setText("Origen");
+
+        labelTitulo63.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo63.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo63.setText("Marca");
+
+        labelTitulo64.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo64.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo64.setText("Precio costo");
+
+        labelTitulo65.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo65.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo65.setText("Grad. Alc.");
+
+        labelTitulo66.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo66.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo66.setText("Contenido");
+
+        labelTitulo67.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo67.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo67.setText("Stock mín");
+
+        campoNombreIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoNombreIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoNombreIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoNombreIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoMarcaIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoMarcaIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoMarcaIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoMarcaIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoMarcaIndustrialCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoMarcaIndustrialCargaActionPerformed(evt);
+            }
+        });
+
+        comboBoxOrigenIndCarga.setBackground(new java.awt.Color(36, 46, 59));
+        comboBoxOrigenIndCarga.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nacional", "Importada" }));
+        comboBoxOrigenIndCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoTipoIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoTipoIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoTipoIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoTipoIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoPrecioCIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioCIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioCIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioCIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioCIndustrialCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPrecioCIndustrialCargaActionPerformed(evt);
+            }
+        });
+
+        campoGradAlcIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoGradAlcIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoGradAlcIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoGradAlcIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoContIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoContIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoContIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoContIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoStockMinIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoStockMinIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoStockMinIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoStockMinIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        botonCargarIndustrial.setBackground(new java.awt.Color(36, 46, 59));
+        botonCargarIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelModInd8.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelModInd8.setForeground(new java.awt.Color(102, 252, 241));
+        labelModInd8.setText("CARGAR");
+
+        javax.swing.GroupLayout botonCargarIndustrialLayout = new javax.swing.GroupLayout(botonCargarIndustrial);
+        botonCargarIndustrial.setLayout(botonCargarIndustrialLayout);
+        botonCargarIndustrialLayout.setHorizontalGroup(
+            botonCargarIndustrialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarIndustrialLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelModInd8)
+                .addGap(22, 22, 22))
+        );
+        botonCargarIndustrialLayout.setVerticalGroup(
+            botonCargarIndustrialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarIndustrialLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelModInd8)
+                .addGap(8, 8, 8))
+        );
+
+        botonLimpiarIndustrial.setBackground(new java.awt.Color(36, 46, 59));
+        botonLimpiarIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelElimInd8.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelElimInd8.setForeground(new java.awt.Color(102, 252, 241));
+        labelElimInd8.setText("LIMPIAR");
+
+        javax.swing.GroupLayout botonLimpiarIndustrialLayout = new javax.swing.GroupLayout(botonLimpiarIndustrial);
+        botonLimpiarIndustrial.setLayout(botonLimpiarIndustrialLayout);
+        botonLimpiarIndustrialLayout.setHorizontalGroup(
+            botonLimpiarIndustrialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarIndustrialLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelElimInd8)
+                .addGap(22, 22, 22))
+        );
+        botonLimpiarIndustrialLayout.setVerticalGroup(
+            botonLimpiarIndustrialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarIndustrialLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelElimInd8)
+                .addGap(8, 8, 8))
+        );
+
+        labelTitulo69.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo69.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo69.setText("Precio venta");
+
+        campoPrecioVIndustrialCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioVIndustrialCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioVIndustrialCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioVIndustrialCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        jLabel6.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel6.setText("cc");
+
+        campoPrecioVIndustrialCarga1.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioVIndustrialCarga1.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioVIndustrialCarga1.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioVIndustrialCarga1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelTitulo88.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo88.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo88.setText("Precio venta");
+
+        javax.swing.GroupLayout panelCargaIndustrialesLayout = new javax.swing.GroupLayout(panelCargaIndustriales);
+        panelCargaIndustriales.setLayout(panelCargaIndustrialesLayout);
+        panelCargaIndustrialesLayout.setHorizontalGroup(
+            panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelTitulo69)
+                    .addComponent(labelTitulo66)
+                    .addComponent(labelTitulo61)
+                    .addComponent(labelTitulo60)
+                    .addComponent(labelTitulo64))
+                .addGap(12, 12, 12)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                        .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(campoPrecioCIndustrialCarga, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(campoNombreIndustrialCarga)
+                            .addComponent(campoTipoIndustrialCarga))
+                        .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                                .addGap(86, 86, 86)
+                                .addComponent(labelTitulo63)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoMarcaIndustrialCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargaIndustrialesLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelTitulo65, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTitulo67, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTitulo62, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                                        .addComponent(botonLimpiarIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(botonCargarIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(campoGradAlcIndustrialCarga)
+                                    .addComponent(campoStockMinIndustrialCarga)
+                                    .addComponent(comboBoxOrigenIndCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                        .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(campoPrecioVIndustrialCarga, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                                .addComponent(campoContIndustrialCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(27, 27, 27)
+                        .addComponent(labelTitulo88)
+                        .addGap(12, 12, 12)
+                        .addComponent(campoPrecioVIndustrialCarga1)))
+                .addGap(84, 84, 84))
+        );
+        panelCargaIndustrialesLayout.setVerticalGroup(
+            panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaIndustrialesLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNombreIndustrialCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTitulo60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo63)
+                    .addComponent(campoMarcaIndustrialCarga))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo61)
+                    .addComponent(campoTipoIndustrialCarga)
+                    .addComponent(labelTitulo62)
+                    .addComponent(comboBoxOrigenIndCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo64)
+                    .addComponent(campoPrecioCIndustrialCarga)
+                    .addComponent(labelTitulo65)
+                    .addComponent(campoGradAlcIndustrialCarga))
+                .addGap(36, 36, 36)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo66)
+                    .addComponent(campoContIndustrialCarga)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo67)
+                    .addComponent(campoStockMinIndustrialCarga))
+                .addGap(28, 28, 28)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo69)
+                    .addComponent(campoPrecioVIndustrialCarga)
+                    .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelTitulo88)
+                        .addComponent(campoPrecioVIndustrialCarga1)))
+                .addGap(102, 102, 102)
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonLimpiarIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCargarIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        panelFormulario.add(panelCargaIndustriales, "Industrial");
+
+        panelCargaArtesanales.setBackground(new java.awt.Color(24, 30, 38));
+
+        labelTitulo68.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo68.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo68.setText("Nombre");
+
+        labelTitulo70.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo70.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo70.setText("Tipo");
+
+        labelTitulo72.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo72.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo72.setText("Marca");
+
+        labelTitulo73.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo73.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo73.setText("Precio costo");
+
+        labelTitulo74.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo74.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo74.setText("Grad. Alc.");
+
+        labelTitulo75.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo75.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo75.setText("Contenido");
+
+        labelTitulo76.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo76.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo76.setText("Color");
+
+        campoNombreArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoNombreArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoNombreArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoNombreArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoMarcaArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoMarcaArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoMarcaArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoMarcaArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoMarcaArtesanalCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoMarcaArtesanalCargaActionPerformed(evt);
+            }
+        });
+
+        campoTipoArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoTipoArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoTipoArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoTipoArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoPrecioCArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioCArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioCArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioCArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioCArtesanalCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPrecioCArtesanalCargaActionPerformed(evt);
+            }
+        });
+
+        campoGradAlcArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoGradAlcArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoGradAlcArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoGradAlcArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoContArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoContArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoContArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoContArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoColorArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoColorArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoColorArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoColorArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        botonCargarArtesanal.setBackground(new java.awt.Color(36, 46, 59));
+        botonCargarArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelModInd9.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelModInd9.setForeground(new java.awt.Color(102, 252, 241));
+        labelModInd9.setText("CARGAR");
+
+        javax.swing.GroupLayout botonCargarArtesanalLayout = new javax.swing.GroupLayout(botonCargarArtesanal);
+        botonCargarArtesanal.setLayout(botonCargarArtesanalLayout);
+        botonCargarArtesanalLayout.setHorizontalGroup(
+            botonCargarArtesanalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarArtesanalLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelModInd9)
+                .addGap(22, 22, 22))
+        );
+        botonCargarArtesanalLayout.setVerticalGroup(
+            botonCargarArtesanalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarArtesanalLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelModInd9)
+                .addGap(8, 8, 8))
+        );
+
+        botonLimpiarArtesanal.setBackground(new java.awt.Color(36, 46, 59));
+        botonLimpiarArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelElimInd9.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelElimInd9.setForeground(new java.awt.Color(102, 252, 241));
+        labelElimInd9.setText("LIMPIAR");
+
+        javax.swing.GroupLayout botonLimpiarArtesanalLayout = new javax.swing.GroupLayout(botonLimpiarArtesanal);
+        botonLimpiarArtesanal.setLayout(botonLimpiarArtesanalLayout);
+        botonLimpiarArtesanalLayout.setHorizontalGroup(
+            botonLimpiarArtesanalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarArtesanalLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelElimInd9)
+                .addGap(22, 22, 22))
+        );
+        botonLimpiarArtesanalLayout.setVerticalGroup(
+            botonLimpiarArtesanalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarArtesanalLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelElimInd9)
+                .addGap(8, 8, 8))
+        );
+
+        labelTitulo77.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo77.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo77.setText("Precio venta");
+
+        campoPrecioVArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioVArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioVArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioVArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        jLabel7.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel7.setText("cc");
+
+        campoMaltaArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoMaltaArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoMaltaArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoMaltaArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoMaltaArtesanalCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoMaltaArtesanalCargaActionPerformed(evt);
+            }
+        });
+
+        labelTitulo78.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo78.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo78.setText("Malta");
+
+        campoLupuloArtesanalCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoLupuloArtesanalCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoLupuloArtesanalCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoLupuloArtesanalCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelTitulo79.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo79.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo79.setText("Lúpulo");
+
+        javax.swing.GroupLayout panelCargaArtesanalesLayout = new javax.swing.GroupLayout(panelCargaArtesanales);
+        panelCargaArtesanales.setLayout(panelCargaArtesanalesLayout);
+        panelCargaArtesanalesLayout.setHorizontalGroup(
+            panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTitulo77)
+                            .addComponent(labelTitulo70)
+                            .addComponent(labelTitulo68)
+                            .addComponent(labelTitulo75))
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargaArtesanalesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(labelTitulo79)
+                        .addGap(18, 18, 18)))
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                        .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(campoNombreArtesanalCarga)
+                            .addComponent(campoTipoArtesanalCarga)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCargaArtesanalesLayout.createSequentialGroup()
+                                .addComponent(campoContArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoLupuloArtesanalCarga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonLimpiarArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(botonCargarArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelTitulo74)
+                                    .addComponent(labelTitulo72)
+                                    .addComponent(labelTitulo76)
+                                    .addComponent(labelTitulo73)
+                                    .addComponent(labelTitulo78))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoMarcaArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoGradAlcArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoColorArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoMaltaArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoPrecioCArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 3, Short.MAX_VALUE)))
+                        .addGap(84, 84, 84))
+                    .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                        .addComponent(campoPrecioVArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        panelCargaArtesanalesLayout.setVerticalGroup(
+            panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNombreArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTitulo68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo72)
+                    .addComponent(campoMarcaArtesanalCarga))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo70)
+                    .addComponent(campoTipoArtesanalCarga)
+                    .addComponent(labelTitulo74)
+                    .addComponent(campoGradAlcArtesanalCarga))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo75)
+                    .addComponent(campoContArtesanalCarga)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo76)
+                    .addComponent(campoColorArtesanalCarga))
+                .addGap(32, 32, 32)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo79)
+                    .addComponent(campoLupuloArtesanalCarga)
+                    .addComponent(labelTitulo78)
+                    .addComponent(campoMaltaArtesanalCarga))
+                .addGap(26, 26, 26)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo77)
+                    .addComponent(campoPrecioVArtesanalCarga)
+                    .addComponent(labelTitulo73)
+                    .addComponent(campoPrecioCArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(108, 108, 108)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonLimpiarArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCargarArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        panelFormulario.add(panelCargaArtesanales, "card3");
+
+        panelCargaVinos.setBackground(new java.awt.Color(24, 30, 38));
+
+        labelTitulo71.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo71.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo71.setText("Nombre");
+
+        labelTitulo80.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo80.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo80.setText("Color");
+
+        labelTitulo81.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo81.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo81.setText("Bodega");
+
+        labelTitulo82.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo82.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo82.setText("Precio costo");
+
+        labelTitulo83.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo83.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo83.setText("Grad. Alc.");
+
+        labelTitulo84.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo84.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo84.setText("Uva");
+
+        labelTitulo85.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo85.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo85.setText("Stock mín.");
+
+        campoNombreVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoNombreVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoNombreVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoNombreVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoBodegaVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoBodegaVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoBodegaVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoBodegaVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoBodegaVinoCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoBodegaVinoCargaActionPerformed(evt);
+            }
+        });
+
+        campoColorVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoColorVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoColorVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoColorVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoPrecioCVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioCVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioCVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioCVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioCVinoCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPrecioCVinoCargaActionPerformed(evt);
+            }
+        });
+
+        campoGradAlcVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoGradAlcVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoGradAlcVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoGradAlcVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoUvaVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoUvaVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoUvaVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoUvaVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoStockMinVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoStockMinVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoStockMinVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoStockMinVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        botonCargarVino.setBackground(new java.awt.Color(36, 46, 59));
+        botonCargarVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelModInd10.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelModInd10.setForeground(new java.awt.Color(102, 252, 241));
+        labelModInd10.setText("CARGAR");
+
+        javax.swing.GroupLayout botonCargarVinoLayout = new javax.swing.GroupLayout(botonCargarVino);
+        botonCargarVino.setLayout(botonCargarVinoLayout);
+        botonCargarVinoLayout.setHorizontalGroup(
+            botonCargarVinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarVinoLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelModInd10)
+                .addGap(22, 22, 22))
+        );
+        botonCargarVinoLayout.setVerticalGroup(
+            botonCargarVinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarVinoLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelModInd10)
+                .addGap(8, 8, 8))
+        );
+
+        botonLimpiarVino.setBackground(new java.awt.Color(36, 46, 59));
+        botonLimpiarVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelElimInd10.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelElimInd10.setForeground(new java.awt.Color(102, 252, 241));
+        labelElimInd10.setText("LIMPIAR");
+
+        javax.swing.GroupLayout botonLimpiarVinoLayout = new javax.swing.GroupLayout(botonLimpiarVino);
+        botonLimpiarVino.setLayout(botonLimpiarVinoLayout);
+        botonLimpiarVinoLayout.setHorizontalGroup(
+            botonLimpiarVinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarVinoLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelElimInd10)
+                .addGap(22, 22, 22))
+        );
+        botonLimpiarVinoLayout.setVerticalGroup(
+            botonLimpiarVinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarVinoLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelElimInd10)
+                .addGap(8, 8, 8))
+        );
+
+        labelTitulo86.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo86.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo86.setText("Precio venta");
+
+        campoPrecioVVinoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioVVinoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioVVinoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioVVinoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        javax.swing.GroupLayout panelCargaVinosLayout = new javax.swing.GroupLayout(panelCargaVinos);
+        panelCargaVinos.setLayout(panelCargaVinosLayout);
+        panelCargaVinosLayout.setHorizontalGroup(
+            panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaVinosLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelCargaVinosLayout.createSequentialGroup()
+                        .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTitulo80)
+                            .addComponent(labelTitulo71)
+                            .addComponent(labelTitulo84))
+                        .addGap(12, 12, 12)
+                        .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(campoNombreVinoCarga, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(campoColorVinoCarga)
+                            .addComponent(campoUvaVinoCarga, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(panelCargaVinosLayout.createSequentialGroup()
+                        .addComponent(labelTitulo86)
+                        .addGap(12, 12, 12)
+                        .addComponent(campoPrecioVVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargaVinosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonLimpiarVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(botonCargarVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCargaVinosLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTitulo83)
+                            .addComponent(labelTitulo81)
+                            .addComponent(labelTitulo85)
+                            .addComponent(labelTitulo82))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoBodegaVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoGradAlcVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoStockMinVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoPrecioCVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 3, Short.MAX_VALUE)))
+                .addGap(84, 84, 84))
+        );
+        panelCargaVinosLayout.setVerticalGroup(
+            panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaVinosLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNombreVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTitulo71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo81)
+                    .addComponent(campoBodegaVinoCarga))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo80)
+                    .addComponent(campoColorVinoCarga)
+                    .addComponent(labelTitulo83)
+                    .addComponent(campoGradAlcVinoCarga))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo84)
+                    .addComponent(campoUvaVinoCarga)
+                    .addComponent(labelTitulo85)
+                    .addComponent(campoStockMinVinoCarga))
+                .addGap(32, 32, 32)
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo82)
+                    .addComponent(campoPrecioCVinoCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelTitulo86)
+                        .addComponent(campoPrecioVVinoCarga)))
+                .addGap(158, 158, 158)
+                .addGroup(panelCargaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonLimpiarVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCargarVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        panelFormulario.add(panelCargaVinos, "card4");
+
+        panelCargaGaseosa.setBackground(new java.awt.Color(24, 30, 38));
+
+        labelTitulo87.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo87.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo87.setText("Nombre");
+
+        labelTitulo89.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo89.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo89.setText("Sabor");
+
+        labelTitulo90.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo90.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo90.setText("Precio costo");
+
+        labelTitulo92.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo92.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo92.setText("Contenido");
+
+        labelTitulo93.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo93.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo93.setText("Stock mín.");
+
+        campoNombreArtesanalCarga1.setBackground(new java.awt.Color(36, 46, 59));
+        campoNombreArtesanalCarga1.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoNombreArtesanalCarga1.setForeground(new java.awt.Color(197, 198, 199));
+        campoNombreArtesanalCarga1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoMarcaArtesanalCarga1.setBackground(new java.awt.Color(36, 46, 59));
+        campoMarcaArtesanalCarga1.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoMarcaArtesanalCarga1.setForeground(new java.awt.Color(197, 198, 199));
+        campoMarcaArtesanalCarga1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoMarcaArtesanalCarga1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoMarcaArtesanalCarga1ActionPerformed(evt);
+            }
+        });
+
+        campoPrecioCGaseosaCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioCGaseosaCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioCGaseosaCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioCGaseosaCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioCGaseosaCarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPrecioCGaseosaCargaActionPerformed(evt);
+            }
+        });
+
+        campoContArtesanalCarga1.setBackground(new java.awt.Color(36, 46, 59));
+        campoContArtesanalCarga1.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoContArtesanalCarga1.setForeground(new java.awt.Color(197, 198, 199));
+        campoContArtesanalCarga1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        campoStockMinGaseosaCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoStockMinGaseosaCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoStockMinGaseosaCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoStockMinGaseosaCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        botonCargarArtesanal1.setBackground(new java.awt.Color(36, 46, 59));
+        botonCargarArtesanal1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelModInd11.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelModInd11.setForeground(new java.awt.Color(102, 252, 241));
+        labelModInd11.setText("CARGAR");
+
+        javax.swing.GroupLayout botonCargarArtesanal1Layout = new javax.swing.GroupLayout(botonCargarArtesanal1);
+        botonCargarArtesanal1.setLayout(botonCargarArtesanal1Layout);
+        botonCargarArtesanal1Layout.setHorizontalGroup(
+            botonCargarArtesanal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarArtesanal1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelModInd11)
+                .addGap(22, 22, 22))
+        );
+        botonCargarArtesanal1Layout.setVerticalGroup(
+            botonCargarArtesanal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCargarArtesanal1Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelModInd11)
+                .addGap(8, 8, 8))
+        );
+
+        botonLimpiarArtesanal1.setBackground(new java.awt.Color(36, 46, 59));
+        botonLimpiarArtesanal1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        labelElimInd11.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
+        labelElimInd11.setForeground(new java.awt.Color(102, 252, 241));
+        labelElimInd11.setText("LIMPIAR");
+
+        javax.swing.GroupLayout botonLimpiarArtesanal1Layout = new javax.swing.GroupLayout(botonLimpiarArtesanal1);
+        botonLimpiarArtesanal1.setLayout(botonLimpiarArtesanal1Layout);
+        botonLimpiarArtesanal1Layout.setHorizontalGroup(
+            botonLimpiarArtesanal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarArtesanal1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(labelElimInd11)
+                .addGap(22, 22, 22))
+        );
+        botonLimpiarArtesanal1Layout.setVerticalGroup(
+            botonLimpiarArtesanal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonLimpiarArtesanal1Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(labelElimInd11)
+                .addGap(8, 8, 8))
+        );
+
+        labelTitulo94.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo94.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo94.setText("Precio venta");
+
+        campoPrecioVGaseosaCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioVGaseosaCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioVGaseosaCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioVGaseosaCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+
+        jLabel8.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel8.setText("cc");
+
+        javax.swing.GroupLayout panelCargaGaseosaLayout = new javax.swing.GroupLayout(panelCargaGaseosa);
+        panelCargaGaseosa.setLayout(panelCargaGaseosaLayout);
+        panelCargaGaseosaLayout.setHorizontalGroup(
+            panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(labelTitulo87)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(campoNombreArtesanalCarga1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
+                    .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                                .addComponent(labelTitulo92)
+                                .addGap(12, 12, 12)
+                                .addComponent(campoContArtesanalCarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                                .addComponent(labelTitulo94)
+                                .addGap(12, 12, 12)
+                                .addComponent(campoPrecioVGaseosaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonLimpiarArtesanal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(botonCargarArtesanal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTitulo89)
+                            .addComponent(labelTitulo93)
+                            .addComponent(labelTitulo90))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoMarcaArtesanalCarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoStockMinGaseosaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoPrecioCGaseosaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 3, Short.MAX_VALUE)))
+                .addGap(84, 84, 84))
+        );
+        panelCargaGaseosaLayout.setVerticalGroup(
+            panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCargaGaseosaLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNombreArtesanalCarga1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTitulo87, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo89)
+                    .addComponent(campoMarcaArtesanalCarga1))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo92)
+                    .addComponent(campoContArtesanalCarga1)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTitulo93)
+                    .addComponent(campoStockMinGaseosaCarga))
+                .addGap(29, 29, 29)
+                .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo94)
+                    .addComponent(campoPrecioVGaseosaCarga)
+                    .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelTitulo90)
+                        .addComponent(campoPrecioCGaseosaCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(214, 214, 214)
+                .addGroup(panelCargaGaseosaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonLimpiarArtesanal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCargarArtesanal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        panelFormulario.add(panelCargaGaseosa, "card5");
+
         javax.swing.GroupLayout panelProductoLayout = new javax.swing.GroupLayout(panelProducto);
         panelProducto.setLayout(panelProductoLayout);
         panelProductoLayout.setHorizontalGroup(
             panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 990, Short.MAX_VALUE)
+            .addGroup(panelProductoLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelProductoLayout.createSequentialGroup()
+                        .addComponent(labelTitulo59)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboBoxCategoría, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(labelTitulo58))
+                .addGap(659, 659, 659))
+            .addGroup(panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductoLayout.createSequentialGroup()
+                    .addContainerGap(40, Short.MAX_VALUE)
+                    .addComponent(panelFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(40, Short.MAX_VALUE)))
         );
         panelProductoLayout.setVerticalGroup(
             panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(panelProductoLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(labelTitulo58)
+                .addGap(22, 22, 22)
+                .addGroup(panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelTitulo59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxCategoría))
+                .addGap(526, 526, 526))
+            .addGroup(panelProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductoLayout.createSequentialGroup()
+                    .addContainerGap(145, Short.MAX_VALUE)
+                    .addComponent(panelFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(33, Short.MAX_VALUE)))
         );
 
         cuerpo.add(panelProducto, "panelProducto");
@@ -3651,6 +4699,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         tabProducto.setBackground(new java.awt.Color(17, 19, 26));
         tabProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabProductoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tabProductoMouseEntered(evt);
             }
@@ -3691,6 +4742,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         tabRanking.setBackground(new java.awt.Color(17, 19, 26));
         tabRanking.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabRankingMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tabRankingMouseEntered(evt);
             }
@@ -4353,6 +5407,52 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         card1.show(cuerpo, "panelBalance");
     }//GEN-LAST:event_tabBalanceMouseClicked
 
+    private void tabProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabProductoMouseClicked
+        CardLayout card1 = (CardLayout)cuerpo.getLayout();
+        card1.show(cuerpo, "panelProducto");
+    }//GEN-LAST:event_tabProductoMouseClicked
+
+    private void tabRankingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabRankingMouseClicked
+        CardLayout card1 = (CardLayout)cuerpo.getLayout();
+        card1.show(cuerpo, "panelRanking");
+    }//GEN-LAST:event_tabRankingMouseClicked
+
+    private void campoMarcaIndustrialCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMarcaIndustrialCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoMarcaIndustrialCargaActionPerformed
+
+    private void campoPrecioCIndustrialCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecioCIndustrialCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPrecioCIndustrialCargaActionPerformed
+
+    private void campoMarcaArtesanalCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMarcaArtesanalCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoMarcaArtesanalCargaActionPerformed
+
+    private void campoPrecioCArtesanalCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecioCArtesanalCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPrecioCArtesanalCargaActionPerformed
+
+    private void campoMaltaArtesanalCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMaltaArtesanalCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoMaltaArtesanalCargaActionPerformed
+
+    private void campoBodegaVinoCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoBodegaVinoCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoBodegaVinoCargaActionPerformed
+
+    private void campoPrecioCVinoCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecioCVinoCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPrecioCVinoCargaActionPerformed
+
+    private void campoMarcaArtesanalCarga1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMarcaArtesanalCarga1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoMarcaArtesanalCarga1ActionPerformed
+
+    private void campoPrecioCGaseosaCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecioCGaseosaCargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPrecioCGaseosaCargaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4400,6 +5500,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel botonAgregar3;
     private javax.swing.JPanel botonAgregar4;
     private javax.swing.JPanel botonCalcular;
+    private javax.swing.JPanel botonCargarArtesanal;
+    private javax.swing.JPanel botonCargarArtesanal1;
+    private javax.swing.JPanel botonCargarIndustrial;
+    private javax.swing.JPanel botonCargarVino;
     private javax.swing.JPanel botonElimArtesanal;
     private javax.swing.JPanel botonElimGaseosa;
     private javax.swing.JPanel botonElimIndustrial;
@@ -4416,6 +5520,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel botonLimpiar2;
     private javax.swing.JPanel botonLimpiar3;
     private javax.swing.JPanel botonLimpiar4;
+    private javax.swing.JPanel botonLimpiarArtesanal;
+    private javax.swing.JPanel botonLimpiarArtesanal1;
+    private javax.swing.JPanel botonLimpiarIndustrial;
+    private javax.swing.JPanel botonLimpiarVino;
     private javax.swing.JPanel botonModArtesanal;
     private javax.swing.JPanel botonModGaseosa;
     private javax.swing.JPanel botonModIndustrial;
@@ -4429,6 +5537,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel botonProducto3;
     private javax.swing.JPanel botonProducto4;
     private javax.swing.JTextField campoBodegaVino;
+    private javax.swing.JTextField campoBodegaVinoCarga;
     private javax.swing.JTextField campoCPersonasPicadas;
     private javax.swing.JTextField campoCantidad1;
     private javax.swing.JTextField campoCantidad2;
@@ -4440,38 +5549,64 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoCliente3;
     private javax.swing.JTextField campoCliente4;
     private javax.swing.JTextField campoColorArtesanal;
+    private javax.swing.JTextField campoColorArtesanalCarga;
     private javax.swing.JTextField campoColorVino;
+    private javax.swing.JTextField campoColorVinoCarga;
     private javax.swing.JTextField campoContArtesanal;
+    private javax.swing.JTextField campoContArtesanalCarga;
+    private javax.swing.JTextField campoContArtesanalCarga1;
     private javax.swing.JTextField campoContGaseosa;
     private javax.swing.JTextField campoContIndustrial;
+    private javax.swing.JTextField campoContIndustrialCarga;
     private javax.swing.JTextField campoFiltro;
     private javax.swing.JTextField campoGradAlcArtesanal;
+    private javax.swing.JTextField campoGradAlcArtesanalCarga;
     private javax.swing.JTextField campoGradAlcIndustrial;
+    private javax.swing.JTextField campoGradAlcIndustrialCarga;
     private javax.swing.JTextField campoGradAlcVino;
+    private javax.swing.JTextField campoGradAlcVinoCarga;
     private javax.swing.JTextField campoIngTrago;
     private javax.swing.JTextField campoLupuloArtesanal;
+    private javax.swing.JTextField campoLupuloArtesanalCarga;
     private javax.swing.JTextField campoMaltaArtesanal;
+    private javax.swing.JTextField campoMaltaArtesanalCarga;
     private javax.swing.JTextField campoMarcaArtesanal;
+    private javax.swing.JTextField campoMarcaArtesanalCarga;
+    private javax.swing.JTextField campoMarcaArtesanalCarga1;
     private javax.swing.JTextField campoMarcaIndustrial;
+    private javax.swing.JTextField campoMarcaIndustrialCarga;
     private javax.swing.JTextField campoNombreArtesanal;
+    private javax.swing.JTextField campoNombreArtesanalCarga;
+    private javax.swing.JTextField campoNombreArtesanalCarga1;
     private javax.swing.JTextField campoNombreGaseosa;
     private javax.swing.JTextField campoNombreIndustrial;
+    private javax.swing.JTextField campoNombreIndustrialCarga;
     private javax.swing.JTextField campoNombreNarguile;
     private javax.swing.JTextField campoNombrePicadas;
     private javax.swing.JTextField campoNombrePizzas;
     private javax.swing.JTextField campoNombreTrago;
     private javax.swing.JTextField campoNombreVino;
+    private javax.swing.JTextField campoNombreVinoCarga;
     private javax.swing.JTextField campoPrecioCArtesanal;
+    private javax.swing.JTextField campoPrecioCArtesanalCarga;
     private javax.swing.JTextField campoPrecioCGaseosa;
+    private javax.swing.JTextField campoPrecioCGaseosaCarga;
     private javax.swing.JTextField campoPrecioCIndustrial;
+    private javax.swing.JTextField campoPrecioCIndustrialCarga;
     private javax.swing.JTextField campoPrecioCVino;
+    private javax.swing.JTextField campoPrecioCVinoCarga;
+    private javax.swing.JTextField campoPrecioVArtesanalCarga;
     private javax.swing.JTextField campoPrecioVGaseosa;
+    private javax.swing.JTextField campoPrecioVGaseosaCarga;
     private javax.swing.JTextField campoPrecioVIndustrial;
+    private javax.swing.JTextField campoPrecioVIndustrialCarga;
+    private javax.swing.JTextField campoPrecioVIndustrialCarga1;
     private javax.swing.JTextField campoPrecioVNarguile;
     private javax.swing.JTextField campoPrecioVPicadas;
     private javax.swing.JTextField campoPrecioVPizzas;
     private javax.swing.JTextField campoPrecioVTrago;
     private javax.swing.JTextField campoPrecioVVino;
+    private javax.swing.JTextField campoPrecioVVinoCarga;
     private javax.swing.JTextField campoProducto1;
     private javax.swing.JTextField campoProducto2;
     private javax.swing.JTextField campoProducto3;
@@ -4481,16 +5616,24 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoStockActIndustrial;
     private javax.swing.JTextField campoStockActVino;
     private javax.swing.JTextField campoStockMinGaseosa;
+    private javax.swing.JTextField campoStockMinGaseosaCarga;
     private javax.swing.JTextField campoStockMinIndustrial;
+    private javax.swing.JTextField campoStockMinIndustrialCarga;
     private javax.swing.JTextField campoStockMinVino;
+    private javax.swing.JTextField campoStockMinVinoCarga;
     private javax.swing.JTextField campoTabacoNarguile;
     private javax.swing.JTextField campoTipoArtesanal;
+    private javax.swing.JTextField campoTipoArtesanalCarga;
     private javax.swing.JTextField campoTipoIndustrial;
+    private javax.swing.JTextField campoTipoIndustrialCarga;
     private javax.swing.JTextField campoUvaVino;
+    private javax.swing.JTextField campoUvaVinoCarga;
     private javax.swing.JTextField campoVariedadPizzas;
     private javax.swing.JLabel cerrar;
+    private javax.swing.JComboBox comboBoxCategoría;
     private javax.swing.JComboBox comboBoxFiltro;
     private javax.swing.JComboBox comboBoxOrigenInd;
+    private javax.swing.JComboBox comboBoxOrigenIndCarga;
     private javax.swing.JPanel cuerpo;
     private javax.swing.JPanel cuerpoVenta;
     private com.toedter.calendar.JDateChooser fechaFin;
@@ -4513,6 +5656,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
@@ -4546,12 +5692,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelEcuaciones;
     private javax.swing.JLabel labelElimInd;
     private javax.swing.JLabel labelElimInd1;
+    private javax.swing.JLabel labelElimInd10;
+    private javax.swing.JLabel labelElimInd11;
     private javax.swing.JLabel labelElimInd2;
     private javax.swing.JLabel labelElimInd3;
     private javax.swing.JLabel labelElimInd4;
     private javax.swing.JLabel labelElimInd5;
     private javax.swing.JLabel labelElimInd6;
     private javax.swing.JLabel labelElimInd7;
+    private javax.swing.JLabel labelElimInd8;
+    private javax.swing.JLabel labelElimInd9;
     private javax.swing.JLabel labelEliminar1;
     private javax.swing.JLabel labelEliminar2;
     private javax.swing.JLabel labelEliminar3;
@@ -4566,12 +5716,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelMesa4;
     private javax.swing.JLabel labelModInd;
     private javax.swing.JLabel labelModInd1;
+    private javax.swing.JLabel labelModInd10;
+    private javax.swing.JLabel labelModInd11;
     private javax.swing.JLabel labelModInd2;
     private javax.swing.JLabel labelModInd3;
     private javax.swing.JLabel labelModInd4;
     private javax.swing.JLabel labelModInd5;
     private javax.swing.JLabel labelModInd6;
     private javax.swing.JLabel labelModInd7;
+    private javax.swing.JLabel labelModInd8;
+    private javax.swing.JLabel labelModInd9;
     private javax.swing.JLabel labelProducto;
     private javax.swing.JLabel labelProducto1;
     private javax.swing.JLabel labelProducto2;
@@ -4632,10 +5786,46 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo55;
     private javax.swing.JLabel labelTitulo56;
     private javax.swing.JLabel labelTitulo57;
+    private javax.swing.JLabel labelTitulo58;
+    private javax.swing.JLabel labelTitulo59;
     private javax.swing.JLabel labelTitulo6;
+    private javax.swing.JLabel labelTitulo60;
+    private javax.swing.JLabel labelTitulo61;
+    private javax.swing.JLabel labelTitulo62;
+    private javax.swing.JLabel labelTitulo63;
+    private javax.swing.JLabel labelTitulo64;
+    private javax.swing.JLabel labelTitulo65;
+    private javax.swing.JLabel labelTitulo66;
+    private javax.swing.JLabel labelTitulo67;
+    private javax.swing.JLabel labelTitulo68;
+    private javax.swing.JLabel labelTitulo69;
     private javax.swing.JLabel labelTitulo7;
+    private javax.swing.JLabel labelTitulo70;
+    private javax.swing.JLabel labelTitulo71;
+    private javax.swing.JLabel labelTitulo72;
+    private javax.swing.JLabel labelTitulo73;
+    private javax.swing.JLabel labelTitulo74;
+    private javax.swing.JLabel labelTitulo75;
+    private javax.swing.JLabel labelTitulo76;
+    private javax.swing.JLabel labelTitulo77;
+    private javax.swing.JLabel labelTitulo78;
+    private javax.swing.JLabel labelTitulo79;
     private javax.swing.JLabel labelTitulo8;
+    private javax.swing.JLabel labelTitulo80;
+    private javax.swing.JLabel labelTitulo81;
+    private javax.swing.JLabel labelTitulo82;
+    private javax.swing.JLabel labelTitulo83;
+    private javax.swing.JLabel labelTitulo84;
+    private javax.swing.JLabel labelTitulo85;
+    private javax.swing.JLabel labelTitulo86;
+    private javax.swing.JLabel labelTitulo87;
+    private javax.swing.JLabel labelTitulo88;
+    private javax.swing.JLabel labelTitulo89;
     private javax.swing.JLabel labelTitulo9;
+    private javax.swing.JLabel labelTitulo90;
+    private javax.swing.JLabel labelTitulo92;
+    private javax.swing.JLabel labelTitulo93;
+    private javax.swing.JLabel labelTitulo94;
     private javax.swing.JLabel labelTotal1;
     private javax.swing.JLabel labelTotal2;
     private javax.swing.JLabel labelTotal3;
@@ -4657,10 +5847,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel mesa8;
     private javax.swing.JLabel mesa9;
     private javax.swing.JPanel panelBalance;
+    private javax.swing.JPanel panelCargaArtesanales;
+    private javax.swing.JPanel panelCargaGaseosa;
+    private javax.swing.JPanel panelCargaIndustriales;
+    private javax.swing.JPanel panelCargaVinos;
     private javax.swing.JPanel panelCatalogo;
     private javax.swing.JPanel panelCompra;
     private javax.swing.JPanel panelDetalle;
     private javax.swing.JPanel panelEcuaciones;
+    private javax.swing.JPanel panelFormulario;
     private javax.swing.JPanel panelMesa1;
     private javax.swing.JPanel panelMesa2;
     private javax.swing.JPanel panelMesa3;
