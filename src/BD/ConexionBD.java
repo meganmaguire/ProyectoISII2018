@@ -187,9 +187,6 @@ public class ConexionBD {
             System.out.println("Error al cargar la BD");
         }
     }
-    public Connection getConn(){
-        return conn;
-    }
     public static void createConexionBD(){
         if(conn == null)
             new ConexionBD();
