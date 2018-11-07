@@ -3057,6 +3057,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonModPizzas.setBackground(new java.awt.Color(36, 46, 59));
         botonModPizzas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModPizzas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModPizzasMouseClicked(evt);
+            }
+        });
 
         labelModInd6.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd6.setForeground(new java.awt.Color(102, 252, 241));
@@ -3178,9 +3183,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCPersonasPicadas.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoCPersonasPicadas.setForeground(new java.awt.Color(197, 198, 199));
         campoCPersonasPicadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoCPersonasPicadas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoCPersonasPicadasKeyTyped(evt);
+            }
+        });
 
         botonModPicadas.setBackground(new java.awt.Color(36, 46, 59));
         botonModPicadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModPicadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModPicadasMouseClicked(evt);
+            }
+        });
 
         labelModInd7.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd7.setForeground(new java.awt.Color(102, 252, 241));
@@ -6430,6 +6445,99 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_campoStockMinIndustrialKeyTyped
+
+    private void botonModPizzasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModPizzasMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombrePizzas) && validar.validarCampoVacio(campoPrecioVPizzas) && validar.validarCampoVacio(campoVariedadPizzas)){
+            if(validar.validarCampoFloat(campoPrecioVPizzas)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Pizza pizza = new Pizza();
+                pizza.setId(codigo);
+                pizza.setNombreProducto(campoNombrePizzas.getText());
+                pizza.setPrecioVenta(Float.parseFloat(campoPrecioVPizzas.getText()));
+                pizza.setSabor(campoVariedadPizzas.getText());
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(pizza);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonModPizzasMouseClicked
+
+    private void botonModPicadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModPicadasMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombrePicadas) && validar.validarCampoVacio(campoPrecioVPicadas) && validar.validarCampoVacio(campoCPersonasPicadas)){
+            if(validar.validarCampoFloat(campoPrecioVPicadas)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Picada pic = new Picada();
+                pic.setId(codigo);
+                pic.setNombreProducto(campoNombrePicadas.getText());
+                pic.setPrecioVenta(Float.parseFloat(campoPrecioVPicadas.getText()));
+                pic.setcPersonas(Integer.parseInt(campoCPersonasPicadas.getText()));
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(pic);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonModPicadasMouseClicked
+
+    private void campoCPersonasPicadasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoCPersonasPicadasKeyTyped
+        char digito = evt.getKeyChar();
+        if(!Character.isDigit(digito)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_campoCPersonasPicadasKeyTyped
 
     public void mostrarTablaListado(){
         CardLayout card =  (CardLayout)panelDetalle.getLayout();

@@ -5421,6 +5421,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModPizzasMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -5669,6 +5672,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="campoCPersonasPicadasKeyTyped"/>
+                          </Events>
                         </Component>
                         <Container class="javax.swing.JPanel" name="botonModPicadas">
                           <Properties>
@@ -5683,6 +5689,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModPicadasMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
