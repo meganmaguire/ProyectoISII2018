@@ -6332,11 +6332,89 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonModGaseosaMouseClicked
 
     private void botonModTragoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModTragoMouseClicked
-        // TODO add your handling code here:
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreTrago) && validar.validarCampoVacio(campoPrecioVTrago) && validar.validarCampoVacio(campoIngTrago)){
+            //Verificar float
+            if(validar.validarCampoFloat(campoPrecioVTrago)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Trago trago = new Trago();
+                trago.setId(codigo);
+                trago.setNombreProducto(campoNombreTrago.getText());
+                trago.setPrecioVenta(Float.parseFloat(campoPrecioVTrago.getText()));
+                trago.setIngredientes(campoIngTrago.getText());
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(trago);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
     }//GEN-LAST:event_botonModTragoMouseClicked
 
     private void botonModNarguileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModNarguileMouseClicked
-        // TODO add your handling code here:
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreNarguile) && validar.validarCampoVacio(campoPrecioVNarguile) && validar.validarCampoVacio(campoTabacoNarguile)){
+            if(validar.validarCampoFloat(campoPrecioVNarguile)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Narguile nar = new Narguile();
+                nar.setId(codigo);
+                nar.setNombreProducto(campoNombreNarguile.getText());
+                nar.setPrecioVenta(Float.parseFloat(campoPrecioVNarguile.getText()));
+                nar.setTabaco(campoTabacoNarguile.getText());
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(nar);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
     }//GEN-LAST:event_botonModNarguileMouseClicked
 
     private void campoContIndustrialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoContIndustrialKeyTyped
