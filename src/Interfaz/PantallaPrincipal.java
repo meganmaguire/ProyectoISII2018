@@ -6282,7 +6282,53 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonModArtesanalMouseClicked
 
     private void botonModGaseosaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModGaseosaMouseClicked
-        // TODO add your handling code here:
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreGaseosa) && validar.validarCampoVacio(campoSaborGaseosa) &&
+        validar.validarCampoVacio(campoContGaseosa) && validar.validarCampoVacio(campoPrecioCGaseosa) &&
+        validar.validarCampoVacio(campoStockMinGaseosa) && validar.validarCampoVacio(campoPrecioVGaseosa)){
+            //Verificar float
+            if(validar.validarCampoFloat(campoContGaseosa) && validar.validarCampoFloat(campoPrecioCGaseosa) && validar.validarCampoFloat(campoPrecioVGaseosa)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Gaseosa gas = new Gaseosa();
+                gas.setId(codigo);
+                gas.setNombreProducto(campoNombreGaseosa.getText());
+                gas.setSabor(campoSaborGaseosa.getText());
+                gas.setContenido(Float.parseFloat(campoContGaseosa.getText()));
+                gas.setPrecioCosto(Float.parseFloat(campoPrecioCGaseosa.getText()));
+                Stock stock = new Stock(Integer.parseInt(campoStockActGaseosa.getText()),Integer.parseInt(campoStockMinGaseosa.getText()));
+                gas.setStock(stock);
+                gas.setPrecioVenta(Float.parseFloat(campoPrecioVGaseosa.getText()));
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(gas);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
     }//GEN-LAST:event_botonModGaseosaMouseClicked
 
     private void botonModTragoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModTragoMouseClicked
