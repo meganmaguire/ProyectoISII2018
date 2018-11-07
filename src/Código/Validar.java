@@ -5,6 +5,9 @@
  */
 package Código;
 
+import java.text.ParseException;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Maru
@@ -43,6 +46,19 @@ public class Validar {
                 return false;
             }
         } 
+        return true;
+    }
+    
+    public boolean validarCampoVacio(JTextField campo){
+        String texto = campo.getText();
+        return !texto.isEmpty();
+    }
+    public boolean validarCampoFloat(JTextField campo){
+        try{
+            float numero = Float.parseFloat(campo.getText());
+        }catch(NumberFormatException e){
+            return false;
+        }
         return true;
     }
 }
