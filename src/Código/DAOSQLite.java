@@ -608,8 +608,8 @@ public class DAOSQLite implements DAO{
                         + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE GASEOSAS "
-                        + "SET G_Sabor = '"+sabor+"',G_Cont = "+contenido+",Vi_PrecioCosto = "+precioCosto+" "
-                        +",G_StockActual = "+stockActual+",G_StockMinimo = "+stockMin+" "
+                        + "SET G_Sabor = '"+sabor+"',G_Cont = "+contenido+",G_PrecioCosto = "+precioCosto+", "
+                        +"G_StockActual = "+stockActual+",G_StockMinima = "+stockMin+" "
                         +"WHERE Prod_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion de Gaseosa");
