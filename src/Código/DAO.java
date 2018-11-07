@@ -34,6 +34,14 @@ public interface DAO {
     public void updateStockArtesanalas(int id,float stock);
     public void updateStockGaseosa(int id,int stock);
     public void updateStockVino(int id,int stock);
+    public boolean updateIndustrial(Industrial ind);
+    public boolean updateArtesanal(Artesanal art);
+    public boolean updateVino(Vino vino);
+    public boolean updateGaseosa(Gaseosa gas);
+    public boolean updateTrago(Trago trago);
+    public boolean updateNarguile(Narguile nar);
+    public boolean updatePizza(Pizza pizza);
+    public boolean updatePicada(Picada pic);
     
     //consultas
     public int consultarStockIndustrial(int idProducto);
