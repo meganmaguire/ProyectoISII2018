@@ -3028,6 +3028,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="campoContIndustrialKeyTyped"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoStockActIndustrial">
                           <Properties>
@@ -3047,6 +3050,7 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoStockMinIndustrial">
@@ -3068,6 +3072,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="campoStockMinIndustrialKeyTyped"/>
+                          </Events>
                         </Component>
                         <Container class="javax.swing.JPanel" name="botonModIndustrial">
                           <Properties>
@@ -3082,6 +3089,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModIndustrialMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -3225,7 +3235,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -3240,9 +3250,9 @@
                                               <Component id="labelTitulo20" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo23" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="campoNombreArtesanal" alignment="0" max="32767" attributes="0"/>
+                                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="campoNombreArtesanal" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
                                               <Component id="campoMarcaArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoTipoArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoPrecioCArtesanal" alignment="0" max="32767" attributes="0"/>
@@ -3268,7 +3278,7 @@
                                           <Component id="botonModArtesanal" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3443,6 +3453,9 @@
                                   <Color PropertyName="color" blue="9e" green="a2" red="45" type="rgb"/>
                                 </LineBorder>
                               </Border>
+                            </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3624,6 +3637,7 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Container class="javax.swing.JPanel" name="botonModArtesanal">
@@ -3639,6 +3653,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModArtesanalMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -3786,41 +3803,42 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="labelTitulo42" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="campoPrecioVVino" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="labelTitulo31" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo28" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo27" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo26" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo24" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo25" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo29" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo30" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="campoBodegaVino" alignment="0" pref="151" max="32767" attributes="0"/>
+                                              <Component id="campoColorVino" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoUvaVino" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoGradAlcVino" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoPrecioCVino" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoStockActVino" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoStockMinVino" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoNombreVino" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="labelTitulo31" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo28" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo27" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo26" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo24" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo25" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo29" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="labelTitulo30" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="campoNombreVino" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoBodegaVino" alignment="0" pref="151" max="32767" attributes="0"/>
-                                                      <Component id="campoColorVino" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoUvaVino" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoGradAlcVino" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoPrecioCVino" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoStockActVino" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoStockMinVino" alignment="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                                   <Component id="botonElimVino" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="botonModVino" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="labelTitulo42" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="campoPrecioVVino" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -3994,6 +4012,9 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoBodegaVino">
@@ -4013,6 +4034,9 @@
                                   <Color PropertyName="color" blue="9e" green="a2" red="45" type="rgb"/>
                                 </LineBorder>
                               </Border>
+                            </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -4034,6 +4058,9 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoUvaVino">
@@ -4053,6 +4080,9 @@
                                   <Color PropertyName="color" blue="9e" green="a2" red="45" type="rgb"/>
                                 </LineBorder>
                               </Border>
+                            </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -4074,6 +4104,9 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoPrecioCVino">
@@ -4093,6 +4126,9 @@
                                   <Color PropertyName="color" blue="9e" green="a2" red="45" type="rgb"/>
                                 </LineBorder>
                               </Border>
+                            </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -4114,6 +4150,10 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoStockMinVino">
@@ -4134,6 +4174,9 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Container class="javax.swing.JPanel" name="botonModVino">
@@ -4149,6 +4192,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModVinoMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -4261,6 +4307,9 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[151, 24]"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -4281,7 +4330,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="botonElimGaseosa" min="-2" max="-2" attributes="0"/>
@@ -4532,6 +4581,7 @@
                                 </LineBorder>
                               </Border>
                             </Property>
+                            <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="campoStockMinGaseosa">
@@ -4567,6 +4617,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModGaseosaMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -4839,6 +4892,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModTragoMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -5100,6 +5156,9 @@
                               </Border>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonModNarguileMouseClicked"/>
+                          </Events>
 
                           <Layout>
                             <DimensionLayout dim="0">

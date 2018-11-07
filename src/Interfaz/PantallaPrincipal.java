@@ -15,6 +15,7 @@ import Código.Picada;
 import Código.Pizza;
 import Código.Producto;
 import Código.Renglon;
+import Código.Stock;
 import Código.Trago;
 import Código.Usuario;
 import Código.Validar;
@@ -22,6 +23,7 @@ import Código.Venta;
 import Código.Vino;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -1907,19 +1909,35 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoContIndustrial.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoContIndustrial.setForeground(new java.awt.Color(197, 198, 199));
         campoContIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoContIndustrial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoContIndustrialKeyTyped(evt);
+            }
+        });
 
         campoStockActIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         campoStockActIndustrial.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoStockActIndustrial.setForeground(new java.awt.Color(197, 198, 199));
         campoStockActIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoStockActIndustrial.setEnabled(false);
 
         campoStockMinIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         campoStockMinIndustrial.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoStockMinIndustrial.setForeground(new java.awt.Color(197, 198, 199));
         campoStockMinIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoStockMinIndustrial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoStockMinIndustrialKeyTyped(evt);
+            }
+        });
 
         botonModIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         botonModIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModIndustrial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModIndustrialMouseClicked(evt);
+            }
+        });
 
         labelModInd.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd.setForeground(new java.awt.Color(102, 252, 241));
@@ -2111,6 +2129,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoNombreArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoNombreArtesanal.setForeground(new java.awt.Color(197, 198, 199));
         campoNombreArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoNombreArtesanal.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoMarcaArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         campoMarcaArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
@@ -2156,9 +2175,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoCantidadActual.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoCantidadActual.setForeground(new java.awt.Color(197, 198, 199));
         campoCantidadActual.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoCantidadActual.setEnabled(false);
 
         botonModArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         botonModArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModArtesanal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModArtesanalMouseClicked(evt);
+            }
+        });
 
         labelModInd1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd1.setForeground(new java.awt.Color(102, 252, 241));
@@ -2241,8 +2266,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(labelTitulo20)
                             .addComponent(labelTitulo23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoNombreArtesanal)
+                        .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoNombreArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoMarcaArtesanal)
                             .addComponent(campoTipoArtesanal)
                             .addComponent(campoPrecioCArtesanal)
@@ -2262,14 +2287,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addComponent(botonElimArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botonModArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
         panelTablaArtesanalesLayout.setVerticalGroup(
             panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoNombreArtesanal)
+                    .addComponent(campoNombreArtesanal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelTitulo13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2356,44 +2381,58 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoNombreVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoNombreVino.setForeground(new java.awt.Color(197, 198, 199));
         campoNombreVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoNombreVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoBodegaVino.setBackground(new java.awt.Color(36, 46, 59));
         campoBodegaVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoBodegaVino.setForeground(new java.awt.Color(197, 198, 199));
         campoBodegaVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoBodegaVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoColorVino.setBackground(new java.awt.Color(36, 46, 59));
         campoColorVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoColorVino.setForeground(new java.awt.Color(197, 198, 199));
         campoColorVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoColorVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoUvaVino.setBackground(new java.awt.Color(36, 46, 59));
         campoUvaVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoUvaVino.setForeground(new java.awt.Color(197, 198, 199));
         campoUvaVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoUvaVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoGradAlcVino.setBackground(new java.awt.Color(36, 46, 59));
         campoGradAlcVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoGradAlcVino.setForeground(new java.awt.Color(197, 198, 199));
         campoGradAlcVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoGradAlcVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoPrecioCVino.setBackground(new java.awt.Color(36, 46, 59));
         campoPrecioCVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoPrecioCVino.setForeground(new java.awt.Color(197, 198, 199));
         campoPrecioCVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioCVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoStockActVino.setBackground(new java.awt.Color(36, 46, 59));
         campoStockActVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoStockActVino.setForeground(new java.awt.Color(197, 198, 199));
         campoStockActVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoStockActVino.setEnabled(false);
+        campoStockActVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         campoStockMinVino.setBackground(new java.awt.Color(36, 46, 59));
         campoStockMinVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoStockMinVino.setForeground(new java.awt.Color(197, 198, 199));
         campoStockMinVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoStockMinVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         botonModVino.setBackground(new java.awt.Color(36, 46, 59));
         botonModVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModVino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModVinoMouseClicked(evt);
+            }
+        });
 
         labelModInd2.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd2.setForeground(new java.awt.Color(102, 252, 241));
@@ -2448,6 +2487,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoPrecioVVino.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoPrecioVVino.setForeground(new java.awt.Color(197, 198, 199));
         campoPrecioVVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioVVino.setMaximumSize(new java.awt.Dimension(151, 24));
 
         javax.swing.GroupLayout panelTablaVinosLayout = new javax.swing.GroupLayout(panelTablaVinos);
         panelTablaVinos.setLayout(panelTablaVinosLayout);
@@ -2456,37 +2496,38 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGroup(panelTablaVinosLayout.createSequentialGroup()
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTablaVinosLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(labelTitulo42)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoPrecioVVino))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTablaVinosLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelTablaVinosLayout.createSequentialGroup()
-                                .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelTitulo31)
-                                    .addComponent(labelTitulo28)
-                                    .addComponent(labelTitulo27)
-                                    .addComponent(labelTitulo26)
-                                    .addComponent(labelTitulo24)
-                                    .addComponent(labelTitulo25)
-                                    .addComponent(labelTitulo29)
-                                    .addComponent(labelTitulo30))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(campoNombreVino)
-                                    .addComponent(campoBodegaVino, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                    .addComponent(campoColorVino)
-                                    .addComponent(campoUvaVino)
-                                    .addComponent(campoGradAlcVino)
-                                    .addComponent(campoPrecioCVino)
-                                    .addComponent(campoStockActVino)
-                                    .addComponent(campoStockMinVino)))
-                            .addGroup(panelTablaVinosLayout.createSequentialGroup()
+                            .addComponent(labelTitulo31)
+                            .addComponent(labelTitulo28)
+                            .addComponent(labelTitulo27)
+                            .addComponent(labelTitulo26)
+                            .addComponent(labelTitulo24)
+                            .addComponent(labelTitulo25)
+                            .addComponent(labelTitulo29)
+                            .addComponent(labelTitulo30))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campoBodegaVino, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                            .addComponent(campoColorVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoUvaVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoGradAlcVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoPrecioCVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoStockActVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoStockMinVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoNombreVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelTablaVinosLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaVinosLayout.createSequentialGroup()
+                                .addGap(0, 8, Short.MAX_VALUE)
                                 .addComponent(botonElimVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botonModVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(botonModVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelTablaVinosLayout.createSequentialGroup()
+                                .addComponent(labelTitulo42)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoPrecioVVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(35, 35, 35))
         );
         panelTablaVinosLayout.setVerticalGroup(
@@ -2494,40 +2535,40 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGroup(panelTablaVinosLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoNombreVino)
+                    .addComponent(campoNombreVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelTitulo24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo26)
-                    .addComponent(campoBodegaVino))
+                    .addComponent(campoBodegaVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(11, 11, 11)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo25)
-                    .addComponent(campoColorVino))
+                    .addComponent(campoColorVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo27)
-                    .addComponent(campoUvaVino))
+                    .addComponent(campoUvaVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo28)
-                    .addComponent(campoGradAlcVino))
+                    .addComponent(campoGradAlcVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo29)
-                    .addComponent(campoPrecioCVino))
+                    .addComponent(campoPrecioCVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo31)
-                    .addComponent(campoStockActVino))
+                    .addComponent(campoStockActVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo30)
-                    .addComponent(campoStockMinVino))
+                    .addComponent(campoStockMinVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo42)
-                    .addComponent(campoPrecioVVino))
+                    .addComponent(campoPrecioVVino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
                 .addGroup(panelTablaVinosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonElimVino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2587,6 +2628,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoStockActGaseosa.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
         campoStockActGaseosa.setForeground(new java.awt.Color(197, 198, 199));
         campoStockActGaseosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoStockActGaseosa.setFocusable(false);
 
         campoStockMinGaseosa.setBackground(new java.awt.Color(36, 46, 59));
         campoStockMinGaseosa.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
@@ -2595,6 +2637,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonModGaseosa.setBackground(new java.awt.Color(36, 46, 59));
         botonModGaseosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModGaseosa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModGaseosaMouseClicked(evt);
+            }
+        });
 
         labelModInd3.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd3.setForeground(new java.awt.Color(102, 252, 241));
@@ -2659,7 +2706,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelTablaGaseosasLayout.setHorizontalGroup(
             panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTablaGaseosasLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(32, 32, 32)
                 .addGroup(panelTablaGaseosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaGaseosasLayout.createSequentialGroup()
                         .addComponent(botonElimGaseosa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2751,6 +2798,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonModTrago.setBackground(new java.awt.Color(36, 46, 59));
         botonModTrago.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModTrago.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModTragoMouseClicked(evt);
+            }
+        });
 
         labelModInd4.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd4.setForeground(new java.awt.Color(102, 252, 241));
@@ -2875,6 +2927,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonModNarguile.setBackground(new java.awt.Color(36, 46, 59));
         botonModNarguile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonModNarguile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModNarguileMouseClicked(evt);
+            }
+        });
 
         labelModInd5.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd5.setForeground(new java.awt.Color(102, 252, 241));
@@ -5684,27 +5741,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void tabCatalogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabCatalogoMouseClicked
         CardLayout card1 = (CardLayout)cuerpo.getLayout();
         card1.show(cuerpo, "panelCatalogo");
-        CardLayout card =  (CardLayout)panelDetalle.getLayout();
-        card.show(panelDetalle, "empty");
         
-        ManagerProductos manager = new ManagerProductos();
-        
-        //Traigo los datos de la tabla
-        listado = manager.verCatálogo();
-        
-        CardLayout card2 = (CardLayout)panelDetalle.getLayout();
-        card.show(panelDetalle, "empty");
-    
-        //borra la tabla antes de cargarla por si tiene algo previamente
-        int i,n=tablaListado.getRowCount();
-        for(i=0;i<n;i++){
-            modeloTablaListado.removeRow(0);
-        }
-        //se carga la tabla con el listado de la BD
-        for(Producto p : listado){
-            Object [] row ={p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
-            modeloTablaListado.addRow(row);
-        }
+        mostrarTablaListado();
         
     }//GEN-LAST:event_tabCatalogoMouseClicked
 
@@ -5783,7 +5821,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     break;
                 case "Vino" :
                     Vino vino = (Vino)producto.clone();
-                    campoNombreVino.setText(vino.getNombreProducto());
+                    campoNombreVino.setText(vino.getNombreProducto()); 
                     campoBodegaVino.setText(vino.getBodega());
                     campoColorVino.setText(vino.getColor());
                     campoUvaVino.setText(vino.getTipoDeUva());
@@ -6076,6 +6114,122 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonCalcularRankingMouseClicked
 
+    private void botonModVinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModVinoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModVinoMouseClicked
+
+    private void botonModIndustrialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModIndustrialMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        
+        //Verificacion de campos vacíos
+        if(validar.validarCampoVacio(campoNombreIndustrial) && validar.validarCampoVacio(campoMarcaIndustrial) &&
+        validar.validarCampoVacio(campoTipoIndustrial) && validar.validarCampoVacio(campoPrecioCIndustrial) &&
+        validar.validarCampoVacio(campoGradAlcIndustrial) && validar.validarCampoVacio(campoContIndustrial) &&
+        validar.validarCampoVacio(campoStockActIndustrial) && validar.validarCampoVacio(campoStockMinIndustrial) &&
+        validar.validarCampoVacio(campoPrecioVIndustrial)){
+            //Valida los float
+            if(validar.validarCampoFloat(campoPrecioCIndustrial) && validar.validarCampoFloat(campoGradAlcIndustrial) &&
+            validar.validarCampoFloat(campoPrecioVIndustrial)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                System.out.println(codigo);
+                //Carga el producto en un objeto para pasarselo al manager
+                Industrial ind = new Industrial();
+                ind.setId(codigo);
+                ind.setNombreProducto(campoNombreIndustrial.getText());
+                ind.setMarca(campoMarcaIndustrial.getText());
+                ind.setTipo(campoTipoIndustrial.getText());
+                ind.setOrigen(String.valueOf(comboBoxOrigenInd.getSelectedItem()));
+                ind.setGraduacionAlc(Float.parseFloat(campoGradAlcIndustrial.getText()));
+                ind.setContenido(Float.parseFloat(campoContIndustrial.getText()));
+                Stock stock = new Stock(Integer.parseInt(campoStockActIndustrial.getText()),Integer.parseInt(campoStockMinIndustrial.getText()));
+                ind.setStock(stock);
+                ind.setPrecioVenta(Float.parseFloat(campoPrecioVIndustrial.getText()));
+                ind.setPrecioCosto(Float.parseFloat(campoPrecioCIndustrial.getText()));
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(ind);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_botonModIndustrialMouseClicked
+
+    private void botonModArtesanalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModArtesanalMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModArtesanalMouseClicked
+
+    private void botonModGaseosaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModGaseosaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModGaseosaMouseClicked
+
+    private void botonModTragoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModTragoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModTragoMouseClicked
+
+    private void botonModNarguileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModNarguileMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModNarguileMouseClicked
+
+    private void campoContIndustrialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoContIndustrialKeyTyped
+        char digito = evt.getKeyChar();
+        if(!Character.isDigit(digito)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_campoContIndustrialKeyTyped
+
+    private void campoStockMinIndustrialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoStockMinIndustrialKeyTyped
+        char digito = evt.getKeyChar();
+        if(!Character.isDigit(digito)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_campoStockMinIndustrialKeyTyped
+
+    public void mostrarTablaListado(){
+        CardLayout card =  (CardLayout)panelDetalle.getLayout();
+        card.show(panelDetalle, "empty");
+        
+        ManagerProductos manager = new ManagerProductos();
+        
+        //Traigo los datos de la tabla
+        listado = manager.verCatálogo();
+        
+        CardLayout card2 = (CardLayout)panelDetalle.getLayout();
+        card.show(panelDetalle, "empty");
+    
+        //borra la tabla antes de cargarla por si tiene algo previamente
+        int i,n=tablaListado.getRowCount();
+        for(i=0;i<n;i++){
+            modeloTablaListado.removeRow(0);
+        }
+        //se carga la tabla con el listado de la BD
+        for(Producto p : listado){
+            Object [] row ={p.getId(),p.getNombreProducto(),p.instance(),p.getPrecioVenta()};
+            modeloTablaListado.addRow(row);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
