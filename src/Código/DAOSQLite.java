@@ -24,6 +24,7 @@ public class DAOSQLite implements DAO{
     private Connection conn;
     private Statement stmt;
     
+    @Override
     public List readVentas(){
         List<Venta> listaVentas=new ArrayList();
         Venta venta= new Venta();
@@ -46,6 +47,7 @@ public class DAOSQLite implements DAO{
         return listaVentas;
     }
 
+    @Override
     public List readCompras() {
         List <Compra> listaCompras= new ArrayList();
         Compra compra= new Compra();
@@ -68,6 +70,7 @@ public class DAOSQLite implements DAO{
         return listaCompras;
     }
 
+    @Override
     public List readIndustriales() {
         List<Industrial> industriales = new ArrayList();
         Industrial ind = new Industrial();
@@ -126,6 +129,7 @@ public class DAOSQLite implements DAO{
         
     }
     
+    @Override
     public List readArtesanales() {
         List<Artesanal> artesanales=new ArrayList();
         Artesanal art = new Artesanal();
@@ -159,6 +163,7 @@ public class DAOSQLite implements DAO{
         return artesanales;  
     }
 
+    @Override
     public List readTragos() {
         List<Trago> tragos=new ArrayList();
         Trago trago = new Trago();
@@ -179,6 +184,7 @@ public class DAOSQLite implements DAO{
         return tragos;
     }
 
+    @Override
     public List readNarguiles() {
         List <Narguile> narguiles=new ArrayList();
         Narguile nar = new Narguile();
@@ -200,6 +206,7 @@ public class DAOSQLite implements DAO{
         return narguiles;
     }
 
+    @Override
     public List readGaseosas() {
         List <Gaseosa> gaseosas= new ArrayList();
         Gaseosa gas = new Gaseosa();
@@ -225,6 +232,7 @@ public class DAOSQLite implements DAO{
         return gaseosas;
     }
 
+    @Override
     public List readVinos() {
         List <Vino> vinos= new ArrayList();
         Vino vino = new Vino();
@@ -253,6 +261,7 @@ public class DAOSQLite implements DAO{
         return vinos;
     }
 
+    @Override
     public List readPizzas() {
         List <Pizza> pizzas= new ArrayList();
         Pizza pizza = new Pizza();
@@ -273,6 +282,7 @@ public class DAOSQLite implements DAO{
         return pizzas;
     }
 
+    @Override
     public List readPicadas() {
         List <Picada> picadas= new ArrayList();
         Picada picada = new Picada();
@@ -293,6 +303,7 @@ public class DAOSQLite implements DAO{
         return picadas;
     }
 
+    @Override
     public boolean createVenta(Venta venta) {
         try{
         conn = ConexionBD.getConexionBD();
@@ -311,6 +322,7 @@ public class DAOSQLite implements DAO{
         return true;
     }
     
+    @Override
     public boolean createRenglonVenta(Renglon renglon) {
         try{
             conn = ConexionBD.getConexionBD();
@@ -329,6 +341,7 @@ public class DAOSQLite implements DAO{
         return true;
     }
     
+    @Override
     public int consultarStockIndustrial(int idProducto){
         int stockActual=0;
         try{
@@ -342,6 +355,7 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
     
+    @Override
     public float consultarStockArtesanal(int idProducto){
         float stockActual=0;
         try{
@@ -355,6 +369,7 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
     
+    @Override
     public int consultarStockGaseosas(int idProducto){
         int stockActual=0;
         try{
@@ -368,6 +383,7 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
     
+    @Override
     public int consultarStockVinos(int idProducto){
         int stockActual=0;
         try{
@@ -381,6 +397,7 @@ public class DAOSQLite implements DAO{
         return stockActual;
     }
     
+    @Override
     public float consultarContenidoArtesanal(int idProducto){
         float contenido=0;
         try{
@@ -425,6 +442,7 @@ public class DAOSQLite implements DAO{
         return precioVenta;
     }
     
+    @Override
     public void updateStockIndustriales(int id,int stock) {
         try{
             conn = ConexionBD.getConexionBD();
@@ -437,6 +455,7 @@ public class DAOSQLite implements DAO{
         }
     }
 
+    @Override
     public void updateStockArtesanalas(int id, float stock) {
         try{
             conn = ConexionBD.getConexionBD();
@@ -449,6 +468,7 @@ public class DAOSQLite implements DAO{
         }
     }
 
+    @Override
     public void updateStockGaseosa(int id, int stock) {
         try{
             conn = ConexionBD.getConexionBD();
@@ -461,6 +481,7 @@ public class DAOSQLite implements DAO{
         }
     }
 
+    @Override
     public void updateStockVino(int id, int stock) {
         try{
             conn = ConexionBD.getConexionBD();
@@ -472,5 +493,223 @@ public class DAOSQLite implements DAO{
             System.out.println("No se pudo realizar la modificacion");
         }
     }
+    
+    @Override
+    public boolean updateIndustrial(Industrial ind){
+        int id = ind.getId();
+        float precioVenta = ind.getPrecioVenta();
+        String nombre = ind.getNombreProducto();
+        String marca = ind.getMarca();
+        String tipo = ind.getTipo();
+        float precioCosto = ind.getPrecioCosto();
+        float gradAlc = ind.getGraduacionAlc();
+        float contenido = ind.getContenido();
+        String origen = ind.getOrigen();
+        int stockActual = ind.getStock().getStockActual();
+        int stockMin = ind.getStock().getStockMinimo();
+               
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE INDUSTRIALES "
+                        + "SET I_Marca = '"+marca+"',I_Tipo = '"+tipo+"',I_PrecioCosto = "+precioCosto+" "
+                        +",I_GradAlc = "+gradAlc+",I_Cont = "+contenido+",I_Origen = '"+origen+"',I_StockActual = "+stockActual+",I_StockMinimo = "+stockMin+" "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Industrial");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
+    @Override
+    public boolean updateArtesanal(Artesanal art){
+        int id = art.getId();
+        float precioVenta = art.getPrecioVenta();
+        String nombre = art.getNombreProducto();
+        String marca = art.getMarca();
+        String tipo = art.getTipo();
+        float precioCosto = art.getPrecioCosto();
+        float gradAlc = art.getGraduacionAlc();
+        float contenido = art.getContenido();
+        String color = art.getColor();
+        String lupulo = art.getLupulo();
+        String malta = art.getMalta();
+                    
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE ARTESANALES "
+                        + "SET A_Marca = '"+marca+"',A_Tipo = '"+tipo+"',A_PrecioCosto = "+precioCosto+" "
+                        +",A_GradAlc = "+gradAlc+",A_Cont = "+contenido+",A_Color = '"+color+"',A_Lúpulo = '"+lupulo+"',A_Malta = '"+malta+"' "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Artesanal");
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public boolean updateVino(Vino vino){
+        int id = vino.getId();
+        float precioVenta = vino.getPrecioVenta();
+        String nombre = vino.getNombreProducto();
+        String bodega = vino.getBodega();
+        String color = vino.getColor();
+        String uva = vino.getTipoDeUva();
+        float precioCosto = vino.getPrecioCosto();
+        float gradAlc = vino.getGraduacionAlc();
+        int stockActual = vino.getStock().getStockActual();
+        int stockMin = vino.getStock().getStockMinimo();
+                    
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE VINOS "
+                        + "SET Vi_Bodega = '"+bodega+"',Vi_Color = '"+color+"',Vi_PrecioCosto = "+precioCosto+" "
+                        +",Vi_GradAlc = "+gradAlc+",Vi_Uva = '"+uva+"',Vi_StockActual = "+stockActual+",Vi_StockMinimo = "+stockMin+" "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Vino");
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public boolean updateGaseosa(Gaseosa gas){
+        int id = gas.getId();
+        float precioVenta = gas.getPrecioVenta();
+        String nombre = gas.getNombreProducto();
+        String sabor = gas.getSabor();
+        float contenido = gas.getContenido();
+        float precioCosto = gas.getPrecioCosto();
+        int stockActual = gas.getStock().getStockActual();
+        int stockMin = gas.getStock().getStockMinimo();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE GASEOSAS "
+                        + "SET G_Sabor = '"+sabor+"',G_Cont = "+contenido+",Vi_PrecioCosto = "+precioCosto+" "
+                        +",G_StockActual = "+stockActual+",G_StockMinimo = "+stockMin+" "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Gaseosa");
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public boolean updateTrago(Trago trago){
+        int id = trago.getId();
+        float precioVenta = trago.getPrecioVenta();
+        String nombre = trago.getNombreProducto();
+        String ingredientes = trago.getIngredientes();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE TRAGOS "
+                        + "SET T_Ingredientes = '"+ingredientes+"' "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Trago");
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Override
+    public boolean updateNarguile(Narguile nar){
+        int id = nar.getId();
+        float precioVenta = nar.getPrecioVenta();
+        String nombre = nar.getNombreProducto();
+        String tabaco = nar.getTabaco();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE NARGUILE "
+                        + "SET N_Tabaco = '"+tabaco+"' "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Narguile");
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Override
+    public boolean updatePizza(Pizza pizza){
+        int id = pizza.getId();
+        float precioVenta = pizza.getPrecioVenta();
+        String nombre = pizza.getNombreProducto();
+        String variedad = pizza.getSabor();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE PIZZAS "
+                        + "SET Pizza_Sabor = "+variedad+" "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Pizza");
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Override
+    public boolean updatePicada(Picada pic){
+        int id = pic.getId();
+        float precioVenta = pic.getPrecioVenta();
+        String nombre = pic.getNombreProducto();
+        int personas = pic.getcPersonas();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("UPDATE PRODUCTOS "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "WHERE Prod_ID = "+id);
+            stmt.execute("UPDATE PICADAS "
+                        + "SET Pic_CantPersonas = "+personas+" "
+                        +"WHERE Prod_ID = "+id);
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la modificacion de Picada");
+            return false;
+        }
+        return true;
+        
+    }
+    
 }
