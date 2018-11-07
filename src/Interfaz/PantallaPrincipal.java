@@ -6115,7 +6115,56 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCalcularRankingMouseClicked
 
     private void botonModVinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModVinoMouseClicked
-        // TODO add your handling code here:
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //Veridicación de cmapos vacíos
+        if(validar.validarCampoVacio(campoNombreVino) && validar.validarCampoVacio(campoBodegaVino) &&
+        validar.validarCampoVacio(campoColorVino) && validar.validarCampoVacio(campoUvaVino) &&
+        validar.validarCampoVacio(campoGradAlcVino) && validar.validarCampoVacio(campoPrecioCVino) &&
+        validar.validarCampoVacio(campoStockMinVino) && validar.validarCampoVacio(campoPrecioVVino)){
+            //Valida los float
+            if(validar.validarCampoFloat(campoGradAlcVino) && validar.validarCampoFloat(campoPrecioCVino) && validar.validarCampoFloat(campoPrecioVVino)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Vino vino = new Vino();
+                vino.setId(codigo);
+                vino.setNombreProducto(campoNombreVino.getText());
+                vino.setBodega(campoBodegaVino.getText());
+                vino.setColor(campoColorVino.getText());
+                vino.setTipoDeUva(campoUvaVino.getText());
+                vino.setGraduacionAlc(Float.parseFloat(campoGradAlcVino.getText()));
+                vino.setPrecioCosto(Float.parseFloat(campoPrecioCVino.getText()));
+                Stock stock = new Stock(Integer.parseInt(campoStockActVino.getText()),Integer.parseInt(campoStockMinVino.getText()));
+                vino.setStock(stock);
+                vino.setPrecioVenta(Float.parseFloat(campoPrecioVVino.getText()));
+                //realiza el modificar
+                boolean exito = manager.modificarProducto(vino);
+                
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
     }//GEN-LAST:event_botonModVinoMouseClicked
 
     private void botonModIndustrialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModIndustrialMouseClicked
@@ -6133,7 +6182,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             validar.validarCampoFloat(campoPrecioVIndustrial)){
                 int i = tablaListado.getSelectedRow();
                 int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
-                System.out.println(codigo);
                 //Carga el producto en un objeto para pasarselo al manager
                 Industrial ind = new Industrial();
                 ind.setId(codigo);
