@@ -61,5 +61,21 @@ public class ManagerProductos {
         
     }
     
+    public boolean modificarProducto(Producto producto){
+        DAO dao = new DAOSQLite();
+        boolean exito = false;
+        switch(producto.instance()){
+            case "Industrial": exito = dao.updateIndustrial((Industrial)producto); break;
+            case "Artesanal": exito = dao.updateArtesanal((Artesanal)producto); break;
+            case "Vino": exito = dao.updateVino((Vino)producto); break;
+            case "Gaseosa": exito = dao.updateGaseosa((Gaseosa)producto); break;
+            case "Trago": exito = dao.updateTrago((Trago)producto); break;
+            case "Narguile": exito = dao.updateNarguile((Narguile)producto); break;
+            case "Pizza": exito = dao.updatePizza((Pizza)producto); break;
+            case "Picada": exito = dao.updatePicada((Picada)producto);
+        }
+        
+        return exito;
+    }
    
 }
