@@ -219,7 +219,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoNombreArtesanal = new javax.swing.JTextField();
         campoMarcaArtesanal = new javax.swing.JTextField();
         campoTipoArtesanal = new javax.swing.JTextField();
-        campoPrecioCArtesanal = new javax.swing.JTextField();
+        campoPrecioVArtesanal = new javax.swing.JTextField();
         campoGradAlcArtesanal = new javax.swing.JTextField();
         campoContArtesanal = new javax.swing.JTextField();
         campoColorArtesanal = new javax.swing.JTextField();
@@ -2107,7 +2107,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         labelTitulo17.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
         labelTitulo17.setForeground(new java.awt.Color(250, 250, 250));
-        labelTitulo17.setText("Precio costo");
+        labelTitulo17.setText("Precio venta");
 
         labelTitulo18.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
         labelTitulo18.setForeground(new java.awt.Color(250, 250, 250));
@@ -2141,10 +2141,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoTipoArtesanal.setForeground(new java.awt.Color(197, 198, 199));
         campoTipoArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
 
-        campoPrecioCArtesanal.setBackground(new java.awt.Color(36, 46, 59));
-        campoPrecioCArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
-        campoPrecioCArtesanal.setForeground(new java.awt.Color(197, 198, 199));
-        campoPrecioCArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoPrecioVArtesanal.setBackground(new java.awt.Color(36, 46, 59));
+        campoPrecioVArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
+        campoPrecioVArtesanal.setForeground(new java.awt.Color(197, 198, 199));
+        campoPrecioVArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
 
         campoGradAlcArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         campoGradAlcArtesanal.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
@@ -2251,26 +2251,26 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelTablaArtesanalesLayout.setHorizontalGroup(
             panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
+                .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaArtesanalesLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
                         .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(labelTitulo21)
                             .addComponent(labelTitulo18)
-                            .addComponent(labelTitulo17)
                             .addComponent(labelTitulo16)
                             .addComponent(labelTitulo13)
                             .addComponent(labelTitulo14)
                             .addComponent(labelTitulo19)
                             .addComponent(labelTitulo22)
                             .addComponent(labelTitulo20)
-                            .addComponent(labelTitulo23))
+                            .addComponent(labelTitulo23)
+                            .addComponent(labelTitulo17))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(campoNombreArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoMarcaArtesanal)
                             .addComponent(campoTipoArtesanal)
-                            .addComponent(campoPrecioCArtesanal)
+                            .addComponent(campoPrecioVArtesanal)
                             .addComponent(campoGradAlcArtesanal)
                             .addComponent(campoColorArtesanal)
                             .addComponent(campoMaltaArtesanal)
@@ -2283,7 +2283,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                                 .addComponent(campoCantidadActual, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(panelTablaArtesanalesLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaArtesanalesLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
                         .addComponent(botonElimArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botonModArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2307,7 +2308,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo17)
-                    .addComponent(campoPrecioCArtesanal))
+                    .addComponent(campoPrecioVArtesanal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelTablaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo18)
@@ -5811,7 +5812,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     campoNombreArtesanal.setText(art.getNombreProducto());
                     campoMarcaArtesanal.setText(art.getMarca());
                     campoTipoArtesanal.setText(art.getTipo());
-                    campoPrecioCArtesanal.setText(String.valueOf(art.getPrecioCosto()));
+                    campoPrecioVArtesanal.setText(String.valueOf(art.getPrecioVenta()));
                     campoGradAlcArtesanal.setText(String.valueOf(art.getGraduacionAlc()));
                     campoContArtesanal.setText(String.valueOf(art.getContenido()));
                     campoColorArtesanal.setText(art.getColor());
@@ -6225,7 +6226,59 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonModIndustrialMouseClicked
 
     private void botonModArtesanalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModArtesanalMouseClicked
-        // TODO add your handling code here:
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreArtesanal) && validar.validarCampoVacio(campoMarcaArtesanal) &&
+        validar.validarCampoVacio(campoTipoArtesanal) && validar.validarCampoVacio(campoGradAlcArtesanal) &&
+        validar.validarCampoVacio(campoPrecioVArtesanal) && validar.validarCampoVacio(campoContArtesanal) &&
+        validar.validarCampoVacio(campoColorArtesanal) && validar.validarCampoVacio(campoLupuloArtesanal) &&
+        validar.validarCampoVacio(campoMaltaArtesanal) ){
+            //verificar float
+            if(validar.validarCampoFloat(campoGradAlcArtesanal) && validar.validarCampoFloat(campoPrecioVArtesanal) && validar.validarCampoFloat(campoContArtesanal)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Artesanal art = new Artesanal();
+                art.setId(codigo);
+                art.setNombreProducto(campoNombreArtesanal.getText());
+                art.setMarca(campoMarcaArtesanal.getText());
+                art.setTipo(campoTipoArtesanal.getText());
+                art.setGraduacionAlc(Float.parseFloat(campoGradAlcArtesanal.getText()));
+                art.setPrecioVenta(Float.parseFloat(campoPrecioVArtesanal.getText()));
+                art.setContenido(Float.parseFloat(campoContArtesanal.getText()));
+                art.setColor(campoColorArtesanal.getText());
+                art.setLupulo(campoLupuloArtesanal.getText());
+                art.setMalta(campoMaltaArtesanal.getText());
+                //realiza el modificar      
+                boolean exito = manager.modificarProducto(art);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Modificación exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo modificar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+        
+        
     }//GEN-LAST:event_botonModArtesanalMouseClicked
 
     private void botonModGaseosaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModGaseosaMouseClicked
@@ -6426,7 +6479,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoNombreTragoCarga;
     private javax.swing.JTextField campoNombreVino;
     private javax.swing.JTextField campoNombreVinoCarga;
-    private javax.swing.JTextField campoPrecioCArtesanal;
     private javax.swing.JTextField campoPrecioCArtesanalCarga;
     private javax.swing.JTextField campoPrecioCGaseosa;
     private javax.swing.JTextField campoPrecioCGaseosaCarga;
@@ -6434,6 +6486,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoPrecioCIndustrialCarga;
     private javax.swing.JTextField campoPrecioCVino;
     private javax.swing.JTextField campoPrecioCVinoCarga;
+    private javax.swing.JTextField campoPrecioVArtesanal;
     private javax.swing.JTextField campoPrecioVArtesanalCarga;
     private javax.swing.JTextField campoPrecioVGaseosa;
     private javax.swing.JTextField campoPrecioVGaseosaCarga;

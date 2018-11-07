@@ -3235,13 +3235,12 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="labelTitulo21" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo18" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="labelTitulo17" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo16" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo13" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo14" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -3249,13 +3248,14 @@
                                               <Component id="labelTitulo22" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo20" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="labelTitulo23" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelTitulo17" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="campoNombreArtesanal" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
                                               <Component id="campoMarcaArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoTipoArtesanal" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="campoPrecioCArtesanal" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoPrecioVArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoGradAlcArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoColorArtesanal" alignment="0" max="32767" attributes="0"/>
                                               <Component id="campoMaltaArtesanal" alignment="0" max="32767" attributes="0"/>
@@ -3273,6 +3273,7 @@
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Component id="botonElimArtesanal" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="botonModArtesanal" min="-2" max="-2" attributes="0"/>
@@ -3303,7 +3304,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="labelTitulo17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="campoPrecioCArtesanal" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="campoPrecioVArtesanal" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3389,7 +3390,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="fa" green="fa" red="fa" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Precio costo"/>
+                            <Property name="text" type="java.lang.String" value="Precio venta"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="labelTitulo18">
@@ -3499,7 +3500,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="campoPrecioCArtesanal">
+                        <Component class="javax.swing.JTextField" name="campoPrecioVArtesanal">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="3b" green="2e" red="24" type="rgb"/>
