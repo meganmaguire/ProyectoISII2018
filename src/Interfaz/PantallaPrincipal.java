@@ -358,8 +358,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTitulo69 = new javax.swing.JLabel();
         campoPrecioVIndustrialCarga = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        campoPrecioVIndustrialCarga1 = new javax.swing.JTextField();
-        labelTitulo88 = new javax.swing.JLabel();
         panelCargaArtesanales = new javax.swing.JPanel();
         labelTitulo68 = new javax.swing.JLabel();
         labelTitulo70 = new javax.swing.JLabel();
@@ -3527,6 +3525,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarIndustrial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarIndustrialMouseClicked(evt);
+            }
+        });
 
         labelModInd8.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd8.setForeground(new java.awt.Color(102, 252, 241));
@@ -3586,15 +3589,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(250, 250, 250));
         jLabel6.setText("cc");
 
-        campoPrecioVIndustrialCarga1.setBackground(new java.awt.Color(36, 46, 59));
-        campoPrecioVIndustrialCarga1.setFont(new java.awt.Font("Fira Sans Book", 0, 18)); // NOI18N
-        campoPrecioVIndustrialCarga1.setForeground(new java.awt.Color(197, 198, 199));
-        campoPrecioVIndustrialCarga1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-
-        labelTitulo88.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
-        labelTitulo88.setForeground(new java.awt.Color(250, 250, 250));
-        labelTitulo88.setText("Precio venta");
-
         javax.swing.GroupLayout panelCargaIndustrialesLayout = new javax.swing.GroupLayout(panelCargaIndustriales);
         panelCargaIndustriales.setLayout(panelCargaIndustrialesLayout);
         panelCargaIndustrialesLayout.setHorizontalGroup(
@@ -3643,10 +3637,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                                 .addComponent(campoContIndustrialCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27)
-                        .addComponent(labelTitulo88)
-                        .addGap(12, 12, 12)
-                        .addComponent(campoPrecioVIndustrialCarga1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(84, 84, 84))
         );
         panelCargaIndustrialesLayout.setVerticalGroup(
@@ -3678,13 +3669,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(labelTitulo67)
                     .addComponent(campoStockMinIndustrialCarga))
                 .addGap(28, 28, 28)
-                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelTitulo88)
-                        .addComponent(campoPrecioVIndustrialCarga1))
-                    .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelTitulo69)
-                        .addComponent(campoPrecioVIndustrialCarga)))
+                .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo69)
+                    .addComponent(campoPrecioVIndustrialCarga))
                 .addGap(92, 92, 92)
                 .addGroup(panelCargaIndustrialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonLimpiarIndustrial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6539,6 +6526,59 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoCPersonasPicadasKeyTyped
 
+    private void botonCargarIndustrialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarIndustrialMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        
+        //Verificacion de campos vacíos
+        if(validar.validarCampoVacio(campoNombreIndustrialCarga) && validar.validarCampoVacio(campoMarcaIndustrialCarga) &&
+        validar.validarCampoVacio(campoTipoIndustrialCarga) && validar.validarCampoVacio(campoPrecioCIndustrialCarga) &&
+        validar.validarCampoVacio(campoGradAlcIndustrialCarga) && validar.validarCampoVacio(campoContIndustrialCarga) &&
+        validar.validarCampoVacio(campoStockMinIndustrialCarga) && validar.validarCampoVacio(campoPrecioVIndustrialCarga)){
+            //Valida los float
+            if(validar.validarCampoFloat(campoPrecioCIndustrialCarga) && validar.validarCampoFloat(campoGradAlcIndustrialCarga) &&
+            validar.validarCampoFloat(campoPrecioVIndustrialCarga)){
+                //Carga el producto en un objeto para pasarselo al manager
+                Industrial ind = new Industrial();
+                
+                ind.setNombreProducto(campoNombreIndustrialCarga.getText());
+                ind.setMarca(campoMarcaIndustrialCarga.getText());
+                ind.setTipo(campoTipoIndustrialCarga.getText());
+                ind.setOrigen(String.valueOf(comboBoxOrigenIndCarga.getSelectedItem()));
+                ind.setGraduacionAlc(Float.parseFloat(campoGradAlcIndustrialCarga.getText()));
+                ind.setContenido(Float.parseFloat(campoContIndustrialCarga.getText()));
+                Stock stock = new Stock(0,Integer.parseInt(campoStockMinIndustrial.getText()));
+                ind.setStock(stock);
+                ind.setPrecioVenta(Float.parseFloat(campoPrecioVIndustrialCarga.getText()));
+                ind.setPrecioCosto(Float.parseFloat(campoPrecioCIndustrialCarga.getText()));
+                //realiza el cargar   
+                boolean exito = manager.agregarProducto(ind);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarIndustrialMouseClicked
+
     public void mostrarTablaListado(){
         CardLayout card =  (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");
@@ -6724,7 +6764,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoPrecioVGaseosaCarga;
     private javax.swing.JTextField campoPrecioVIndustrial;
     private javax.swing.JTextField campoPrecioVIndustrialCarga;
-    private javax.swing.JTextField campoPrecioVIndustrialCarga1;
     private javax.swing.JTextField campoPrecioVNarguile;
     private javax.swing.JTextField campoPrecioVNarguileCarga;
     private javax.swing.JTextField campoPrecioVPicadaCarga;
@@ -6973,7 +7012,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo85;
     private javax.swing.JLabel labelTitulo86;
     private javax.swing.JLabel labelTitulo87;
-    private javax.swing.JLabel labelTitulo88;
     private javax.swing.JLabel labelTitulo89;
     private javax.swing.JLabel labelTitulo9;
     private javax.swing.JLabel labelTitulo90;
