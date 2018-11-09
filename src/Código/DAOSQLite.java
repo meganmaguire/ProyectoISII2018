@@ -10,9 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -339,6 +337,39 @@ public class DAOSQLite implements DAO{
             return false;
         }
         return true;
+    }
+    
+    public boolean createIndustrial(Industrial ind){
+        int id = ind.getId();
+        float precioVenta = ind.getPrecioVenta();
+        String nombre = ind.getNombreProducto();
+        String marca = ind.getMarca();
+        String tipo = ind.getTipo();
+        float precioCosto = ind.getPrecioCosto();
+        float gradAlc = ind.getGraduacionAlc();
+        float contenido = ind.getContenido();
+        String origen = ind.getOrigen();
+        int stockActual = ind.getStock().getStockActual();
+        int stockMin = ind.getStock().getStockMinimo();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            //Escribir la consulta
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Cerveza')");
+            //Escribir la consulta
+            stmt.execute("INSERT "
+                        + "INTO INDUSTRIALES "
+                        + "VALUES("+id+",'"+marca+"','"+tipo+"',"+precioCosto+","+gradAlc+","+contenido+",'"+origen+"',"+stockActual+","+stockMin+")");
+        }catch(SQLException e){
+            System.out.println("");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+        
     }
     
     @Override
