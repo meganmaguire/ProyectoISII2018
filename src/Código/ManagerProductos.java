@@ -77,5 +77,23 @@ public class ManagerProductos {
         
         return exito;
     }
+    
+    public boolean agregarProducto(Producto producto){
+        DAO dao = new DAOSQLite();
+        boolean exito = false;
+        //Agregar los métodos
+        switch(producto.instance()){
+            case "Industrial": dao.createIndustrial((Industrial)producto); break;
+            case "Artesanal": break;
+            case "Vino": break;
+            case "Gaseosa": break;
+            case "Trago": break;
+            case "Narguile": break;
+            case "Pizza": break;
+            case "Picada": 
+        }
+        
+        return exito;
+    }
    
 }
