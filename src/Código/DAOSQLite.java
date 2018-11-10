@@ -300,6 +300,27 @@ public class DAOSQLite implements DAO{
         }
         return picadas;
     }
+    
+    
+    @Override
+    public List<Renglon> readRenglonesVenta(int idVenta) {
+        List<Renglon> listaRenglones= new ArrayList();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM RENGLONESVENTA WHERE RENGLONESVENTA.V_ID = "+idVenta);
+            while(resultado.next()){
+                Renglon renglon= new Renglon();
+                renglon.setId(resultado.getInt(1));
+                renglon.setCantidad(resultado.getInt(2));
+                renglon.setId(idVenta);
+                listaRenglones.add(renglon);
+            }
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta readrenglonesVenta");
+        }
+        return listaRenglones;
+    }
 
     @Override
     public boolean createVenta(Venta venta) {
