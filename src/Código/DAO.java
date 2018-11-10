@@ -25,6 +25,7 @@ public interface DAO {
     public List readPizzas();
     public List readPicadas();
     public List<Renglon> readRenglonesVenta(int idVenta);
+    public Producto readProducto(int id);
     
     //creates
     public boolean createVenta(Venta venta);

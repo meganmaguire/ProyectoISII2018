@@ -3272,7 +3272,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(campoCPersonasPicadas)
                             .addComponent(campoNombrePicadas)))
                     .addGroup(panelTablaPicadasLayout.createSequentialGroup()
-                        .addGap(0, 8, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(botonElimPicadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botonModPicadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -4929,14 +4929,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Nombre", "Categoría", "Precio"
+                "Código", "Nombre", "Categoría", "Cantidad", "Precio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -4953,6 +4953,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             tablaRanking.getColumnModel().getColumn(1).setResizable(false);
             tablaRanking.getColumnModel().getColumn(2).setResizable(false);
             tablaRanking.getColumnModel().getColumn(3).setResizable(false);
+            tablaRanking.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout panelRankingLayout = new javax.swing.GroupLayout(panelRanking);
@@ -5538,7 +5539,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Fira Sans Book", 1, 48)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\megan\\Documents\\UNSL\\3 - Ingeniería de Software II\\Proyecto\\logo.png")); // NOI18N
         lateral.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 270, 230));
 
         tabCompra.setBackground(new java.awt.Color(17, 19, 26));
@@ -6150,7 +6150,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 }
                 else{
                     listaRanking=managerVentas.mostrarRankingProductosVendidos(fechaI, fechaF);
-                    
+                    managerVentas.mostrarTablaRanking(modeloTablaRanking,listaRanking);
                 }
                 if(this.modeloTablaRanking.getRowCount()==0){
                     CartelError error= new CartelError(this,true,"No existen ventas realizadas en las fechas dadas");

@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -167,7 +168,16 @@ public class ManagerVentas {
         return listaOrdenada;
     }
 
-    public void mostrarTablaRanking(JTable tablaRanking,List <Map.Entry<Integer,Integer>> listaRanking){
-        
+    public void mostrarTablaRanking(DefaultTableModel modeloTablaRanking,List <Map.Entry<Integer,Integer>> listaRanking){
+        Object[] dato = new Object[5];
+        for (Entry<Integer,Integer> x : listaRanking){
+            Producto prod = dao.readProducto(x.getKey());
+            dato[0] = prod.getId();
+            dato[1] = prod.getNombreProducto();
+            dato[2] = prod.instance();
+            dato[3] = x.getValue();
+            dato[4] = prod.getPrecioVenta();
+            modeloTablaRanking.addRow(dato);
+        }
     }
 }
