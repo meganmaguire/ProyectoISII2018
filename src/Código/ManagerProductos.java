@@ -83,7 +83,7 @@ public class ManagerProductos {
         boolean exito = false;
         //Agregar los métodos
         switch(producto.instance()){
-            case "Industrial": dao.createIndustrial((Industrial)producto); break;
+            case "Industrial": exito = dao.createIndustrial((Industrial)producto); break;
             case "Artesanal": break;
             case "Vino": break;
             case "Gaseosa": break;
