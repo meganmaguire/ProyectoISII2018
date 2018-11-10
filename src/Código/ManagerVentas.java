@@ -8,9 +8,14 @@ package Código;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JTable;
 
 /**
@@ -119,4 +124,50 @@ public class ManagerVentas {
         }
     }
     
+    public Map<String,String> mostrarRankingProductosVendidos(Date fecha1, Date fecha2){
+        SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
+        Date fecha=null;
+        int contador=0;
+        List<Venta> listaVentas=dao.readVentas();
+        List<Renglon> listaRenglones= new ArrayList();
+        Map <String,Integer> ranking= new HashMap <>();
+        Map <String,String> listaProductosRanking= new HashMap<>();
+        Iterator iter = listaVentas.iterator();
+        while(iter.hasNext()){
+            Venta venta= (Venta) iter;
+            try{
+                fecha=formato.parse(venta.getFecha());
+            }
+            catch(ParseException e){
+                System.out.println("No se pudo parsear la fecha");
+            }
+            if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
+                listaRenglones=dao.readRenglonesVenta(venta.getId());
+                Iterator i= listaRenglones.iterator();
+                while(i.hasNext()){
+                    Renglon renglon= (Renglon) i;
+                    String nombreProducto=dao.readNombreProducto(renglon.getIdProducto());
+                    if(ranking.containsKey(nombreProducto)){
+                        contador= renglon.getCantidad()+ranking.get(nombreProducto);
+                        ranking.put(nombreProducto,contador);
+                    }
+                    else{
+                        ranking.put(nombreProducto, renglon.getCantidad());
+                    }
+                }
+            }
+        }
+        List <Map.Entry<String,Integer>> listaOrdenada= new LinkedList<Map.Entry<String,Integer>>(ranking.entrySet());
+        Collections.sort(listaOrdenada, new Comparator<Map.Entry<String,Integer>>(){
+            public int compare(Map.Entry<String,Integer> o1, Map.Entry<String,Integer> o2){
+                return (o1.getValue().compareTo(o2.getValue()));
+            }
+        });
+        Collections.reverse(listaOrdenada);
+        for (Map.Entry<String,Integer> x : listaOrdenada){
+            String categoria= dao.readCategoriaProducto(x.getKey());
+            listaProductosRanking.put(x.getKey(), categoria);
+        }
+        return listaProductosRanking;
+    }
 }
