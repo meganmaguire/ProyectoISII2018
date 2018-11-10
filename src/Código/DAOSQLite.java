@@ -397,13 +397,13 @@ public class DAOSQLite implements DAO{
             //Escribir la consulta
             stmt.execute("INSERT "
                         + "INTO PRODUCTOS "
-                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Cerveza')");
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Industrial')");
             //Escribir la consulta
             stmt.execute("INSERT "
                         + "INTO INDUSTRIALES "
                         + "VALUES("+id+",'"+marca+"','"+tipo+"',"+precioCosto+","+gradAlc+","+contenido+",'"+origen+"',"+stockActual+","+stockMin+")");
         }catch(SQLException e){
-            System.out.println("");
+            System.out.println("No se pudo crear la cerveza");
             e.printStackTrace();
             return false;
         }
