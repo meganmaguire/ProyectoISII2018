@@ -321,6 +321,24 @@ public class DAOSQLite implements DAO{
         }
         return listaRenglones;
     }
+    
+    public Producto readProducto(int id){
+        Producto prod =  null;
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM PRODUCTOS WHERE Prod_ID = "+id);
+            float precioVenta = resultado.getInt(2);
+            String nombre = resultado.getString(3);
+            String categoria = resultado.getString(4);
+            ManagerProductos manager = new ManagerProductos();
+            prod = manager.instanciarProducto(id, nombre, categoria, precioVenta);
+            
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta readrenglonesVenta");
+        }
+         return prod;      
+    }
 
     @Override
     public boolean createVenta(Venta venta) {
