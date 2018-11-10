@@ -6130,7 +6130,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         Date fechaF;
         fechaI=this.fechaInicioBalance.getDate();
         fechaF=this.fechaFinBalance.getDate();
-        Map<String,String> listaRanking= new HashMap <>();
+        List <Map.Entry<Integer,Integer>> listaRanking= new ArrayList();
         if(fechaI==null || fechaF==null){
             CartelError error= new CartelError(this,true,"Debes seleccionar las fechas");
             error.setLocationRelativeTo(null);
@@ -6150,12 +6150,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 }
                 else{
                     listaRanking=managerVentas.mostrarRankingProductosVendidos(fechaI, fechaF);
-                    String[] dato = new String[2];
-                    for (Map.Entry<String,String> x : listaRanking.entrySet()){
-                        dato[0]= x.getKey();    //nombre del producto
-                        dato[1]=x.getValue();   //categoria del producto
-                        this.modeloTablaRanking.addRow(dato);
-                    }
+                    
                 }
                 if(this.modeloTablaRanking.getRowCount()==0){
                     CartelError error= new CartelError(this,true,"No existen ventas realizadas en las fechas dadas");

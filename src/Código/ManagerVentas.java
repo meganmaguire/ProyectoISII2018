@@ -16,6 +16,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import javax.swing.JTable;
 
 /**
@@ -124,14 +125,13 @@ public class ManagerVentas {
         }
     }
     
-    public Map<String,String> mostrarRankingProductosVendidos(Date fecha1, Date fecha2){
+    public List <Map.Entry<Integer,Integer>> mostrarRankingProductosVendidos(Date fecha1, Date fecha2){
         SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
         Date fecha=null;
         int contador=0;
         List<Venta> listaVentas=dao.readVentas();
         List<Renglon> listaRenglones= new ArrayList();
-        Map <String,Integer> ranking= new HashMap <>();
-        Map <String,String> listaProductosRanking= new HashMap<>();
+        Map <Integer,Integer> ranking= new HashMap <>();
         Iterator iter = listaVentas.iterator();
         while(iter.hasNext()){
             Venta venta= (Venta) iter;
@@ -143,31 +143,31 @@ public class ManagerVentas {
             }
             if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
                 listaRenglones=dao.readRenglonesVenta(venta.getId());
+                venta.setRenglonesDeVenta(listaRenglones);
                 Iterator i= listaRenglones.iterator();
                 while(i.hasNext()){
                     Renglon renglon= (Renglon) i;
-                    String nombreProducto=dao.readNombreProducto(renglon.getIdProducto());
-                    if(ranking.containsKey(nombreProducto)){
-                        contador= renglon.getCantidad()+ranking.get(nombreProducto);
-                        ranking.put(nombreProducto,contador);
+                    if(ranking.containsKey(renglon.getIdProducto())){
+                        contador= renglon.getCantidad()+ranking.get(renglon.getIdProducto());
+                        ranking.put(renglon.getIdProducto(),contador);
                     }
                     else{
-                        ranking.put(nombreProducto, renglon.getCantidad());
+                        ranking.put(renglon.getIdProducto(), renglon.getCantidad());
                     }
                 }
             }
         }
-        List <Map.Entry<String,Integer>> listaOrdenada= new LinkedList<Map.Entry<String,Integer>>(ranking.entrySet());
-        Collections.sort(listaOrdenada, new Comparator<Map.Entry<String,Integer>>(){
-            public int compare(Map.Entry<String,Integer> o1, Map.Entry<String,Integer> o2){
+        List <Map.Entry<Integer,Integer>> listaOrdenada= new LinkedList<Map.Entry<Integer,Integer>>(ranking.entrySet());
+        Collections.sort(listaOrdenada, new Comparator<Map.Entry<Integer,Integer>>(){
+            public int compare(Map.Entry<Integer,Integer> o1, Map.Entry<Integer,Integer> o2){
                 return (o1.getValue().compareTo(o2.getValue()));
             }
         });
         Collections.reverse(listaOrdenada);
-        for (Map.Entry<String,Integer> x : listaOrdenada){
-            String categoria= dao.readCategoriaProducto(x.getKey());
-            listaProductosRanking.put(x.getKey(), categoria);
-        }
-        return listaProductosRanking;
+        return listaOrdenada;
+    }
+
+    public void mostrarTablaRanking(JTable tablaRanking,List <Map.Entry<Integer,Integer>> listaRanking){
+        
     }
 }
