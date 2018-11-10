@@ -27,8 +27,10 @@ import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -41,6 +43,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     
     private DefaultTableModel modeloTablaListado;
     private DefaultTableModel modeloTablaVenta;
+    private DefaultTableModel modeloTablaRanking;
     private List <Producto> listado;
     private String categoria;
     private Integer id;
@@ -57,6 +60,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         tablaListado.setModel(modeloTablaListado);
         this.modeloTablaVenta = (DefaultTableModel)tablaVentas1.getModel();
         tablaVentas1.setModel(modeloTablaVenta);
+        this.modeloTablaRanking = (DefaultTableModel)tablaRanking.getModel();
+        tablaRanking.setModel(modeloTablaRanking);
         this.valores = new Object[2];
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         try{
@@ -477,7 +482,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonCalcularRanking = new javax.swing.JPanel();
         labelCalcular1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaRanking = new javax.swing.JTable();
         panelBalance = new javax.swing.JPanel();
         labelTitulo52 = new javax.swing.JLabel();
         labelTitulo53 = new javax.swing.JLabel();
@@ -3748,6 +3753,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarArtesanal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarArtesanalMouseClicked(evt);
+            }
+        });
 
         labelModInd9.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd9.setForeground(new java.awt.Color(102, 252, 241));
@@ -4912,9 +4922,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable1.setBackground(new java.awt.Color(32, 40, 51));
-        jTable1.setForeground(new java.awt.Color(250, 250, 250));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRanking.setBackground(new java.awt.Color(32, 40, 51));
+        tablaRanking.setForeground(new java.awt.Color(250, 250, 250));
+        tablaRanking.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -4937,12 +4947,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane3.setViewportView(tablaRanking);
+        if (tablaRanking.getColumnModel().getColumnCount() > 0) {
+            tablaRanking.getColumnModel().getColumn(0).setResizable(false);
+            tablaRanking.getColumnModel().getColumn(1).setResizable(false);
+            tablaRanking.getColumnModel().getColumn(2).setResizable(false);
+            tablaRanking.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout panelRankingLayout = new javax.swing.GroupLayout(panelRanking);
@@ -5311,7 +5321,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lateral.add(tabVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, -1, 50));
+        lateral.add(tabVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, -1, 50));
 
         tabCatalogo.setBackground(new java.awt.Color(17, 19, 26));
         tabCatalogo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5354,7 +5364,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lateral.add(tabCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, -1, 50));
+        lateral.add(tabCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, -1, 50));
 
         tabEcuaciones.setBackground(new java.awt.Color(17, 19, 26));
         tabEcuaciones.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5394,7 +5404,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lateral.add(tabEcuaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 290, 50));
+        lateral.add(tabEcuaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 290, 50));
 
         tabProducto.setBackground(new java.awt.Color(17, 19, 26));
         tabProducto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5437,7 +5447,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lateral.add(tabProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 290, 50));
+        lateral.add(tabProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 290, 50));
 
         tabRanking.setBackground(new java.awt.Color(17, 19, 26));
         tabRanking.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5480,7 +5490,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lateral.add(tabRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 290, 50));
+        lateral.add(tabRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 290, 50));
 
         tabBalance.setBackground(new java.awt.Color(17, 19, 26));
         tabBalance.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5523,13 +5533,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lateral.add(tabBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 290, 50));
+        lateral.add(tabBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 290, 50));
 
         jLabel19.setFont(new java.awt.Font("Fira Sans Book", 1, 48)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Logo");
-        lateral.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 270, 230));
+        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\megan\\Documents\\UNSL\\3 - Ingeniería de Software II\\Proyecto\\logo.png")); // NOI18N
+        lateral.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 270, 230));
 
         tabCompra.setBackground(new java.awt.Color(17, 19, 26));
         tabCompra.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5569,10 +5579,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lateral.add(tabCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 290, 50));
+        lateral.add(tabCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 290, 50));
 
         separadorLogo.setForeground(new java.awt.Color(32, 40, 51));
-        lateral.add(separadorLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 270, 10));
+        lateral.add(separadorLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 270, 10));
 
         base.add(lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 720));
 
@@ -6114,7 +6124,46 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_comboBoxCategoríaItemStateChanged
 
     private void botonCalcularRankingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCalcularRankingMouseClicked
-        // TODO add your handling code here:
+        SimpleDateFormat formato= new SimpleDateFormat();
+        Date fechaActual= new Date();
+        Date fechaI;
+        Date fechaF;
+        fechaI=this.fechaInicioBalance.getDate();
+        fechaF=this.fechaFinBalance.getDate();
+        Map<String,String> listaRanking= new HashMap <>();
+        if(fechaI==null || fechaF==null){
+            CartelError error= new CartelError(this,true,"Debes seleccionar las fechas");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+        else{
+            if(fechaI.compareTo(fechaActual)>0 || fechaF.compareTo(fechaActual)>0){
+                CartelError error= new CartelError(this,true,"La fecha ingresada excede la fecha actual");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+            else{
+                if(fechaI.compareTo(fechaF)>0){
+                    CartelError error= new CartelError(this,true,"La fecha de inicio es mayor a la fecha de fin");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                else{
+                    listaRanking=managerVentas.mostrarRankingProductosVendidos(fechaI, fechaF);
+                    String[] dato = new String[2];
+                    for (Map.Entry<String,String> x : listaRanking.entrySet()){
+                        dato[0]= x.getKey();    //nombre del producto
+                        dato[1]=x.getValue();   //categoria del producto
+                        this.modeloTablaRanking.addRow(dato);
+                    }
+                }
+                if(this.modeloTablaRanking.getRowCount()==0){
+                    CartelError error= new CartelError(this,true,"No existen ventas realizadas en las fechas dadas");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+            }
+        }
     }//GEN-LAST:event_botonCalcularRankingMouseClicked
 
     private void botonModVinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModVinoMouseClicked
@@ -6579,6 +6628,60 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonCargarIndustrialMouseClicked
 
+    private void botonCargarArtesanalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarArtesanalMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreArtesanalCarga) && validar.validarCampoVacio(campoMarcaArtesanalCarga) &&
+        validar.validarCampoVacio(campoTipoArtesanalCarga) && validar.validarCampoVacio(campoGradAlcArtesanalCarga) &&
+        validar.validarCampoVacio(campoPrecioVArtesanalCarga) && validar.validarCampoVacio(campoContArtesanalCarga) &&
+        validar.validarCampoVacio(campoColorArtesanalCarga) && validar.validarCampoVacio(campoLupuloArtesanalCarga) &&
+        validar.validarCampoVacio(campoMaltaArtesanalCarga) ){
+            //verificar float
+            if(validar.validarCampoFloat(campoGradAlcArtesanalCarga) && validar.validarCampoFloat(campoPrecioVArtesanalCarga) && validar.validarCampoFloat(campoContArtesanalCarga)){
+                int i = tablaListado.getSelectedRow();
+                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                //Carga el producto en un objeto para pasarselo al manager
+                Artesanal art = new Artesanal();
+                art.setId(codigo);
+                art.setNombreProducto(campoNombreArtesanalCarga.getText());
+                art.setMarca(campoMarcaArtesanalCarga.getText());
+                art.setTipo(campoTipoArtesanalCarga.getText());
+                art.setGraduacionAlc(Float.parseFloat(campoGradAlcArtesanalCarga.getText()));
+                art.setPrecioVenta(Float.parseFloat(campoPrecioVArtesanalCarga.getText()));
+                art.setContenido(Float.parseFloat(campoContArtesanalCarga.getText()));
+                art.setColor(campoColorArtesanalCarga.getText());
+                art.setLupulo(campoLupuloArtesanalCarga.getText());
+                art.setMalta(campoMaltaArtesanalCarga.getText());
+                //realiza el modificar      
+                boolean exito = manager.agregarProducto(art);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarArtesanalMouseClicked
+
     public void mostrarTablaListado(){
         CardLayout card =  (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");
@@ -6839,7 +6942,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelAceptar1;
     private javax.swing.JLabel labelAceptar2;
     private javax.swing.JLabel labelAceptar3;
@@ -7091,6 +7193,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel tabRanking;
     private javax.swing.JPanel tabVenta;
     private javax.swing.JTable tablaListado;
+    private javax.swing.JTable tablaRanking;
     private javax.swing.JTable tablaVentas1;
     private javax.swing.JTable tablaVentas2;
     private javax.swing.JTable tablaVentas3;
