@@ -46,6 +46,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private Object[] valores;
     private ManagerVentas managerVentas= new ManagerVentas();
     private Usuario usuario;
+    private Color botonInactivo;
+    private Color botonActivo;
     /**
      * Creates new form PantallaPrincipal
      */
@@ -59,6 +61,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.modeloTablaRanking = (DefaultTableModel)tablaRanking.getModel();
         tablaRanking.setModel(modeloTablaRanking);
         this.valores = new Object[2];
+        this.botonInactivo = new Color(36,46,59);
+        this.botonActivo = new Color(39,56,69);
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         try{
             usuario = new Usuario("Fede","Chira","19/09/1992","fedechira","1234","admin");
@@ -738,6 +742,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonProducto1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProducto1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProducto1MouseExited(evt);
+            }
         });
 
         labelProducto1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
@@ -773,6 +783,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonAgregar1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAgregar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAgregar1MouseExited(evt);
+            }
         });
 
         labelAgregar1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
@@ -801,6 +817,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonEliminar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonEliminar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonEliminar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonEliminar1MouseExited(evt);
             }
         });
 
@@ -831,6 +853,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonAceptar1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAceptar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAceptar1MouseExited(evt);
+            }
         });
 
         labelAceptar1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
@@ -859,6 +887,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiar1MouseExited(evt);
             }
         });
 
@@ -1970,6 +2004,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModIndustrialMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModIndustrialMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModIndustrialMouseExited(evt);
+            }
         });
 
         labelModInd.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -1995,6 +2035,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         botonElimIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimIndustrial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimIndustrialMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimIndustrialMouseExited(evt);
+            }
+        });
 
         labelElimInd.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd.setForeground(new java.awt.Color(102, 252, 241));
@@ -2216,6 +2264,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModArtesanalMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModArtesanalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModArtesanalMouseExited(evt);
+            }
         });
 
         labelModInd1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -2241,6 +2295,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         botonElimArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimArtesanal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimArtesanalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimArtesanalMouseExited(evt);
+            }
+        });
 
         labelElimInd1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd1.setForeground(new java.awt.Color(102, 252, 241));
@@ -2466,6 +2528,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModVinoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModVinoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModVinoMouseExited(evt);
+            }
         });
 
         labelModInd2.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -2491,6 +2559,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimVino.setBackground(new java.awt.Color(36, 46, 59));
         botonElimVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimVino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimVinoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimVinoMouseExited(evt);
+            }
+        });
 
         labelElimInd2.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd2.setForeground(new java.awt.Color(102, 252, 241));
@@ -2675,6 +2751,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModGaseosaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModGaseosaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModGaseosaMouseExited(evt);
+            }
         });
 
         labelModInd3.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -2700,6 +2782,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimGaseosa.setBackground(new java.awt.Color(36, 46, 59));
         botonElimGaseosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimGaseosa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimGaseosaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimGaseosaMouseExited(evt);
+            }
+        });
 
         labelElimInd3.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd3.setForeground(new java.awt.Color(102, 252, 241));
@@ -2836,6 +2926,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModTragoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModTragoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModTragoMouseExited(evt);
+            }
         });
 
         labelModInd4.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -2861,6 +2957,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimTrago.setBackground(new java.awt.Color(36, 46, 59));
         botonElimTrago.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimTrago.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimTragoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimTragoMouseExited(evt);
+            }
+        });
 
         labelElimInd4.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd4.setForeground(new java.awt.Color(102, 252, 241));
@@ -2965,6 +3069,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModNarguileMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModNarguileMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModNarguileMouseExited(evt);
+            }
         });
 
         labelModInd5.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -2990,6 +3100,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimNarguile.setBackground(new java.awt.Color(36, 46, 59));
         botonElimNarguile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimNarguile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimNarguileMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimNarguileMouseExited(evt);
+            }
+        });
 
         labelElimInd5.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd5.setForeground(new java.awt.Color(102, 252, 241));
@@ -3094,6 +3212,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModPizzasMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModPizzasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModPizzasMouseExited(evt);
+            }
         });
 
         labelModInd6.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -3119,6 +3243,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimPizzas.setBackground(new java.awt.Color(36, 46, 59));
         botonElimPizzas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimPizzas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimPizzasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimPizzasMouseExited(evt);
+            }
+        });
 
         labelElimInd6.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd6.setForeground(new java.awt.Color(102, 252, 241));
@@ -3228,6 +3360,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonModPicadasMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonModPicadasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModPicadasMouseExited(evt);
+            }
         });
 
         labelModInd7.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -3253,6 +3391,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonElimPicadas.setBackground(new java.awt.Color(36, 46, 59));
         botonElimPicadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonElimPicadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonElimPicadasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonElimPicadasMouseExited(evt);
+            }
+        });
 
         labelElimInd7.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd7.setForeground(new java.awt.Color(102, 252, 241));
@@ -3564,6 +3710,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarIndustrialMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarIndustrialMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarIndustrialMouseExited(evt);
+            }
         });
 
         labelModInd8.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -3592,6 +3744,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarIndustrial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarIndustrialMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarIndustrialMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarIndustrialMouseExited(evt);
             }
         });
 
@@ -3792,6 +3950,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarArtesanalMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarArtesanalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarArtesanalMouseExited(evt);
+            }
         });
 
         labelModInd9.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -3820,6 +3984,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarArtesanal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarArtesanalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarArtesanalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarArtesanalMouseExited(evt);
             }
         });
 
@@ -4049,6 +4219,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarVinoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarVinoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarVinoMouseExited(evt);
+            }
         });
 
         labelModInd10.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -4077,6 +4253,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarVino.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarVinoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarVinoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarVinoMouseExited(evt);
             }
         });
 
@@ -4240,6 +4422,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarGaseosaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarGaseosaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarGaseosaMouseExited(evt);
+            }
         });
 
         labelModInd11.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -4268,6 +4456,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarGaseosa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarGaseosaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarGaseosaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarGaseosaMouseExited(evt);
             }
         });
 
@@ -4402,6 +4596,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarTragoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarTragoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarTragoMouseExited(evt);
+            }
         });
 
         labelModInd12.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -4430,6 +4630,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarTrago.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarTragoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarTragoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarTragoMouseExited(evt);
             }
         });
 
@@ -4550,6 +4756,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarNarguileMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarNarguileMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarNarguileMouseExited(evt);
+            }
         });
 
         labelModInd13.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -4578,6 +4790,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarNarguile.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarNarguileMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarNarguileMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarNarguileMouseExited(evt);
             }
         });
 
@@ -4692,6 +4910,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarPizzaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarPizzaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarPizzaMouseExited(evt);
+            }
         });
 
         labelModInd14.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -4720,6 +4944,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarPizza.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarPizzaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarPizzaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarPizzaMouseExited(evt);
             }
         });
 
@@ -4833,6 +5063,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCargarPicadaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCargarPicadaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCargarPicadaMouseExited(evt);
+            }
         });
 
         labelModInd15.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
@@ -4861,6 +5097,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonLimpiarPicada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonLimpiarPicadaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonLimpiarPicadaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonLimpiarPicadaMouseExited(evt);
             }
         });
 
@@ -5010,6 +5252,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCalcularRankingMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCalcularRankingMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCalcularRankingMouseExited(evt);
+            }
         });
 
         labelCalcular1.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 22)); // NOI18N
@@ -5153,6 +5401,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         botonCalcularBalance.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonCalcularBalanceMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCalcularBalanceMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCalcularBalanceMouseExited(evt);
             }
         });
 
@@ -5725,6 +5979,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // <editor-fold defaultstate="collapsed" desc="Eventos de animación Tabs e Icons">
     private void tabVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabVentaMouseEntered
         this.labelVenta.setForeground(new Color(102,252,241));
         this.iconVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Buying_32px_1.png")));
@@ -5838,7 +6093,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_cerrarMouseClicked
-
+    //</editor-fold>
+    
     private void mesa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mesa1MouseClicked
         CardLayout card = (CardLayout)cuerpoVenta.getLayout();
         card.show(cuerpoVenta, "panelMesa1");
@@ -7071,7 +7327,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             error.setVisible(true);
         }
     }//GEN-LAST:event_botonCargarPicadaMouseClicked
-
+    
     private void botonLimpiarIndustrialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarIndustrialMouseClicked
         limpiarCamposIndustrial();
     }//GEN-LAST:event_botonLimpiarIndustrialMouseClicked
@@ -7104,6 +7360,323 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         limpiarCamposPicada();
     }//GEN-LAST:event_botonLimpiarTragoMouseClicked
 
+    // <editor-fold defaultstate="collapsed" desc="Eventos de animación de Botones">
+    
+    private void botonProducto1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseEntered
+        botonProducto1.setBackground(botonActivo);
+    }//GEN-LAST:event_botonProducto1MouseEntered
+
+    private void botonProducto1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProducto1MouseExited
+        botonProducto1.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonProducto1MouseExited
+
+    private void botonAgregar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregar1MouseEntered
+        botonAgregar1.setBackground(botonActivo);
+    }//GEN-LAST:event_botonAgregar1MouseEntered
+
+    private void botonAgregar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregar1MouseExited
+        botonAgregar1.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonAgregar1MouseExited
+
+    private void botonEliminar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseEntered
+        botonEliminar1.setBackground(botonActivo);
+    }//GEN-LAST:event_botonEliminar1MouseEntered
+
+    private void botonEliminar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminar1MouseExited
+        botonEliminar1.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonEliminar1MouseExited
+
+    private void botonAceptar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptar1MouseEntered
+        botonAceptar1.setBackground(botonActivo);
+    }//GEN-LAST:event_botonAceptar1MouseEntered
+
+    private void botonAceptar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptar1MouseExited
+        botonAceptar1.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonAceptar1MouseExited
+
+    private void botonLimpiar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiar1MouseEntered
+        botonLimpiar1.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiar1MouseEntered
+
+    private void botonLimpiar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiar1MouseExited
+        botonLimpiar1.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiar1MouseExited
+
+    private void botonModIndustrialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModIndustrialMouseEntered
+        botonModIndustrial.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModIndustrialMouseEntered
+
+    private void botonModIndustrialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModIndustrialMouseExited
+        botonModIndustrial.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModIndustrialMouseExited
+
+    private void botonElimIndustrialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimIndustrialMouseEntered
+        botonElimIndustrial.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimIndustrialMouseEntered
+
+    private void botonElimIndustrialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimIndustrialMouseExited
+        botonElimIndustrial.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimIndustrialMouseExited
+
+    private void botonModArtesanalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModArtesanalMouseEntered
+        botonModArtesanal.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModArtesanalMouseEntered
+
+    private void botonModArtesanalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModArtesanalMouseExited
+        botonModArtesanal.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModArtesanalMouseExited
+
+    private void botonElimArtesanalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimArtesanalMouseEntered
+        botonElimArtesanal.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimArtesanalMouseEntered
+
+    private void botonElimArtesanalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimArtesanalMouseExited
+        botonElimArtesanal.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimArtesanalMouseExited
+
+    private void botonModVinoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModVinoMouseEntered
+        botonModVino.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModVinoMouseEntered
+
+    private void botonModVinoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModVinoMouseExited
+        botonModVino.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModVinoMouseExited
+
+    private void botonElimVinoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimVinoMouseEntered
+        botonElimVino.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimVinoMouseEntered
+
+    private void botonElimVinoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimVinoMouseExited
+        botonElimVino.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimVinoMouseExited
+
+    private void botonModGaseosaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModGaseosaMouseEntered
+        botonModGaseosa.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModGaseosaMouseEntered
+
+    private void botonModGaseosaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModGaseosaMouseExited
+        botonModGaseosa.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModGaseosaMouseExited
+
+    private void botonElimGaseosaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimGaseosaMouseEntered
+        botonElimGaseosa.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimGaseosaMouseEntered
+
+    private void botonElimGaseosaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimGaseosaMouseExited
+        botonElimGaseosa.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimGaseosaMouseExited
+
+    private void botonModTragoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModTragoMouseEntered
+        botonModTrago.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModTragoMouseEntered
+
+    private void botonModTragoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModTragoMouseExited
+        botonModTrago.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModTragoMouseExited
+
+    private void botonElimTragoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimTragoMouseEntered
+        botonElimTrago.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimTragoMouseEntered
+
+    private void botonElimTragoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimTragoMouseExited
+        botonElimTrago.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimTragoMouseExited
+
+    private void botonModNarguileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModNarguileMouseEntered
+        botonModNarguile.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModNarguileMouseEntered
+
+    private void botonModNarguileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModNarguileMouseExited
+        botonModNarguile.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModNarguileMouseExited
+
+    private void botonElimNarguileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimNarguileMouseEntered
+        botonElimNarguile.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimNarguileMouseEntered
+
+    private void botonElimNarguileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimNarguileMouseExited
+        botonElimNarguile.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimNarguileMouseExited
+
+    private void botonModPizzasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModPizzasMouseEntered
+        botonModPizzas.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModPizzasMouseEntered
+
+    private void botonModPizzasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModPizzasMouseExited
+        botonModPizzas.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModPizzasMouseExited
+
+    private void botonElimPizzasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimPizzasMouseEntered
+        botonElimPizzas.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimPizzasMouseEntered
+
+    private void botonElimPizzasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimPizzasMouseExited
+        botonElimPizzas.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimPizzasMouseExited
+
+    private void botonModPicadasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModPicadasMouseEntered
+        botonModPicadas.setBackground(botonActivo);
+    }//GEN-LAST:event_botonModPicadasMouseEntered
+
+    private void botonModPicadasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModPicadasMouseExited
+        botonModPicadas.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonModPicadasMouseExited
+
+    private void botonElimPicadasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimPicadasMouseEntered
+        botonElimPicadas.setBackground(botonActivo);
+    }//GEN-LAST:event_botonElimPicadasMouseEntered
+
+    private void botonElimPicadasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonElimPicadasMouseExited
+        botonElimPicadas.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonElimPicadasMouseExited
+
+    private void botonCargarIndustrialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarIndustrialMouseEntered
+        botonCargarIndustrial.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarIndustrialMouseEntered
+
+    private void botonCargarIndustrialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarIndustrialMouseExited
+        botonCargarIndustrial.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarIndustrialMouseExited
+
+    private void botonLimpiarIndustrialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarIndustrialMouseEntered
+        botonLimpiarIndustrial.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarIndustrialMouseEntered
+
+    private void botonLimpiarIndustrialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarIndustrialMouseExited
+        botonLimpiarIndustrial.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarIndustrialMouseExited
+
+    private void botonCargarArtesanalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarArtesanalMouseEntered
+        botonCargarArtesanal.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarArtesanalMouseEntered
+
+    private void botonCargarArtesanalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarArtesanalMouseExited
+        botonCargarArtesanal.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarArtesanalMouseExited
+
+    private void botonLimpiarArtesanalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarArtesanalMouseEntered
+        botonLimpiarArtesanal.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarArtesanalMouseEntered
+
+    private void botonLimpiarArtesanalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarArtesanalMouseExited
+        botonLimpiarArtesanal.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarArtesanalMouseExited
+
+    private void botonCargarVinoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarVinoMouseEntered
+        botonCargarVino.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarVinoMouseEntered
+
+    private void botonCargarVinoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarVinoMouseExited
+        botonCargarVino.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarVinoMouseExited
+
+    private void botonLimpiarVinoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarVinoMouseEntered
+        botonLimpiarVino.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarVinoMouseEntered
+
+    private void botonLimpiarVinoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarVinoMouseExited
+        botonLimpiarVino.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarVinoMouseExited
+
+    private void botonCargarGaseosaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarGaseosaMouseEntered
+        botonCargarGaseosa.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarGaseosaMouseEntered
+
+    private void botonCargarGaseosaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarGaseosaMouseExited
+        botonCargarGaseosa.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarGaseosaMouseExited
+
+    private void botonLimpiarGaseosaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarGaseosaMouseEntered
+        botonLimpiarGaseosa.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarGaseosaMouseEntered
+
+    private void botonLimpiarGaseosaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarGaseosaMouseExited
+        botonLimpiarGaseosa.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarGaseosaMouseExited
+
+    private void botonCargarTragoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarTragoMouseEntered
+        botonCargarTrago.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarTragoMouseEntered
+
+    private void botonCargarTragoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarTragoMouseExited
+        botonCargarTrago.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarTragoMouseExited
+
+    private void botonLimpiarTragoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarTragoMouseEntered
+        botonLimpiarTrago.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarTragoMouseEntered
+
+    private void botonLimpiarTragoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarTragoMouseExited
+        botonLimpiarTrago.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarTragoMouseExited
+
+    private void botonCargarNarguileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarNarguileMouseEntered
+        botonCargarNarguile.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarNarguileMouseEntered
+
+    private void botonCargarNarguileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarNarguileMouseExited
+        botonCargarNarguile.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarNarguileMouseExited
+
+    private void botonLimpiarNarguileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarNarguileMouseEntered
+        botonLimpiarNarguile.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarNarguileMouseEntered
+
+    private void botonLimpiarNarguileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarNarguileMouseExited
+        botonLimpiarNarguile.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarNarguileMouseExited
+
+    private void botonCargarPizzaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarPizzaMouseEntered
+        botonCargarPizza.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarPizzaMouseEntered
+
+    private void botonCargarPizzaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarPizzaMouseExited
+        botonCargarPizza.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarPizzaMouseExited
+
+    private void botonLimpiarPizzaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarPizzaMouseEntered
+        botonLimpiarPizza.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarPizzaMouseEntered
+
+    private void botonLimpiarPizzaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarPizzaMouseExited
+        botonLimpiarPizza.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarPizzaMouseExited
+
+    private void botonCargarPicadaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarPicadaMouseEntered
+        botonCargarPicada.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCargarPicadaMouseEntered
+
+    private void botonCargarPicadaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarPicadaMouseExited
+        botonCargarPicada.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCargarPicadaMouseExited
+
+    private void botonLimpiarPicadaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarPicadaMouseEntered
+        botonLimpiarPicada.setBackground(botonActivo);
+    }//GEN-LAST:event_botonLimpiarPicadaMouseEntered
+
+    private void botonLimpiarPicadaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarPicadaMouseExited
+        botonLimpiarPicada.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonLimpiarPicadaMouseExited
+
+    private void botonCalcularRankingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCalcularRankingMouseEntered
+        botonCalcularRanking.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCalcularRankingMouseEntered
+
+    private void botonCalcularRankingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCalcularRankingMouseExited
+        botonCalcularRanking.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCalcularRankingMouseExited
+
+    private void botonCalcularBalanceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCalcularBalanceMouseEntered
+        botonCalcularBalance.setBackground(botonActivo);
+    }//GEN-LAST:event_botonCalcularBalanceMouseEntered
+
+    private void botonCalcularBalanceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCalcularBalanceMouseExited
+        botonCalcularBalance.setBackground(botonInactivo);
+    }//GEN-LAST:event_botonCalcularBalanceMouseExited
+
+    //</editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="Métodos auxiliares">
     public void mostrarTablaListado(){
         CardLayout card =  (CardLayout)panelDetalle.getLayout();
         card.show(panelDetalle, "empty");
@@ -7195,6 +7768,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoPrecioVPicadaCarga.setText("");
         campoCPersonasPicadaCarga.setText("");
     }
+    
+    //</editor-fold>
+    
     /**
      * @param args the command line arguments
      */
@@ -7229,7 +7805,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
+    
+// <editor-fold defaultstate="collapsed" desc="Variables autogeneradas">
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel barraMesas;
     private javax.swing.JPanel base;
@@ -7691,4 +8268,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tablaVentas3;
     private javax.swing.JTable tablaVentas4;
     // End of variables declaration//GEN-END:variables
+//</editor-fold>
+    
 }
