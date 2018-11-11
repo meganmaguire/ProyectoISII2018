@@ -130,12 +130,13 @@ public class ManagerVentas {
         SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
         Date fecha=null;
         int contador=0;
-        List<Venta> listaVentas=dao.readVentas();
-        List<Renglon> listaRenglones= new ArrayList();
+        List <Venta> listaVentas=dao.readVentas();
+        List <Renglon> listaRenglones= new ArrayList();
         Map <Integer,Integer> ranking= new HashMap <>();
-        Iterator iter = listaVentas.iterator();
-        while(iter.hasNext()){
-            Venta venta= (Venta) iter;
+        Iterator i= listaVentas.iterator();
+        Venta venta= new Venta();
+        while(i.hasNext()){
+            venta= (Venta)i.next();
             try{
                 fecha=formato.parse(venta.getFecha());
             }
@@ -143,11 +144,12 @@ public class ManagerVentas {
                 System.out.println("No se pudo parsear la fecha");
             }
             if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
-                listaRenglones=dao.readRenglonesVenta(venta.getId());
+                int idVenta= venta.getId();
+                listaRenglones=dao.readRenglonesVenta(idVenta);
                 venta.setRenglonesDeVenta(listaRenglones);
-                Iterator i= listaRenglones.iterator();
-                while(i.hasNext()){
-                    Renglon renglon= (Renglon) i;
+                Iterator iter= listaRenglones.iterator();
+                while(iter.hasNext()){
+                    Renglon renglon= (Renglon) iter.next();
                     if(ranking.containsKey(renglon.getIdProducto())){
                         contador= renglon.getCantidad()+ranking.get(renglon.getIdProducto());
                         ranking.put(renglon.getIdProducto(),contador);
@@ -179,5 +181,6 @@ public class ManagerVentas {
             dato[4] = prod.getPrecioVenta();
             modeloTablaRanking.addRow(dato);
         }
+        //verificar tabla vacia
     }
 }

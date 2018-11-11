@@ -6252,8 +6252,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         Date fechaActual= new Date();
         Date fechaI;
         Date fechaF;
-        fechaI=this.fechaInicioBalance.getDate();
-        fechaF=this.fechaFinBalance.getDate();
+        fechaI=this.fechaInicioRanking.getDate();
+        fechaF=this.fechaFinRanking.getDate();
         List <Map.Entry<Integer,Integer>> listaRanking= new ArrayList();
         if(fechaI==null || fechaF==null){
             CartelError error= new CartelError(this,true,"Debes seleccionar las fechas");
