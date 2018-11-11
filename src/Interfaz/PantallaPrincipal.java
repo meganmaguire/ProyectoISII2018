@@ -5014,14 +5014,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Nombre", "Categoría", "Precio"
+                "Código", "Nombre", "Categoría", "Cantidad", "Precio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -5038,6 +5038,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             tablaRanking.getColumnModel().getColumn(1).setResizable(false);
             tablaRanking.getColumnModel().getColumn(2).setResizable(false);
             tablaRanking.getColumnModel().getColumn(3).setResizable(false);
+            tablaRanking.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout panelRankingLayout = new javax.swing.GroupLayout(panelRanking);
@@ -6246,7 +6247,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 }
                 else{
                     listaRanking=managerVentas.mostrarRankingProductosVendidos(fechaI, fechaF);
-                    
+                    managerVentas.mostrarTablaRanking(modeloTablaRanking,listaRanking);
                 }
                 if(this.modeloTablaRanking.getRowCount()==0){
                     CartelError error= new CartelError(this,true,"No existen ventas realizadas en las fechas dadas");
