@@ -60,4 +60,6 @@ public interface DAO {
     public int consultarStockGaseosas(int idProducto);
     public int consultarStockVinos(int idProducto);
     public float consultarContenidoArtesanal(int idProducto);
+    public float consultarPrecioProducto(int idProducto);
+    public int consultarIdBarril(int idProducto);
 }

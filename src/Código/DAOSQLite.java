@@ -689,6 +689,7 @@ public class DAOSQLite implements DAO{
         return contenido;
     }
     
+    @Override
     public int consultarIdBarril(int idProducto){
         int idBarril=0;
         try{
@@ -703,6 +704,7 @@ public class DAOSQLite implements DAO{
         return idBarril;
     }
     
+    @Override
     public float consultarPrecioProducto(int idProducto){
         float precioVenta = 0;
         try{
