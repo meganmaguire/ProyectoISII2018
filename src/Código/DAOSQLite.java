@@ -339,6 +339,32 @@ public class DAOSQLite implements DAO{
         }
          return prod;      
     }
+    
+    public List<Object[]> readBarriles(){
+        List<Object[]> barriles = new ArrayList();
+        Barril barril = new Barril();
+        Object[] info = new Object[3];
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            ResultSet resultado = stmt.executeQuery("SELECT DISTINCT BARRILES.Bar_ID,Bar_CantActual,Bar_CantMinima,A_Tipo,A_Marca "
+                                                  + "FROM BARRILES,ARTESANALES "
+                                                  + "WHERE BARRILES.Bar_ID = ARTESANALES.Bar_ID");
+            while(resultado.next()){
+                barril.setId(resultado.getInt(1));
+                barril.setCantActual(resultado.getInt(2));
+                barril.setCantMinima(resultado.getInt(3));
+                info[0] = barril.clone();
+                info[1] = resultado.getString(4);
+                info[2] = resultado.getString(5);
+                barriles.add(info.clone());
+            }
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la consulta readBarriles");
+            e.printStackTrace();
+        }
+        return barriles;
+    }
 
     @Override
     public boolean createVenta(Venta venta) {
@@ -394,17 +420,198 @@ public class DAOSQLite implements DAO{
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            //Escribir la consulta
             stmt.execute("INSERT "
                         + "INTO PRODUCTOS "
-                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Cerveza')");
-            //Escribir la consulta
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Industrial')");
             stmt.execute("INSERT "
                         + "INTO INDUSTRIALES "
                         + "VALUES("+id+",'"+marca+"','"+tipo+"',"+precioCosto+","+gradAlc+","+contenido+",'"+origen+"',"+stockActual+","+stockMin+")");
         }catch(SQLException e){
-            System.out.println("");
+            System.out.println("No se pudo crear la cerveza");
             e.printStackTrace();
+            return false;
+        }
+        return true;
+        
+    }
+    @Override
+    public boolean createArtesanal(Artesanal art){
+        int id = art.getId();
+        float precioVenta = art.getPrecioVenta();
+        String nombre = art.getNombreProducto();
+        String marca = art.getMarca();
+        String tipo = art.getTipo();
+        float precioCosto = art.getPrecioCosto();
+        float gradAlc = art.getGraduacionAlc();
+        float contenido = art.getContenido();
+        String color = art.getColor();
+        String lupulo = art.getLupulo();
+        String malta = art.getMalta();
+        int idBarril = art.getBarril().getId();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Artesanal')");
+            stmt.execute("INSERT "
+                        + "INTO ARTESANALES "
+                        + "VALUES("+id+",'"+marca+"','"+tipo+"',"+precioCosto+","+gradAlc+","+contenido+",'"+color+"','"+lupulo+"','"+malta+"',"+idBarril+")");
+        }catch(SQLException e){
+            System.out.println("No se pudo crear la cerveza");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+        
+    }
+    
+    public boolean createVino(Vino vino){
+        int id = vino.getId();
+        float precioVenta = vino.getPrecioVenta();
+        String nombre = vino.getNombreProducto();
+        String bodega = vino.getBodega();
+        String color = vino.getColor();
+        String uva = vino.getTipoDeUva();
+        float precioCosto = vino.getPrecioCosto();
+        float gradAlc = vino.getGraduacionAlc();
+        int stockActual = vino.getStock().getStockActual();
+        int stockMin = vino.getStock().getStockMinimo();
+                    
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Vino')");
+            stmt.execute("INSERT "
+                        + "INTO VINOS "
+                        + "VALUES("+id+",'"+bodega+"','"+color+"','"+uva+"',"+gradAlc+","+precioCosto+","+stockActual+","+stockMin+")");
+        
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la creacion de Vino");
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public boolean createGaseosa(Gaseosa gas){
+        int id = gas.getId();
+        float precioVenta = gas.getPrecioVenta();
+        String nombre = gas.getNombreProducto();
+        String sabor = gas.getSabor();
+        float contenido = gas.getContenido();
+        float precioCosto = gas.getPrecioCosto();
+        int stockActual = gas.getStock().getStockActual();
+        int stockMin = gas.getStock().getStockMinimo();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Gaseosa')");
+            stmt.execute("INSERT "
+                        + "INTO GASEOSAS "
+                        + "VALUES("+id+",'"+sabor+"',"+contenido+","+precioCosto+","+stockActual+","+stockMin+")");
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la creacion de Gaseosa");
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public boolean createTrago(Trago trago){
+        int id = trago.getId();
+        float precioVenta = trago.getPrecioVenta();
+        String nombre = trago.getNombreProducto();
+        String ingredientes = trago.getIngredientes();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Trago')");
+            stmt.execute("INSERT "
+                        + "INTO TRAGOS "
+                        + "VALUES("+id+",'"+ingredientes+"')");
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la creacion de Trago");
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Override
+    public boolean createNarguile(Narguile nar){
+        int id = nar.getId();
+        float precioVenta = nar.getPrecioVenta();
+        String nombre = nar.getNombreProducto();
+        String tabaco = nar.getTabaco();
+        
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Narguile')");
+            stmt.execute("INSERT "
+                        + "INTO NARGUILE "
+                        + "VALUES("+id+",'"+tabaco+"')");
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la creacion de Narguile");
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Override
+    public boolean createPizza(Pizza pizza){
+        int id = pizza.getId();
+        float precioVenta = pizza.getPrecioVenta();
+        String nombre = pizza.getNombreProducto();
+        String variedad = pizza.getSabor();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Pizza')");
+            stmt.execute("INSERT "
+                        + "INTO PIZZAS "
+                        + "VALUES("+id+",'"+variedad+"')");
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la creacion de Pizza");
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Override
+    public boolean createPicada(Picada pic){
+        int id = pic.getId();
+        float precioVenta = pic.getPrecioVenta();
+        String nombre = pic.getNombreProducto();
+        int personas = pic.getcPersonas();
+        try{
+            conn = ConexionBD.getConexionBD();
+            stmt = conn.createStatement();
+            stmt.execute("INSERT "
+                        + "INTO PRODUCTOS "
+                        + "VALUES("+id+","+precioVenta+",'"+nombre+"','Picada')");
+            stmt.execute("INSERT "
+                        + "INTO PICADAS "
+                        + "VALUES("+id+","+personas+")");
+        }catch(SQLException e){
+            System.out.println("No se pudo realizar la creacion de Picada");
             return false;
         }
         return true;
@@ -723,7 +930,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE PRODUCTOS "
-                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE NARGUILE "
                         + "SET N_Tabaco = '"+tabaco+"' "
@@ -746,10 +953,10 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE PRODUCTOS "
-                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE PIZZAS "
-                        + "SET Pizza_Sabor = "+variedad+" "
+                        + "SET Pizza_Sabor = '"+variedad+"' "
                         +"WHERE Prod_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion de Pizza");
@@ -769,7 +976,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE PRODUCTOS "
-                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre = '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE PICADAS "
                         + "SET Pic_CantPersonas = "+personas+" "

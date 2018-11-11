@@ -6,6 +6,7 @@
 package Interfaz;
 
 import Código.Artesanal;
+import Código.Barril;
 import Código.Gaseosa;
 import Código.Industrial;
 import Código.ManagerProductos;
@@ -79,6 +80,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        grupoCargar = new javax.swing.ButtonGroup();
         base = new javax.swing.JPanel();
         cuerpo = new javax.swing.JPanel();
         panelVenta = new javax.swing.JPanel();
@@ -389,6 +391,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTitulo78 = new javax.swing.JLabel();
         campoLupuloArtesanalCarga = new javax.swing.JTextField();
         labelTitulo79 = new javax.swing.JLabel();
+        labelTitulo88 = new javax.swing.JLabel();
+        comboBoxBarrilCarga = new javax.swing.JComboBox();
         panelCargaVinos = new javax.swing.JPanel();
         labelTitulo71 = new javax.swing.JLabel();
         labelTitulo80 = new javax.swing.JLabel();
@@ -439,7 +443,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTitulo99 = new javax.swing.JLabel();
         campoPrecioVTragoCarga = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        campoIngredientesTragoCarga = new javax.swing.JTextArea();
+        campoIngTragoCarga = new javax.swing.JTextArea();
         panelCargaNarguile = new javax.swing.JPanel();
         labelTitulo96 = new javax.swing.JLabel();
         labelTitulo97 = new javax.swing.JLabel();
@@ -3559,6 +3563,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarIndustrial.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarIndustrial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarIndustrial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarIndustrialMouseClicked(evt);
+            }
+        });
 
         labelElimInd8.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd8.setForeground(new java.awt.Color(102, 252, 241));
@@ -3782,6 +3791,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarArtesanal.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarArtesanal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarArtesanal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarArtesanalMouseClicked(evt);
+            }
+        });
 
         labelElimInd9.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd9.setForeground(new java.awt.Color(102, 252, 241));
@@ -3835,24 +3849,29 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         labelTitulo79.setForeground(new java.awt.Color(250, 250, 250));
         labelTitulo79.setText("Lúpulo");
 
+        labelTitulo88.setFont(new java.awt.Font("Fira Sans Book", 1, 18)); // NOI18N
+        labelTitulo88.setForeground(new java.awt.Color(250, 250, 250));
+        labelTitulo88.setText("Barril");
+
         javax.swing.GroupLayout panelCargaArtesanalesLayout = new javax.swing.GroupLayout(panelCargaArtesanales);
         panelCargaArtesanales.setLayout(panelCargaArtesanalesLayout);
         panelCargaArtesanalesLayout.setHorizontalGroup(
             panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
                 .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargaArtesanalesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(labelTitulo79)
+                        .addGap(18, 18, 18))
                     .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(labelTitulo77)
                             .addComponent(labelTitulo70)
                             .addComponent(labelTitulo68)
-                            .addComponent(labelTitulo75))
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCargaArtesanalesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelTitulo79)
-                        .addGap(18, 18, 18)))
+                            .addComponent(labelTitulo75)
+                            .addComponent(labelTitulo88))
+                        .addGap(12, 12, 12)))
                 .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCargaArtesanalesLayout.createSequentialGroup()
                         .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -3881,8 +3900,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                             .addComponent(campoColorArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoMaltaArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoPrecioCArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(campoPrecioVArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 87, Short.MAX_VALUE))
+                    .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(comboBoxBarrilCarga, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoPrecioVArtesanalCarga, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         panelCargaArtesanalesLayout.setVerticalGroup(
             panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3906,19 +3927,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelTitulo76)
                     .addComponent(campoColorArtesanalCarga))
-                .addGap(32, 32, 32)
+                .addGap(29, 29, 29)
                 .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo79)
                     .addComponent(campoLupuloArtesanalCarga)
                     .addComponent(labelTitulo78)
                     .addComponent(campoMaltaArtesanalCarga))
-                .addGap(26, 26, 26)
+                .addGap(29, 29, 29)
                 .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo77)
                     .addComponent(campoPrecioVArtesanalCarga)
                     .addComponent(labelTitulo73)
                     .addComponent(campoPrecioCArtesanalCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98)
+                .addGap(30, 30, 30)
+                .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTitulo88)
+                    .addComponent(comboBoxBarrilCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
                 .addGroup(panelCargaArtesanalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonLimpiarArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonCargarArtesanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3994,6 +4019,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarVino.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarVino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarVinoMouseClicked(evt);
+            }
+        });
 
         labelModInd10.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd10.setForeground(new java.awt.Color(102, 252, 241));
@@ -4018,6 +4048,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarVino.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarVino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarVino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarVinoMouseClicked(evt);
+            }
+        });
 
         labelElimInd10.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd10.setForeground(new java.awt.Color(102, 252, 241));
@@ -4175,6 +4210,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarGaseosa.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarGaseosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarGaseosa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarGaseosaMouseClicked(evt);
+            }
+        });
 
         labelModInd11.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd11.setForeground(new java.awt.Color(102, 252, 241));
@@ -4199,6 +4239,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarGaseosa.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarGaseosa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarGaseosa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarGaseosaMouseClicked(evt);
+            }
+        });
 
         labelElimInd11.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd11.setForeground(new java.awt.Color(102, 252, 241));
@@ -4327,6 +4372,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarTrago.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarTrago.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarTrago.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarTragoMouseClicked(evt);
+            }
+        });
 
         labelModInd12.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd12.setForeground(new java.awt.Color(102, 252, 241));
@@ -4351,6 +4401,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarTrago.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarTrago.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarTrago.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarTragoMouseClicked(evt);
+            }
+        });
 
         labelElimInd12.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd12.setForeground(new java.awt.Color(102, 252, 241));
@@ -4383,14 +4438,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         campoPrecioVTragoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
         campoPrecioVTragoCarga.setCaretColor(new java.awt.Color(250, 250, 250));
 
-        campoIngredientesTragoCarga.setBackground(new java.awt.Color(36, 46, 59));
-        campoIngredientesTragoCarga.setColumns(20);
-        campoIngredientesTragoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 13)); // NOI18N
-        campoIngredientesTragoCarga.setForeground(new java.awt.Color(197, 198, 199));
-        campoIngredientesTragoCarga.setRows(5);
-        campoIngredientesTragoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
-        campoIngredientesTragoCarga.setCaretColor(new java.awt.Color(250, 250, 250));
-        jScrollPane2.setViewportView(campoIngredientesTragoCarga);
+        campoIngTragoCarga.setBackground(new java.awt.Color(36, 46, 59));
+        campoIngTragoCarga.setColumns(20);
+        campoIngTragoCarga.setFont(new java.awt.Font("Fira Sans Book", 0, 13)); // NOI18N
+        campoIngTragoCarga.setForeground(new java.awt.Color(197, 198, 199));
+        campoIngTragoCarga.setRows(5);
+        campoIngTragoCarga.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        campoIngTragoCarga.setCaretColor(new java.awt.Color(250, 250, 250));
+        jScrollPane2.setViewportView(campoIngTragoCarga);
 
         javax.swing.GroupLayout panelCargaTragosLayout = new javax.swing.GroupLayout(panelCargaTragos);
         panelCargaTragos.setLayout(panelCargaTragosLayout);
@@ -4465,6 +4520,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarNarguile.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarNarguile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarNarguile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarNarguileMouseClicked(evt);
+            }
+        });
 
         labelModInd13.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd13.setForeground(new java.awt.Color(102, 252, 241));
@@ -4489,6 +4549,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarNarguile.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarNarguile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarNarguile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarNarguileMouseClicked(evt);
+            }
+        });
 
         labelElimInd13.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd13.setForeground(new java.awt.Color(102, 252, 241));
@@ -4597,6 +4662,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarPizza.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarPizza.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarPizza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarPizzaMouseClicked(evt);
+            }
+        });
 
         labelModInd14.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd14.setForeground(new java.awt.Color(102, 252, 241));
@@ -4621,6 +4691,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarPizza.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarPizza.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarPizza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarPizzaMouseClicked(evt);
+            }
+        });
 
         labelElimInd14.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd14.setForeground(new java.awt.Color(102, 252, 241));
@@ -4728,6 +4803,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonCargarPicada.setBackground(new java.awt.Color(36, 46, 59));
         botonCargarPicada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonCargarPicada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCargarPicadaMouseClicked(evt);
+            }
+        });
 
         labelModInd15.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelModInd15.setForeground(new java.awt.Color(102, 252, 241));
@@ -4752,6 +4832,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         botonLimpiarPicada.setBackground(new java.awt.Color(36, 46, 59));
         botonLimpiarPicada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69, 162, 158)));
+        botonLimpiarPicada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonLimpiarPicadaMouseClicked(evt);
+            }
+        });
 
         labelElimInd15.setFont(new java.awt.Font("Fira Sans UltraLight", 0, 18)); // NOI18N
         labelElimInd15.setForeground(new java.awt.Color(102, 252, 241));
@@ -6110,9 +6195,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void comboBoxCategoríaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxCategoríaItemStateChanged
         String seleccion =  String.valueOf(this.comboBoxCategoría.getSelectedItem());
         CardLayout card = (CardLayout)panelFormulario.getLayout();
+        ManagerProductos manager = new ManagerProductos();
         switch(seleccion){
             case "Industrial": card.show(panelFormulario,"industrial"); break;
-            case "Artesanal": card.show(panelFormulario, "artesanal"); break;
+            case "Artesanal": 
+                card.show(panelFormulario, "artesanal"); 
+                comboBoxBarrilCarga.removeAllItems();
+                List<Object[]> barriles = manager.mostrarBarriles();
+                Iterator i = barriles.iterator();
+                while(i.hasNext()){
+                    Object[] barril = (Object[]) i.next();
+                    Barril bar = (Barril)barril[0];
+                    String nombre = bar.getId() + " - " + barril[1] + " " + barril[2];
+                    comboBoxBarrilCarga.addItem(nombre);
+                }
+                break;
             case "Vino": card.show(panelFormulario, "vino"); break;
             case "Gaseosa": card.show(panelFormulario, "gaseosa"); break;
             case "Trago": card.show(panelFormulario, "trago"); break;
@@ -6591,7 +6688,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 ind.setOrigen(String.valueOf(comboBoxOrigenIndCarga.getSelectedItem()));
                 ind.setGraduacionAlc(Float.parseFloat(campoGradAlcIndustrialCarga.getText()));
                 ind.setContenido(Float.parseFloat(campoContIndustrialCarga.getText()));
-                Stock stock = new Stock(0,Integer.parseInt(campoStockMinIndustrial.getText()));
+                Stock stock = new Stock(0,Integer.parseInt(campoStockMinIndustrialCarga.getText()));
                 ind.setStock(stock);
                 ind.setPrecioVenta(Float.parseFloat(campoPrecioVIndustrialCarga.getText()));
                 ind.setPrecioCosto(Float.parseFloat(campoPrecioCIndustrialCarga.getText()));
@@ -6600,6 +6697,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 //carteles
                 if(exito){
                     mostrarTablaListado();
+                    limpiarCamposIndustrial();
                     CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
                     exitoCartel.setLocationRelativeTo(null);
                     exitoCartel.setVisible(true);
@@ -6628,17 +6726,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         ManagerProductos manager = new ManagerProductos();
         //verificar campos vacios
         if(validar.validarCampoVacio(campoNombreArtesanalCarga) && validar.validarCampoVacio(campoMarcaArtesanalCarga) &&
-        validar.validarCampoVacio(campoTipoArtesanalCarga) && validar.validarCampoVacio(campoGradAlcArtesanalCarga) &&
-        validar.validarCampoVacio(campoPrecioVArtesanalCarga) && validar.validarCampoVacio(campoContArtesanalCarga) &&
-        validar.validarCampoVacio(campoColorArtesanalCarga) && validar.validarCampoVacio(campoLupuloArtesanalCarga) &&
-        validar.validarCampoVacio(campoMaltaArtesanalCarga) ){
+            validar.validarCampoVacio(campoTipoArtesanalCarga) && validar.validarCampoVacio(campoGradAlcArtesanalCarga) &&
+            validar.validarCampoVacio(campoPrecioVArtesanalCarga) && validar.validarCampoVacio(campoContArtesanalCarga) &&
+            validar.validarCampoVacio(campoColorArtesanalCarga) && validar.validarCampoVacio(campoLupuloArtesanalCarga) &&
+            validar.validarCampoVacio(campoMaltaArtesanalCarga) && comboBoxBarrilCarga.getSelectedIndex() != -1){
             //verificar float
             if(validar.validarCampoFloat(campoGradAlcArtesanalCarga) && validar.validarCampoFloat(campoPrecioVArtesanalCarga) && validar.validarCampoFloat(campoContArtesanalCarga)){
-                int i = tablaListado.getSelectedRow();
-                int codigo = Integer.parseInt(String.valueOf(modeloTablaListado.getValueAt(i, 0)));
+                
+                String[] barril = String.valueOf(comboBoxBarrilCarga.getSelectedItem()).split(" - ");
+                int idBarril = Integer.parseInt(barril[0]);
                 //Carga el producto en un objeto para pasarselo al manager
                 Artesanal art = new Artesanal();
-                art.setId(codigo);
                 art.setNombreProducto(campoNombreArtesanalCarga.getText());
                 art.setMarca(campoMarcaArtesanalCarga.getText());
                 art.setTipo(campoTipoArtesanalCarga.getText());
@@ -6648,11 +6746,64 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 art.setColor(campoColorArtesanalCarga.getText());
                 art.setLupulo(campoLupuloArtesanalCarga.getText());
                 art.setMalta(campoMaltaArtesanalCarga.getText());
-                //realiza el modificar      
+                art.setBarril(new Barril(idBarril,0,0));
+                //realiza el modificar
                 boolean exito = manager.agregarProducto(art);
                 //carteles
                 if(exito){
                     mostrarTablaListado();
+                    limpiarCamposArtesanal();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarArtesanalMouseClicked
+
+    private void botonCargarVinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarVinoMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //Veridicación de cmapos vacíos
+        if(validar.validarCampoVacio(campoNombreVinoCarga) && validar.validarCampoVacio(campoBodegaVinoCarga) &&
+        validar.validarCampoVacio(campoColorVinoCarga) && validar.validarCampoVacio(campoUvaVinoCarga) &&
+        validar.validarCampoVacio(campoGradAlcVinoCarga) && validar.validarCampoVacio(campoPrecioCVinoCarga) &&
+        validar.validarCampoVacio(campoStockMinVinoCarga) && validar.validarCampoVacio(campoPrecioVVinoCarga)){
+            //Valida los float
+            if(validar.validarCampoFloat(campoGradAlcVinoCarga) && validar.validarCampoFloat(campoPrecioCVinoCarga) && validar.validarCampoFloat(campoPrecioVVinoCarga)){
+                //Carga el producto en un objeto para pasarselo al manager
+                Vino vino = new Vino();
+                vino.setNombreProducto(campoNombreVinoCarga.getText());
+                vino.setBodega(campoBodegaVinoCarga.getText());
+                vino.setColor(campoColorVinoCarga.getText());
+                vino.setTipoDeUva(campoUvaVinoCarga.getText());
+                vino.setGraduacionAlc(Float.parseFloat(campoGradAlcVinoCarga.getText()));
+                vino.setPrecioCosto(Float.parseFloat(campoPrecioCVinoCarga.getText()));
+                Stock stock = new Stock(0,Integer.parseInt(campoStockMinVinoCarga.getText()));
+                vino.setStock(stock);
+                vino.setPrecioVenta(Float.parseFloat(campoPrecioVVinoCarga.getText()));
+                //realiza el modificar
+                boolean exito = manager.agregarProducto(vino);
+                
+                if(exito){
+                    mostrarTablaListado();
+                    limpiarCamposVino();
                     CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
                     exitoCartel.setLocationRelativeTo(null);
                     exitoCartel.setVisible(true);
@@ -6675,7 +6826,250 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             error.setLocationRelativeTo(null);
             error.setVisible(true);
         }
-    }//GEN-LAST:event_botonCargarArtesanalMouseClicked
+    }//GEN-LAST:event_botonCargarVinoMouseClicked
+
+    private void botonCargarGaseosaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarGaseosaMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreGaseosaCarga) && validar.validarCampoVacio(campoSaborGaseosaCarga) &&
+        validar.validarCampoVacio(campoContGaseosaCarga) && validar.validarCampoVacio(campoPrecioCGaseosaCarga) &&
+        validar.validarCampoVacio(campoStockMinGaseosaCarga) && validar.validarCampoVacio(campoPrecioVGaseosaCarga)){
+            //Verificar float
+            if(validar.validarCampoFloat(campoContGaseosaCarga) && validar.validarCampoFloat(campoPrecioCGaseosaCarga) && validar.validarCampoFloat(campoPrecioVGaseosaCarga)){
+                //Carga el producto en un objeto para pasarselo al manager
+                Gaseosa gas = new Gaseosa();
+                gas.setNombreProducto(campoNombreGaseosaCarga.getText());
+                gas.setSabor(campoSaborGaseosaCarga.getText());
+                gas.setContenido(Float.parseFloat(campoContGaseosaCarga.getText()));
+                gas.setPrecioCosto(Float.parseFloat(campoPrecioCGaseosaCarga.getText()));
+                Stock stock = new Stock(0,Integer.parseInt(campoStockMinGaseosaCarga.getText()));
+                gas.setStock(stock);
+                gas.setPrecioVenta(Float.parseFloat(campoPrecioVGaseosaCarga.getText()));
+                //realiza el modificar      
+                boolean exito = manager.agregarProducto(gas);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    limpiarCamposGaseosa();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo crear el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarGaseosaMouseClicked
+
+    private void botonCargarTragoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarTragoMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreTragoCarga) && validar.validarCampoVacio(campoPrecioVTragoCarga) && !campoIngTragoCarga.getText().isEmpty()){
+            //Verificar float
+            if(validar.validarCampoFloat(campoPrecioVTragoCarga)){//Carga el producto en un objeto para pasarselo al manager
+                Trago trago = new Trago();
+                trago.setNombreProducto(campoNombreTragoCarga.getText());
+                trago.setPrecioVenta(Float.parseFloat(campoPrecioVTragoCarga.getText()));
+                trago.setIngredientes(campoIngTragoCarga.getText());
+                //realiza el modificar      
+                boolean exito = manager.agregarProducto(trago);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    limpiarCamposTrago();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarTragoMouseClicked
+
+    private void botonCargarNarguileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarNarguileMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombreNarguileCarga) && validar.validarCampoVacio(campoPrecioVNarguileCarga) && validar.validarCampoVacio(campoTabacoNarguileCarga)){
+            if(validar.validarCampoFloat(campoPrecioVNarguileCarga)){
+                //Carga el producto en un objeto para pasarselo al manager
+                Narguile nar = new Narguile();
+                nar.setNombreProducto(campoNombreNarguileCarga.getText());
+                nar.setPrecioVenta(Float.parseFloat(campoPrecioVNarguileCarga.getText()));
+                nar.setTabaco(campoTabacoNarguileCarga.getText());
+                //realiza el modificar      
+                boolean exito = manager.agregarProducto(nar);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    limpiarCamposNarguile();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarNarguileMouseClicked
+
+    private void botonCargarPizzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarPizzaMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombrePizzaCarga) && validar.validarCampoVacio(campoPrecioVPizzaCarga) && validar.validarCampoVacio(campoVariedadPizzaCarga)){
+            if(validar.validarCampoFloat(campoPrecioVPizzaCarga)){
+                //Carga el producto en un objeto para pasarselo al manager
+                Pizza pizza = new Pizza();
+                pizza.setNombreProducto(campoNombrePizzaCarga.getText());
+                pizza.setPrecioVenta(Float.parseFloat(campoPrecioVPizzaCarga.getText()));
+                pizza.setSabor(campoVariedadPizzaCarga.getText());
+                //realiza el modificar      
+                boolean exito = manager.agregarProducto(pizza);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    limpiarCamposPizza();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarPizzaMouseClicked
+
+    private void botonCargarPicadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCargarPicadaMouseClicked
+        Validar validar = new Validar();
+        ManagerProductos manager = new ManagerProductos();
+        //verificar campos vacios
+        if(validar.validarCampoVacio(campoNombrePicadaCarga) && validar.validarCampoVacio(campoPrecioVPicadaCarga) && validar.validarCampoVacio(campoCPersonasPicadaCarga)){
+            if(validar.validarCampoFloat(campoPrecioVPicadaCarga)){
+                //Carga el producto en un objeto para pasarselo al manager
+                Picada pic = new Picada();
+                pic.setNombreProducto(campoNombrePicadaCarga.getText());
+                pic.setPrecioVenta(Float.parseFloat(campoPrecioVPicadaCarga.getText()));
+                pic.setcPersonas(Integer.parseInt(campoCPersonasPicadaCarga.getText()));
+                //realiza el modificar      
+                boolean exito = manager.agregarProducto(pic);
+                //carteles
+                if(exito){
+                    mostrarTablaListado();
+                    limpiarCamposPicada();
+                    CartelExito exitoCartel= new CartelExito(this,true,"Carga de producto exitosa");
+                    exitoCartel.setLocationRelativeTo(null);
+                    exitoCartel.setVisible(true);
+                }
+                else{
+                    CartelError error= new CartelError(this,true,"No se pudo cargar el producto");
+                    error.setLocationRelativeTo(null);
+                    error.setVisible(true);
+                }
+                
+            }
+            else{
+                CartelError error= new CartelError(this,true,"Hay campos con valores inválidos");
+                error.setLocationRelativeTo(null);
+                error.setVisible(true);
+            }
+        }
+        else{
+            CartelError error= new CartelError(this,true,"Hay campos vacíos");
+            error.setLocationRelativeTo(null);
+            error.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCargarPicadaMouseClicked
+
+    private void botonLimpiarIndustrialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarIndustrialMouseClicked
+        limpiarCamposIndustrial();
+    }//GEN-LAST:event_botonLimpiarIndustrialMouseClicked
+
+    private void botonLimpiarArtesanalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarArtesanalMouseClicked
+        limpiarCamposArtesanal();
+    }//GEN-LAST:event_botonLimpiarArtesanalMouseClicked
+
+    private void botonLimpiarVinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarVinoMouseClicked
+        limpiarCamposVino();
+    }//GEN-LAST:event_botonLimpiarVinoMouseClicked
+
+    private void botonLimpiarGaseosaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarGaseosaMouseClicked
+        limpiarCamposGaseosa();
+    }//GEN-LAST:event_botonLimpiarGaseosaMouseClicked
+
+    private void botonLimpiarPicadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarPicadaMouseClicked
+        limpiarCamposTrago();
+    }//GEN-LAST:event_botonLimpiarPicadaMouseClicked
+
+    private void botonLimpiarNarguileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarNarguileMouseClicked
+        limpiarCamposNarguile();
+    }//GEN-LAST:event_botonLimpiarNarguileMouseClicked
+
+    private void botonLimpiarPizzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarPizzaMouseClicked
+        limpiarCamposPizza();
+    }//GEN-LAST:event_botonLimpiarPizzaMouseClicked
+
+    private void botonLimpiarTragoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLimpiarTragoMouseClicked
+        limpiarCamposPicada();
+    }//GEN-LAST:event_botonLimpiarTragoMouseClicked
 
     public void mostrarTablaListado(){
         CardLayout card =  (CardLayout)panelDetalle.getLayout();
@@ -6701,6 +7095,73 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
     }
     
+    public void limpiarCamposIndustrial(){
+        campoNombreIndustrialCarga.setText("");
+        campoMarcaIndustrialCarga.setText("");
+        campoTipoIndustrialCarga.setText("");
+        campoPrecioCIndustrialCarga.setText("");
+        campoGradAlcIndustrialCarga.setText("");
+        campoContIndustrialCarga.setText("");
+        campoStockMinIndustrialCarga.setText("");
+        campoPrecioVIndustrialCarga.setText("");
+    }
+    
+    public void limpiarCamposArtesanal(){
+        campoNombreArtesanalCarga.setText("");
+        campoMarcaArtesanalCarga.setText("");
+        campoTipoArtesanalCarga.setText("");
+        campoGradAlcArtesanalCarga.setText("");        
+        campoPrecioVArtesanalCarga.setText("");
+        campoContArtesanalCarga.setText("");
+        campoColorArtesanalCarga.setText("");
+        campoLupuloArtesanalCarga.setText("");
+        campoMaltaArtesanalCarga.setText("");
+        comboBoxBarrilCarga.setSelectedIndex(-1);
+    }
+    
+    public void limpiarCamposVino(){
+        campoNombreVinoCarga.setText("");
+        campoBodegaVinoCarga.setText("");
+        campoColorVinoCarga.setText("");
+        campoUvaVinoCarga.setText("");
+        campoGradAlcVinoCarga.setText("");
+        campoPrecioCVinoCarga.setText("");
+        campoStockMinVinoCarga.setText("");
+        campoPrecioVVinoCarga.setText("");
+    }
+    
+    public void limpiarCamposGaseosa(){
+        campoNombreGaseosaCarga.setText("");
+        campoSaborGaseosaCarga.setText("");
+        campoContGaseosaCarga.setText("");
+        campoPrecioCGaseosaCarga.setText("");
+        campoStockMinGaseosaCarga.setText("");
+        campoPrecioVGaseosaCarga.setText("");
+    }
+    
+    public void limpiarCamposTrago(){
+        campoNombreTragoCarga.setText("");
+        campoPrecioVTragoCarga.setText("");
+        campoIngTragoCarga.setText("");
+    }
+    
+    public void limpiarCamposNarguile(){
+        campoNombreNarguileCarga.setText("");
+        campoPrecioVNarguileCarga.setText("");
+        campoTabacoNarguileCarga.setText("");
+    }
+    
+    public void limpiarCamposPizza(){
+        campoNombrePizzaCarga.setText("");
+        campoPrecioVPizzaCarga.setText("");
+        campoVariedadPizzaCarga.setText("");
+    }
+    
+    public void limpiarCamposPicada(){
+        campoNombrePicadaCarga.setText("");
+        campoPrecioVPicadaCarga.setText("");
+        campoCPersonasPicadaCarga.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -6824,7 +7285,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoGradAlcVino;
     private javax.swing.JTextField campoGradAlcVinoCarga;
     private javax.swing.JTextField campoIngTrago;
-    private javax.swing.JTextArea campoIngredientesTragoCarga;
+    private javax.swing.JTextArea campoIngTragoCarga;
     private javax.swing.JTextField campoLupuloArtesanal;
     private javax.swing.JTextField campoLupuloArtesanalCarga;
     private javax.swing.JTextField campoMaltaArtesanal;
@@ -6898,6 +7359,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField campoVariedadPizzaCarga;
     private javax.swing.JTextField campoVariedadPizzas;
     private javax.swing.JLabel cerrar;
+    private javax.swing.JComboBox comboBoxBarrilCarga;
     private javax.swing.JComboBox comboBoxCategoría;
     private javax.swing.JComboBox comboBoxFiltro;
     private javax.swing.JComboBox comboBoxOrigenInd;
@@ -6909,6 +7371,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser fechaInicioBalance;
     private com.toedter.calendar.JDateChooser fechaInicioRanking;
     private javax.swing.JPanel fondo;
+    private javax.swing.ButtonGroup grupoCargar;
     private javax.swing.JLabel iconAlerta;
     private javax.swing.JLabel iconBalance;
     private javax.swing.JLabel iconCatalogo;
@@ -7109,6 +7572,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo85;
     private javax.swing.JLabel labelTitulo86;
     private javax.swing.JLabel labelTitulo87;
+    private javax.swing.JLabel labelTitulo88;
     private javax.swing.JLabel labelTitulo89;
     private javax.swing.JLabel labelTitulo9;
     private javax.swing.JLabel labelTitulo90;

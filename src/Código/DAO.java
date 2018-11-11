@@ -26,11 +26,19 @@ public interface DAO {
     public List readPicadas();
     public List<Renglon> readRenglonesVenta(int idVenta);
     public Producto readProducto(int id);
+    public List readBarriles();
     
     //creates
     public boolean createVenta(Venta venta);
     public boolean createRenglonVenta(Renglon renglon);
     public boolean createIndustrial(Industrial ind);
+    public boolean createArtesanal(Artesanal art);
+    public boolean createVino(Vino vino);
+    public boolean createGaseosa(Gaseosa gas);
+    public boolean createTrago(Trago trago);
+    public boolean createNarguile(Narguile nar);
+    public boolean createPizza(Pizza pizza);
+    public boolean createPicada(Picada pic);
     
     //updates
     public void updateStockIndustriales(int id,int stock);

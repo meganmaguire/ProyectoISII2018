@@ -83,17 +83,22 @@ public class ManagerProductos {
         boolean exito = false;
         //Agregar los métodos
         switch(producto.instance()){
-            case "Industrial": dao.createIndustrial((Industrial)producto); break;
-            case "Artesanal": break;
-            case "Vino": break;
-            case "Gaseosa": break;
-            case "Trago": break;
-            case "Narguile": break;
-            case "Pizza": break;
-            case "Picada": 
+            case "Industrial": exito = dao.createIndustrial((Industrial)producto); break;
+            case "Artesanal": exito = dao.createArtesanal((Artesanal)producto); break;
+            case "Vino": exito = dao.createVino((Vino)producto); break;
+            case "Gaseosa": exito = dao.createGaseosa((Gaseosa)producto); break;
+            case "Trago": exito = dao.createTrago((Trago)producto); break;
+            case "Narguile": exito = dao.createNarguile((Narguile)producto); break;
+            case "Pizza": exito = dao.createPizza((Pizza)producto); break;
+            case "Picada": exito = dao.createPicada((Picada)producto);
         }
         
         return exito;
     }
-   
+    
+    public List<Object[]> mostrarBarriles(){
+        DAO dao = new DAOSQLite();
+        List<Object[]> barriles = dao.readBarriles();
+        return barriles;
+    }
 }
