@@ -97,7 +97,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Multiply_32px_3.png"))); // NOI18N
+        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Multiply_32px.png"))); // NOI18N
         cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cerrarMouseClicked(evt);
@@ -153,7 +153,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(campoPass, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
