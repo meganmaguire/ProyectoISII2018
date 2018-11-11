@@ -51,6 +51,7 @@ public class Barril {
     
     public Barril clone(){
         Barril barril= new Barril();
+        barril.setId(this.getId());
         barril.setCantActual(this.getCantActual());
         barril.setCantMinima(this.getCantMinima());
         return barril;
