@@ -562,7 +562,7 @@ public class DAOSQLite implements DAO{
                         + "INTO PRODUCTOS "
                         + "VALUES("+id+","+precioVenta+",'"+nombre+"','Narguile')");
             stmt.execute("INSERT "
-                        + "INTO TRAGOS "
+                        + "INTO NARGUILE "
                         + "VALUES("+id+",'"+tabaco+"')");
         }catch(SQLException e){
             System.out.println("No se pudo realizar la creacion de Narguile");
@@ -585,7 +585,7 @@ public class DAOSQLite implements DAO{
                         + "INTO PRODUCTOS "
                         + "VALUES("+id+","+precioVenta+",'"+nombre+"','Pizza')");
             stmt.execute("INSERT "
-                        + "INTO TRAGOS "
+                        + "INTO PIZZAS "
                         + "VALUES("+id+",'"+variedad+"')");
         }catch(SQLException e){
             System.out.println("No se pudo realizar la creacion de Pizza");
@@ -608,7 +608,7 @@ public class DAOSQLite implements DAO{
                         + "INTO PRODUCTOS "
                         + "VALUES("+id+","+precioVenta+",'"+nombre+"','Picada')");
             stmt.execute("INSERT "
-                        + "INTO TRAGOS "
+                        + "INTO PICADAS "
                         + "VALUES("+id+","+personas+")");
         }catch(SQLException e){
             System.out.println("No se pudo realizar la creacion de Picada");
@@ -930,7 +930,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE PRODUCTOS "
-                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE NARGUILE "
                         + "SET N_Tabaco = '"+tabaco+"' "
@@ -953,10 +953,10 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE PRODUCTOS "
-                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE PIZZAS "
-                        + "SET Pizza_Sabor = "+variedad+" "
+                        + "SET Pizza_Sabor = '"+variedad+"' "
                         +"WHERE Prod_ID = "+id);
         }catch(SQLException e){
             System.out.println("No se pudo realizar la modificacion de Pizza");
@@ -976,7 +976,7 @@ public class DAOSQLite implements DAO{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
             stmt.execute("UPDATE PRODUCTOS "
-                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre =  "+nombre+" "
+                        + "SET Prod_PrecioVenta = "+precioVenta+",Prod_Nombre = '"+nombre+"' "
                         + "WHERE Prod_ID = "+id);
             stmt.execute("UPDATE PICADAS "
                         + "SET Pic_CantPersonas = "+personas+" "
