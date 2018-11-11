@@ -6255,6 +6255,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         fechaI=this.fechaInicioRanking.getDate();
         fechaF=this.fechaFinRanking.getDate();
         List <Map.Entry<Integer,Integer>> listaRanking= new ArrayList();
+        //borra la tabla por si había algo previamente calculado
+        int i,n=tablaRanking.getRowCount();
+        for(i=0;i<n;i++){
+            modeloTablaRanking.removeRow(0);
+        }
+        //verifica los campos
         if(fechaI==null || fechaF==null){
             CartelError error= new CartelError(this,true,"Debes seleccionar las fechas");
             error.setLocationRelativeTo(null);
