@@ -15,25 +15,20 @@ import Código.Narguile;
 import Código.Picada;
 import Código.Pizza;
 import Código.Producto;
-import Código.Renglon;
 import Código.Stock;
 import Código.Trago;
 import Código.Usuario;
 import Código.Validar;
-import Código.Venta;
 import Código.Vino;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.swing.JDialog;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -555,72 +550,102 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         barraMesas.setBackground(new java.awt.Color(24, 30, 38));
 
+        mesa1.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa1.setForeground(new java.awt.Color(199, 197, 196));
         mesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa1.setText("1");
         mesa1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mesa1MouseClicked(evt);
             }
         });
 
+        mesa2.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa2.setForeground(new java.awt.Color(199, 198, 197));
         mesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa2.setText("2");
         mesa2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mesa2MouseClicked(evt);
             }
         });
 
+        mesa3.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa3.setForeground(new java.awt.Color(199, 198, 197));
         mesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa3.setText("3");
         mesa3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mesa3MouseClicked(evt);
             }
         });
 
+        mesa4.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa4.setForeground(new java.awt.Color(199, 198, 197));
         mesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa4.setText("4");
         mesa4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mesa4MouseClicked(evt);
             }
         });
 
+        mesa5.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa5.setForeground(new java.awt.Color(199, 198, 197));
         mesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa5.setText("5");
 
+        mesa6.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa6.setForeground(new java.awt.Color(199, 198, 197));
         mesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa6.setText("6");
 
+        mesa7.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa7.setForeground(new java.awt.Color(199, 198, 197));
         mesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa7.setText("7");
 
+        mesa8.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa8.setForeground(new java.awt.Color(199, 198, 197));
         mesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa8.setText("8");
 
+        mesa9.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa9.setForeground(new java.awt.Color(199, 198, 197));
         mesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa9.setText("9");
 
+        mesa10.setFont(new java.awt.Font("Fira Sans Book", 0, 22)); // NOI18N
+        mesa10.setForeground(new java.awt.Color(199, 198, 197));
         mesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/icons8_Service_Bell_32px.png"))); // NOI18N
+        mesa10.setText("10");
 
         javax.swing.GroupLayout barraMesasLayout = new javax.swing.GroupLayout(barraMesas);
         barraMesas.setLayout(barraMesasLayout);
         barraMesasLayout.setHorizontalGroup(
             barraMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(barraMesasLayout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
                 .addComponent(mesa1)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa2)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa3)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa4)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa5)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa6)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa7)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa8)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa9)
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(mesa10)
-                .addGap(160, 160, 160))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         barraMesasLayout.setVerticalGroup(
             barraMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -635,8 +660,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(mesa5)
                     .addComponent(mesa4)
                     .addComponent(mesa3)
-                    .addComponent(mesa2)
-                    .addComponent(mesa1))
+                    .addGroup(barraMesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(mesa1)
+                        .addComponent(mesa2)))
                 .addContainerGap())
         );
 
@@ -5624,6 +5650,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Fira Sans Book", 1, 48)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/icons/logo.png"))); // NOI18N
         lateral.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 270, 230));
 
         tabCompra.setBackground(new java.awt.Color(17, 19, 26));
