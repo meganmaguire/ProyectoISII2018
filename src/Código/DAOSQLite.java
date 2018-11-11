@@ -303,17 +303,17 @@ public class DAOSQLite implements DAO{
     
     
     @Override
-    public List<Renglon> readRenglonesVenta(int idVenta) {
-        List<Renglon> listaRenglones= new ArrayList();
+    public List readRenglonesVenta(int idVenta) {
+        List <Renglon> listaRenglones= new ArrayList();
+        Renglon renglon= new Renglon();
         try{
             conn = ConexionBD.getConexionBD();
             stmt = conn.createStatement();
-            ResultSet resultado = stmt.executeQuery("SELECT * FROM RENGLONESVENTA WHERE RENGLONESVENTA.V_ID = "+idVenta);
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM RENGLONESVENTA WHERE V_ID = "+idVenta);
             while(resultado.next()){
-                Renglon renglon= new Renglon();
-                renglon.setId(resultado.getInt(1));
+                renglon.setIdProducto(resultado.getInt(1));
                 renglon.setCantidad(resultado.getInt(2));
-                renglon.setId(idVenta);
+                renglon.setId(resultado.getInt(3));
                 listaRenglones.add(renglon);
             }
         }catch(SQLException e){
