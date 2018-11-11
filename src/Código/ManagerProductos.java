@@ -15,15 +15,14 @@ import java.util.List;
  * @author Maru
  */
 public class ManagerProductos {
-    DAOSQLite dao;
+    private DAO dao;
     
     public ManagerProductos(){
-        dao= new DAOSQLite();
+        this.dao = FactoryDAO.getDAO("bd");;
     }
     
     public List verCatálogo(){
         List<Producto> listado = new ArrayList();
-        DAOSQLite dao = new DAOSQLite();
         
         listado.addAll(dao.readIndustriales());
         listado.addAll(dao.readArtesanales());
@@ -38,17 +37,7 @@ public class ManagerProductos {
     }
     
     public Producto instanciarProducto(int id,String nombre,String instancia, float precio){
-        Producto producto = null;
-        switch(instancia){
-            case "Industrial":  producto = new Industrial(); break;
-            case "Artesanal" :  producto = new Artesanal(); break;
-            case "Vino" :       producto = new Vino(); break;
-            case "Gaseosa" :    producto = new Gaseosa(); break;
-            case "Narguile" :   producto = new Narguile(); break;
-            case "Pizza" :      producto = new Pizza(); break;
-            case "Picada" :     producto = new Picada(); break;
-            case "Trago" :      producto = new Trago();
-        }
+        Producto producto = FactoryProducto.getProducto(instancia);
         producto.setId(id);
         producto.setNombreProducto(nombre);
         producto.setPrecioVenta(precio);
@@ -62,7 +51,6 @@ public class ManagerProductos {
     }
     
     public boolean modificarProducto(Producto producto){
-        DAO dao = new DAOSQLite();
         boolean exito = false;
         switch(producto.instance()){
             case "Industrial": exito = dao.updateIndustrial((Industrial)producto); break;
@@ -79,7 +67,6 @@ public class ManagerProductos {
     }
     
     public boolean agregarProducto(Producto producto){
-        DAO dao = new DAOSQLite();
         boolean exito = false;
         //Agregar los métodos
         switch(producto.instance()){
@@ -97,7 +84,6 @@ public class ManagerProductos {
     }
     
     public List<Object[]> mostrarBarriles(){
-        DAO dao = new DAOSQLite();
         List<Object[]> barriles = dao.readBarriles();
         return barriles;
     }

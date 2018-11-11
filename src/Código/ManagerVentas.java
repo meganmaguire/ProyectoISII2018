@@ -25,10 +25,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Maru
  */
 public class ManagerVentas {
-    DAOSQLite dao;
-    
+    private DAO dao;
+        
     public ManagerVentas(){
-        dao= new DAOSQLite();
+        this.dao = FactoryDAO.getDAO("bd");
     }
     
     public Object[] balanceVentas(Date fecha1, Date fecha2){

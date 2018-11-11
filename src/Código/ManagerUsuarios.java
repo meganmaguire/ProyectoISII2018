@@ -14,9 +14,9 @@ import java.util.List;
  * @author Maru
  */
 public class ManagerUsuarios {
-    DAOSQLite dao;
+    private DAO dao;
     
     public ManagerUsuarios(){
-        dao= new DAOSQLite();
+        this.dao = FactoryDAO.getDAO("bd");
     }
 }
