@@ -144,7 +144,8 @@ public class ManagerVentas {
                 System.out.println("No se pudo parsear la fecha");
             }
             if(fecha.compareTo(fecha1) >=0 && fecha.compareTo(fecha2) <=0){
-                listaRenglones=dao.readRenglonesVenta(venta.getId());
+                int idVenta= venta.getId();
+                listaRenglones=dao.readRenglonesVenta(idVenta);
                 venta.setRenglonesDeVenta(listaRenglones);
                 Iterator iter= listaRenglones.iterator();
                 while(iter.hasNext()){
